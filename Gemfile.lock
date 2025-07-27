@@ -23,7 +23,7 @@ GEM
     crack (1.0.0)
       bigdecimal
       rexml
-    curb (1.0.9)
+    curb (1.1.0)
     diff-lcs (1.5.1)
     diffy (3.4.2)
     docile (1.4.1)
@@ -205,7 +205,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   codecov (~> 0.6)
-  curb (>= 0.7.16, < 1.1, != 0.8.7)
+  curb (>= 0.7.16, < 1.2, != 0.8.7)
   em-http-request (~> 1.1.7)
   github-markup
   iconv
