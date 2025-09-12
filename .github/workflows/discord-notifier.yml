@@ -1,4 +1,6 @@
 name: Discord Notify
+permissions:
+  contents: read
 
 on:
   check_run:
