@@ -365,13 +365,41 @@ For example:
 spec.add_dependency "oauth", "~> 1.1"
 ```
 
-## License
+<details>
+<summary>📌 Is "Platform Support" part of the public API? More details inside.</summary>
+
+SemVer should, IMO, but doesn't explicitly, say that dropping support for specific Platforms
+is a *breaking change* to an API.
+It is obvious to many, but not all, and since the spec is silent, the bike shedding is endless.
+
+To get a better understanding of how SemVer is intended to work over a project's lifetime,
+read this article from the creator of SemVer:
+
+- ["Major Version Numbers are Not Sacred"][📌major-versions-not-sacred]
+
+</details>
+
+See [CHANGELOG.md][📌changelog] for a list of releases.
+
+## 📄 License
 
 The gem is available as open source under the terms of
-the [MIT License][license] [![License: MIT][🖇src-license-img]][🖇src-license].
-See [LICENSE.txt][license] for the [Copyright Notice][copyright-notice-explainer].
+the [MIT License][📄license] [![License: MIT][📄license-img]][📄license-ref].
+See [LICENSE.txt][📄license] for the official [Copyright Notice][📄copyright-notice-explainer].
 
-## Contact
+### © Copyright
+
+<ul>
+    <li>
+        Copyright (c) 2023, 2025 Peter H. Boling, of
+        <a href="https://discord.gg/3qme4XHNKN">
+            Galtzo.com
+            <picture>
+              <img src="https://logos.galtzo.com/assets/images/galtzo-floss/avatar-128px-blank.svg" alt="Galtzo.com Logo (Wordless) by Aboling0, CC BY-SA 4.0" width="24">
+            </picture>
+        </a>, and oauth contributors.
+    </li>
+</ul>
 
 OAuth Ruby has been created and maintained by a large number of talented
 individuals. The current maintainer is Peter Boling (@pboling).  Please
