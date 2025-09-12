@@ -87,7 +87,7 @@ RSpec.describe OAuth::TTY::CLI do
       normalized = out.lines.map { |l| l.strip }
       expected = [
         "OAuth Gem #{OAuth::Version::VERSION}",
-        "OAuth TTY Gem #{OAuth::TTY::Version::VERSION}"
+        "OAuth TTY Gem #{OAuth::TTY::Version::VERSION}",
       ]
       expect(normalized).to eq(expected)
     end

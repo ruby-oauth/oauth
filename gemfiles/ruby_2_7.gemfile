@@ -2,6 +2,8 @@
 
 source "https://rubygems.org"
 
+gem "oauth-tty", branch: "main", git: "https://github.com/ruby-oauth/oauth-tty"
+
 gemspec path: "../"
 
 eval_gemfile("modular/x_std_libs/r2/libs.gemfile")
