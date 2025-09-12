@@ -9,27 +9,41 @@
 /gemfiles/.bundle/
 /gemfiles/.bundle/config
 /gemfiles/vendor/
+Appraisal.*.gemfile.lock
 
 # Specs
+.rspec_status
 /coverage/
-/test/reports/
+/spec/reports/
+/results/
+.output.txt
 
 # Documentation
-/.yardoc
+/.yardoc/
 /_yardoc/
-/doc/
 /rdoc/
+/doc/
 
-# Editors
-.idea
-*~
-
-# Other
-/measurement/
-/.byebug_history
-.DS_Store
-
-# Version Managers
+# Ruby Version Managers (RVM, rbenv, etc)
+# Ignored because we currently use .tool-versions
 .rvmrc
 .ruby-version
-.tool-versions
+.ruby-gemset
+
+# Benchmarking
+/measurement/
+
+# Debugger detritus
+.byebug_history
+
+# direnv - brew install direnv
+.env.local
+
+# OS Detritus
+.DS_Store
+
+# Editors
+*~
+
+# Sentinels
+.floss_funding.*.lock

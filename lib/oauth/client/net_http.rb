@@ -58,20 +58,31 @@ module Net
     private
 
     def oauth_helper_options(http, consumer, token, options)
-      { request_uri: oauth_full_request_uri(http, options),
+      {
+        request_uri: oauth_full_request_uri(http, options),
         consumer: consumer,
         token: token,
         scheme: "header",
         signature_method: nil,
         nonce: nil,
         timestamp: nil,
-        body_hash_enabled: true }.merge(options)
+        body_hash_enabled: true,
+      }.merge(options)
     end
 
     def oauth_full_request_uri(http, options)
       uri = URI.parse(path)
-      uri.host = http.address
-      uri.port = http.port
+
+      # Guard against strict doubles or alternative HTTP adapters that may not
+      # expose Net::HTTP's #address/#port API. Only set host/port when available;
+      # otherwise, leave them to be filled by other options (e.g., :site) or the
+      # request itself.
+      if http.respond_to?(:address)
+        uri.host ||= http.address
+      end
+      if http.respond_to?(:port)
+        uri.port ||= http.port
+      end
 
       if options[:request_endpoint] && options[:site]
         is_https = options[:site].match(%r{^https://})
@@ -79,11 +90,26 @@ module Net
         uri.port ||= is_https ? 443 : 80
       end
 
-      uri.scheme = if http.respond_to?(:use_ssl?) && http.use_ssl?
-                     "https"
-                   else
-                     "http"
-                   end
+      # Fall back to the provided site URL if host/scheme are still missing.
+      if options[:site]
+        begin
+          site_uri = URI.parse(options[:site])
+          uri.host ||= site_uri.host
+          uri.scheme ||= site_uri.scheme
+          uri.port ||= site_uri.port
+        rescue URI::InvalidURIError
+          # ignore and use defaults below
+        end
+      end
+
+      # As a last resort, ensure scheme/host/port are present to avoid nil errors
+      uri.scheme ||= if http.respond_to?(:use_ssl?) && http.use_ssl?
+        "https"
+      else
+        "http"
+      end
+      uri.host ||= "localhost"
+      uri.port ||= ((uri.scheme == "https") ? 443 : 80)
 
       uri.to_s
     end
@@ -115,10 +141,10 @@ module Net
       oauth_params_str = @oauth_helper.oauth_parameters.map { |k, v| [escape(k), escape(v)].join("=") }.join("&")
       uri = URI.parse(path)
       uri.query = if uri.query.to_s == ""
-                    oauth_params_str
-                  else
-                    "#{uri.query}&#{oauth_params_str}"
-                  end
+        oauth_params_str
+      else
+        "#{uri.query}&#{oauth_params_str}"
+      end
 
       @path = uri.to_s
 

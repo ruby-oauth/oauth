@@ -43,7 +43,7 @@ module OAuth
         # override secrets based on the values returned from the block (if any)
         if block
           # consumer secret and token secret need to be looked up based on pieces of the request
-          secrets = yield block.arity == 1 ? request : [token, consumer_key, nonce, request.timestamp]
+          secrets = yield (block.arity == 1) ? request : [token, consumer_key, nonce, request.timestamp]
           if secrets.is_a?(Array) && secrets.size == 2
             @token_secret = secrets[0]
             @consumer_secret = secrets[1]

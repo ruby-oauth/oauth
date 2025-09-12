@@ -34,7 +34,8 @@ module OAuth
           query ? CGI.parse(query) : {}
         end
 
-        def request_params; end
+        def request_params
+        end
 
         def post_parameters
           # Post params are only used if posting form data
@@ -52,9 +53,9 @@ module OAuth
           query.split("&").inject({}) do |result, q|
             k, v = q.split("=")
             if !v.nil?
-              result.merge({ k => v })
+              result.merge({k => v})
             elsif !result.key?(k)
-              result.merge({ k => true })
+              result.merge({k => true})
             else
               result
             end

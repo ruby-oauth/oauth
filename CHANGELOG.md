@@ -1,18 +1,34 @@
 # Changelog
+
+[![SemVer 2.0.0][📌semver-img]][📌semver] [![Keep-A-Changelog 1.0.0][📗keep-changelog-img]][📗keep-changelog]
+
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog][📗keep-changelog],
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html),
+and [yes][📌major-versions-not-sacred], platform and engine support are part of the [public API][📌semver-breaking].
+Please file a bug if you notice a violation of semantic versioning.
+
+[📌semver]: https://semver.org/spec/v2.0.0.html
+[📌semver-img]: https://img.shields.io/badge/semver-2.0.0-FFDD67.svg?style=flat
+[📌semver-breaking]: https://github.com/semver/semver/issues/716#issuecomment-869336139
+[📌major-versions-not-sacred]: https://tom.preston-werner.com/2022/05/23/major-version-numbers-are-not-sacred.html
+[📗keep-changelog]: https://keepachangelog.com/en/1.0.0/
+[📗keep-changelog-img]: https://img.shields.io/badge/keep--a--changelog-1.0.0-FFDD67.svg?style=flat
 
 ## [Unreleased]
 ### Added
+- kettle-dev v1.1.18
 ### Changed
-### Fixed
+- converted minitest => rspec
+### Deprecated
 ### Removed
+### Fixed
+### Security
 
 ## [1.1.0] 2022-08-29 ([tag][1.1.0t])
 ### Changed
-* `OAuth::CLI` has been extracted to a new gem, `oauth-tty`, hosted on [Gitlab](https://gitlab.com/oauth-xx/oauth-tty)
+* `OAuth::CLI` has been extracted to a new gem, `oauth-tty`, hosted on [Gitlab](https://gitlab.com/ruby-oauth/oauth-tty)
   * The public API of `oauth-tty` is backwards compatible (meaning `OAuth::CLI`)
   * The change within the `oauth` gem is backwards compatible as `oauth-tty` has been added as a dependency
   * Minor version bump is cautionary, as many lines of code have changed.
@@ -413,75 +429,75 @@ but please have a look at the unit tests.
 * Moved all non-Rails functionality from the Rails plugin:
   http://code.google.com/p/oauth-plugin/
 
-[Unreleased]: https://gitlab.com/oauth-xx/oauth/-/compare/v1.1.0...main
-[1.1.0]: https://gitlab.com/oauth-xx/oauth/-/compare/v1.0.1...v1.1.0
-[1.1.0t]: https://gitlab.com/oauth-xx/oauth/-/tags/v1.1.0
-[1.0.1]: https://gitlab.com/oauth-xx/oauth/-/compare/v1.0.0...v1.0.1
-[1.0.1t]: https://gitlab.com/oauth-xx/oauth/-/tags/v1.0.1
-[1.0.0]: https://gitlab.com/oauth-xx/oauth/-/compare/v0.6.2...v1.0.0
-[1.0.0t]: https://gitlab.com/oauth-xx/oauth/-/tags/v1.0.0
-[0.6.2]: https://gitlab.com/oauth-xx/oauth/-/compare/v0.6.1...v0.6.2
-[0.6.2t]: https://gitlab.com/oauth-xx/oauth/-/tags/v0.6.2
-[0.6.1]: https://gitlab.com/oauth-xx/oauth/-/compare/v0.6.0...v0.6.1
-[0.6.1t]: https://gitlab.com/oauth-xx/oauth/-/tags/v0.6.1
-[0.6.0]: https://gitlab.com/oauth-xx/oauth/-/compare/v0.5.14...v0.6.0
-[0.6.0t]: https://gitlab.com/oauth-xx/oauth/-/tags/v0.6.0
-[0.5.14]: https://gitlab.com/oauth-xx/oauth/-/compare/v0.5.13...v0.5.14
-[0.5.14t]: https://gitlab.com/oauth-xx/oauth/-/tags/v0.5.14
-[0.5.13]: https://gitlab.com/oauth-xx/oauth/-/compare/v0.5.12...v0.5.13
-[0.5.13t]: https://gitlab.com/oauth-xx/oauth/-/tags/v0.5.13
-[0.5.12]: https://gitlab.com/oauth-xx/oauth/-/compare/v0.5.11...v0.5.12
-[0.5.12t]: https://gitlab.com/oauth-xx/oauth/-/tags/v0.5.12
-[0.5.11]: https://gitlab.com/oauth-xx/oauth/-/compare/v0.5.10...v0.5.11
-[0.5.11t]: https://gitlab.com/oauth-xx/oauth/-/tags/v0.5.11
-[c0.5.10t]: https://gitlab.com/oauth-xx/oauth/-/compare/v0.5.9...v0.5.10
-[0.5.10t]: https://gitlab.com/oauth-xx/oauth/-/tags/v0.5.10
-[0.5.9]: https://gitlab.com/oauth-xx/oauth/-/compare/v0.5.8...v0.5.9
-[0.5.9t]: https://gitlab.com/oauth-xx/oauth/-/tags/v0.5.9
-[0.5.8]: https://gitlab.com/oauth-xx/oauth/-/compare/v0.5.7...v0.5.8
-[0.5.8t]: https://gitlab.com/oauth-xx/oauth/-/tags/v0.5.8
-[0.5.7]: https://gitlab.com/oauth-xx/oauth/-/compare/v0.5.6...v0.5.7
-[0.5.7t]: https://gitlab.com/oauth-xx/oauth/-/tags/v0.5.7
-[0.5.6]: https://gitlab.com/oauth-xx/oauth/-/compare/v0.5.5...v0.5.6
-[0.5.6t]: https://gitlab.com/oauth-xx/oauth/-/tags/v0.5.6
-[0.5.5]: https://gitlab.com/oauth-xx/oauth/-/compare/v0.5.4...v0.5.5
-[0.5.5t]: https://gitlab.com/oauth-xx/oauth/-/tags/v0.5.5
-[0.5.4]: https://gitlab.com/oauth-xx/oauth/-/compare/v0.5.3...v0.5.4
-[0.5.4t]: https://gitlab.com/oauth-xx/oauth/-/tags/v0.5.4
-[0.5.3]: https://gitlab.com/oauth-xx/oauth/-/compare/v0.5.2...v0.5.3
-[0.5.3t]: https://gitlab.com/oauth-xx/oauth/-/tags/v0.5.3
-[0.5.2]: https://gitlab.com/oauth-xx/oauth/-/compare/v0.5.1...v0.5.2
-[0.5.2t]: https://gitlab.com/oauth-xx/oauth/-/tags/v0.5.2
-[0.5.1]: https://gitlab.com/oauth-xx/oauth/-/compare/v0.5.0...v0.5.1
-[0.5.1t]: https://gitlab.com/oauth-xx/oauth/-/tags/v0.5.1
-[0.5.0]: https://gitlab.com/oauth-xx/oauth/-/compare/v0.4.7...v0.5.0
-[0.5.0t]: https://gitlab.com/oauth-xx/oauth/-/tags/v0.5.0
-[0.4.7]: https://gitlab.com/oauth-xx/oauth/-/compare/v0.4.6...v0.4.7
-[0.4.7t]: https://gitlab.com/oauth-xx/oauth/-/tags/v0.4.7
-[0.4.6]: https://gitlab.com/oauth-xx/oauth/-/compare/v0.4.5...v0.4.6
-[0.4.6t]: https://gitlab.com/oauth-xx/oauth/-/tags/v0.4.6
-[0.4.5]: https://gitlab.com/oauth-xx/oauth/-/compare/v0.4.4...v0.4.5
-[0.4.5t]: https://gitlab.com/oauth-xx/oauth/-/tags/v0.4.5
-[0.4.4]: https://gitlab.com/oauth-xx/oauth/-/compare/v0.4.3...v0.4.4
-[0.4.4t]: https://gitlab.com/oauth-xx/oauth/-/tags/v0.4.4
-[0.4.3]: https://gitlab.com/oauth-xx/oauth/-/compare/v0.4.2...v0.4.3
-[0.4.3t]: https://gitlab.com/oauth-xx/oauth/-/tags/v0.4.3
-[0.4.2]: https://gitlab.com/oauth-xx/oauth/-/compare/v0.4.1...v0.4.2
-[0.4.2t]: https://gitlab.com/oauth-xx/oauth/-/tags/v0.4.2
-[0.4.1]: https://gitlab.com/oauth-xx/oauth/-/compare/v0.4.0...v0.4.1
-[0.4.1t]: https://gitlab.com/oauth-xx/oauth/-/tags/v0.4.1
-[0.4.0]: https://gitlab.com/oauth-xx/oauth/-/compare/v0.3.6...v0.4.0
-[0.4.0t]: https://gitlab.com/oauth-xx/oauth/-/tags/v0.4.0
-[0.3.6]: https://gitlab.com/oauth-xx/oauth/-/compare/v0.3.5...v0.3.6
-[0.3.6t]: https://gitlab.com/oauth-xx/oauth/-/tags/v0.3.6
-[0.3.5]: https://gitlab.com/oauth-xx/oauth/-/compare/v0.3.4...v0.3.5
-[0.3.5t]: https://gitlab.com/oauth-xx/oauth/-/tags/v0.3.5
-[0.3.4]: https://gitlab.com/oauth-xx/oauth/-/compare/v0.3.3...v0.3.4
-[0.3.4t]: https://gitlab.com/oauth-xx/oauth/-/tags/v0.3.4
-[0.3.3]: https://gitlab.com/oauth-xx/oauth/-/compare/v0.3.2...v0.3.3
-[0.3.3t]: https://gitlab.com/oauth-xx/oauth/-/tags/v0.3.3
-[0.3.2]: https://gitlab.com/oauth-xx/oauth/-/compare/v0.3.1...v0.3.2
-[0.3.2t]: https://gitlab.com/oauth-xx/oauth/-/tags/v0.3.2
-[0.3.1]: https://gitlab.com/oauth-xx/oauth/-/compare/v0.3.0...v0.3.1
-[0.3.1t]: https://gitlab.com/oauth-xx/oauth/-/tags/v0.3.1
-[0.3.0]: https://gitlab.com/oauth-xx/oauth/-/tags/v0.3.0
+[Unreleased]: https://gitlab.com/ruby-oauth/oauth/-/compare/v1.1.0...main
+[1.1.0]: https://gitlab.com/ruby-oauth/oauth/-/compare/v1.0.1...v1.1.0
+[1.1.0t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v1.1.0
+[1.0.1]: https://gitlab.com/ruby-oauth/oauth/-/compare/v1.0.0...v1.0.1
+[1.0.1t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v1.0.1
+[1.0.0]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.6.2...v1.0.0
+[1.0.0t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v1.0.0
+[0.6.2]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.6.1...v0.6.2
+[0.6.2t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.6.2
+[0.6.1]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.6.0...v0.6.1
+[0.6.1t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.6.1
+[0.6.0]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.14...v0.6.0
+[0.6.0t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.6.0
+[0.5.14]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.13...v0.5.14
+[0.5.14t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.14
+[0.5.13]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.12...v0.5.13
+[0.5.13t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.13
+[0.5.12]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.11...v0.5.12
+[0.5.12t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.12
+[0.5.11]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.10...v0.5.11
+[0.5.11t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.11
+[c0.5.10t]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.9...v0.5.10
+[0.5.10t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.10
+[0.5.9]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.8...v0.5.9
+[0.5.9t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.9
+[0.5.8]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.7...v0.5.8
+[0.5.8t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.8
+[0.5.7]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.6...v0.5.7
+[0.5.7t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.7
+[0.5.6]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.5...v0.5.6
+[0.5.6t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.6
+[0.5.5]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.4...v0.5.5
+[0.5.5t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.5
+[0.5.4]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.3...v0.5.4
+[0.5.4t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.4
+[0.5.3]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.2...v0.5.3
+[0.5.3t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.3
+[0.5.2]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.1...v0.5.2
+[0.5.2t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.2
+[0.5.1]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.0...v0.5.1
+[0.5.1t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.1
+[0.5.0]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.4.7...v0.5.0
+[0.5.0t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.0
+[0.4.7]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.4.6...v0.4.7
+[0.4.7t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.4.7
+[0.4.6]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.4.5...v0.4.6
+[0.4.6t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.4.6
+[0.4.5]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.4.4...v0.4.5
+[0.4.5t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.4.5
+[0.4.4]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.4.3...v0.4.4
+[0.4.4t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.4.4
+[0.4.3]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.4.2...v0.4.3
+[0.4.3t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.4.3
+[0.4.2]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.4.1...v0.4.2
+[0.4.2t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.4.2
+[0.4.1]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.4.0...v0.4.1
+[0.4.1t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.4.1
+[0.4.0]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.3.6...v0.4.0
+[0.4.0t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.4.0
+[0.3.6]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.3.5...v0.3.6
+[0.3.6t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.3.6
+[0.3.5]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.3.4...v0.3.5
+[0.3.5t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.3.5
+[0.3.4]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.3.3...v0.3.4
+[0.3.4t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.3.4
+[0.3.3]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.3.2...v0.3.3
+[0.3.3t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.3.3
+[0.3.2]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.3.1...v0.3.2
+[0.3.2t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.3.2
+[0.3.1]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.3.0...v0.3.1
+[0.3.1t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.3.1
+[0.3.0]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.3.0

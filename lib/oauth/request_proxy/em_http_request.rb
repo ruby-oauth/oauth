@@ -41,10 +41,10 @@ module OAuth
         def query_parameters
           quer = request.req[:query]
           hash_quer = if quer.respond_to?(:merge)
-                        quer
-                      else
-                        CGI.parse(quer.to_s)
-                      end
+            quer
+          else
+            CGI.parse(quer.to_s)
+          end
           CGI.parse(request.conn.query.to_s).merge(hash_quer)
         end
 

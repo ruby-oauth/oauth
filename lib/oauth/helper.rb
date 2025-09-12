@@ -18,11 +18,11 @@ module OAuth
     end
 
     def _escape(string)
-      URI::DEFAULT_PARSER.escape(string, OAuth::RESERVED_CHARACTERS)
+      URI::RFC2396_PARSER.escape(string, OAuth::RESERVED_CHARACTERS)
     end
 
     def unescape(value)
-      URI::DEFAULT_PARSER.unescape(value.gsub("+", "%2B"))
+      URI::RFC2396_PARSER.unescape(value.gsub("+", "%2B"))
     end
 
     # Generate a random key of up to +size+ bytes. The value returned is Base64 encoded with non-word
@@ -31,7 +31,7 @@ module OAuth
       Base64.encode64(OpenSSL::Random.random_bytes(size)).gsub(/\W/, "")
     end
 
-    alias generate_nonce generate_key
+    alias_method :generate_nonce, :generate_key
 
     def generate_timestamp # :nodoc:
       Time.now.to_i.to_s

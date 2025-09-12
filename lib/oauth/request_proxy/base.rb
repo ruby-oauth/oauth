@@ -65,12 +65,12 @@ module OAuth
       end
 
       # TODO: deprecate these
-      alias consumer_key oauth_consumer_key
-      alias token oauth_token
-      alias nonce oauth_nonce
-      alias timestamp oauth_timestamp
-      alias signature oauth_signature
-      alias signature_method oauth_signature_method
+      alias_method :consumer_key, :oauth_consumer_key
+      alias_method :token, :oauth_token
+      alias_method :nonce, :oauth_nonce
+      alias_method :timestamp, :oauth_timestamp
+      alias_method :signature, :oauth_signature
+      alias_method :signature_method, :oauth_signature_method
 
       ## Parameter accessors
 
@@ -97,7 +97,7 @@ module OAuth
       # See 9.1.2 in specs
       def normalized_uri
         u = URI.parse(uri)
-        "#{u.scheme.downcase}://#{u.host.downcase}#{(u.scheme.casecmp("http").zero? && u.port != 80) || (u.scheme.casecmp("https").zero? && u.port != 443) ? ":#{u.port}" : ""}#{u.path && u.path != "" ? u.path : "/"}"
+        "#{u.scheme.downcase}://#{u.host.downcase}#{":#{u.port}" if (u.scheme.casecmp("http").zero? && u.port != 80) || (u.scheme.casecmp("https").zero? && u.port != 443)}#{(u.path && u.path != "") ? u.path : "/"}"
       end
 
       # See 9.1.1. in specs Normalize Request Parameters
@@ -130,14 +130,14 @@ module OAuth
       def signed_uri(with_oauth: true)
         if signed?
           params = if with_oauth
-                     parameters
-                   else
-                     non_oauth_parameters
-                   end
+            parameters
+          else
+            non_oauth_parameters
+          end
 
           [uri, normalize(params)].join("?")
         else
-          warn "This request has not yet been signed!"
+          warn("This request has not yet been signed!")
         end
       end
 

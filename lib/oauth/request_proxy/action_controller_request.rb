@@ -43,11 +43,11 @@ module OAuth
           params << request.raw_post if raw_post_signature?
         end
 
-        params.
-          join("&").split("&").
-          reject { |s| s.match(/\A\s*\z/) }.
-          map { |p| p.split("=").map { |esc| CGI.unescape(esc) } }.
-          reject { |kv| kv[0] == "oauth_signature" }
+        params
+          .join("&").split("&")
+          .reject { |s| s.match(/\A\s*\z/) }
+          .map { |p| p.split("=").map { |esc| CGI.unescape(esc) } }
+          .reject { |kv| kv[0] == "oauth_signature" }
       end
 
       def raw_post_signature?

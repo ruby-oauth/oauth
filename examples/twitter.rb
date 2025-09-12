@@ -32,10 +32,11 @@ if options[:consumer_key].nil? || options[:consumer_secret].nil? || query.nil?
   exit 1
 end
 
-consumer = OAuth::Consumer.new \
+consumer = OAuth::Consumer.new(
   options[:consumer_key],
   options[:consumer_secret],
-  site: "https://api.twitter.com"
+  site: "https://api.twitter.com",
+)
 
 access_token = OAuth::AccessToken.new(consumer)
 

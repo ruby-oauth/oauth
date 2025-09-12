@@ -25,13 +25,15 @@ module EventMachine
     #
     # See Also: {OAuth core spec version 1.0, section 5.4.1}[http://oauth.net/core/1.0#rfc.section.5.4.1]
     def oauth!(http, consumer = nil, token = nil, options = {})
-      options = { request_uri: normalized_oauth_uri(http),
-                  consumer: consumer,
-                  token: token,
-                  scheme: "header",
-                  signature_method: nil,
-                  nonce: nil,
-                  timestamp: nil }.merge(options)
+      options = {
+        request_uri: normalized_oauth_uri(http),
+        consumer: consumer,
+        token: token,
+        scheme: "header",
+        signature_method: nil,
+        nonce: nil,
+        timestamp: nil,
+      }.merge(options)
 
       @oauth_helper = OAuth::Client::Helper.new(self, options)
       __send__(:"set_oauth_#{options[:scheme]}")
@@ -51,13 +53,15 @@ module EventMachine
     #
     # See Also: {OAuth core spec version 1.0, section 9.1.1}[http://oauth.net/core/1.0#rfc.section.9.1.1]
     def signature_base_string(http, consumer = nil, token = nil, options = {})
-      options = { request_uri: normalized_oauth_uri(http),
-                  consumer: consumer,
-                  token: token,
-                  scheme: "header",
-                  signature_method: nil,
-                  nonce: nil,
-                  timestamp: nil }.merge(options)
+      options = {
+        request_uri: normalized_oauth_uri(http),
+        consumer: consumer,
+        token: token,
+        scheme: "header",
+        signature_method: nil,
+        nonce: nil,
+        timestamp: nil,
+      }.merge(options)
 
       OAuth::Client::Helper.new(self, options).signature_base_string
     end
@@ -71,7 +75,7 @@ module EventMachine
         encoded_query = encode_query(@conn, @req[:query])
         path, query = encoded_query.split("?", 2)
         uri.query = query unless encoded_query.empty?
-        uri.path  = path
+        uri.path = path
         uri
       end
     end
@@ -80,10 +84,10 @@ module EventMachine
 
     def combine_query(path, query, uri_query)
       combined_query = if query.is_a?(Hash)
-                         query.map { |k, v| encode_param(k, v) }.join("&")
-                       else
-                         query.to_s
-                       end
+        query.map { |k, v| encode_param(k, v) }.join("&")
+      else
+        query.to_s
+      end
       combined_query = [combined_query, uri_query].reject(&:empty?).join("&") unless uri_query.to_s.empty?
       combined_query.to_s.empty? ? path : "#{path}?#{combined_query}"
     end
@@ -96,10 +100,10 @@ module EventMachine
       uri.port = http.port
 
       uri.scheme = if http.respond_to?(:use_ssl?) && http.use_ssl?
-                     "https"
-                   else
-                     "http"
-                   end
+        "https"
+      else
+        "http"
+      end
       uri.to_s
     end
 
