@@ -74,7 +74,7 @@
     <orderEntry type="library" scope="PROVIDED" name="parser (v3.3.9.0, mise: 3.4.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pp (v0.6.2, mise: 3.4.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="prettyprint (v0.2.0, mise: 3.4.5) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="prism (v1.4.0, mise: 3.4.5) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="prism (v1.5.0, mise: 3.4.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="psych (v5.2.6, mise: 3.4.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="public_suffix (v6.0.2, mise: 3.4.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="racc (v1.8.1, mise: 3.4.5) [gem]" level="application" />
@@ -125,7 +125,7 @@
     <orderEntry type="library" scope="PROVIDED" name="simplecov-rcov (v0.3.7, mise: 3.4.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="simplecov_json_formatter (v0.1.4, mise: 3.4.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="snaky_hash (v2.0.3, mise: 3.4.5) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="standard (v1.51.0, mise: 3.4.5) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="standard (v1.51.1, mise: 3.4.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="standard-custom (v1.0.2, mise: 3.4.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="standard-performance (v1.8.0, mise: 3.4.5) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="standard-rubocop-lts (v1.0.10, mise: 3.4.5) [gem]" level="application" />

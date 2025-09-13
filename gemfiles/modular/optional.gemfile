@@ -1,1 +1,7 @@
 # Optional dependencies are not depended on directly, but may be used if present.
+
+# em-http-request depends on http_parser.rb, which is supposed to be,
+# but appears to not be, compatible with JRuby.
+# http_parser.rb is highly unmaintained, with no responses on issues for 2 years.
+# em-http-request is even less maintained, with no releases in 5 years.
+gem "em-http-request", "~> 1.1.7" # ruby >= 0

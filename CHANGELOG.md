@@ -23,6 +23,8 @@ Please file a bug if you notice a violation of semantic versioning.
 - converted minitest => rspec
 ### Deprecated
 ### Removed
+- dependency on em-http-request
+  - now lazy Loaded so it can be optional, since some systems fail to install it, and it doesn't seem maintained
 ### Fixed
 ### Security
 

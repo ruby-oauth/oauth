@@ -150,7 +150,6 @@ Thanks, |7eter l-|. l3oling
   #       Development dependencies that require strictly newer Ruby versions should be in a "gemfile",
   #       and preferably a modular one (see gemfiles/modular/*.gemfile).
 
-  spec.add_development_dependency("em-http-request", "~> 1.1.7")
   spec.add_development_dependency("mocha")
   spec.add_development_dependency("rack", ">= 2.0.0")
   spec.add_development_dependency("rack-test")
