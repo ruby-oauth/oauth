@@ -19,6 +19,10 @@ Please file a bug if you notice a violation of semantic versioning.
 ## [Unreleased]
 ### Added
 - kettle-dev v1.1.18
+- Internal escape & unescape methods
+  - Stop relying on URI / CGI for escaping and unescaping
+  - They are both unstable across supported versions of Ruby (including 3.5 HEAD)
+- Tests against Rails-specific code are now run in CI
 ### Changed
 - converted minitest => rspec
 ### Deprecated

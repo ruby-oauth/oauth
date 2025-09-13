@@ -16,14 +16,18 @@ module OAuth
       end
 
       def uri
-        request.url
+        options[:uri] || request.url
       end
 
       def parameters
         if options[:clobber_request]
           options[:parameters] || {}
         else
-          params = request_params.merge(query_params).merge(header_params)
+          # Rails proxies should expose array-style values for params to align with
+          # historical oauth gem behavior / specs. Header params remain scalars.
+          rq = wrap_values(request_params)
+          qq = wrap_values(query_params)
+          params = rq.merge(qq).merge(header_params)
           params.stringify_keys! if params.respond_to?(:stringify_keys!)
           params.merge(options[:parameters] || {})
         end

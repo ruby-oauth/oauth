@@ -94,4 +94,71 @@ RSpec.describe OAuth::Helper do
       ])
     end
   end
+
+  describe "::escape" do
+    it "leaves unreserved characters unchanged (RFC3986)" do
+      # unreserved = ALPHA / DIGIT / '-' / '.' / '_' / '~'
+      input = "AZaz09-._~"
+      expect(described_class.escape(input)).to eq(input)
+    end
+
+    it "percent-encodes reserved and other characters (space, plus, etc)" do
+      input = " a+b*c%/&="
+      # space -> %20, plus -> %2B, asterisk -> %2A, percent -> %25, slash -> %2F, ampersand -> %26, equals -> %3D
+      expect(described_class.escape(input)).to eq("%20a%2Bb%2Ac%25%2F%26%3D")
+    end
+
+    it "encodes non-ASCII characters by UTF-8 bytes (e.g., é)" do
+      input = "Café"
+      # 'é' -> 0xC3 0xA9 in UTF-8
+      expect(described_class.escape(input)).to eq("Caf%C3%A9")
+    end
+
+    it "handles binary-encoded strings by bytes and forces UTF-8 on error" do
+      bytes = [0xC3, 0xA9] # UTF-8 for 'é'
+      suspicious = bytes.pack("C*").force_encoding(Encoding::ASCII_8BIT)
+      # Prepend simple ASCII to ensure mix
+      input = "X" + suspicious
+      expect(described_class.escape(input)).to eq("X%C3%A9")
+    end
+  end
+
+  describe "::unescape" do
+    it "decodes percent-encoded sequences (including %20 to space)" do
+      expect(described_class.unescape("Hello%20World%21")).to eq("Hello World!")
+    end
+
+    it "does NOT treat '+' as space" do
+      # Important OAuth semantic: '+' should be literal plus unless percent-encoded
+      expect(described_class.unescape("a+b")).to eq("a+b")
+      expect(described_class.unescape("a%2Bb")).to eq("a+b")
+    end
+
+    it "decodes multibyte UTF-8 sequences back to original" do
+      expect(described_class.unescape("Caf%C3%A9")).to eq("Café")
+      snowman = "%E2%98%83" # U+2603
+      expect(described_class.unescape(snowman)).to eq("\u2603")
+    end
+
+    it "leaves malformed percent sequences intact" do
+      expect(described_class.unescape("%ZZ")).to eq("%ZZ")
+      expect(described_class.unescape("abc%2")).to eq("abc%2")
+      expect(described_class.unescape("%")).to eq("%")
+    end
+
+    it "round-trips escape -> unescape for representative inputs" do
+      samples = [
+        "simple",
+        "AZaz09-._~",
+        "a b+c&d=e/f%g*h",
+        "Café",
+        "\u2603 and space",
+      ]
+      samples.each do |s|
+        enc = described_class.escape(s)
+        dec = described_class.unescape(enc)
+        expect(dec).to eq(s)
+      end
+    end
+  end
 end

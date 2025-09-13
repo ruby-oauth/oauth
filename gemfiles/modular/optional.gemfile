@@ -5,3 +5,9 @@
 # http_parser.rb is highly unmaintained, with no responses on issues for 2 years.
 # em-http-request is even less maintained, with no releases in 5 years.
 gem "em-http-request", "~> 1.1.7" # ruby >= 0
+
+# This gem ships with Rails-specific integrations because it began life
+#   as a Rails plugin, and they haven't been extracted yet.
+# They are not required for, or by, the core library,
+#   and must be required explicitly.
+gem "rails", ">= 5.0"

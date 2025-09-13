@@ -61,7 +61,7 @@
     [212, 7, 83, "RSpec/ReceiveMessages: Use `receive_messages` instead of multiple stubs on lines [214].", 4182076280],
     [214, 7, 96, "RSpec/ReceiveMessages: Use `receive_messages` instead of multiple stubs on lines [212].", 3226867591]
   ],
-  "spec/oauth/helper_spec.rb:2421896228": [
+  "spec/oauth/helper_spec.rb:3023999608": [
     [3, 1, 28, "RSpec/SpecFilePathFormat: Spec path should end with `o_auth/helper*_spec.rb`.", 2306013808]
   ],
   "spec/oauth/net_http_client_spec.rb:797264696": [
