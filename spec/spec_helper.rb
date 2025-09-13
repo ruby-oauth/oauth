@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
-# External libs
+# Global Extensions
+require_relative "ext/backports"
+
+# External libraries
 # N/A
 
 # External RSpec & related config
