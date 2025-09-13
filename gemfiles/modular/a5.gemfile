@@ -1,0 +1,2 @@
+# Ruby >= 2.2
+gem "actionpack", "~> 5.2.8.1"

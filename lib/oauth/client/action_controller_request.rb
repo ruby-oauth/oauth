@@ -35,19 +35,23 @@ module ActionController
     end
 
     def configure_oauth(consumer = nil, token = nil, options = {})
-      @oauth_options = { consumer: consumer,
-                         token: token,
-                         scheme: "header",
-                         signature_method: nil,
-                         nonce: nil,
-                         timestamp: nil }.merge(options)
+      @oauth_options = {
+        consumer: consumer,
+        token: token,
+        scheme: "header",
+        signature_method: nil,
+        nonce: nil,
+        timestamp: nil,
+      }.merge(options)
     end
 
     def apply_oauth!
       return unless ActionController::TestRequest.use_oauth? && @oauth_options
 
-      @oauth_helper = OAuth::Client::Helper.new(self,
-                                                @oauth_options.merge(request_uri: (respond_to?(:fullpath) ? fullpath : request_uri)))
+      @oauth_helper = OAuth::Client::Helper.new(
+        self,
+        @oauth_options.merge(request_uri: (respond_to?(:fullpath) ? fullpath : request_uri)),
+      )
       @oauth_helper.amend_user_agent_header(env)
 
       send("set_oauth_#{@oauth_options[:scheme]}")
@@ -62,6 +66,7 @@ module ActionController
       @query_parameters.merge!(oauth_signature: @oauth_helper.signature)
     end
 
-    def set_oauth_query_string; end
+    def set_oauth_query_string
+    end
   end
 end

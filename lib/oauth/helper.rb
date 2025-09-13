@@ -18,11 +18,33 @@ module OAuth
     end
 
     def _escape(string)
-      URI::DEFAULT_PARSER.escape(string, OAuth::RESERVED_CHARACTERS)
+      # Percent-encode per RFC 3986 (unreserved: A-Z a-z 0-9 - . _ ~)
+      # Encode by byte to ensure stable behavior across Ruby versions and encodings.
+      bytes = string.to_s.b.bytes
+      bytes.map do |b|
+        ch = b.chr
+        if ch =~ OAuth::RESERVED_CHARACTERS
+          "%%%02X" % b
+        else
+          ch
+        end
+      end.join
     end
 
     def unescape(value)
-      URI::DEFAULT_PARSER.unescape(value.gsub("+", "%2B"))
+      # Do NOT treat "+" as space; OAuth treats '+' as a literal plus unless percent-encoded.
+      str = value.to_s.gsub("+", "%2B")
+      # Decode %HH sequences; leave malformed sequences intact.
+      decoded = str.gsub(/%([0-9A-Fa-f]{2})/) { Regexp.last_match(1).to_i(16).chr }
+      # Prefer UTF-8 when the decoded bytes form valid UTF-8; otherwise, return as binary.
+      begin
+        utf8 = decoded.dup
+        utf8.force_encoding(Encoding::UTF_8)
+        decoded = utf8 if utf8.valid_encoding?
+      rescue NameError
+        # Older Rubies without Encoding constants: keep original encoding.
+      end
+      decoded
     end
 
     # Generate a random key of up to +size+ bytes. The value returned is Base64 encoded with non-word
@@ -31,7 +53,7 @@ module OAuth
       Base64.encode64(OpenSSL::Random.random_bytes(size)).gsub(/\W/, "")
     end
 
-    alias generate_nonce generate_key
+    alias_method :generate_nonce, :generate_key
 
     def generate_timestamp # :nodoc:
       Time.now.to_i.to_s

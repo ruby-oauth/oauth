@@ -1,45 +1,17 @@
-inherit_from: .rubocop_todo.yml
-
 inherit_gem:
-  rubocop-lts: rubocop-lts.yml
+  rubocop-lts: config/rubygem_rspec.yml
 
-require:
-  # See: https://github.com/rubocop/rubocop-md/issues/14
-  #  - 'rubocop-md'
-  - 'rubocop-minitest'
-  - 'rubocop-packaging'
-  - 'rubocop-performance'
-  - 'rubocop-rake'
-  - 'rubocop-thread_safety'
+inherit_from:
+  - .rubocop_rspec.yml
+
+plugins: rubocop-on-rbs
+
+RBS:
+  Enabled: true
 
 AllCops:
-  DisplayCopNames: true # Display the name of the failing cops
+  Exclude:
+    - 'lib/oauth/helper.rb'
 
-Layout/DotPosition:
-  Enabled: true
-  EnforcedStyle: trailing
-Metrics/BlockLength:
-  IgnoredMethods:
-    - context
-    - describe
-    - it
-    - shared_context
-    - shared_examples
-    - shared_examples_for
-Style/StringLiterals:
-  Enabled: true
-  EnforcedStyle: double_quotes
-Style/StringLiteralsInInterpolation:
-  Enabled: true
-  EnforcedStyle: double_quotes
-
-Lint/RaiseException: # (0.81)
-  Enabled: true
-Lint/StructNewOverride: # (0.81)
-  Enabled: true
-Style/HashEachMethods: # (0.80)
-  Enabled: true
-Style/HashTransformKeys: # (0.80)
-  Enabled: true
-Style/HashTransformValues: # (0.80)
-  Enabled: true
+Layout/IndentationConsistency:
+  Exclude: ['*.md']

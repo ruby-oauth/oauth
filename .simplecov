@@ -1,33 +1,11 @@
-# frozen_string_literal: true
+require "kettle/soup/cover/config"
 
-# To get coverage
-# On Local, default (HTML) output, it just works, coverage is turned on:
-#   bundle exec rspec spec
-# On Local, all output formats:
-#   COVER_ALL=true bundle exec rspec spec
-#
-# On CI, all output formats, the ENV variables CI is always set,
-#   and COVER_ALL, and CI_CODECOV, are set in the coverage.yml workflow only,
-#   so coverage only runs in that workflow, and outputs all formats.
-#
-
-if RUN_COVERAGE
-  SimpleCov.start do
-    enable_coverage :branch
-    primary_coverage :branch
-    add_filter "test"
-    add_filter "lib/oauth/version.rb"
-    track_files "**/*.rb"
-
-    if ALL_FORMATTERS
-      command_name "#{ENV.fetch("GITHUB_WORKFLOW",
-                                nil)} Job #{ENV.fetch("GITHUB_RUN_ID", nil)}:#{ENV.fetch("GITHUB_RUN_NUMBER", nil)}"
-    else
-      formatter SimpleCov::Formatter::HTMLFormatter
-    end
-
-    minimum_coverage(65)
-  end
-else
-  puts "Not running coverage on #{RUBY_ENGINE} #{RUBY_VERSION}"
+# Minimum coverage thresholds are set by kettle-soup-cover.
+# It is controlled by ENV variables, which are set in .envrc and loaded via `direnv allow`
+# If the values for minimum coverage need to change, they should be changed both there,
+#   and in 2 places in .github/workflows/coverage.yml.
+SimpleCov.start do
+  track_files "lib/**/*.rb"
+  track_files "lib/**/*.rake"
+  track_files "exe/*.rb"
 end

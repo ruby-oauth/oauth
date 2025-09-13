@@ -37,29 +37,33 @@ module OAuth
           "oauth_timestamp" => timestamp,
           "oauth_nonce" => nonce,
           "oauth_verifier" => options[:oauth_verifier],
-          "oauth_version" => (options[:oauth_version] || "1.0"),
-          "oauth_session_handle" => options[:oauth_session_handle]
+          "oauth_version" => options[:oauth_version] || "1.0",
+          "oauth_session_handle" => options[:oauth_session_handle],
         }
         allowed_empty_params = options[:allow_empty_params]
         if allowed_empty_params != true && !allowed_empty_params.is_a?(Array)
-          allowed_empty_params = allowed_empty_params == false ? [] : [allowed_empty_params]
+          allowed_empty_params = (allowed_empty_params == false) ? [] : [allowed_empty_params]
         end
         out.select! { |k, v| v.to_s != "" || allowed_empty_params == true || allowed_empty_params.include?(k) }
         out
       end
 
       def signature(extra_options = {})
-        OAuth::Signature.sign(@request, { uri: options[:request_uri],
-                                          consumer: options[:consumer],
-                                          token: options[:token],
-                                          unsigned_parameters: options[:unsigned_parameters] }.merge(extra_options))
+        OAuth::Signature.sign(@request, {
+          uri: options[:request_uri],
+          consumer: options[:consumer],
+          token: options[:token],
+          unsigned_parameters: options[:unsigned_parameters],
+        }.merge(extra_options))
       end
 
       def signature_base_string(extra_options = {})
-        OAuth::Signature.signature_base_string(@request, { uri: options[:request_uri],
-                                                           consumer: options[:consumer],
-                                                           token: options[:token],
-                                                           parameters: oauth_parameters }.merge(extra_options))
+        OAuth::Signature.signature_base_string(@request, {
+          uri: options[:request_uri],
+          consumer: options[:consumer],
+          token: options[:token],
+          parameters: oauth_parameters,
+        }.merge(extra_options))
       end
 
       def token_request?

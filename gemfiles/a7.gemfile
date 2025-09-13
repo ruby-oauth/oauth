@@ -1,9 +1,0 @@
-# frozen_string_literal: true
-
-source "https://rubygems.org"
-
-# See README.md in this directory
-
-gem "actionpack", "~> 7.0"
-
-eval_gemfile "../Gemfile"

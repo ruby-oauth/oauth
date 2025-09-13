@@ -7,7 +7,7 @@ module OAuth
     def initialize(problem, request = nil, params = {})
       super(request)
       @problem = problem
-      @params  = params
+      @params = params
     end
 
     def to_s

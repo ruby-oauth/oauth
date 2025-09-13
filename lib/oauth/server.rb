@@ -7,12 +7,13 @@ module OAuth
   # This is mainly used to create consumer credentials and can pretty much be ignored if you want to create your own
   class Server
     include OAuth::Helper
+
     attr_accessor :base_url
 
     @@server_paths = {
       request_token_path: "/oauth/request_token",
       authorize_path: "/oauth/authorize",
-      access_token_path: "/oauth/access_token"
+      access_token_path: "/oauth/access_token",
     }
 
     # Create a new server instance
@@ -32,13 +33,16 @@ module OAuth
     # mainly for testing purposes
     def create_consumer
       creds = generate_credentials
-      Consumer.new(creds[0], creds[1],
-                   {
-                     site: base_url,
-                     request_token_path: request_token_path,
-                     authorize_path: authorize_path,
-                     access_token_path: access_token_path
-                   })
+      Consumer.new(
+        creds[0],
+        creds[1],
+        {
+          site: base_url,
+          request_token_path: request_token_path,
+          authorize_path: authorize_path,
+          access_token_path: access_token_path,
+        },
+      )
     end
 
     def request_token_path

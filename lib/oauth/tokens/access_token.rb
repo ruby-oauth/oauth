@@ -8,7 +8,7 @@ module OAuth
     def request(http_method, path, *arguments)
       request_uri = URI.parse(path)
       site_uri = consumer.uri
-      is_service_uri_different = (request_uri.absolute? && request_uri != site_uri)
+      is_service_uri_different = request_uri.absolute? && request_uri != site_uri
       begin
         consumer.uri(request_uri) if is_service_uri_different
         @response = super(http_method, path, *arguments)

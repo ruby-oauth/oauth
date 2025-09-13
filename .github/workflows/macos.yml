@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - 'main'
-      - '*-maintenance'
-      - '*-dev'
       - '*-stable'
     tags:
       - '!*' # Do not execute on tags
@@ -32,15 +30,13 @@ jobs:
       matrix:
         experimental: [true]
         gemfile:
-          - a7
+          - current
         rubygems:
           - latest
         bundler:
           - latest
         ruby:
-          - "2.7"
-          - "3.0"
-          - "3.1"
+          - ruby
           - truffleruby
 
     runs-on: macos-latest

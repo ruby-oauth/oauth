@@ -4,7 +4,7 @@ module OAuth
   # Superclass for tokens used by OAuth Clients
   class ConsumerToken < Token
     attr_accessor :consumer, :params
-    attr_reader   :response
+    attr_reader :response
 
     def self.from_hash(consumer, hash)
       token = new(consumer, hash[:oauth_token], hash[:oauth_token_secret])
@@ -15,7 +15,7 @@ module OAuth
     def initialize(consumer, token = "", secret = "")
       super(token, secret)
       @consumer = consumer
-      @params   = {}
+      @params = {}
     end
 
     # Make a signed request using given http_method to the path

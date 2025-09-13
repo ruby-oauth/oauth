@@ -1,0 +1,2 @@
+# Ruby >= 2.6
+gem "actionpack", "~> 6.1.7.10"

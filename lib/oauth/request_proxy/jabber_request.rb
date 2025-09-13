@@ -18,8 +18,15 @@ module OAuth
         oauth = @request.get_elements("//oauth").first
         return @params unless oauth
 
-        %w[ oauth_token oauth_consumer_key oauth_signature_method oauth_signature
-            oauth_timestamp oauth_nonce oauth_version ].each do |param|
+        %w[
+          oauth_token
+          oauth_consumer_key
+          oauth_signature_method
+          oauth_signature
+          oauth_timestamp
+          oauth_nonce
+          oauth_version
+        ].each do |param|
           next unless (element = oauth.first_element(param))
 
           @params[param] = element.text

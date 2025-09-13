@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  File: README
+  
+    &mdash; Documentation by YARD 0.9.37
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "README";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><div id='filecontents'><p><a href="https://discord.gg/3qme4XHNKN"><img src="https://logos.galtzo.com/assets/images/galtzo-floss/avatar-192px.svg" alt="Galtzo FLOSS Logo by Aboling0, CC BY-SA 4.0"></a> <a href="https://www.ruby-lang.org/"><img src="https://logos.galtzo.com/assets/images/ruby-lang/avatar-192px.svg" alt="ruby-lang Logo, Yukihiro Matsumoto, Ruby Visual Identity Team, CC BY-SA 2.5"></a> <a href="https://github.com/ruby-oauth/oauth"><img src="https://logos.galtzo.com/assets/images/oauth/oauth/avatar-192px.svg" alt="oauth Logo by Aboling0, CC BY-SA 4.0"></a></p>
+
+<h1 id="-ruby-oauth">🔑 Ruby OAuth</h1>
+
+<p><a href="https://rubygems.org/gems/oauth"><img src="https://img.shields.io/gem/v/oauth.svg" alt="Version"></a> <a href="http://github.com/ruby-oauth/oauth/releases"><img src="https://img.shields.io/github/tag/ruby-oauth/oauth.svg" alt="GitHub tag (latest SemVer)"></a> <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-259D6C.svg" alt="License: MIT"></a> <a href="https://rubygems.org/gems/oauth"><img src="https://img.shields.io/gem/rd/oauth.svg" alt="Downloads Rank"></a> <a href="https://www.codetriage.com/ruby-oauth/oauth"><img src="https://www.codetriage.com/ruby-oauth/oauth/badges/users.svg" alt="Open Source Helpers"></a> <a href="https://codecov.io/gh/ruby-oauth/oauth"><img src="https://codecov.io/gh/ruby-oauth/oauth/graph/badge.svg" alt="CodeCov Test Coverage"></a> <a href="https://coveralls.io/github/ruby-oauth/oauth?branch=main"><img src="https://coveralls.io/repos/github/ruby-oauth/oauth/badge.svg?branch=main" alt="Coveralls Test Coverage"></a> <a href="https://qlty.sh/gh/ruby-oauth/projects/oauth/metrics/code?sort=coverageRating"><img src="https://qlty.sh/gh/ruby-oauth/projects/oauth/coverage.svg" alt="QLTY Test Coverage"></a> <a href="https://qlty.sh/gh/ruby-oauth/projects/oauth"><img src="https://qlty.sh/gh/ruby-oauth/projects/oauth/maintainability.svg" alt="QLTY Maintainability"></a> <a href="https://github.com/ruby-oauth/oauth/actions/workflows/heads.yml"><img src="https://github.com/ruby-oauth/oauth/actions/workflows/heads.yml/badge.svg" alt="CI Heads"></a> <a href="https://github.com/ruby-oauth/oauth/actions/workflows/dep-heads.yml"><img src="https://github.com/ruby-oauth/oauth/actions/workflows/dep-heads.yml/badge.svg" alt="CI Runtime Dependencies @ HEAD"></a> <a href="https://github.com/ruby-oauth/oauth/actions/workflows/current.yml"><img src="https://github.com/ruby-oauth/oauth/actions/workflows/current.yml/badge.svg" alt="CI Current"></a> <a href="https://github.com/ruby-oauth/oauth/actions/workflows/truffle.yml"><img src="https://github.com/ruby-oauth/oauth/actions/workflows/truffle.yml/badge.svg" alt="CI Truffle Ruby"></a> <a href="https://github.com/ruby-oauth/oauth/actions/workflows/jruby.yml"><img src="https://github.com/ruby-oauth/oauth/actions/workflows/jruby.yml/badge.svg" alt="CI JRuby"></a> <a href="https://github.com/ruby-oauth/oauth/actions/workflows/locked_deps.yml"><img src="https://github.com/ruby-oauth/oauth/actions/workflows/locked_deps.yml/badge.svg" alt="Deps Locked"></a> <a href="https://github.com/ruby-oauth/oauth/actions/workflows/unlocked_deps.yml"><img src="https://github.com/ruby-oauth/oauth/actions/workflows/unlocked_deps.yml/badge.svg" alt="Deps Unlocked"></a> <a href="https://github.com/ruby-oauth/oauth/actions/workflows/supported.yml"><img src="https://github.com/ruby-oauth/oauth/actions/workflows/supported.yml/badge.svg" alt="CI Supported"></a> <a href="https://github.com/ruby-oauth/oauth/actions/workflows/legacy.yml"><img src="https://github.com/ruby-oauth/oauth/actions/workflows/legacy.yml/badge.svg" alt="CI Legacy"></a> <a href="https://github.com/ruby-oauth/oauth/actions/workflows/unsupported.yml"><img src="https://github.com/ruby-oauth/oauth/actions/workflows/unsupported.yml/badge.svg" alt="CI Unsupported"></a> <a href="https://github.com/ruby-oauth/oauth/actions/workflows/ancient.yml"><img src="https://github.com/ruby-oauth/oauth/actions/workflows/ancient.yml/badge.svg" alt="CI Ancient"></a> <a href="https://github.com/ruby-oauth/oauth/actions/workflows/coverage.yml"><img src="https://github.com/ruby-oauth/oauth/actions/workflows/coverage.yml/badge.svg" alt="CI Test Coverage"></a> <a href="https://github.com/ruby-oauth/oauth/actions/workflows/style.yml"><img src="https://github.com/ruby-oauth/oauth/actions/workflows/style.yml/badge.svg" alt="CI Style"></a> <a href="https://github.com/ruby-oauth/oauth/security/code-scanning"><img src="https://github.com/ruby-oauth/oauth/actions/workflows/codeql-analysis.yml/badge.svg" alt="CodeQL"></a></p>
+
+<p><code>if ci_badges.map(&amp;:color).detect { it != "green"}</code> ☝️ <a href="https://discord.gg/3qme4XHNKN">let me know</a>, as I may have missed the <a href="https://discord.gg/3qme4XHNKN">discord notification</a>.</p>
+
+<hr>
+
+<p><code>if ci_badges.map(&amp;:color).all? { it == "green"}</code> 👇️ send money so I can do more of this. FLOSS maintenance is now my full-time job.</p>
+
+<p><a href="https://opencollective.com/ruby-oauth#backer"><img src="https://opencollective.com/ruby-oauth/backers/badge.svg?style=flat" alt="OpenCollective Backers"></a> <a href="https://opencollective.com/ruby-oauth#sponsor"><img src="https://opencollective.com/ruby-oauth/sponsors/badge.svg?style=flat" alt="OpenCollective Sponsors"></a> <a href="https://github.com/sponsors/pboling"><img src="https://img.shields.io/badge/Sponsor_Me!-pboling.svg?style=social&amp;logo=github" alt="Sponsor Me on Github"></a> <a href="https://liberapay.com/pboling/donate"><img src="https://img.shields.io/liberapay/goal/pboling.svg?logo=liberapay&amp;color=a51611&amp;style=flat" alt="Liberapay Goal Progress"></a> <a href="https://www.paypal.com/paypalme/peterboling"><img src="https://img.shields.io/badge/donate-paypal-a51611.svg?style=flat&amp;logo=paypal" alt="Donate on PayPal"></a> <a href="https://www.buymeacoffee.com/pboling"><img src="https://img.shields.io/badge/buy_me_a_coffee-%E2%9C%93-a51611.svg?style=flat" alt="Buy me a coffee"></a> <a href="https://polar.sh/pboling"><img src="https://img.shields.io/badge/polar-donate-a51611.svg?style=flat" alt="Donate on Polar"></a> <a href="https://ko-fi.com/O5O86SNP4"><img src="https://img.shields.io/badge/ko--fi-%E2%9C%93-a51611.svg?style=flat" alt="Donate at ko-fi.com"></a></p>
+
+<h2 id="-synopsis">🌻 Synopsis</h2>
+
+<p>OAuth 1.0a is an industry-standard protocol for authorization.</p>
+
+<p>This is a RubyGem for implementing both OAuth 1.0a clients and servers in Ruby applications.<br>
+See the sibling <code>oauth2</code> gem for OAuth 2.0, 2.1, &amp; OIDC clients in Ruby.</p>
+
+<ul>
+  <li><a href="http://oauth.net/core/1.0/">OAuth 1.0 Spec</a></li>
+  <li>
+<a href="https://gitlab.com/ruby-oauth/oauth2">oauth2 sibling gem</a> for OAuth 2.0 implementations in Ruby.</li>
+</ul>
+
+<p>OAuth Ruby has been maintained by a large number of talented<br>
+individuals over the years.<br>
+The primary maintainer since 2020 is Peter Boling (@pboling).</p>
+
+<h2 id="-info-you-can-shake-a-stick-at">💡 Info you can shake a stick at</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tokens to Remember</th>
+      <th>
+<a href="https://rubygems.org/gems/oauth"><img src="https://img.shields.io/badge/name-oauth-3C2D2D.svg?style=square&amp;logo=rubygems&amp;logoColor=red" alt="Gem name"></a> <a href="https://github.com/ruby-oauth/oauth"><img src="https://img.shields.io/badge/namespace-Oauth-3C2D2D.svg?style=square&amp;logo=ruby&amp;logoColor=white" alt="Gem namespace"></a>
+</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Works with JRuby</td>
+      <td>
+<img src="https://img.shields.io/badge/JRuby-9.1_(%F0%9F%9A%ABCI)-AABBCC?style=for-the-badge&amp;logo=ruby&amp;logoColor=red" alt="JRuby 9.1 Compat"> <img src="https://img.shields.io/badge/JRuby-9.2_(%F0%9F%9A%ABCI)-AABBCC?style=for-the-badge&amp;logo=ruby&amp;logoColor=red" alt="JRuby 9.2 Compat"> <img src="https://img.shields.io/badge/JRuby-9.3_(%F0%9F%9A%ABCI)-AABBCC?style=for-the-badge&amp;logo=ruby&amp;logoColor=red" alt="JRuby 9.3 Compat"> <br> <a href="https://github.com/ruby-oauth/oauth/actions/workflows/jruby.yml"><img src="https://img.shields.io/badge/JRuby-9.4-FBE742?style=for-the-badge&amp;logo=ruby&amp;logoColor=red" alt="JRuby 9.4 Compat"></a> <a href="https://github.com/ruby-oauth/oauth/actions/workflows/current.yml"><img src="https://img.shields.io/badge/JRuby-current-FBE742?style=for-the-badge&amp;logo=ruby&amp;logoColor=green" alt="JRuby 10.0 Compat"></a> <a href="https://github.com/ruby-oauth/oauth/actions/workflows/heads.yml"><img src="https://img.shields.io/badge/JRuby-HEAD-FBE742?style=for-the-badge&amp;logo=ruby&amp;logoColor=blue" alt="JRuby HEAD Compat"></a>
+</td>
+    </tr>
+    <tr>
+      <td>Works with Truffle Ruby</td>
+      <td>
+<img src="https://img.shields.io/badge/Truffle_Ruby-22.3_(%F0%9F%9A%ABCI)-AABBCC?style=for-the-badge&amp;logo=ruby&amp;logoColor=pink" alt="Truffle Ruby 22.3 Compat"> <img src="https://img.shields.io/badge/Truffle_Ruby-23.0_(%F0%9F%9A%ABCI)-AABBCC?style=for-the-badge&amp;logo=ruby&amp;logoColor=pink" alt="Truffle Ruby 23.0 Compat"> <br> <a href="https://github.com/ruby-oauth/oauth/actions/workflows/truffle.yml"><img src="https://img.shields.io/badge/Truffle_Ruby-23.1-34BCB1?style=for-the-badge&amp;logo=ruby&amp;logoColor=pink" alt="Truffle Ruby 23.1 Compat"></a> <a href="https://github.com/ruby-oauth/oauth/actions/workflows/current.yml"><img src="https://img.shields.io/badge/Truffle_Ruby-current-34BCB1?style=for-the-badge&amp;logo=ruby&amp;logoColor=green" alt="Truffle Ruby 24.1 Compat"></a>
+</td>
+    </tr>
+    <tr>
+      <td>Works with MRI Ruby 3</td>
+      <td>
+<a href="https://github.com/ruby-oauth/oauth/actions/workflows/legacy.yml"><img src="https://img.shields.io/badge/Ruby-3.0-CC342D?style=for-the-badge&amp;logo=ruby&amp;logoColor=white" alt="Ruby 3.0 Compat"></a> <a href="https://github.com/ruby-oauth/oauth/actions/workflows/supported.yml"><img src="https://img.shields.io/badge/Ruby-3.1-CC342D?style=for-the-badge&amp;logo=ruby&amp;logoColor=white" alt="Ruby 3.1 Compat"></a> <a href="https://github.com/ruby-oauth/oauth/actions/workflows/supported.yml"><img src="https://img.shields.io/badge/Ruby-3.2-CC342D?style=for-the-badge&amp;logo=ruby&amp;logoColor=white" alt="Ruby 3.2 Compat"></a> <a href="https://github.com/ruby-oauth/oauth/actions/workflows/supported.yml"><img src="https://img.shields.io/badge/Ruby-3.3-CC342D?style=for-the-badge&amp;logo=ruby&amp;logoColor=white" alt="Ruby 3.3 Compat"></a> <a href="https://github.com/ruby-oauth/oauth/actions/workflows/current.yml"><img src="https://img.shields.io/badge/Ruby-current-CC342D?style=for-the-badge&amp;logo=ruby&amp;logoColor=green" alt="Ruby 3.4 Compat"></a> <a href="https://github.com/ruby-oauth/oauth/actions/workflows/heads.yml"><img src="https://img.shields.io/badge/Ruby-HEAD-CC342D?style=for-the-badge&amp;logo=ruby&amp;logoColor=blue" alt="Ruby HEAD Compat"></a>
+</td>
+    </tr>
+    <tr>
+      <td>Works with MRI Ruby 2</td>
+      <td>
+<a href="https://github.com/ruby-oauth/oauth/actions/workflows/ancient.yml"><img src="https://img.shields.io/badge/Ruby-2.3-DF00CA?style=for-the-badge&amp;logo=ruby&amp;logoColor=white" alt="Ruby 2.3 Compat"></a> <a href="https://github.com/ruby-oauth/oauth/actions/workflows/ancient.yml"><img src="https://img.shields.io/badge/Ruby-2.4-DF00CA?style=for-the-badge&amp;logo=ruby&amp;logoColor=white" alt="Ruby 2.4 Compat"></a> <a href="https://github.com/ruby-oauth/oauth/actions/workflows/ancient.yml"><img src="https://img.shields.io/badge/Ruby-2.5-DF00CA?style=for-the-badge&amp;logo=ruby&amp;logoColor=white" alt="Ruby 2.5 Compat"></a> <a href="https://github.com/ruby-oauth/oauth/actions/workflows/unsupported.yml"><img src="https://img.shields.io/badge/Ruby-2.6-DF00CA?style=for-the-badge&amp;logo=ruby&amp;logoColor=white" alt="Ruby 2.6 Compat"></a> <a href="https://github.com/ruby-oauth/oauth/actions/workflows/unsupported.yml"><img src="https://img.shields.io/badge/Ruby-2.7-DF00CA?style=for-the-badge&amp;logo=ruby&amp;logoColor=white" alt="Ruby 2.7 Compat"></a>
+</td>
+    </tr>
+    <tr>
+      <td>Support  &amp; Community</td>
+      <td>
+<a href="https://app.daily.dev/squads/rubyfriends"><img src="https://img.shields.io/badge/daily.dev-%F0%9F%92%8E_Ruby_Friends-0A0A0A?style=for-the-badge&amp;logo=dailydotdev&amp;logoColor=white" alt="Join Me on Daily.dev's RubyFriends"></a> <a href="https://discord.gg/3qme4XHNKN"><img src="https://img.shields.io/discord/1373797679469170758?style=for-the-badge&amp;logo=discord" alt="Live Chat on Discord"></a> <a href="https://www.upwork.com/freelancers/~014942e9b056abdf86?mp_source=share"><img src="https://img.shields.io/badge/UpWork-13544E?style=for-the-badge&amp;logo=Upwork&amp;logoColor=white" alt="Get help from me on Upwork"></a> <a href="https://www.codementor.io/peterboling?utm_source=github&amp;utm_medium=button&amp;utm_term=peterboling&amp;utm_campaign=github"><img src="https://img.shields.io/badge/CodeMentor-Get_Help-1abc9c?style=for-the-badge&amp;logo=CodeMentor&amp;logoColor=white" alt="Get help from me on Codementor"></a>
+</td>
+    </tr>
+    <tr>
+      <td>Source</td>
+      <td>
+<a href="https://gitlab.com/ruby-oauth/oauth/"><img src="https://img.shields.io/badge/GitLab-FBA326?style=for-the-badge&amp;logo=Gitlab&amp;logoColor=orange" alt="Source on GitLab.com"></a> <a href="https://codeberg.org/ruby-oauth/oauth"><img src="https://img.shields.io/badge/CodeBerg-4893CC?style=for-the-badge&amp;logo=CodeBerg&amp;logoColor=blue" alt="Source on CodeBerg.org"></a> <a href="https://github.com/ruby-oauth/oauth"><img src="https://img.shields.io/badge/GitHub-238636?style=for-the-badge&amp;logo=Github&amp;logoColor=green" alt="Source on Github.com"></a> <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="https://img.shields.io/badge/KLOC-3.613-FFDD67.svg?style=for-the-badge&amp;logo=YouTube&amp;logoColor=blue" alt="The best SHA: dQw4w9WgXcQ!"></a>
+</td>
+    </tr>
+    <tr>
+      <td>Documentation</td>
+      <td>
+<a href="http://rubydoc.info/gems/oauth"><img src="https://img.shields.io/badge/RubyDoc-Current_Release-943CD2?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=white" alt="Current release on RubyDoc.info"></a> <a href="https://oauth.galtzo.com"><img src="https://img.shields.io/badge/YARD_on_Galtzo.com-HEAD-943CD2?style=for-the-badge&amp;logo=readthedocs&amp;logoColor=white" alt="YARD on Galtzo.com"></a> <a href="http://www.railsbling.com/tags/oauth"><img src="https://img.shields.io/badge/blog-railsbling-0093D0.svg?style=for-the-badge&amp;logo=rubyonrails&amp;logoColor=orange" alt="Maintainer Blog"></a> <a href="https://gitlab.com/ruby-oauth/oauth/-/wikis/home"><img src="https://img.shields.io/badge/wiki-examples-943CD2.svg?style=for-the-badge&amp;logo=Wiki&amp;logoColor=white" alt="Wiki"></a>
+</td>
+    </tr>
+    <tr>
+      <td>Compliance</td>
+      <td>
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-259D6C.svg" alt="License: MIT"></a> <a href="https://www.ilo.org/declaration/lang--en/index.htm"><img src="https://img.shields.io/badge/ILO_Fundamental_Principles-%E2%9C%93-259D6C.svg?style=flat" alt="📄ilo-declaration-img"></a> <a href="file.SECURITY.html" title="&lt;img src=&quot;https://img.shields.io/badge/security-policy-259D6C.svg?style=flat&quot; alt=&quot;Security Policy&quot;&gt;"><img src="https://img.shields.io/badge/security-policy-259D6C.svg?style=flat" alt="Security Policy"></a> <a href="file.CODE_OF_CONDUCT.html" title="&lt;img src=&quot;https://img.shields.io/badge/Contributor_Covenant-2.1-259D6C.svg&quot; alt=&quot;Contributor Covenant 2.1&quot;&gt;"><img src="https://img.shields.io/badge/Contributor_Covenant-2.1-259D6C.svg" alt="Contributor Covenant 2.1"></a> <a href="https://semver.org/spec/v2.0.0.html"><img src="https://img.shields.io/badge/semver-2.0.0-259D6C.svg?style=flat" alt="SemVer 2.0.0"></a>
+</td>
+    </tr>
+    <tr>
+      <td>Style</td>
+      <td>
+<a href="https://github.com/rubocop-lts/rubocop-lts"><img src="https://img.shields.io/badge/code_style_&amp;_linting-rubocop--lts-34495e.svg?plastic&amp;logo=ruby&amp;logoColor=white" alt="Enforced Code Style Linter"></a> <a href="https://keepachangelog.com/en/1.0.0/"><img src="https://img.shields.io/badge/keep--a--changelog-1.0.0-34495e.svg?style=flat" alt="Keep-A-Changelog 1.0.0"></a> <a href="https://gitmoji.dev"><img src="https://img.shields.io/badge/gitmoji_commits-%20%F0%9F%98%9C%20%F0%9F%98%8D-34495e.svg?style=flat-square" alt="Gitmoji Commits"></a> <a href="https://github.com/appraisal-rb/appraisal2"><img src="https://img.shields.io/badge/appraised_by-appraisal2-34495e.svg?plastic&amp;logo=ruby&amp;logoColor=white" alt="Compatibility appraised by: appraisal2"></a>
+</td>
+    </tr>
+    <tr>
+      <td>Maintainer 🎖️</td>
+      <td>
+<a href="http://www.linkedin.com/in/peterboling"><img src="https://img.shields.io/badge/PeterBoling-LinkedIn-0B66C2?style=flat&amp;logo=newjapanprowrestling" alt="Follow Me on LinkedIn"></a> <a href="https://ruby.social/@galtzo"><img src="https://img.shields.io/mastodon/follow/109447111526622197?domain=https://ruby.social&amp;style=flat&amp;logo=mastodon&amp;label=Ruby%20@galtzo" alt="Follow Me on Ruby.Social"></a> <a href="https://bsky.app/profile/galtzo.com"><img src="https://img.shields.io/badge/@galtzo.com-0285FF?style=flat&amp;logo=bluesky&amp;logoColor=white" alt="Follow Me on Bluesky"></a> <a href="http://www.railsbling.com/contact"><img src="https://img.shields.io/badge/Contact-Maintainer-0093D0.svg?style=flat&amp;logo=rubyonrails&amp;logoColor=red" alt="Contact Maintainer"></a> <a href="https://dev.to/galtzo"><img src="https://img.shields.io/badge/dev.to-0A0A0A?style=flat&amp;logo=devdotto&amp;logoColor=white" alt="My technical writing"></a>
+</td>
+    </tr>
+    <tr>
+      <td>
+<code>...</code> 💖</td>
+      <td>
+<a href="https://wellfound.com/u/peter-boling"><img src="https://img.shields.io/badge/peter--boling-orange?style=flat&amp;logo=wellfound" alt="Find Me on WellFound:"></a> <a href="https://www.crunchbase.com/person/peter-boling"><img src="https://img.shields.io/badge/peter--boling-purple?style=flat&amp;logo=crunchbase" alt="Find Me on CrunchBase"></a> <a href="https://linktr.ee/galtzo"><img src="https://img.shields.io/badge/galtzo-purple?style=flat&amp;logo=linktree" alt="My LinkTree"></a> <a href="https://about.me/peter.boling"><img src="https://img.shields.io/badge/about.me-0A0A0A?style=flat&amp;logo=aboutme&amp;logoColor=white" alt="More About Me"></a> <a href="https://codeberg.org/pboling">🧊</a> <a href="https://github.org/pboling">🐙</a>  <a href="https://sr.ht/~galtzo/">🛖</a> <a href="https://gitlab.com/pboling">🧪</a>
+</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="compatibility">Compatibility</h3>
+
+<p>Compatible with MRI Ruby 2.3+, and concordant releases of JRuby, and TruffleRuby.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>🚚 <em>Amazing</em> test matrix was brought to you by</th>
+      <th>🔎 appraisal2 🔎 and the color 💚 green 💚</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>👟 Check it out!</td>
+      <td>✨ <a href="https://github.com/appraisal-rb/appraisal2">github.com/appraisal-rb/appraisal2</a> ✨</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="federated-dvcs">Federated DVCS</h3>
+
+<details>
+  <summary>Find this repo on other forges (Coming soon!)</summary>
+
+| Federated [DVCS][💎d-in-dvcs] Repository        | Status                                                                | Issues                    | PRs                      | Wiki                      | CI                       | Discussions                  |
+|-------------------------------------------------|-----------------------------------------------------------------------|---------------------------|--------------------------|---------------------------|--------------------------|------------------------------|
+| 🧪 [ruby-oauth/oauth on GitLab][📜src-gl]   | The Truth                                                             | [💚][🤝gl-issues]         | [💚][🤝gl-pulls]         | [💚][📜wiki]              | 🏀 Tiny Matrix           | ➖                            |
+| 🧊 [ruby-oauth/oauth on CodeBerg][📜src-cb] | An Ethical Mirror ([Donate][🤝cb-donate])                             | [💚][🤝cb-issues]         | [💚][🤝cb-pulls]         | ➖                         | ⭕️ No Matrix             | ➖                            |
+| 🐙 [ruby-oauth/oauth on GitHub][📜src-gh]   | Another Mirror                                                        | [💚][🤝gh-issues]         | [💚][🤝gh-pulls]         | ➖                         | 💯 Full Matrix           | [💚][gh-discussions]         |
+| 🎮️ [Discord Server][✉️discord-invite]          | [![Live Chat on Discord][✉️discord-invite-img-ftb]][✉️discord-invite] | [Let's][✉️discord-invite] | [talk][✉️discord-invite] | [about][✉️discord-invite] | [this][✉️discord-invite] | [library!][✉️discord-invite] |
+
+</details>
+
+<h3 id="enterprise-support-">Enterprise Support <a href="https://tidelift.com/subscription/pkg/rubygems-oauth?utm_source=rubygems-oauth&amp;utm_medium=referral&amp;utm_campaign=readme"><img src="https://tidelift.com/badges/package/rubygems/oauth" alt="Tidelift"></a>
+</h3>
+
+<p>Available as part of the Tidelift Subscription.</p>
+
+<details>
+  <summary>Need enterprise-level guarantees?</summary>
+
+The maintainers of this and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source packages you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact packages you use.
+
+[![Get help from me on Tidelift][🏙️entsup-tidelift-img]][🏙️entsup-tidelift]
+
+- 💡Subscribe for support guarantees covering _all_ your FLOSS dependencies
+- 💡Tidelift is part of [Sonar][🏙️entsup-tidelift-sonar]
+- 💡Tidelift pays maintainers to maintain the software you depend on!<br>📊`@`Pointy Haired Boss: An [enterprise support][🏙️entsup-tidelift] subscription is "[never gonna let you down][🧮kloc]", and *supports* open source maintainers
+
+Alternatively:
+
+- [![Live Chat on Discord][✉️discord-invite-img-ftb]][✉️discord-invite]
+- [![Get help from me on Upwork][👨🏼‍🏫expsup-upwork-img]][👨🏼‍🏫expsup-upwork]
+- [![Get help from me on Codementor][👨🏼‍🏫expsup-codementor-img]][👨🏼‍🏫expsup-codementor]
+
+</details>
+
+<h2 id="-installation">✨ Installation</h2>
+
+<p>Install the gem and add to the application’s Gemfile by executing:</p>
+
+<pre class="code language-console"><code class="language-console">bundle add oauth
+</code></pre>
+
+<p>If bundler is not being used to manage dependencies, install the gem by executing:</p>
+
+<pre class="code language-console"><code class="language-console">gem install oauth
+</code></pre>
+
+<h3 id="-secure-installation">🔒 Secure Installation</h3>
+
+<details>
+  <summary>For Medium or High Security Installations</summary>
+
+This gem is cryptographically signed, and has verifiable [SHA-256 and SHA-512][💎SHA_checksums] checksums by
+[stone_checksums][💎stone_checksums]. Be sure the gem you install hasn’t been tampered with
+by following the instructions below.
+
+Add my public key (if you haven’t already, expires 2045-04-29) as a trusted certificate:
+
+```console
+gem cert --add &lt;(curl -Ls https://raw.github.com/galtzo-floss/certs/main/pboling.pem)
+```
+
+You only need to do that once.  Then proceed to install with:
+
+```console
+gem install oauth -P HighSecurity
+```
+
+The `HighSecurity` trust profile will verify signed gems, and not allow the installation of unsigned dependencies.
+
+If you want to up your security game full-time:
+
+```console
+bundle config set --global trust-policy MediumSecurity
+```
+
+`MediumSecurity` instead of `HighSecurity` is necessary if not all the gems you use are signed.
+
+NOTE: Be prepared to track down certs for signed gems and add them the same way you added mine.
+
+</details>
+
+<h2 id="️-configuration">⚙️ Configuration</h2>
+
+<p>This is a ruby library which is intended to be used in creating Ruby Consumer<br>
+and Service Provider applications. It is NOT a Rails plugin, but could easily<br>
+be used for the foundation for such a Rails plugin.</p>
+
+<p>This gem was originally extracted from @pelle’s <a href="https://github.com/pelle/oauth-plugin">oauth-plugin</a><br>
+gem. After extraction that gem was made to depend on this gem.</p>
+
+<p>Unfortunately, this gem does have some Rails related bits that are<br>
+<strong>optional</strong> to load. You don’t need Rails! The Rails bits may be pulled out<br>
+into a separate gem with the 1.x minor updates of this gem.</p>
+
+<h2 id="-basic-usage">🔧 Basic Usage</h2>
+
+<h3 id="extensions">Extensions</h3>
+
+<ul>
+  <li>
+<a href="https://gitlab.com/ruby-oauth/oauth-tty">oauth-tty (on Gitlab)</a> (<a href="https://rubygems.org/gems/oauth-tty">rubygems.org</a>)</li>
+</ul>
+
+<h3 id="examples">Examples</h3>
+
+<p>We need to specify the <code>oauth_callback</code> url explicitly, otherwise it defaults to<br>
+“oob” (Out of Band)</p>
+
+<pre class="code language-ruby"><code class="language-ruby">callback_url = &quot;http://127.0.0.1:3000/oauth/callback&quot;
+</code></pre>
+
+<p>Create a new <code>OAuth::Consumer</code> instance by passing it a configuration hash:</p>
+
+<pre class="code language-ruby"><code class="language-ruby">oauth_consumer = OAuth::Consumer.new(&quot;key&quot;, &quot;secret&quot;, site: &quot;https://agree2&quot;)
+</code></pre>
+
+<p>Start the process by requesting a token</p>
+
+<pre class="code language-ruby"><code class="language-ruby">request_token = oauth_consumer.get_request_token(oauth_callback: callback_url)
+
+session[:token] = request_token.token
+session[:token_secret] = request_token.secret
+redirect_to request_token.authorize_url(oauth_callback: callback_url)
+</code></pre>
+
+<p>When user returns create an access_token</p>
+
+<pre class="code language-ruby"><code class="language-ruby">hash = {oauth_token: session[:token], oauth_token_secret: session[:token_secret]}
+request_token = OAuth::RequestToken.from_hash(oauth_consumer, hash)
+access_token = request_token.get_access_token
+# For 3-legged authorization, flow oauth_verifier is passed as param in callback
+# access_token = request_token.get_access_token(oauth_verifier: params[:oauth_verifier])
+@photos = access_token.get(&quot;/photos.xml&quot;)
+</code></pre>
+
+<p>Now that you have an access token, you can use Typhoeus to interact with the<br>
+OAuth provider if you choose.</p>
+
+<pre class="code language-ruby"><code class="language-ruby">require &quot;typhoeus&quot;
+require &quot;oauth/request_proxy/typhoeus_request&quot;
+oauth_params = {consumer: oauth_consumer, token: access_token}
+hydra = Typhoeus::Hydra.new
+req = Typhoeus::Request.new(uri, options) # :method needs to be specified in options
+oauth_helper = OAuth::Client::Helper.new(req, oauth_params.merge(request_uri: uri))
+req.options[:headers][&quot;Authorization&quot;] = oauth_helper.header # Signs the request
+hydra.queue(req)
+hydra.run
+@response = req.response
+</code></pre>
+
+<h3 id="more-information">More Information</h3>
+
+<ul>
+  <li>RubyDoc Documentation: [![RubyDoc.info][🚎yard-img]][🚎yard]</li>
+  <li>Mailing List/Google Group: [![Mailing List][⛳mail-list-img]][⛳mail-list]</li>
+  <li>Live Chat on Gitter: [![Join the chat at https://gitter.im/ruby-oauth/oauth-ruby][🏘chat-img]][🏘chat]</li>
+  <li>Maintainer’s Blog: [![Blog][🚎blog-img]][🚎blog]</li>
+</ul>
+
+<h2 id="-floss-funding">🦷 FLOSS Funding</h2>
+
+<p>While ruby-oauth tools are free software and will always be, the project would benefit immensely from some funding.<br>
+Raising a monthly budget of… “dollars” would make the project more sustainable.</p>
+
+<p>We welcome both individual and corporate sponsors! We also offer a<br>
+wide array of funding channels to account for your preferences<br>
+(although currently <a href="https://opencollective.com/ruby-oauth">Open Collective</a> is our preferred funding platform).</p>
+
+<p><strong>If you’re working in a company that’s making significant use of ruby-oauth tools we’d<br>
+appreciate it if you suggest to your company to become a ruby-oauth sponsor.</strong></p>
+
+<p>You can support the development of ruby-oauth tools via<br>
+<a href="https://github.com/sponsors/pboling">GitHub Sponsors</a>,<br>
+<a href="https://liberapay.com/pboling/donate">Liberapay</a>,<br>
+<a href="https://www.paypal.com/paypalme/peterboling">PayPal</a>,<br>
+<a href="https://opencollective.com/ruby-oauth">Open Collective</a><br>
+and <a href="https://tidelift.com/subscription/pkg/rubygems-oauth?utm_source=rubygems-oauth&amp;utm_medium=referral&amp;utm_campaign=readme">Tidelift</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>📍 NOTE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>If doing a sponsorship in the form of donation is problematic for your company <br> from an accounting standpoint, we’d recommend the use of Tidelift, <br> where you can get a support-like subscription instead.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="open-collective-for-individuals">Open Collective for Individuals</h3>
+
+<!-- OPENCOLLECTIVE-INDIVIDUALS:START -->
+<p>No backers yet. Be the first!<br>
+<!-- OPENCOLLECTIVE-INDIVIDUALS:END --></p>
+
+<p>Support us with a monthly donation and help us continue our activities. [<a href="https://opencollective.com/ruby-oauth#backer">Become a backer</a>]</p>
+
+<h3 id="open-collective-for-organizations">Open Collective for Organizations</h3>
+
+<!-- OPENCOLLECTIVE-ORGANIZATIONS:START -->
+<p>No sponsors yet. Be the first!<br>
+<!-- OPENCOLLECTIVE-ORGANIZATIONS:END --></p>
+
+<p>Become a sponsor and get your logo on our README on GitHub with a link to your site. [<a href="https://opencollective.com/ruby-oauth#sponsor">Become a sponsor</a>]</p>
+
+<h3 id="another-way-to-support-open-source">Another way to support open-source</h3>
+
+<blockquote>
+  <p>How wonderful it is that nobody need wait a single moment before starting to improve the world.<br><br>
+—Anne Frank</p>
+</blockquote>
+
+<p>I’m driven by a passion to foster a thriving open-source community – a space where people can tackle complex problems, no matter how small.  Revitalizing libraries that have fallen into disrepair, and building new libraries focused on solving real-world challenges, are my passions — totaling 79 hours of FLOSS coding over just the past seven days, a pretty regular week for me.  I was recently affected by layoffs, and the tech jobs market is unwelcoming. I’m reaching out here because your support would significantly aid my efforts to provide for my family, and my farm (11 🐔 chickens, 2 🐶 dogs, 3 🐰 rabbits, 8 🐈‍ cats).</p>
+
+<p>If you work at a company that uses my work, please encourage them to support me as a corporate sponsor. My work on gems you use might show up in <code>bundle fund</code>.</p>
+
+<p>I’m developing a new library, <a href="https://github.com/galtzo-floss/floss_funding">floss_funding</a>, designed to empower open-source developers like myself to get paid for the work we do, in a sustainable way. Please give it a look.</p>
+
+<p><strong><a href="https://floss-funding.dev">Floss-Funding.dev</a>: 👉️ No network calls. 👉️ No tracking. 👉️ No oversight. 👉️ Minimal crypto hashing. 💡 Easily disabled nags</strong></p>
+
+<p><a href="https://opencollective.com/ruby-oauth#backer"><img src="https://opencollective.com/ruby-oauth/backers/badge.svg?style=flat" alt="OpenCollective Backers"></a> <a href="https://opencollective.com/ruby-oauth#sponsor"><img src="https://opencollective.com/ruby-oauth/sponsors/badge.svg?style=flat" alt="OpenCollective Sponsors"></a> <a href="https://github.com/sponsors/pboling"><img src="https://img.shields.io/badge/Sponsor_Me!-pboling.svg?style=social&amp;logo=github" alt="Sponsor Me on Github"></a> <a href="https://liberapay.com/pboling/donate"><img src="https://img.shields.io/liberapay/goal/pboling.svg?logo=liberapay&amp;color=a51611&amp;style=flat" alt="Liberapay Goal Progress"></a> <a href="https://www.paypal.com/paypalme/peterboling"><img src="https://img.shields.io/badge/donate-paypal-a51611.svg?style=flat&amp;logo=paypal" alt="Donate on PayPal"></a> <a href="https://www.buymeacoffee.com/pboling"><img src="https://img.shields.io/badge/buy_me_a_coffee-%E2%9C%93-a51611.svg?style=flat" alt="Buy me a coffee"></a> <a href="https://polar.sh/pboling"><img src="https://img.shields.io/badge/polar-donate-a51611.svg?style=flat" alt="Donate on Polar"></a> <a href="https://ko-fi.com/O5O86SNP4"><img src="https://img.shields.io/badge/ko--fi-%E2%9C%93-a51611.svg?style=flat" alt="Donate to my FLOSS or refugee efforts at ko-fi.com"></a> <a href="https://patreon.com/galtzo"><img src="https://img.shields.io/badge/patreon-donate-a51611.svg?style=flat" alt="Donate to my FLOSS or refugee efforts using Patreon"></a></p>
+
+<h2 id="-security">🔐 Security</h2>
+
+<p>See <a href="file.SECURITY.html" title="SECURITY.md">SECURITY.md</a>.</p>
+
+<h2 id="-contributing">🤝 Contributing</h2>
+
+<p>If you need some ideas of where to help, you could work on adding more code coverage,<br>
+or if it is already 💯 (see <a href="#code-coverage">below</a>) check <a href="file.REEK.html" title="reek">reek</a>, <a href="https://github.com/ruby-oauth/oauth/issues">issues</a>, or <a href="https://github.com/ruby-oauth/oauth/pulls">PRs</a>,<br>
+or use the gem and think about how it could be better.</p>
+
+<p>We <a href="https://keepachangelog.com/en/1.0.0/"><img src="https://img.shields.io/badge/keep--a--changelog-1.0.0-34495e.svg?style=flat" alt="Keep A Changelog"></a> so if you make changes, remember to update it.</p>
+
+<p>See <a href="file.CONTRIBUTING.html" title="CONTRIBUTING.md">CONTRIBUTING.md</a> for more detailed instructions.</p>
+
+<h3 id="-release-instructions">🚀 Release Instructions</h3>
+
+<p>See <a href="file.CONTRIBUTING.html" title="CONTRIBUTING.md">CONTRIBUTING.md</a>.</p>
+
+<h3 id="code-coverage">Code Coverage</h3>
+
+<p><a href="https://codecov.io/gh/ruby-oauth/oauth"><img src="https://codecov.io/gh/ruby-oauth/oauth/graphs/tree.svg" alt="Coverage Graph"></a></p>
+
+<p><a href="https://coveralls.io/github/ruby-oauth/oauth?branch=main"><img src="https://coveralls.io/repos/github/ruby-oauth/oauth/badge.svg?branch=main" alt="Coveralls Test Coverage"></a></p>
+
+<p><a href="https://qlty.sh/gh/ruby-oauth/projects/oauth/metrics/code?sort=coverageRating"><img src="https://qlty.sh/gh/ruby-oauth/projects/oauth/coverage.svg" alt="QLTY Test Coverage"></a></p>
+
+<h3 id="-code-of-conduct">🪇 Code of Conduct</h3>
+
+<p>Everyone interacting with this project’s codebases, issue trackers,<br>
+chat rooms and mailing lists agrees to follow the <a href="file.CODE_OF_CONDUCT.html" title="&lt;img src=&quot;https://img.shields.io/badge/Contributor_Covenant-2.1-259D6C.svg&quot; alt=&quot;Contributor Covenant 2.1&quot;&gt;"><img src="https://img.shields.io/badge/Contributor_Covenant-2.1-259D6C.svg" alt="Contributor Covenant 2.1"></a>.</p>
+
+<h2 id="-contributors">🌈 Contributors</h2>
+
+<p><a href="https://github.com/ruby-oauth/oauth/graphs/contributors"><img src="https://contrib.rocks/image?repo=ruby-oauth/oauth" alt="Contributors"></a></p>
+
+<p>Made with <a href="https://contrib.rocks">contributors-img</a>.</p>
+
+<p>Also see GitLab Contributors: <a href="https://gitlab.com/ruby-oauth/oauth/-/graphs/main">https://gitlab.com/ruby-oauth/oauth/-/graphs/main</a></p>
+
+<details>
+    <summary>⭐️ Star History</summary>
+
+<a href="https://star-history.com/#ruby-oauth/oauth&amp;Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=ruby-oauth/oauth&amp;type=Date&amp;theme=dark"></source>
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=ruby-oauth/oauth&amp;type=Date"></source>
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=ruby-oauth/oauth&amp;type=Date">
+ </picture>
+</a>
+
+</details>
+
+<h2 id="-versioning">📌 Versioning</h2>
+
+<p>This Library adheres to <a href="https://semver.org/spec/v2.0.0.html"><img src="https://img.shields.io/badge/semver-2.0.0-259D6C.svg?style=flat" alt="Semantic Versioning 2.0.0"></a>.<br>
+Violations of this scheme should be reported as bugs.<br>
+Specifically, if a minor or patch version is released that breaks backward compatibility,<br>
+a new version should be immediately released that restores compatibility.<br>
+Breaking changes to the public API will only be introduced with new major versions.</p>
+
+<blockquote>
+  <p>dropping support for a platform is both obviously and objectively a breaking change <br><br>
+—Jordan Harband (<a href="https://github.com/ljharb">@ljharb</a>, maintainer of SemVer) <a href="https://github.com/semver/semver/issues/716#issuecomment-869336139">in SemVer issue 716</a></p>
+</blockquote>
+
+<p>I understand that policy doesn’t work universally (“exceptions to every rule!”),<br>
+but it is the policy here.<br>
+As such, in many cases it is good to specify a dependency on this library using<br>
+the <a href="http://guides.rubygems.org/patterns/#pessimistic-version-constraint">Pessimistic Version Constraint</a> with two digits of precision.</p>
+
+<p>For example:</p>
+
+<pre class="code language-ruby"><code class="language-ruby">spec.add_dependency(&quot;oauth&quot;, &quot;~&gt; 1.0&quot;)
+</code></pre>
+
+<details>
+<summary>📌 Is "Platform Support" part of the public API? More details inside.</summary>
+
+SemVer should, IMO, but doesn't explicitly, say that dropping support for specific Platforms
+is a *breaking change* to an API.
+It is obvious to many, but not all, and since the spec is silent, the bike shedding is endless.
+
+To get a better understanding of how SemVer is intended to work over a project's lifetime,
+read this article from the creator of SemVer:
+
+- ["Major Version Numbers are Not Sacred"][📌major-versions-not-sacred]
+
+</details>
+
+<p>See <a href="file.CHANGELOG.html" title="CHANGELOG.md">CHANGELOG.md</a> for a list of releases.</p>
+
+<h2 id="-license">📄 License</h2>
+
+<p>The gem is available as open source under the terms of<br>
+the <a href="file.LICENSE.html" title="MIT License">MIT License</a> <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-259D6C.svg" alt="License: MIT"></a>.<br>
+See <a href="file.LICENSE.html" title="LICENSE.txt">LICENSE.txt</a> for the official <a href="https://opensource.stackexchange.com/questions/5778/why-do-licenses-such-as-the-mit-license-specify-a-single-year">Copyright Notice</a>.</p>
+
+<h3 id="-copyright">© Copyright</h3>
+
+<ul>
+    <li>
+        Copyright (c) 2023, 2025 Peter H. Boling, of
+        <a href="https://discord.gg/3qme4XHNKN">
+            Galtzo.com
+            <picture>
+              <img src="https://logos.galtzo.com/assets/images/galtzo-floss/avatar-128px-blank.svg" alt="Galtzo.com Logo (Wordless) by Aboling0, CC BY-SA 4.0" width="24">
+            </picture>
+        </a>, and oauth contributors.
+    </li>
+</ul>
+
+<h2 id="-a-request-for-help">🤑 A request for help</h2>
+
+<p>Maintainers have teeth and need to pay their dentists.<br>
+After getting laid off in an RIF in March and filled with many dozens of rejections,<br>
+I’m now spending ~60+ hours a week building open source tools.<br>
+I’m hoping to be able to pay for my kids’ health insurance this month,<br>
+so if you value the work I am doing, I need your support.<br>
+Please consider sponsoring me or the project.</p>
+
+<p>To join the community or get help 👇️ Join the Discord.</p>
+
+<p><a href="https://discord.gg/3qme4XHNKN"><img src="https://img.shields.io/discord/1373797679469170758?style=for-the-badge&amp;logo=discord" alt="Live Chat on Discord"></a></p>
+
+<p>To say “thanks!” ☝️ Join the Discord or 👇️ send money.</p>
+
+<p><a href="https://opencollective.com/ruby-oauth"><img src="https://img.shields.io/opencollective/all/ruby-oauth?style=for-the-badge" alt="Sponsor ruby-oauth/oauth on Open Source Collective"></a> 💌 <a href="https://github.com/sponsors/pboling"><img src="https://img.shields.io/badge/Sponsor_Me!-pboling-blue?style=for-the-badge&amp;logo=github" alt="Sponsor me on GitHub Sponsors"></a> 💌 <a href="https://img.shields.io/liberapay/goal/pboling.svg?logo=liberapay&amp;color=a51611&amp;style=flat"><img src="https://img.shields.io/liberapay/goal/pboling.svg?style=for-the-badge&amp;logo=liberapay&amp;color=a51611" alt="Sponsor me on Liberapay"></a> 💌 <a href="https://img.shields.io/badge/donate-paypal-a51611.svg?style=flat&amp;logo=paypal"><img src="https://img.shields.io/badge/donate-paypal-a51611.svg?style=for-the-badge&amp;logo=paypal&amp;color=0A0A0A" alt="Donate on PayPal"></a></p>
+
+<h3 id="please-give-the-project-a-star--">Please give the project a star ⭐ ♥.</h3>
+
+<p>Thanks for RTFM. ☺️</p>
+
+</div></div>
+
+      <div id="footer">
+  Generated on Fri Sep 12 10:55:44 2025 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.37 (ruby-3.4.5).
+</div>
+
+    </div>
+  </body>
+</html>

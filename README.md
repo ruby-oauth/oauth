@@ -1,263 +1,154 @@
-<p align="center">
-    <a href="http://oauth.net/core/1.0/" target="_blank" rel="noopener">
-      <img width="124px" src="https://github.com/oauth-xx/oauth-ruby/raw/main/docs/images/logo/Oauth_logo.svg?raw=true" alt="OAuth 1.0 Logo by Chris Messina, CC BY-SA 3.0, via Wikimedia Commons">
-    </a>
-    <a href="https://www.ruby-lang.org/" target="_blank" rel="noopener">
-      <img width="124px" src="https://github.com/oauth-xx/oauth-ruby/raw/main/docs/images/logo/ruby-logo-198px.svg?raw=true" alt="Yukihiro Matsumoto, Ruby Visual Identity Team, CC BY-SA 2.5">
-    </a>
-</p>
+[![Galtzo FLOSS Logo by Aboling0, CC BY-SA 4.0][🖼️galtzo-i]][🖼️galtzo-discord] [![ruby-lang Logo, Yukihiro Matsumoto, Ruby Visual Identity Team, CC BY-SA 2.5][🖼️ruby-lang-i]][🖼️ruby-lang] [![oauth Logo by Aboling0, CC BY-SA 4.0][🖼️oauth-i]][🖼️oauth]
+
+[🖼️galtzo-i]: https://logos.galtzo.com/assets/images/galtzo-floss/avatar-192px.svg
+[🖼️galtzo-discord]: https://discord.gg/3qme4XHNKN
+[🖼️ruby-lang-i]: https://logos.galtzo.com/assets/images/ruby-lang/avatar-192px.svg
+[🖼️ruby-lang]: https://www.ruby-lang.org/
+[🖼️oauth-i]: https://logos.galtzo.com/assets/images/oauth/oauth/avatar-192px.svg
+[🖼️oauth]: https://github.com/ruby-oauth/oauth
 
 # 🔑 Ruby OAuth
 
-[![Liberapay Goal Progress][⛳liberapay-img]][⛳liberapay] [![Sponsor Me on Github][🖇sponsor-img]][🖇sponsor] [![Buy me a coffee][🖇buyme-small-img]][🖇buyme] [![Donate on Polar][🖇polar-img]][🖇polar] [![Donate to my FLOSS or refugee efforts at ko-fi.com][🖇kofi-img]][🖇kofi] [![Donate to my FLOSS or refugee efforts using Patreon][🖇patreon-img]][🖇patreon]
+[![Version][👽versioni]][👽version] [![GitHub tag (latest SemVer)][⛳️tag-img]][⛳️tag] [![License: MIT][📄license-img]][📄license-ref] [![Downloads Rank][👽dl-ranki]][👽dl-rank] [![Open Source Helpers][👽oss-helpi]][👽oss-help] [![CodeCov Test Coverage][🔑codecovi]][🔑codecov] [![Coveralls Test Coverage][🔑coveralls-img]][🔑coveralls] [![QLTY Test Coverage][🔑qlty-covi]][🔑qlty-cov] [![QLTY Maintainability][🔑qlty-mnti]][🔑qlty-mnt] [![CI Heads][🚎3-hd-wfi]][🚎3-hd-wf] [![CI Runtime Dependencies @ HEAD][🚎12-crh-wfi]][🚎12-crh-wf] [![CI Current][🚎11-c-wfi]][🚎11-c-wf] [![CI Truffle Ruby][🚎9-t-wfi]][🚎9-t-wf] [![CI JRuby][🚎10-j-wfi]][🚎10-j-wf] [![Deps Locked][🚎13-🔒️-wfi]][🚎13-🔒️-wf] [![Deps Unlocked][🚎14-🔓️-wfi]][🚎14-🔓️-wf] [![CI Supported][🚎6-s-wfi]][🚎6-s-wf] [![CI Legacy][🚎4-lg-wfi]][🚎4-lg-wf] [![CI Unsupported][🚎7-us-wfi]][🚎7-us-wf] [![CI Ancient][🚎1-an-wfi]][🚎1-an-wf] [![CI Test Coverage][🚎2-cov-wfi]][🚎2-cov-wf] [![CI Style][🚎5-st-wfi]][🚎5-st-wf] [![CodeQL][🖐codeQL-img]][🖐codeQL]
+
+`if ci_badges.map(&:color).detect { it != "green"}` ☝️ [let me know][🖼️galtzo-discord], as I may have missed the [discord notification][🖼️galtzo-discord].
 
 ---
 
-[⛳liberapay-img]: https://img.shields.io/liberapay/goal/pboling.svg?logo=liberapay
-[⛳liberapay]: https://liberapay.com/pboling/donate
-[🖇sponsor-img]: https://img.shields.io/badge/Sponsor_Me!-pboling.svg?style=social&logo=github
-[🖇sponsor]: https://github.com/sponsors/pboling
-[🖇polar-img]: https://img.shields.io/badge/polar-donate-yellow.svg
-[🖇polar]: https://polar.sh/pboling
-[🖇kofi-img]: https://img.shields.io/badge/a_more_different_coffee-✓-yellow.svg
-[🖇kofi]: https://ko-fi.com/O5O86SNP4
-[🖇patreon-img]: https://img.shields.io/badge/patreon-donate-yellow.svg
-[🖇patreon]: https://patreon.com/galtzo
-[🖇buyme-small-img]: https://img.shields.io/badge/buy_me_a_coffee-✓-yellow.svg?style=flat
+`if ci_badges.map(&:color).all? { it == "green"}` 👇️ send money so I can do more of this. FLOSS maintenance is now my full-time job.
 
+[![OpenCollective Backers][🖇osc-backers-i]][🖇osc-backers] [![OpenCollective Sponsors][🖇osc-sponsors-i]][🖇osc-sponsors] [![Sponsor Me on Github][🖇sponsor-img]][🖇sponsor] [![Liberapay Goal Progress][⛳liberapay-img]][⛳liberapay] [![Donate on PayPal][🖇paypal-img]][🖇paypal] [![Buy me a coffee][🖇buyme-small-img]][🖇buyme] [![Donate on Polar][🖇polar-img]][🖇polar] [![Donate at ko-fi.com][🖇kofi-img]][🖇kofi]
 
-OAuth 1.0 is an industry-standard protocol for authorization.
+## 🌻 Synopsis
 
-This is a RubyGem for implementing both OAuth 1.0 clients and servers in Ruby applications.
-See the sibling `oauth2` gem for OAuth 2.0 implementations in Ruby.
+OAuth 1.0a is an industry-standard protocol for authorization.
+
+This is a RubyGem for implementing both OAuth 1.0a clients and servers in Ruby applications.
+See the sibling `oauth2` gem for OAuth 2.0, 2.1, & OIDC clients in Ruby.
 
 * [OAuth 1.0 Spec][oauth1-spec]
 * [oauth2 sibling gem][sibling-gem] for OAuth 2.0 implementations in Ruby.
 
 [oauth1-spec]: http://oauth.net/core/1.0/
-[sibling-gem]: https://gitlab.com/oauth-xx/oauth2
+[sibling-gem]: https://gitlab.com/ruby-oauth/oauth2
 
-**New EOL Policy**
+OAuth Ruby has been maintained by a large number of talented
+individuals over the years.
+The primary maintainer since 2020 is Peter Boling (@pboling).
 
-Versions 1.1.x will be EOL no later than April, 2023.
-Versions 1.0.x will be EOL no later than April, 2023.
-Versions 0.6.x will be EOL no later than April, 2023.
-Versions 0.5.x will be EOL no later than April, 2023.
+## 💡 Info you can shake a stick at
 
-This will facilitate dropping support for old, dead, and crusty versions of Ruby.
+| Tokens to Remember      | [![Gem name][⛳️name-img]][⛳️gem-name] [![Gem namespace][⛳️namespace-img]][⛳️gem-namespace]                                                                                                                                                                                                                                    |
+|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Works with JRuby        | ![JRuby 9.1 Compat][💎jruby-9.1i] ![JRuby 9.2 Compat][💎jruby-9.2i] ![JRuby 9.3 Compat][💎jruby-9.3i] <br/> [![JRuby 9.4 Compat][💎jruby-9.4i]][🚎10-j-wf] [![JRuby 10.0 Compat][💎jruby-c-i]][🚎11-c-wf] [![JRuby HEAD Compat][💎jruby-headi]][🚎3-hd-wf]                                                                    |
+| Works with Truffle Ruby | ![Truffle Ruby 22.3 Compat][💎truby-22.3i] ![Truffle Ruby 23.0 Compat][💎truby-23.0i] <br/> [![Truffle Ruby 23.1 Compat][💎truby-23.1i]][🚎9-t-wf] [![Truffle Ruby 24.1 Compat][💎truby-c-i]][🚎11-c-wf]                                                                                                                      |
+| Works with MRI Ruby 3   | [![Ruby 3.0 Compat][💎ruby-3.0i]][🚎4-lg-wf] [![Ruby 3.1 Compat][💎ruby-3.1i]][🚎6-s-wf] [![Ruby 3.2 Compat][💎ruby-3.2i]][🚎6-s-wf] [![Ruby 3.3 Compat][💎ruby-3.3i]][🚎6-s-wf] [![Ruby 3.4 Compat][💎ruby-c-i]][🚎11-c-wf] [![Ruby HEAD Compat][💎ruby-headi]][🚎3-hd-wf]                                                   |
+| Works with MRI Ruby 2   | [![Ruby 2.3 Compat][💎ruby-2.3i]][🚎1-an-wf] [![Ruby 2.4 Compat][💎ruby-2.4i]][🚎1-an-wf] [![Ruby 2.5 Compat][💎ruby-2.5i]][🚎1-an-wf] [![Ruby 2.6 Compat][💎ruby-2.6i]][🚎7-us-wf] [![Ruby 2.7 Compat][💎ruby-2.7i]][🚎7-us-wf]                                                                                              |
+| Support  & Community    | [![Join Me on Daily.dev's RubyFriends][✉️ruby-friends-img]][✉️ruby-friends] [![Live Chat on Discord][✉️discord-invite-img-ftb]][✉️discord-invite] [![Get help from me on Upwork][👨🏼‍🏫expsup-upwork-img]][👨🏼‍🏫expsup-upwork] [![Get help from me on Codementor][👨🏼‍🏫expsup-codementor-img]][👨🏼‍🏫expsup-codementor] |
+| Source                  | [![Source on GitLab.com][📜src-gl-img]][📜src-gl] [![Source on CodeBerg.org][📜src-cb-img]][📜src-cb] [![Source on Github.com][📜src-gh-img]][📜src-gh] [![The best SHA: dQw4w9WgXcQ!][🧮kloc-img]][🧮kloc]                                                                                                                   |
+| Documentation           | [![Current release on RubyDoc.info][📜docs-cr-rd-img]][🚎yard-current] [![YARD on Galtzo.com][📜docs-head-rd-img]][🚎yard-head] [![Maintainer Blog][🚂maint-blog-img]][🚂maint-blog] [![Wiki][📜wiki-img]][📜wiki]                                                                                                            |
+| Compliance              | [![License: MIT][📄license-img]][📄license-ref] [![📄ilo-declaration-img]][📄ilo-declaration] [![Security Policy][🔐security-img]][🔐security] [![Contributor Covenant 2.1][🪇conduct-img]][🪇conduct] [![SemVer 2.0.0][📌semver-img]][📌semver]                                                                              |
+| Style                   | [![Enforced Code Style Linter][💎rlts-img]][💎rlts] [![Keep-A-Changelog 1.0.0][📗keep-changelog-img]][📗keep-changelog] [![Gitmoji Commits][📌gitmoji-img]][📌gitmoji] [![Compatibility appraised by: appraisal2][💎appraisal2-img]][💎appraisal2]                                                                            |
+| Maintainer 🎖️          | [![Follow Me on LinkedIn][💖🖇linkedin-img]][💖🖇linkedin] [![Follow Me on Ruby.Social][💖🐘ruby-mast-img]][💖🐘ruby-mast] [![Follow Me on Bluesky][💖🦋bluesky-img]][💖🦋bluesky] [![Contact Maintainer][🚂maint-contact-img]][🚂maint-contact] [![My technical writing][💖💁🏼‍♂️devto-img]][💖💁🏼‍♂️devto]                |
+| `...` 💖                | [![Find Me on WellFound:][💖✌️wellfound-img]][💖✌️wellfound] [![Find Me on CrunchBase][💖💲crunchbase-img]][💖💲crunchbase] [![My LinkTree][💖🌳linktree-img]][💖🌳linktree] [![More About Me][💖💁🏼‍♂️aboutme-img]][💖💁🏼‍♂️aboutme] [🧊][💖🧊berg] [🐙][💖🐙hub]  [🛖][💖🛖hut] [🧪][💖🧪lab]                             |
 
-Non-commercial support for the oldest version of Ruby (which itself is going EOL) will be dropped each year in April.
+### Compatibility
 
-Please upgrade to version 1.1.x.  The only breaking change in 1.0.x is dropping old Rubies,
-while 1.1.x extracts the CLI tool to an external gem dependency ([`oauth-tty`](https://gitlab.com/oauth-xx/oauth-tty)).
+Compatible with MRI Ruby 2.3+, and concordant releases of JRuby, and TruffleRuby.
 
-## Status
+| 🚚 _Amazing_ test matrix was brought to you by | 🔎 appraisal2 🔎 and the color 💚 green 💚             |
+|------------------------------------------------|--------------------------------------------------------|
+| 👟 Check it out!                               | ✨ [github.com/appraisal-rb/appraisal2][💎appraisal2] ✨ |
 
-<!--
-Numbering rows and badges in each row as a visual "database" lookup,
-    as the table is extremely dense, and it can be very difficult to find anything
-Putting one on each row here, to document the emoji that should be used, and for ease of copy/paste.
+### Federated DVCS
 
-row #s:
-1️⃣
-2️⃣
-3️⃣
-4️⃣
-5️⃣
-6️⃣
-7️⃣
+<details>
+  <summary>Find this repo on other forges (Coming soon!)</summary>
 
-badge #s:
-⛳️
-🖇
-🏘
-🚎
-🖐
-🧮
-📗
+| Federated [DVCS][💎d-in-dvcs] Repository        | Status                                                                | Issues                    | PRs                      | Wiki                      | CI                       | Discussions                  |
+|-------------------------------------------------|-----------------------------------------------------------------------|---------------------------|--------------------------|---------------------------|--------------------------|------------------------------|
+| 🧪 [ruby-oauth/oauth on GitLab][📜src-gl]   | The Truth                                                             | [💚][🤝gl-issues]         | [💚][🤝gl-pulls]         | [💚][📜wiki]              | 🏀 Tiny Matrix           | ➖                            |
+| 🧊 [ruby-oauth/oauth on CodeBerg][📜src-cb] | An Ethical Mirror ([Donate][🤝cb-donate])                             | [💚][🤝cb-issues]         | [💚][🤝cb-pulls]         | ➖                         | ⭕️ No Matrix             | ➖                            |
+| 🐙 [ruby-oauth/oauth on GitHub][📜src-gh]   | Another Mirror                                                        | [💚][🤝gh-issues]         | [💚][🤝gh-pulls]         | ➖                         | 💯 Full Matrix           | [💚][gh-discussions]         |
+| 🎮️ [Discord Server][✉️discord-invite]          | [![Live Chat on Discord][✉️discord-invite-img-ftb]][✉️discord-invite] | [Let's][✉️discord-invite] | [talk][✉️discord-invite] | [about][✉️discord-invite] | [this][✉️discord-invite] | [library!][✉️discord-invite] |
 
-appended indicators:
-♻️ - URL needs to be updated from SASS integration. Find / Replace is insufficient.
--->
+</details>
 
-|     | Project               | bundle add oauth                                                                                                                                                                                                                                                   |
-|:----|-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1️⃣ | name, license, docs   | [![RubyGems.org][⛳️name-img]][⛳️gem] [![License: MIT][🖇src-license-img]][🖇src-license] [![RubyDoc.info][🚎yard-img]][🚎yard] [![SemVer 2.0.0][🧮semver-img]][🧮semver] [![Keep-A-Changelog 1.0.0][📗keep-changelog-img]][📗keep-changelog]                       |
-| 2️⃣ | version & activity    | [![Gem Version][⛳️version-img]][⛳️gem] [![Total Downloads][🖇DL-total-img]][⛳️gem] [![Download Rank][🏘DL-rank-img]][⛳️gem] [![Source Code][🚎src-main-img]][🚎src-main] [![Contributors][🖐contributors-img]][🖐contributors]                                     |
-| 3️⃣ | maintenance & linting | [![Maintainability][⛳cclim-maint-img♻️]][⛳cclim-maint] [![Helpers][🖇triage-help-img]][🖇triage-help] [![Depfu][🏘depfu-img♻️]][🏘depfu♻️] [![Style][🖐style-wf-img]][🖐style-wf]                                                                                  |
-| 4️⃣ | testing               | [![Supported][🏘sup-wf-img]][🏘sup-wf] [![Heads][🚎heads-wf-img]][🚎heads-wf] [![MacOS][🧮mac-wf-img]][🧮mac-wf] [![Windows][📗win-wf-img]][📗win-wf]                                                                                                              |
-| 5️⃣ | coverage & security   | [![CodeClimate][⛳cclim-cov-img♻️]][⛳cclim-cov] [![CodeCov][🖇codecov-img♻️]][🖇codecov] [![Coveralls][🏘coveralls-img]][🏘coveralls] [![Security Policy][🚎sec-pol-img]][🚎sec-pol] [![CodeQL][🖐codeQL-img]][🖐codeQL] [![Code Coverage][🧮cov-wf-img]][🧮cov-wf] |
-| 6️⃣ | resources             | [![Mailing List][⛳mail-list-img]][⛳mail-list] [![Get help on Codementor][🖇codementor-img]][🖇codementor] [![Chat][🏘chat-img]][🏘chat] [![Blog][🚎blog-img]][🚎blog] [![Blog][🖐wiki-img]][🖐wiki]                                                                |
-| 7️⃣ | spread 💖             | [![Liberapay Patrons][⛳liberapay-img]][⛳liberapay] [![Sponsor Me][🖇sponsor-img]][🖇sponsor] [![Code of Conduct][🚎code-conduct-img]][🚎code-conduct] [![Tweet @ Peter][🏘tweet-img]][🏘tweet] [🌏][aboutme] [👼][angelme] [💻][coderme]                           |
+[gh-discussions]: https://github.com/ruby-oauth/oauth/discussions
 
-<!--
-The link tokens in the following sections should be kept ordered by the row and badge numbering scheme
--->
-
-<!-- 1️⃣ name, license, docs -->
-[⛳️gem]: https://rubygems.org/gems/oauth
-[⛳️name-img]: https://img.shields.io/badge/name-oauth-brightgreen.svg?style=flat
-[🖇src-license]: https://opensource.org/licenses/MIT
-[🖇src-license-img]: https://img.shields.io/badge/License-MIT-green.svg
-[🚎yard]: https://www.rubydoc.info/gems/oauth
-[🚎yard-img]: https://img.shields.io/badge/documentation-rubydoc-brightgreen.svg?style=flat
-[🧮semver]: http://semver.org/
-[🧮semver-img]: https://img.shields.io/badge/semver-2.0.0-FFDD67.svg?style=flat
-[📗keep-changelog]: https://keepachangelog.com/en/1.0.0/
-[📗keep-changelog-img]: https://img.shields.io/badge/keep--a--changelog-1.0.0-FFDD67.svg?style=flat
-
-<!-- 2️⃣ version & activity -->
-[⛳️version-img]: http://img.shields.io/gem/v/oauth.svg
-[🖇DL-total-img]: https://img.shields.io/gem/dt/oauth.svg
-[🏘DL-rank-img]: https://img.shields.io/gem/rt/oauth.svg
-[🚎src-main]: https://gitlab.com/oauth-xx/oauth/-/tree/main
-[🚎src-main-img]: https://img.shields.io/badge/source-gitlab-blue.svg?style=flat
-[🖐contributors]: https://gitlab.com/oauth-xx/oauth/-/graphs/main
-[🖐contributors-img]: https://img.shields.io/github/contributors-anon/oauth-xx/oauth-ruby
-
-<!-- 3️⃣ maintenance & linting -->
-[⛳cclim-maint]: https://codeclimate.com/github/oauth-xx/oauth-ruby/maintainability
-[⛳cclim-maint-img♻️]: https://api.codeclimate.com/v1/badges/3cf23270c21e8791d788/maintainability
-[🖇triage-help]: https://www.codetriage.com/oauth-xx/oauth-ruby
-[🖇triage-help-img]: https://www.codetriage.com/oauth-xx/oauth-ruby/badges/users.svg
-[🏘depfu♻️]: https://depfu.com/github/oauth-xx/oauth-ruby?project_id=22868
-[🏘depfu-img♻️]: https://badges.depfu.com/badges/d570491bac0ad3b0b65deb3c82028327/count.svg
-[🖐style-wf]: https://github.com/oauth-xx/oauth-ruby/actions/workflows/style.yml
-[🖐style-wf-img]: https://github.com/oauth-xx/oauth-ruby/actions/workflows/style.yml/badge.svg
-
-<!-- 4️⃣ testing -->
-[🏘sup-wf]: https://github.com/oauth-xx/oauth-ruby/actions/workflows/supported.yml
-[🏘sup-wf-img]: https://github.com/oauth-xx/oauth-ruby/actions/workflows/supported.yml/badge.svg
-[🚎heads-wf]: https://github.com/oauth-xx/oauth-ruby/actions/workflows/heads.yml
-[🚎heads-wf-img]: https://github.com/oauth-xx/oauth-ruby/actions/workflows/heads.yml/badge.svg
-[🧮mac-wf]: https://github.com/oauth-xx/oauth-ruby/actions/workflows/macos.yml
-[🧮mac-wf-img]: https://github.com/oauth-xx/oauth-ruby/actions/workflows/macos.yml/badge.svg
-[📗win-wf]: https://github.com/oauth-xx/oauth-ruby/actions/workflows/windows.yml
-[📗win-wf-img]: https://github.com/oauth-xx/oauth-ruby/actions/workflows/windows.yml/badge.svg
-
-<!-- 5️⃣ coverage & security -->
-[⛳cclim-cov]: https://codeclimate.com/github/oauth-xx/oauth-ruby/test_coverage
-[⛳cclim-cov-img♻️]: https://api.codeclimate.com/v1/badges/3cf23270c21e8791d788/test_coverage
-[🖇codecov-img♻️]: https://codecov.io/gh/oauth-xx/oauth-ruby/branch/main/graph/badge.svg?token=4ZNAWNxrf9
-[🖇codecov]: https://codecov.io/gh/oauth-xx/oauth-ruby
-[🏘coveralls]: https://coveralls.io/github/oauth-xx/oauth-ruby?branch=main
-[🏘coveralls-img]: https://coveralls.io/repos/github/oauth-xx/oauth-ruby/badge.svg?branch=main
-[🚎sec-pol]: https://gitlab.com/oauth-xx/oauth/-/blob/main/SECURITY.md
-[🚎sec-pol-img]: https://img.shields.io/badge/security-policy-brightgreen.svg?style=flat
-[🖐codeQL]: https://github.com/oauth-xx/oauth-ruby/security/code-scanning
-[🖐codeQL-img]: https://github.com/oauth-xx/oauth-ruby/actions/workflows/codeql-analysis.yml/badge.svg
-[🧮cov-wf]: https://github.com/oauth-xx/oauth-ruby/actions/workflows/coverage.yml
-[🧮cov-wf-img]: https://github.com/oauth-xx/oauth-ruby/actions/workflows/coverage.yml/badge.svg
-
-<!-- 6️⃣ resources -->
-[⛳mail-list]: http://groups.google.com/group/oauth-ruby
-[⛳mail-list-img]: https://img.shields.io/badge/group-mailinglist-violet.svg?style=social&logo=google
-[🖇codementor]: https://www.codementor.io/peterboling?utm_source=github&utm_medium=button&utm_term=peterboling&utm_campaign=github
-[🖇codementor-img]: https://cdn.codementor.io/badges/get_help_github.svg
-[🏘chat]: https://gitter.im/oauth-xx/oauth-ruby
-[🏘chat-img]: https://img.shields.io/gitter/room/oauth-xx/oauth-ruby.svg
-[🚎blog]: http://www.railsbling.com/tags/oauth-ruby/
-[🚎blog-img]: https://img.shields.io/badge/blog-railsbling-brightgreen.svg?style=flat
-[🖐wiki]: https://gitlab.com/oauth-xx/oauth/-/wikis/home
-[🖐wiki-img]: https://img.shields.io/badge/wiki-examples-brightgreen.svg?style=flat
-
-<!-- 7️⃣ spread 💖 -->
-[⛳liberapay-img]: https://img.shields.io/liberapay/patrons/pboling.svg?logo=liberapay
-[⛳liberapay]: https://liberapay.com/pboling/donate
-[🖇sponsor-img]: https://img.shields.io/badge/sponsor-pboling.svg?style=social&logo=github
-[🖇sponsor]: https://github.com/sponsors/pboling
-[🏘tweet-img]: https://img.shields.io/twitter/follow/galtzo.svg?style=social&label=Follow
-[🏘tweet]: http://twitter.com/galtzo
-[🚎code-conduct]: https://gitlab.com/oauth-xx/oauth/-/blob/main/CODE_OF_CONDUCT.md
-[🚎code-conduct-img]: https://img.shields.io/badge/code-conduct-black.svg?style=flat
-
-<!-- Maintainer Links -->
-[aboutme]: https://about.me/peter.boling
-[angelme]: https://angel.co/peter-boling
-[coderme]:http://coderwall.com/pboling
-[followme-img]: https://img.shields.io/twitter/follow/galtzo.svg?style=social&label=Follow
-[gh_sponsors]: https://github.com/sponsors/pboling
-[liberapay_donate]: https://liberapay.com/pboling/donate
-[peterboling]: http://www.peterboling.com
-[railsbling]: http://www.railsbling.com
-
-## Installation
-
-Install the gem and add to the application's Gemfile by executing:
-
-    $ bundle add oauth
-
-If bundler is not being used to manage dependencies, install the gem by executing:
-
-    $ gem install oauth
-
-## OAuth for Enterprise
+### Enterprise Support [![Tidelift](https://tidelift.com/badges/package/rubygems/oauth)](https://tidelift.com/subscription/pkg/rubygems-oauth?utm_source=rubygems-oauth&utm_medium=referral&utm_campaign=readme)
 
 Available as part of the Tidelift Subscription.
 
-The maintainers of OAuth2 and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source packages you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact packages you use. [Learn more.](https://tidelift.com/subscription/pkg/rubygems-oauth?utm_source=rubygems-oauth&utm_medium=referral&utm_campaign=enterprise)
-
-## Security contact information [![Security Policy][🚎sec-pol-img]][🚎sec-pol]
-
-To report a security vulnerability, please use the [Tidelift security contact](https://tidelift.com/security).
-Tidelift will coordinate the fix and disclosure.
-
-For more see [SECURITY.md][🚎sec-pol].
-
-## Compatibility
-
-Targeted ruby compatibility is non-EOL versions of Ruby, currently 2.7, 3.0, and
-3.1. Ruby is limited to 2.7+ in the gemspec, and this will change with major version bumps,
-in accordance with the SemVer spec.
-
-The `main` branch now targets 1.1.x releases, for Ruby >= 2.7.
-See `v1.0-maintenance` (EOL April, 2023) branch for Ruby >= 2.7.
-See `v0.6-maintenance` (EOL April, 2023) branch for Ruby >= 2.4.
-See `v0.5-maintenance` (EOL April, 2023) branch for Ruby >= 2.0.
-
-NOTE: No further releases of versions < 1.0.x are anticipated.
-
 <details>
-  <summary>Ruby Engine Compatibility Policy</summary>
+  <summary>Need enterprise-level guarantees?</summary>
 
-This gem is tested against MRI, and to a lesser extent, against JRuby, and Truffleruby.
-Each of those has varying versions that target a specific version of MRI Ruby.
-This gem should work in the just-listed Ruby engines according to the targeted MRI compatibility in the table below.
-If you would like to add support for additional engines,
-first make sure Github Actions supports the engine,
-then submit a PR to the correct maintenance branch as according to the table below.
+The maintainers of this and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source packages you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact packages you use.
+
+[![Get help from me on Tidelift][🏙️entsup-tidelift-img]][🏙️entsup-tidelift]
+
+- 💡Subscribe for support guarantees covering _all_ your FLOSS dependencies
+- 💡Tidelift is part of [Sonar][🏙️entsup-tidelift-sonar]
+- 💡Tidelift pays maintainers to maintain the software you depend on!<br/>📊`@`Pointy Haired Boss: An [enterprise support][🏙️entsup-tidelift] subscription is "[never gonna let you down][🧮kloc]", and *supports* open source maintainers
+
+Alternatively:
+
+- [![Live Chat on Discord][✉️discord-invite-img-ftb]][✉️discord-invite]
+- [![Get help from me on Upwork][👨🏼‍🏫expsup-upwork-img]][👨🏼‍🏫expsup-upwork]
+- [![Get help from me on Codementor][👨🏼‍🏫expsup-codementor-img]][👨🏼‍🏫expsup-codementor]
+
 </details>
 
+## ✨ Installation
+
+Install the gem and add to the application's Gemfile by executing:
+
+```console
+bundle add oauth
+```
+
+If bundler is not being used to manage dependencies, install the gem by executing:
+
+```console
+gem install oauth
+```
+
+### 🔒 Secure Installation
+
 <details>
-  <summary>Ruby Version Compatibility Policy</summary>
+  <summary>For Medium or High Security Installations</summary>
 
-If something doesn't work on one of these interpreters, it's a bug.
+This gem is cryptographically signed, and has verifiable [SHA-256 and SHA-512][💎SHA_checksums] checksums by
+[stone_checksums][💎stone_checksums]. Be sure the gem you install hasn’t been tampered with
+by following the instructions below.
 
-This library may inadvertently work (or seem to work) on other Ruby
-implementations, however support will only be provided for the versions listed
-above.
+Add my public key (if you haven’t already, expires 2045-04-29) as a trusted certificate:
 
-If you would like this library to support another Ruby version, you may
-volunteer to be a maintainer. Being a maintainer entails making sure all tests
-run and pass on that implementation. When something breaks on your
-implementation, you will be responsible for providing patches in a timely
-fashion. If critical issues for a particular implementation exist at the time
-of a major release, support for that Ruby version may be dropped.
+```console
+gem cert --add <(curl -Ls https://raw.github.com/galtzo-floss/certs/main/pboling.pem)
+```
+
+You only need to do that once.  Then proceed to install with:
+
+```console
+gem install oauth -P HighSecurity
+```
+
+The `HighSecurity` trust profile will verify signed gems, and not allow the installation of unsigned dependencies.
+
+If you want to up your security game full-time:
+
+```console
+bundle config set --global trust-policy MediumSecurity
+```
+
+`MediumSecurity` instead of `HighSecurity` is necessary if not all the gems you use are signed.
+
+NOTE: Be prepared to track down certs for signed gems and add them the same way you added mine.
+
 </details>
 
-|     | Ruby OAuth Version | Maintenance Branch | EOL     | 🚂 Compatibility       | Official 💎   | Unofficial 💎                | Incidental 💎 |
-|:----|--------------------|--------------------|---------|------------------------|---------------|------------------------------|---------------|
-| 1️⃣ | 1.1.x              | `main`             | 04/2023 | Rails 6, 7             | 2.7, 3.0, 3.1 | none                         | none          |
-| 2️⃣ | 1.0.x              | `v1.0-maintenance` | 04/2023 | Rails 6, 7             | 2.7, 3.0, 3.1 | none                         | none          |
-| 3️⃣ | 0.6.x              | `v0.6-maintenance` | 04/2023 | Rails 5, 6, 7          | 2.7, 3.0, 3.1 | 2.5, 2.6                     | 2.4           |
-| 4️⃣ | 0.5.x              | `v0.5-maintenance` | 04/2023 | Rails 2, 3, 4, 5, 6, 7 | 2.7, 3.0, 3.1 | 2.1, 2.2, 2.3, 2.4, 2.5, 2.6 | 2.0           |
-| 5️⃣ | older              | ⛔                  | ⛔       | ⛔                      | ⛔             | ⛔                            | ⛔             |
-
-See [SECURITY.md][🚎sec-pol]
-
-🚂 NOTE: See notes on Rails in next section.
-
-## Basics
+## ⚙️ Configuration
 
 This is a ruby library which is intended to be used in creating Ruby Consumer
 and Service Provider applications. It is NOT a Rails plugin, but could easily
@@ -270,11 +161,13 @@ Unfortunately, this gem does have some Rails related bits that are
 **optional** to load. You don't need Rails! The Rails bits may be pulled out
 into a separate gem with the 1.x minor updates of this gem.
 
-## Extensions
+## 🔧 Basic Usage
 
-* [oauth-tty (on Gitlab)](https://gitlab.com/oauth-xx/oauth-tty) ([rubygems.org](https://rubygems.org/gems/oauth-tty))
+### Extensions
 
-## Usage
+* [oauth-tty (on Gitlab)](https://gitlab.com/ruby-oauth/oauth-tty) ([rubygems.org](https://rubygems.org/gems/oauth-tty))
+
+### Examples
 
 We need to specify the `oauth_callback` url explicitly, otherwise it defaults to
 "oob" (Out of Band)
@@ -302,7 +195,7 @@ redirect_to request_token.authorize_url(oauth_callback: callback_url)
 When user returns create an access_token
 
 ```ruby
-hash = { oauth_token: session[:token], oauth_token_secret: session[:token_secret] }
+hash = {oauth_token: session[:token], oauth_token_secret: session[:token_secret]}
 request_token = OAuth::RequestToken.from_hash(oauth_consumer, hash)
 access_token = request_token.get_access_token
 # For 3-legged authorization, flow oauth_verifier is passed as param in callback
@@ -316,7 +209,7 @@ OAuth provider if you choose.
 ```ruby
 require "typhoeus"
 require "oauth/request_proxy/typhoeus_request"
-oauth_params = { consumer: oauth_consumer, token: access_token }
+oauth_params = {consumer: oauth_consumer, token: access_token}
 hydra = Typhoeus::Hydra.new
 req = Typhoeus::Request.new(uri, options) # :method needs to be specified in options
 oauth_helper = OAuth::Client::Helper.new(req, oauth_params.merge(request_uri: uri))
@@ -326,76 +219,391 @@ hydra.run
 @response = req.response
 ```
 
-## More Information
+### More Information
 
 * RubyDoc Documentation: [![RubyDoc.info][🚎yard-img]][🚎yard]
 * Mailing List/Google Group: [![Mailing List][⛳mail-list-img]][⛳mail-list]
-* Live Chat on Gitter: [![Join the chat at https://gitter.im/oauth-xx/oauth-ruby][🏘chat-img]][🏘chat]
+* Live Chat on Gitter: [![Join the chat at https://gitter.im/ruby-oauth/oauth-ruby][🏘chat-img]][🏘chat]
 * Maintainer's Blog: [![Blog][🚎blog-img]][🚎blog]
 
-## Code of Conduct
+## 🦷 FLOSS Funding
 
-Everyone interacting in this project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct][🚎code-conduct].
+While ruby-oauth tools are free software and will always be, the project would benefit immensely from some funding.
+Raising a monthly budget of... "dollars" would make the project more sustainable.
 
-## Contributing
+We welcome both individual and corporate sponsors! We also offer a
+wide array of funding channels to account for your preferences
+(although currently [Open Collective][🖇osc] is our preferred funding platform).
 
-Bug reports and pull requests are welcome on GitLab at [https://gitlab.com/oauth-xx/oauth/-/issues][issues].
+**If you're working in a company that's making significant use of ruby-oauth tools we'd
+appreciate it if you suggest to your company to become a ruby-oauth sponsor.**
 
-This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct][🚎code-conduct].
+You can support the development of ruby-oauth tools via
+[GitHub Sponsors][🖇sponsor],
+[Liberapay][⛳liberapay],
+[PayPal][🖇paypal],
+[Open Collective][🖇osc]
+and [Tidelift][🏙️entsup-tidelift].
 
-See [CONTRIBUTING.md][contributing] for detailed instructions on how to help!
+| 📍 NOTE                                                                                                                                                                                                              |
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| If doing a sponsorship in the form of donation is problematic for your company <br/> from an accounting standpoint, we'd recommend the use of Tidelift, <br/> where you can get a support-like subscription instead. |
 
-## Contributors
+### Open Collective for Individuals
 
-See [https://gitlab.com/oauth-xx/oauth/-/graphs/main][🚎contributors]
+<!-- OPENCOLLECTIVE-INDIVIDUALS:START -->
+No backers yet. Be the first!
+<!-- OPENCOLLECTIVE-INDIVIDUALS:END -->
 
-## Versioning
+Support us with a monthly donation and help us continue our activities. [[Become a backer](https://opencollective.com/ruby-oauth#backer)]
 
-This library aims to adhere to [Semantic Versioning 2.0.0][🧮semver]. Violations of this scheme should be reported as
-bugs. Specifically, if a minor or patch version is released that breaks backward compatibility, a new version should be
-immediately released that restores compatibility. Breaking changes to the public API will only be introduced with new
-major versions.  Compatibility with a major and minor versions of Ruby will only be changed with a major version bump.
+### Open Collective for Organizations
 
-As a result of this policy, you can (and should) specify a dependency on this gem using
-the [Pessimistic Version Constraint][pvc] with two digits of precision.
+<!-- OPENCOLLECTIVE-ORGANIZATIONS:START -->
+No sponsors yet. Be the first!
+<!-- OPENCOLLECTIVE-ORGANIZATIONS:END -->
+
+Become a sponsor and get your logo on our README on GitHub with a link to your site. [[Become a sponsor](https://opencollective.com/ruby-oauth#sponsor)]
+
+### Another way to support open-source
+
+> How wonderful it is that nobody need wait a single moment before starting to improve the world.<br/>
+>—Anne Frank
+
+I’m driven by a passion to foster a thriving open-source community – a space where people can tackle complex problems, no matter how small.  Revitalizing libraries that have fallen into disrepair, and building new libraries focused on solving real-world challenges, are my passions — totaling 79 hours of FLOSS coding over just the past seven days, a pretty regular week for me.  I was recently affected by layoffs, and the tech jobs market is unwelcoming. I’m reaching out here because your support would significantly aid my efforts to provide for my family, and my farm (11 🐔 chickens, 2 🐶 dogs, 3 🐰 rabbits, 8 🐈‍ cats).
+
+If you work at a company that uses my work, please encourage them to support me as a corporate sponsor. My work on gems you use might show up in `bundle fund`.
+
+I’m developing a new library, [floss_funding][🖇floss-funding-gem], designed to empower open-source developers like myself to get paid for the work we do, in a sustainable way. Please give it a look.
+
+**[Floss-Funding.dev][🖇floss-funding.dev]: 👉️ No network calls. 👉️ No tracking. 👉️ No oversight. 👉️ Minimal crypto hashing. 💡 Easily disabled nags**
+
+[![OpenCollective Backers][🖇osc-backers-i]][🖇osc-backers] [![OpenCollective Sponsors][🖇osc-sponsors-i]][🖇osc-sponsors] [![Sponsor Me on Github][🖇sponsor-img]][🖇sponsor] [![Liberapay Goal Progress][⛳liberapay-img]][⛳liberapay] [![Donate on PayPal][🖇paypal-img]][🖇paypal] [![Buy me a coffee][🖇buyme-small-img]][🖇buyme] [![Donate on Polar][🖇polar-img]][🖇polar] [![Donate to my FLOSS or refugee efforts at ko-fi.com][🖇kofi-img]][🖇kofi] [![Donate to my FLOSS or refugee efforts using Patreon][🖇patreon-img]][🖇patreon]
+
+## 🔐 Security
+
+See [SECURITY.md][🔐security].
+
+## 🤝 Contributing
+
+If you need some ideas of where to help, you could work on adding more code coverage,
+or if it is already 💯 (see [below](#code-coverage)) check [reek](REEK), [issues][🤝gh-issues], or [PRs][🤝gh-pulls],
+or use the gem and think about how it could be better.
+
+We [![Keep A Changelog][📗keep-changelog-img]][📗keep-changelog] so if you make changes, remember to update it.
+
+See [CONTRIBUTING.md][🤝contributing] for more detailed instructions.
+
+### 🚀 Release Instructions
+
+See [CONTRIBUTING.md][🤝contributing].
+
+### Code Coverage
+
+[![Coverage Graph][🔑codecov-g]][🔑codecov]
+
+[![Coveralls Test Coverage][🔑coveralls-img]][🔑coveralls]
+
+[![QLTY Test Coverage][🔑qlty-covi]][🔑qlty-cov]
+
+### 🪇 Code of Conduct
+
+Everyone interacting with this project's codebases, issue trackers,
+chat rooms and mailing lists agrees to follow the [![Contributor Covenant 2.1][🪇conduct-img]][🪇conduct].
+
+## 🌈 Contributors
+
+[![Contributors][🖐contributors-img]][🖐contributors]
+
+Made with [contributors-img][🖐contrib-rocks].
+
+Also see GitLab Contributors: [https://gitlab.com/ruby-oauth/oauth/-/graphs/main][🚎contributors-gl]
+
+<details>
+    <summary>⭐️ Star History</summary>
+
+<a href="https://star-history.com/#ruby-oauth/oauth&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=ruby-oauth/oauth&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=ruby-oauth/oauth&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=ruby-oauth/oauth&type=Date" />
+ </picture>
+</a>
+
+</details>
+
+## 📌 Versioning
+
+This Library adheres to [![Semantic Versioning 2.0.0][📌semver-img]][📌semver].
+Violations of this scheme should be reported as bugs.
+Specifically, if a minor or patch version is released that breaks backward compatibility,
+a new version should be immediately released that restores compatibility.
+Breaking changes to the public API will only be introduced with new major versions.
+
+> dropping support for a platform is both obviously and objectively a breaking change <br/>
+>—Jordan Harband ([@ljharb](https://github.com/ljharb), maintainer of SemVer) [in SemVer issue 716][📌semver-breaking]
+
+I understand that policy doesn't work universally ("exceptions to every rule!"),
+but it is the policy here.
+As such, in many cases it is good to specify a dependency on this library using
+the [Pessimistic Version Constraint][📌pvc] with two digits of precision.
 
 For example:
 
 ```ruby
-spec.add_dependency "oauth", "~> 1.1"
+spec.add_dependency("oauth", "~> 1.0")
 ```
 
-## License
+<details>
+<summary>📌 Is "Platform Support" part of the public API? More details inside.</summary>
+
+SemVer should, IMO, but doesn't explicitly, say that dropping support for specific Platforms
+is a *breaking change* to an API.
+It is obvious to many, but not all, and since the spec is silent, the bike shedding is endless.
+
+To get a better understanding of how SemVer is intended to work over a project's lifetime,
+read this article from the creator of SemVer:
+
+- ["Major Version Numbers are Not Sacred"][📌major-versions-not-sacred]
+
+</details>
+
+See [CHANGELOG.md][📌changelog] for a list of releases.
+
+## 📄 License
 
 The gem is available as open source under the terms of
-the [MIT License][license] [![License: MIT][🖇src-license-img]][🖇src-license].
-See [LICENSE.txt][license] for the [Copyright Notice][copyright-notice-explainer].
+the [MIT License][📄license] [![License: MIT][📄license-img]][📄license-ref].
+See [LICENSE.txt][📄license] for the official [Copyright Notice][📄copyright-notice-explainer].
 
-## Contact
+### © Copyright
 
-OAuth Ruby has been created and maintained by a large number of talented
-individuals. The current maintainer is Peter Boling (@pboling).  Please
-[support with donations at Liberapay][liberapay_donate]).
+<ul>
+    <li>
+        Copyright (c) 2023, 2025 Peter H. Boling, of
+        <a href="https://discord.gg/3qme4XHNKN">
+            Galtzo.com
+            <picture>
+              <img src="https://logos.galtzo.com/assets/images/galtzo-floss/avatar-128px-blank.svg" alt="Galtzo.com Logo (Wordless) by Aboling0, CC BY-SA 4.0" width="24">
+            </picture>
+        </a>, and oauth contributors.
+    </li>
+</ul>
 
-Comments are welcome. Contact the [OAuth Ruby mailing list (Google Group)][⛳mail-list] or [join the live chat at https://gitter.im/oauth-xx/oauth-ruby][🏘chat].
+## 🤑 A request for help
 
-[contributing]: https://gitlab.com/oauth-xx/oauth/-/blob/main/CONTRIBUTING.md
-[copyright-notice-explainer]: https://opensource.stackexchange.com/questions/5778/why-do-licenses-such-as-the-mit-license-specify-a-single-year
-[actions]: https://github.com/oauth-xx/oauth-ruby/actions
-[issues]: https://gitlab.com/oauth-xx/oauth/-/issues
-[license]: https://gitlab.com/oauth-xx/oauth/-/blob/main/LICENSE.txt
-[pvc]: http://guides.rubygems.org/patterns/#pessimistic-version-constraint
+Maintainers have teeth and need to pay their dentists.
+After getting laid off in an RIF in March and filled with many dozens of rejections,
+I'm now spending ~60+ hours a week building open source tools.
+I'm hoping to be able to pay for my kids' health insurance this month,
+so if you value the work I am doing, I need your support.
+Please consider sponsoring me or the project.
 
-## 🤑 One more thing
+To join the community or get help 👇️ Join the Discord.
 
-You made it to the bottom of the page,
-so perhaps you'll indulge me for another 20 seconds.
-I maintain many dozens of gems, including this one,
-because I want Ruby to be a great place for people to solve problems, big and small.
-Please consider supporting my efforts via the giant yellow link below,
-or one of the others at the head of this README.
+[![Live Chat on Discord][✉️discord-invite-img-ftb]][✉️discord-invite]
 
-[![Buy me a latte][🖇buyme-img]][🖇buyme]
+To say "thanks!" ☝️ Join the Discord or 👇️ send money.
 
+[![Sponsor ruby-oauth/oauth on Open Source Collective][🖇osc-all-bottom-img]][🖇osc] 💌 [![Sponsor me on GitHub Sponsors][🖇sponsor-bottom-img]][🖇sponsor] 💌 [![Sponsor me on Liberapay][⛳liberapay-bottom-img]][⛳liberapay-img] 💌 [![Donate on PayPal][🖇paypal-bottom-img]][🖇paypal-img]
+
+### Please give the project a star ⭐ ♥.
+
+Thanks for RTFM. ☺️
+
+[⛳liberapay-img]: https://img.shields.io/liberapay/goal/pboling.svg?logo=liberapay&color=a51611&style=flat
+[⛳liberapay-bottom-img]: https://img.shields.io/liberapay/goal/pboling.svg?style=for-the-badge&logo=liberapay&color=a51611
+[⛳liberapay]: https://liberapay.com/pboling/donate
+[🖇osc-all-img]: https://img.shields.io/opencollective/all/ruby-oauth
+[🖇osc-sponsors-img]: https://img.shields.io/opencollective/sponsors/ruby-oauth
+[🖇osc-backers-img]: https://img.shields.io/opencollective/backers/ruby-oauth
+[🖇osc-backers]: https://opencollective.com/ruby-oauth#backer
+[🖇osc-backers-i]: https://opencollective.com/ruby-oauth/backers/badge.svg?style=flat
+[🖇osc-sponsors]: https://opencollective.com/ruby-oauth#sponsor
+[🖇osc-sponsors-i]: https://opencollective.com/ruby-oauth/sponsors/badge.svg?style=flat
+[🖇osc-all-bottom-img]: https://img.shields.io/opencollective/all/ruby-oauth?style=for-the-badge
+[🖇osc-sponsors-bottom-img]: https://img.shields.io/opencollective/sponsors/ruby-oauth?style=for-the-badge
+[🖇osc-backers-bottom-img]: https://img.shields.io/opencollective/backers/ruby-oauth?style=for-the-badge
+[🖇osc]: https://opencollective.com/ruby-oauth
+[🖇sponsor-img]: https://img.shields.io/badge/Sponsor_Me!-pboling.svg?style=social&logo=github
+[🖇sponsor-bottom-img]: https://img.shields.io/badge/Sponsor_Me!-pboling-blue?style=for-the-badge&logo=github
+[🖇sponsor]: https://github.com/sponsors/pboling
+[🖇polar-img]: https://img.shields.io/badge/polar-donate-a51611.svg?style=flat
+[🖇polar]: https://polar.sh/pboling
+[🖇kofi-img]: https://img.shields.io/badge/ko--fi-%E2%9C%93-a51611.svg?style=flat
+[🖇kofi]: https://ko-fi.com/O5O86SNP4
+[🖇patreon-img]: https://img.shields.io/badge/patreon-donate-a51611.svg?style=flat
+[🖇patreon]: https://patreon.com/galtzo
+[🖇buyme-small-img]: https://img.shields.io/badge/buy_me_a_coffee-%E2%9C%93-a51611.svg?style=flat
 [🖇buyme-img]: https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20latte&emoji=&slug=pboling&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff
 [🖇buyme]: https://www.buymeacoffee.com/pboling
+[🖇paypal-img]: https://img.shields.io/badge/donate-paypal-a51611.svg?style=flat&logo=paypal
+[🖇paypal-bottom-img]: https://img.shields.io/badge/donate-paypal-a51611.svg?style=for-the-badge&logo=paypal&color=0A0A0A
+[🖇paypal]: https://www.paypal.com/paypalme/peterboling
+[🖇floss-funding.dev]: https://floss-funding.dev
+[🖇floss-funding-gem]: https://github.com/galtzo-floss/floss_funding
+[✉️discord-invite]: https://discord.gg/3qme4XHNKN
+[✉️discord-invite-img-ftb]: https://img.shields.io/discord/1373797679469170758?style=for-the-badge&logo=discord
+[✉️ruby-friends-img]: https://img.shields.io/badge/daily.dev-%F0%9F%92%8E_Ruby_Friends-0A0A0A?style=for-the-badge&logo=dailydotdev&logoColor=white
+[✉️ruby-friends]: https://app.daily.dev/squads/rubyfriends
+
+[✇bundle-group-pattern]: https://gist.github.com/pboling/4564780
+[⛳️gem-namespace]: https://github.com/ruby-oauth/oauth
+[⛳️namespace-img]: https://img.shields.io/badge/namespace-Oauth-3C2D2D.svg?style=square&logo=ruby&logoColor=white
+[⛳️gem-name]: https://rubygems.org/gems/oauth
+[⛳️name-img]: https://img.shields.io/badge/name-oauth-3C2D2D.svg?style=square&logo=rubygems&logoColor=red
+[⛳️tag-img]: https://img.shields.io/github/tag/ruby-oauth/oauth.svg
+[⛳️tag]: http://github.com/ruby-oauth/oauth/releases
+[🚂maint-blog]: http://www.railsbling.com/tags/oauth
+[🚂maint-blog-img]: https://img.shields.io/badge/blog-railsbling-0093D0.svg?style=for-the-badge&logo=rubyonrails&logoColor=orange
+[🚂maint-contact]: http://www.railsbling.com/contact
+[🚂maint-contact-img]: https://img.shields.io/badge/Contact-Maintainer-0093D0.svg?style=flat&logo=rubyonrails&logoColor=red
+[💖🖇linkedin]: http://www.linkedin.com/in/peterboling
+[💖🖇linkedin-img]: https://img.shields.io/badge/PeterBoling-LinkedIn-0B66C2?style=flat&logo=newjapanprowrestling
+[💖✌️wellfound]: https://wellfound.com/u/peter-boling
+[💖✌️wellfound-img]: https://img.shields.io/badge/peter--boling-orange?style=flat&logo=wellfound
+[💖💲crunchbase]: https://www.crunchbase.com/person/peter-boling
+[💖💲crunchbase-img]: https://img.shields.io/badge/peter--boling-purple?style=flat&logo=crunchbase
+[💖🐘ruby-mast]: https://ruby.social/@galtzo
+[💖🐘ruby-mast-img]: https://img.shields.io/mastodon/follow/109447111526622197?domain=https://ruby.social&style=flat&logo=mastodon&label=Ruby%20@galtzo
+[💖🦋bluesky]: https://bsky.app/profile/galtzo.com
+[💖🦋bluesky-img]: https://img.shields.io/badge/@galtzo.com-0285FF?style=flat&logo=bluesky&logoColor=white
+[💖🌳linktree]: https://linktr.ee/galtzo
+[💖🌳linktree-img]: https://img.shields.io/badge/galtzo-purple?style=flat&logo=linktree
+[💖💁🏼‍♂️devto]: https://dev.to/galtzo
+[💖💁🏼‍♂️devto-img]: https://img.shields.io/badge/dev.to-0A0A0A?style=flat&logo=devdotto&logoColor=white
+[💖💁🏼‍♂️aboutme]: https://about.me/peter.boling
+[💖💁🏼‍♂️aboutme-img]: https://img.shields.io/badge/about.me-0A0A0A?style=flat&logo=aboutme&logoColor=white
+[💖🧊berg]: https://codeberg.org/pboling
+[💖🐙hub]: https://github.org/pboling
+[💖🛖hut]: https://sr.ht/~galtzo/
+[💖🧪lab]: https://gitlab.com/pboling
+[👨🏼‍🏫expsup-upwork]: https://www.upwork.com/freelancers/~014942e9b056abdf86?mp_source=share
+[👨🏼‍🏫expsup-upwork-img]: https://img.shields.io/badge/UpWork-13544E?style=for-the-badge&logo=Upwork&logoColor=white
+[👨🏼‍🏫expsup-codementor]: https://www.codementor.io/peterboling?utm_source=github&utm_medium=button&utm_term=peterboling&utm_campaign=github
+[👨🏼‍🏫expsup-codementor-img]: https://img.shields.io/badge/CodeMentor-Get_Help-1abc9c?style=for-the-badge&logo=CodeMentor&logoColor=white
+[🏙️entsup-tidelift]: https://tidelift.com/subscription/pkg/rubygems-oauth?utm_source=rubygems-oauth&utm_medium=referral&utm_campaign=readme
+[🏙️entsup-tidelift-img]: https://img.shields.io/badge/Tidelift_and_Sonar-Enterprise_Support-FD3456?style=for-the-badge&logo=sonar&logoColor=white
+[🏙️entsup-tidelift-sonar]: https://blog.tidelift.com/tidelift-joins-sonar
+[💁🏼‍♂️peterboling]: http://www.peterboling.com
+[🚂railsbling]: http://www.railsbling.com
+[📜src-gl-img]: https://img.shields.io/badge/GitLab-FBA326?style=for-the-badge&logo=Gitlab&logoColor=orange
+[📜src-gl]: https://gitlab.com/ruby-oauth/oauth/
+[📜src-cb-img]: https://img.shields.io/badge/CodeBerg-4893CC?style=for-the-badge&logo=CodeBerg&logoColor=blue
+[📜src-cb]: https://codeberg.org/ruby-oauth/oauth
+[📜src-gh-img]: https://img.shields.io/badge/GitHub-238636?style=for-the-badge&logo=Github&logoColor=green
+[📜src-gh]: https://github.com/ruby-oauth/oauth
+[📜docs-cr-rd-img]: https://img.shields.io/badge/RubyDoc-Current_Release-943CD2?style=for-the-badge&logo=readthedocs&logoColor=white
+[📜docs-head-rd-img]: https://img.shields.io/badge/YARD_on_Galtzo.com-HEAD-943CD2?style=for-the-badge&logo=readthedocs&logoColor=white
+[📜wiki]: https://gitlab.com/ruby-oauth/oauth/-/wikis/home
+[📜wiki-img]: https://img.shields.io/badge/wiki-examples-943CD2.svg?style=for-the-badge&logo=Wiki&logoColor=white
+[👽dl-rank]: https://rubygems.org/gems/oauth
+[👽dl-ranki]: https://img.shields.io/gem/rd/oauth.svg
+[👽oss-help]: https://www.codetriage.com/ruby-oauth/oauth
+[👽oss-helpi]: https://www.codetriage.com/ruby-oauth/oauth/badges/users.svg
+[👽version]: https://rubygems.org/gems/oauth
+[👽versioni]: https://img.shields.io/gem/v/oauth.svg
+[🔑qlty-mnt]: https://qlty.sh/gh/ruby-oauth/projects/oauth
+[🔑qlty-mnti]: https://qlty.sh/gh/ruby-oauth/projects/oauth/maintainability.svg
+[🔑qlty-cov]: https://qlty.sh/gh/ruby-oauth/projects/oauth/metrics/code?sort=coverageRating
+[🔑qlty-covi]: https://qlty.sh/gh/ruby-oauth/projects/oauth/coverage.svg
+[🔑codecov]: https://codecov.io/gh/ruby-oauth/oauth
+[🔑codecovi]: https://codecov.io/gh/ruby-oauth/oauth/graph/badge.svg
+[🔑coveralls]: https://coveralls.io/github/ruby-oauth/oauth?branch=main
+[🔑coveralls-img]: https://coveralls.io/repos/github/ruby-oauth/oauth/badge.svg?branch=main
+[🖐codeQL]: https://github.com/ruby-oauth/oauth/security/code-scanning
+[🖐codeQL-img]: https://github.com/ruby-oauth/oauth/actions/workflows/codeql-analysis.yml/badge.svg
+[🚎1-an-wf]: https://github.com/ruby-oauth/oauth/actions/workflows/ancient.yml
+[🚎1-an-wfi]: https://github.com/ruby-oauth/oauth/actions/workflows/ancient.yml/badge.svg
+[🚎2-cov-wf]: https://github.com/ruby-oauth/oauth/actions/workflows/coverage.yml
+[🚎2-cov-wfi]: https://github.com/ruby-oauth/oauth/actions/workflows/coverage.yml/badge.svg
+[🚎3-hd-wf]: https://github.com/ruby-oauth/oauth/actions/workflows/heads.yml
+[🚎3-hd-wfi]: https://github.com/ruby-oauth/oauth/actions/workflows/heads.yml/badge.svg
+[🚎4-lg-wf]: https://github.com/ruby-oauth/oauth/actions/workflows/legacy.yml
+[🚎4-lg-wfi]: https://github.com/ruby-oauth/oauth/actions/workflows/legacy.yml/badge.svg
+[🚎5-st-wf]: https://github.com/ruby-oauth/oauth/actions/workflows/style.yml
+[🚎5-st-wfi]: https://github.com/ruby-oauth/oauth/actions/workflows/style.yml/badge.svg
+[🚎6-s-wf]: https://github.com/ruby-oauth/oauth/actions/workflows/supported.yml
+[🚎6-s-wfi]: https://github.com/ruby-oauth/oauth/actions/workflows/supported.yml/badge.svg
+[🚎7-us-wf]: https://github.com/ruby-oauth/oauth/actions/workflows/unsupported.yml
+[🚎7-us-wfi]: https://github.com/ruby-oauth/oauth/actions/workflows/unsupported.yml/badge.svg
+[🚎8-ho-wf]: https://github.com/ruby-oauth/oauth/actions/workflows/hoary.yml
+[🚎8-ho-wfi]: https://github.com/ruby-oauth/oauth/actions/workflows/hoary.yml/badge.svg
+[🚎9-t-wf]: https://github.com/ruby-oauth/oauth/actions/workflows/truffle.yml
+[🚎9-t-wfi]: https://github.com/ruby-oauth/oauth/actions/workflows/truffle.yml/badge.svg
+[🚎10-j-wf]: https://github.com/ruby-oauth/oauth/actions/workflows/jruby.yml
+[🚎10-j-wfi]: https://github.com/ruby-oauth/oauth/actions/workflows/jruby.yml/badge.svg
+[🚎11-c-wf]: https://github.com/ruby-oauth/oauth/actions/workflows/current.yml
+[🚎11-c-wfi]: https://github.com/ruby-oauth/oauth/actions/workflows/current.yml/badge.svg
+[🚎12-crh-wf]: https://github.com/ruby-oauth/oauth/actions/workflows/dep-heads.yml
+[🚎12-crh-wfi]: https://github.com/ruby-oauth/oauth/actions/workflows/dep-heads.yml/badge.svg
+[🚎13-🔒️-wf]: https://github.com/ruby-oauth/oauth/actions/workflows/locked_deps.yml
+[🚎13-🔒️-wfi]: https://github.com/ruby-oauth/oauth/actions/workflows/locked_deps.yml/badge.svg
+[🚎14-🔓️-wf]: https://github.com/ruby-oauth/oauth/actions/workflows/unlocked_deps.yml
+[🚎14-🔓️-wfi]: https://github.com/ruby-oauth/oauth/actions/workflows/unlocked_deps.yml/badge.svg
+[💎ruby-2.3i]: https://img.shields.io/badge/Ruby-2.3-DF00CA?style=for-the-badge&logo=ruby&logoColor=white
+[💎ruby-2.4i]: https://img.shields.io/badge/Ruby-2.4-DF00CA?style=for-the-badge&logo=ruby&logoColor=white
+[💎ruby-2.5i]: https://img.shields.io/badge/Ruby-2.5-DF00CA?style=for-the-badge&logo=ruby&logoColor=white
+[💎ruby-2.6i]: https://img.shields.io/badge/Ruby-2.6-DF00CA?style=for-the-badge&logo=ruby&logoColor=white
+[💎ruby-2.7i]: https://img.shields.io/badge/Ruby-2.7-DF00CA?style=for-the-badge&logo=ruby&logoColor=white
+[💎ruby-3.0i]: https://img.shields.io/badge/Ruby-3.0-CC342D?style=for-the-badge&logo=ruby&logoColor=white
+[💎ruby-3.1i]: https://img.shields.io/badge/Ruby-3.1-CC342D?style=for-the-badge&logo=ruby&logoColor=white
+[💎ruby-3.2i]: https://img.shields.io/badge/Ruby-3.2-CC342D?style=for-the-badge&logo=ruby&logoColor=white
+[💎ruby-3.3i]: https://img.shields.io/badge/Ruby-3.3-CC342D?style=for-the-badge&logo=ruby&logoColor=white
+[💎ruby-c-i]: https://img.shields.io/badge/Ruby-current-CC342D?style=for-the-badge&logo=ruby&logoColor=green
+[💎ruby-headi]: https://img.shields.io/badge/Ruby-HEAD-CC342D?style=for-the-badge&logo=ruby&logoColor=blue
+[💎truby-22.3i]: https://img.shields.io/badge/Truffle_Ruby-22.3_(%F0%9F%9A%ABCI)-AABBCC?style=for-the-badge&logo=ruby&logoColor=pink
+[💎truby-23.0i]: https://img.shields.io/badge/Truffle_Ruby-23.0_(%F0%9F%9A%ABCI)-AABBCC?style=for-the-badge&logo=ruby&logoColor=pink
+[💎truby-23.1i]: https://img.shields.io/badge/Truffle_Ruby-23.1-34BCB1?style=for-the-badge&logo=ruby&logoColor=pink
+[💎truby-c-i]: https://img.shields.io/badge/Truffle_Ruby-current-34BCB1?style=for-the-badge&logo=ruby&logoColor=green
+[💎truby-headi]: https://img.shields.io/badge/Truffle_Ruby-HEAD-34BCB1?style=for-the-badge&logo=ruby&logoColor=blue
+[💎jruby-9.1i]: https://img.shields.io/badge/JRuby-9.1_(%F0%9F%9A%ABCI)-AABBCC?style=for-the-badge&logo=ruby&logoColor=red
+[💎jruby-9.2i]: https://img.shields.io/badge/JRuby-9.2_(%F0%9F%9A%ABCI)-AABBCC?style=for-the-badge&logo=ruby&logoColor=red
+[💎jruby-9.3i]: https://img.shields.io/badge/JRuby-9.3_(%F0%9F%9A%ABCI)-AABBCC?style=for-the-badge&logo=ruby&logoColor=red
+[💎jruby-9.4i]: https://img.shields.io/badge/JRuby-9.4-FBE742?style=for-the-badge&logo=ruby&logoColor=red
+[💎jruby-c-i]: https://img.shields.io/badge/JRuby-current-FBE742?style=for-the-badge&logo=ruby&logoColor=green
+[💎jruby-headi]: https://img.shields.io/badge/JRuby-HEAD-FBE742?style=for-the-badge&logo=ruby&logoColor=blue
+[🤝gh-issues]: https://github.com/ruby-oauth/oauth/issues
+[🤝gh-pulls]: https://github.com/ruby-oauth/oauth/pulls
+[🤝gl-issues]: https://gitlab.com/ruby-oauth/oauth/-/issues
+[🤝gl-pulls]: https://gitlab.com/ruby-oauth/oauth/-/merge_requests
+[🤝cb-issues]: https://codeberg.org/ruby-oauth/oauth/issues
+[🤝cb-pulls]: https://codeberg.org/ruby-oauth/oauth/pulls
+[🤝cb-donate]: https://donate.codeberg.org/
+[🤝contributing]: CONTRIBUTING.md
+[🔑codecov-g]: https://codecov.io/gh/ruby-oauth/oauth/graphs/tree.svg
+[🖐contrib-rocks]: https://contrib.rocks
+[🖐contributors]: https://github.com/ruby-oauth/oauth/graphs/contributors
+[🖐contributors-img]: https://contrib.rocks/image?repo=ruby-oauth/oauth
+[🚎contributors-gl]: https://gitlab.com/ruby-oauth/oauth/-/graphs/main
+[🪇conduct]: CODE_OF_CONDUCT.md
+[🪇conduct-img]: https://img.shields.io/badge/Contributor_Covenant-2.1-259D6C.svg
+[📌pvc]: http://guides.rubygems.org/patterns/#pessimistic-version-constraint
+[📌semver]: https://semver.org/spec/v2.0.0.html
+[📌semver-img]: https://img.shields.io/badge/semver-2.0.0-259D6C.svg?style=flat
+[📌semver-breaking]: https://github.com/semver/semver/issues/716#issuecomment-869336139
+[📌major-versions-not-sacred]: https://tom.preston-werner.com/2022/05/23/major-version-numbers-are-not-sacred.html
+[📌changelog]: CHANGELOG.md
+[📗keep-changelog]: https://keepachangelog.com/en/1.0.0/
+[📗keep-changelog-img]: https://img.shields.io/badge/keep--a--changelog-1.0.0-34495e.svg?style=flat
+[📌gitmoji]:https://gitmoji.dev
+[📌gitmoji-img]:https://img.shields.io/badge/gitmoji_commits-%20%F0%9F%98%9C%20%F0%9F%98%8D-34495e.svg?style=flat-square
+[🧮kloc]: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+[🧮kloc-img]: https://img.shields.io/badge/KLOC-3.613-FFDD67.svg?style=for-the-badge&logo=YouTube&logoColor=blue
+[🔐security]: SECURITY.md
+[🔐security-img]: https://img.shields.io/badge/security-policy-259D6C.svg?style=flat
+[📄copyright-notice-explainer]: https://opensource.stackexchange.com/questions/5778/why-do-licenses-such-as-the-mit-license-specify-a-single-year
+[📄license]: LICENSE.txt
+[📄license-ref]: https://opensource.org/licenses/MIT
+[📄license-img]: https://img.shields.io/badge/License-MIT-259D6C.svg
+[📄ilo-declaration]: https://www.ilo.org/declaration/lang--en/index.htm
+[📄ilo-declaration-img]: https://img.shields.io/badge/ILO_Fundamental_Principles-✓-259D6C.svg?style=flat
+[🚎yard-current]: http://rubydoc.info/gems/oauth
+[🚎yard-head]: https://oauth.galtzo.com
+[💎stone_checksums]: https://github.com/galtzo-floss/stone_checksums
+[💎SHA_checksums]: https://gitlab.com/ruby-oauth/oauth/-/tree/main/checksums
+[💎rlts]: https://github.com/rubocop-lts/rubocop-lts
+[💎rlts-img]: https://img.shields.io/badge/code_style_&_linting-rubocop--lts-34495e.svg?plastic&logo=ruby&logoColor=white
+[💎appraisal2]: https://github.com/appraisal-rb/appraisal2
+[💎appraisal2-img]: https://img.shields.io/badge/appraised_by-appraisal2-34495e.svg?plastic&logo=ruby&logoColor=white
+[💎d-in-dvcs]: https://railsbling.com/posts/dvcs/put_the_d_in_dvcs/

@@ -19,8 +19,11 @@ module OAuth
     end
 
     unless defined?(CA_FILE)
-      CA_FILES = %w[/etc/ssl/certs/ca-certificates.crt /etc/pki/tls/certs/ca-bundle.crt
-                    /usr/share/curl/curl-ca-bundle.crt].freeze
+      CA_FILES = %w[
+        /etc/ssl/certs/ca-certificates.crt
+        /etc/pki/tls/certs/ca-bundle.crt
+        /usr/share/curl/curl-ca-bundle.crt
+      ].freeze
       CA_FILES.each do |ca_file|
         if File.exist?(ca_file)
           CA_FILE = ca_file
@@ -70,12 +73,12 @@ module OAuth
         # spec. Possible values are true and false
         body_hash_enabled: true,
 
-        oauth_version: "1.0"
-      }
+        oauth_version: "1.0",
+      },
     )
 
     attr_accessor :options, :key, :secret
-    attr_writer   :site, :http
+    attr_writer :site, :http
 
     # Create a new consumer instance by passing it a configuration hash:
     #
@@ -101,7 +104,7 @@ module OAuth
     #   @photos=@access_token.get('/photos.xml')
     #
     def initialize(consumer_key, consumer_secret, options = {})
-      @key    = consumer_key
+      @key = consumer_key
       @secret = consumer_secret
 
       # ensure that keys are symbols
@@ -116,12 +119,12 @@ module OAuth
 
     def debug_output
       @debug_output ||= case @options[:debug_output]
-                        when nil, false
-                        when true
-                          $stdout
-                        else
-                          @options[:debug_output]
-                        end
+      when nil, false
+      when true
+        $stdout
+      else
+        @options[:debug_output]
+      end
     end
 
     # The HTTP object for the site. The HTTP Object is what you get when you do Net::HTTP.new
@@ -132,7 +135,7 @@ module OAuth
     # Contains the root URI for this site
     def uri(custom_uri = nil)
       if custom_uri
-        @uri  = custom_uri
+        @uri = custom_uri
         @http = create_http # yike, oh well. less intrusive this way
       else # if no custom passed, we use existing, which, if unset, is set to site uri
         @uri ||= URI.parse(site)
@@ -140,8 +143,14 @@ module OAuth
     end
 
     def get_access_token(request_token, request_options = {}, *arguments, &block)
-      response = token_request(http_method, (access_token_url? ? access_token_url : access_token_path), request_token,
-                               request_options, *arguments, &block)
+      response = token_request(
+        http_method,
+        (access_token_url? ? access_token_url : access_token_path),
+        request_token,
+        request_options,
+        *arguments,
+        &block
+      )
       OAuth::AccessToken.from_hash(self, response)
     end
 
@@ -165,18 +174,23 @@ module OAuth
       request_options[:oauth_callback] ||= OAuth::OUT_OF_BAND unless request_options[:exclude_callback]
 
       response = if block
-                   token_request(
-                     http_method,
-                     (request_token_url? ? request_token_url : request_token_path),
-                     nil,
-                     request_options,
-                     *arguments,
-                     &block
-                   )
-                 else
-                   token_request(http_method, (request_token_url? ? request_token_url : request_token_path), nil,
-                                 request_options, *arguments)
-                 end
+        token_request(
+          http_method,
+          (request_token_url? ? request_token_url : request_token_path),
+          nil,
+          request_options,
+          *arguments,
+          &block
+        )
+      else
+        token_request(
+          http_method,
+          (request_token_url? ? request_token_url : request_token_path),
+          nil,
+          request_options,
+          *arguments,
+        )
+      end
       OAuth::RequestToken.from_hash(self, response)
     end
 
@@ -191,23 +205,23 @@ module OAuth
     #   @consumer.request(:post, '/people', @token, {}, @person.to_xml, { 'Content-Type' => 'application/xml' })
     #
     def request(http_method, path, token = nil, request_options = {}, *arguments)
-      unless %r{^/}.match?(path)
+      unless %r{^/} =~ path
         @http = create_http(path)
         _uri = URI.parse(path)
-        path = "#{_uri.path}#{_uri.query ? "?#{_uri.query}" : ""}"
+        path = "#{_uri.path}#{"?#{_uri.query}" if _uri.query}"
       end
 
       # override the request with your own, this is useful for file uploads which Net::HTTP does not do
       req = create_signed_request(http_method, path, token, request_options, *arguments)
-      return nil if block_given? && (yield(req) == :done)
+      return if block_given? && (yield(req) == :done)
 
       rsp = http.request(req)
       # check for an error reported by the Problem Reporting extension
       # (https://wiki.oauth.net/ProblemReporting)
       # note: a 200 may actually be an error; check for an oauth_problem key to be sure
       if !(headers = rsp.to_hash["www-authenticate"]).nil? &&
-         (h = headers.grep(/^OAuth /)).any? &&
-         h.first.include?("oauth_problem")
+          (h = headers.grep(/^OAuth /)).any? &&
+          h.first.include?("oauth_problem")
 
         # puts "Header: #{h.first}"
 
@@ -247,7 +261,7 @@ module OAuth
           # TODO this also drops subsequent values from multi-valued keys
           CGI.parse(response.body).each_with_object({}) do |(k, v), h|
             h[k.strip.to_sym] = v.first
-            h[k.strip]        = v.first
+            h[k.strip] = v.first
           end
         end
       when (300..399)
@@ -286,7 +300,7 @@ module OAuth
     end
 
     def request_endpoint
-      return nil if @options[:request_endpoint].nil?
+      return if @options[:request_endpoint].nil?
 
       @options[:request_endpoint].to_s
     end
@@ -355,24 +369,30 @@ module OAuth
       _url = request_endpoint unless request_endpoint.nil?
 
       our_uri = if _url.nil? || _url[0] =~ %r{^/}
-                  URI.parse(site)
-                else
-                  your_uri = URI.parse(_url)
-                  if your_uri.host.nil?
-                    # If the _url is a path, missing the leading slash, then it won't have a host,
-                    # and our_uri *must* have a host, so we parse site instead.
-                    URI.parse(site)
-                  else
-                    your_uri
-                  end
-                end
+        URI.parse(site)
+      else
+        your_uri = URI.parse(_url)
+        if your_uri.host.nil?
+          # If the _url is a path, missing the leading slash, then it won't have a host,
+          # and our_uri *must* have a host, so we parse site instead.
+          URI.parse(site)
+        else
+          your_uri
+        end
+      end
 
       if proxy.nil?
         http_object = Net::HTTP.new(our_uri.host, our_uri.port)
       else
         proxy_uri = proxy.is_a?(URI) ? proxy : URI.parse(proxy)
-        http_object = Net::HTTP.new(our_uri.host, our_uri.port, proxy_uri.host, proxy_uri.port, proxy_uri.user,
-                                    proxy_uri.password)
+        http_object = Net::HTTP.new(
+          our_uri.host,
+          our_uri.port,
+          proxy_uri.host,
+          proxy_uri.port,
+          proxy_uri.user,
+          proxy_uri.password,
+        )
       end
 
       http_object.use_ssl = (our_uri.scheme == "https")
@@ -453,7 +473,7 @@ module OAuth
     end
 
     def marshal_dump(*_args)
-      { key: @key, secret: @secret, options: @options }
+      {key: @key, secret: @secret, options: @options}
     end
 
     def marshal_load(data)

@@ -9,8 +9,8 @@ module OAuth
         implements "rsa-sha1"
 
         def ==(other)
-          public_key.verify(OpenSSL::Digest.new("SHA1"),
-                            Base64.decode64(other.is_a?(Array) ? other.first : other), signature_base_string)
+          decoded = Base64.decode64(other.is_a?(Array) ? other.first : other)
+          public_key.verify(OpenSSL::Digest.new("SHA1"), decoded, signature_base_string)
         end
 
         def public_key
@@ -25,7 +25,14 @@ module OAuth
         end
 
         def body_hash
-          Base64.encode64(OpenSSL::Digest.digest("SHA1", request.body || "")).chomp.delete("\n")
+          # Use SHA1 body hash with compatibility across OpenSSL versions
+          data = request.body || ""
+          begin
+            digest_bytes = OpenSSL::Digest.digest("SHA1", data)
+          rescue StandardError
+            digest_bytes = ::Digest::SHA1.digest(data)
+          end
+          Base64.encode64(digest_bytes).chomp.delete("\n")
         end
 
         private
@@ -47,7 +54,7 @@ module OAuth
               options[:private_key]
             else
               consumer_secret
-            end
+            end,
           )
 
           private_key.sign(OpenSSL::Digest.new("SHA1"), signature_base_string)

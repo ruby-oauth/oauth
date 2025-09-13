@@ -2,39 +2,32 @@
 
 source "https://rubygems.org"
 
+git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
+git_source(:gitlab) { |repo_name| "https://gitlab.com/#{repo_name}" }
+
+#### IMPORTANT #######################################################
+# Gemfile is for local development ONLY; Gemfile is NOT loaded in CI #
+####################################################### IMPORTANT ####
+
+# Include dependencies from <gem name>.gemspec
 gemspec
 
-git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
+# Debugging
+eval_gemfile "gemfiles/modular/debug.gemfile"
 
-# Curb has trouble building native extentions on Windows platform
-curb = !Gem.win_platform?
+# Code Coverage
+eval_gemfile "gemfiles/modular/coverage.gemfile"
 
-gem "pry", platforms: %i[mri]
-platforms :mri do
-  gem "codecov", "~> 0.6" # For CodeCov
-  gem "overcommit", "~> 0.68"
-  # See: https://github.com/rubocop/rubocop-md/issues/14
-  # gem "rubocop-md"
-  gem "rubocop-minitest"
-  gem "rubocop-packaging"
-  gem "rubocop-performance"
-  gem "rubocop-rake"
-  gem "rubocop-thread_safety"
-  gem "simplecov", "~> 0.21", require: false
-  gem "simplecov-cobertura" # XML for Jenkins
-  gem "simplecov-json" # For CodeClimate
-  gem "simplecov-lcov", "~> 0.8", require: false
+# Linting
+eval_gemfile "gemfiles/modular/style.gemfile"
 
-  # Add `byebug` to your code where you want to drop to REPL, and add DEBUG=true when running tests
-  gem "byebug"
-  # WebMock is known to work with Curb >= 0.7.16, < 1.1, except versions 0.8.7
-  gem "curb", ">= 0.7.16", "!= 0.8.7", "< 1.2" if curb
-  gem "pry-byebug"
-end
+# Documentation
+eval_gemfile "gemfiles/modular/documentation.gemfile"
 
-### deps for documentation and rdoc.info
-group :documentation do
-  gem "github-markup", platform: :mri
-  gem "redcarpet", platform: :mri
-  gem "yard", require: false
-end
+# Optional
+eval_gemfile "gemfiles/modular/optional.gemfile"
+
+### Std Lib Extracted Gems
+eval_gemfile "gemfiles/modular/x_std_libs.gemfile"
+
+gem "oauth-tty", github: "ruby-oauth/oauth-tty", branch: "main"

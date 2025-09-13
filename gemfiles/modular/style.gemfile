@@ -1,0 +1,25 @@
+# frozen_string_literal: true
+
+# We run rubocop on the latest version of Ruby,
+#   but in support of the oldest supported version of Ruby
+
+gem "reek", "~> 6.5"
+# gem "rubocop", "~> 1.73", ">= 1.73.2" # constrained by standard
+gem "rubocop-packaging", "~> 0.6", ">= 0.6.0"
+gem "standard", ">= 1.50"
+gem "rubocop-on-rbs", "~> 1.8"                    # ruby >= 3.1.0
+
+# Std Lib extractions
+gem "benchmark", "~> 0.4", ">= 0.4.1" # Removed from Std Lib in Ruby 3.5
+
+if ENV.fetch("RUBOCOP_LTS_LOCAL", "false").casecmp("true").zero?
+  home = ENV["HOME"]
+  gem "rubocop-lts", path: "#{home}/src/rubocop-lts/rubocop-lts"
+  gem "rubocop-lts-rspec", path: "#{home}/src/rubocop-lts/rubocop-lts-rspec"
+  gem "rubocop-ruby2_3", path: "#{home}/src/rubocop-lts/rubocop-ruby2_3"
+  gem "standard-rubocop-lts", path: "#{home}/src/rubocop-lts/standard-rubocop-lts"
+else
+  gem "rubocop-lts", "~> 10.0"
+  gem "rubocop-ruby2_3"
+  gem "rubocop-rspec", "~> 3.6"
+end
