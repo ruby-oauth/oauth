@@ -84,6 +84,43 @@ See the sibling <code>oauth2</code> gem for OAuth 2.0, 2.1, &amp; OIDC clients i
 <a href="https://gitlab.com/ruby-oauth/oauth2">oauth2 sibling gem</a> for OAuth 2.0 implementations in Ruby.</li>
 </ul>
 
+<h2 id="oauth-10-vs-10a-what-this-library-implements">OAuth 1.0 vs 1.0a: What this library implements</h2>
+
+<p>This gem targets the OAuth 1.0a behavior (the errata that became RFC 5849), while maintaining compatibility with providers that still behave like classic 1.0.<br>
+Here are the key lines between the two and how this gem handles them:</p>
+
+<ul>
+  <li>oauth_callback
+    <ul>
+      <li>1.0: Optional in practice; some providers accepted flows without it.</li>
+      <li>1.0a: Consumer SHOULD send oauth_callback when obtaining a Request Token, or explicitly use the out-of-band value “oob”.</li>
+      <li>This gem: If you do not pass oauth_callback, we default it to “oob” (OUT_OF_BAND). You can opt-out by passing exclude_callback: true.</li>
+    </ul>
+  </li>
+  <li>oauth_callback_confirmed
+    <ul>
+      <li>1.0: Not specified.</li>
+      <li>1.0a: Service Provider MUST return oauth_callback_confirmed=true with the Request Token response. This mitigates session fixation.</li>
+      <li>This gem: Parses token responses but does not include oauth_callback_confirmed in the signature base string (it is a response param, not a signed request param).</li>
+    </ul>
+  </li>
+  <li>oauth_verifier
+    <ul>
+      <li>1.0: Not present.</li>
+      <li>1.0a: After the user authorizes, the Provider returns an oauth_verifier to the Consumer, and the Consumer MUST include it when exchanging the Request Token for an Access Token.</li>
+      <li>This gem: Supports oauth_verifier across request helpers and request proxies; pass oauth_verifier to get_access_token in 3‑legged flows.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Practical guidance:</p>
+<ul>
+  <li>For 3‑legged flows, always supply oauth_callback when calling consumer.get_request_token, and include oauth_verifier when calling request_token.get_access_token.</li>
+  <li>For command‑line or non-HTTP clients, use the special OUT_OF_BAND value (“oob”) as the oauth_callback and prompt the user to paste back the displayed verifier.</li>
+</ul>
+
+<p>References: <a href="https://datatracker.ietf.org/doc/html/rfc5849">RFC 5849 (OAuth 1.0)</a>, sections 5–7; <a href="https://oauth.net/core/1.0a/">1.0a security errata</a>.</p>
+
 <p>OAuth Ruby has been maintained by a large number of talented<br>
 individuals over the years.<br>
 The primary maintainer since 2020 is Peter Boling (@pboling).</p>
@@ -552,7 +589,7 @@ Please consider sponsoring me or the project.</p>
 </div></div>
 
       <div id="footer">
-  Generated on Fri Sep 12 10:55:44 2025 by
+  Generated on Mon Sep 15 00:31:56 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.4.5).
 </div>

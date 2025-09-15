@@ -32,6 +32,30 @@ See the sibling `oauth2` gem for OAuth 2.0, 2.1, & OIDC clients in Ruby.
 [oauth1-spec]: http://oauth.net/core/1.0/
 [sibling-gem]: https://gitlab.com/ruby-oauth/oauth2
 
+## OAuth 1.0 vs 1.0a: What this library implements
+
+This gem targets the OAuth 1.0a behavior (the errata that became RFC 5849), while maintaining compatibility with providers that still behave like classic 1.0.
+Here are the key lines between the two and how this gem handles them:
+
+- oauth_callback
+  - 1.0: Optional in practice; some providers accepted flows without it.
+  - 1.0a: Consumer SHOULD send oauth_callback when obtaining a Request Token, or explicitly use the out-of-band value "oob".
+  - This gem: If you do not pass oauth_callback, we default it to "oob" (OUT_OF_BAND). You can opt-out by passing exclude_callback: true.
+- oauth_callback_confirmed
+  - 1.0: Not specified.
+  - 1.0a: Service Provider MUST return oauth_callback_confirmed=true with the Request Token response. This mitigates session fixation.
+  - This gem: Parses token responses but does not include oauth_callback_confirmed in the signature base string (it is a response param, not a signed request param).
+- oauth_verifier
+  - 1.0: Not present.
+  - 1.0a: After the user authorizes, the Provider returns an oauth_verifier to the Consumer, and the Consumer MUST include it when exchanging the Request Token for an Access Token.
+  - This gem: Supports oauth_verifier across request helpers and request proxies; pass oauth_verifier to get_access_token in 3‑legged flows.
+
+Practical guidance:
+- For 3‑legged flows, always supply oauth_callback when calling consumer.get_request_token, and include oauth_verifier when calling request_token.get_access_token.
+- For command‑line or non-HTTP clients, use the special OUT_OF_BAND value ("oob") as the oauth_callback and prompt the user to paste back the displayed verifier.
+
+References: [RFC 5849 (OAuth 1.0)](https://datatracker.ietf.org/doc/html/rfc5849), sections 5–7; [1.0a security errata](https://oauth.net/core/1.0a/).
+
 OAuth Ruby has been maintained by a large number of talented
 individuals over the years.
 The primary maintainer since 2020 is Peter Boling (@pboling).

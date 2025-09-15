@@ -338,13 +338,33 @@
 
 20
 21
-22</pre>
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/oauth/helper.rb', line 20</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid__escape'>_escape</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
-  <span class='const'>URI</span><span class='op'>::</span><span class='const'>DEFAULT_PARSER</span><span class='period'>.</span><span class='id identifier rubyid_escape'>escape</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="../OAuth.html" title="OAuth (module)">OAuth</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../OAuth.html#RESERVED_CHARACTERS-constant" title="OAuth::RESERVED_CHARACTERS (constant)">RESERVED_CHARACTERS</a></span></span><span class='rparen'>)</span>
+  <span class='comment'># Percent-encode per RFC 3986 (unreserved: A-Z a-z 0-9 - . _ ~)
+</span>  <span class='comment'># Encode by byte to ensure stable behavior across Ruby versions and encodings.
+</span>  <span class='id identifier rubyid_bytes'>bytes</span> <span class='op'>=</span> <span class='id identifier rubyid_string'>string</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_b'>b</span><span class='period'>.</span><span class='id identifier rubyid_bytes'>bytes</span>
+  <span class='id identifier rubyid_bytes'>bytes</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_b'>b</span><span class='op'>|</span>
+    <span class='id identifier rubyid_ch'>ch</span> <span class='op'>=</span> <span class='id identifier rubyid_b'>b</span><span class='period'>.</span><span class='id identifier rubyid_chr'>chr</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_ch'>ch</span> <span class='op'>=~</span> <span class='const'><span class='object_link'><a href="../OAuth.html" title="OAuth (module)">OAuth</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../OAuth.html#RESERVED_CHARACTERS-constant" title="OAuth::RESERVED_CHARACTERS (constant)">RESERVED_CHARACTERS</a></span></span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%%%02X</span><span class='tstring_end'>&quot;</span></span> <span class='op'>%</span> <span class='id identifier rubyid_b'>b</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_ch'>ch</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -427,12 +447,12 @@ characters removed.</p>
       <pre class="lines">
 
 
-30
-31
-32</pre>
+52
+53
+54</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/helper.rb', line 30</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/helper.rb', line 52</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_generate_key'>generate_key</span><span class='lparen'>(</span><span class='id identifier rubyid_size'>size</span> <span class='op'>=</span> <span class='int'>32</span><span class='rparen'>)</span>
   <span class='const'>Base64</span><span class='period'>.</span><span class='id identifier rubyid_encode64'>encode64</span><span class='lparen'>(</span><span class='const'>OpenSSL</span><span class='op'>::</span><span class='const'>Random</span><span class='period'>.</span><span class='id identifier rubyid_random_bytes'>random_bytes</span><span class='lparen'>(</span><span class='id identifier rubyid_size'>size</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\W</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -467,12 +487,12 @@ characters removed.</p>
       <pre class="lines">
 
 
-36
-37
-38</pre>
+58
+59
+60</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/helper.rb', line 36</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/helper.rb', line 58</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_generate_timestamp'>generate_timestamp</span> <span class='comment'># :nodoc:
 </span>  <span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
@@ -513,30 +533,30 @@ name-value pair is separated by an “&amp;” character.</p>
       <pre class="lines">
 
 
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67</pre>
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/helper.rb', line 47</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/helper.rb', line 69</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_normalize'>normalize</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_params'>params</span><span class='period'>.</span><span class='id identifier rubyid_sort'>sort</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span> <span class='id identifier rubyid_values'>values</span><span class='op'>|</span>
@@ -591,23 +611,23 @@ build_nested_query(=&gt; {:level_2 =&gt; [‘value_1’,’value_2’]}, ‘pref
       <pre class="lines">
 
 
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85</pre>
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/helper.rb', line 72</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/helper.rb', line 94</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_normalize_nested_query'>normalize_nested_query</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_prefix'>prefix</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='kw'>case</span> <span class='id identifier rubyid_value'>value</span>
@@ -672,26 +692,26 @@ valid hash. Does not validate the keys or values.</p>
       <pre class="lines">
 
 
-95
-96
-97
-98
-99
-100
-101
-102
-103
-104
-105
-106
-107
-108
-109
-110
-111</pre>
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/helper.rb', line 95</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/helper.rb', line 117</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_parse_header'>parse_header</span><span class='lparen'>(</span><span class='id identifier rubyid_header'>header</span><span class='rparen'>)</span>
   <span class='comment'># decompose
@@ -730,16 +750,16 @@ valid hash. Does not validate the keys or values.</p>
       <pre class="lines">
 
 
-113
-114
-115
-116
-117
-118
-119</pre>
+135
+136
+137
+138
+139
+140
+141</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/helper.rb', line 113</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/helper.rb', line 135</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_stringify_keys'>stringify_keys</span><span class='lparen'>(</span><span class='id identifier rubyid_hash'>hash</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_new_h'>new_h</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
@@ -768,15 +788,39 @@ valid hash. Does not validate the keys or values.</p>
       <pre class="lines">
 
 
-24
-25
-26</pre>
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/helper.rb', line 24</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/helper.rb', line 34</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_unescape'>unescape</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-  <span class='const'>URI</span><span class='op'>::</span><span class='const'>DEFAULT_PARSER</span><span class='period'>.</span><span class='id identifier rubyid_unescape'>unescape</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>+</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%2B</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='comment'># Do NOT treat &quot;+&quot; as space; OAuth treats &#39;+&#39; as a literal plus unless percent-encoded.
+</span>  <span class='id identifier rubyid_str'>str</span> <span class='op'>=</span> <span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>+</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%2B</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='comment'># Decode %HH sequences; leave malformed sequences intact.
+</span>  <span class='id identifier rubyid_decoded'>decoded</span> <span class='op'>=</span> <span class='id identifier rubyid_str'>str</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>%([0-9A-Fa-f]{2})</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'>Regexp</span><span class='period'>.</span><span class='id identifier rubyid_last_match'>last_match</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='lparen'>(</span><span class='int'>16</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_chr'>chr</span> <span class='rbrace'>}</span>
+  <span class='comment'># Prefer UTF-8 when the decoded bytes form valid UTF-8; otherwise, return as binary.
+</span>  <span class='kw'>begin</span>
+    <span class='id identifier rubyid_utf8'>utf8</span> <span class='op'>=</span> <span class='id identifier rubyid_decoded'>decoded</span><span class='period'>.</span><span class='id identifier rubyid_dup'>dup</span>
+    <span class='id identifier rubyid_utf8'>utf8</span><span class='period'>.</span><span class='id identifier rubyid_force_encoding'>force_encoding</span><span class='lparen'>(</span><span class='const'>Encoding</span><span class='op'>::</span><span class='const'>UTF_8</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_decoded'>decoded</span> <span class='op'>=</span> <span class='id identifier rubyid_utf8'>utf8</span> <span class='kw'>if</span> <span class='id identifier rubyid_utf8'>utf8</span><span class='period'>.</span><span class='id identifier rubyid_valid_encoding?'>valid_encoding?</span>
+  <span class='kw'>rescue</span> <span class='const'>NameError</span>
+    <span class='comment'># Older Rubies without Encoding constants: keep original encoding.
+</span>  <span class='kw'>end</span>
+  <span class='id identifier rubyid_decoded'>decoded</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -788,7 +832,7 @@ valid hash. Does not validate the keys or values.</p>
 </div>
 
       <div id="footer">
-  Generated on Fri Sep 12 10:55:44 2025 by
+  Generated on Mon Sep 15 00:31:56 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.4.5).
 </div>

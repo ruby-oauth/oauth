@@ -142,6 +142,21 @@ module OAuth
       end
     end
 
+    # Exchanges a verified Request Token for an Access Token.
+    #
+    # OAuth 1.0 vs 1.0a:
+    # - 1.0a requires including oauth_verifier (as returned by the Provider after
+    #   user authorization) when performing this exchange in a 3‑legged flow.
+    # - 1.0 flows did not include oauth_verifier.
+    #
+    # Usage (3‑legged):
+    #   access_token = request_token.get_access_token(oauth_verifier: params[:oauth_verifier])
+    #
+    # @param request_token [OAuth::RequestToken] The authorized request token
+    # @param request_options [Hash] OAuth or request options (include :oauth_verifier for 1.0a)
+    # @param arguments [Array] Optional POST body and headers
+    # @yield [response_body] If a block is given, yields the raw response body.
+    # @return [OAuth::AccessToken]
     def get_access_token(request_token, request_options = {}, *arguments, &block)
       response = token_request(
         http_method,
@@ -156,18 +171,34 @@ module OAuth
 
     # Makes a request to the service for a new OAuth::RequestToken
     #
-    #  @request_token = @consumer.get_request_token
+    # Example:
+    #   @request_token = @consumer.get_request_token
     #
     # To include OAuth parameters:
-    #
-    #  @request_token = @consumer.get_request_token \
-    #    :oauth_callback => "http://example.com/cb"
+    #   @request_token = @consumer.get_request_token(
+    #     oauth_callback: "http://example.com/cb"
+    #   )
     #
     # To include application-specific parameters:
+    #   @request_token = @consumer.get_request_token({}, foo: "bar")
     #
-    #  @request_token = @consumer.get_request_token({}, :foo => "bar")
+    # OAuth 1.0 vs 1.0a:
+    # - In 1.0a, the Consumer SHOULD send oauth_callback when obtaining a request token
+    #   (or explicitly use OUT_OF_BAND) and the Provider MUST include
+    #   oauth_callback_confirmed=true in the response.
+    # - This library defaults oauth_callback to OUT_OF_BAND ("oob") when not provided,
+    #   which works for both 1.0 and 1.0a, and mirrors common provider behavior.
+    # - The oauth_callback_confirmed response is parsed by the token classes; it is not
+    #   part of the signature base string and thus is not signed.
     #
-    # TODO oauth_callback should be a mandatory parameter
+    # TODO: In a future major release, oauth_callback may be made mandatory unless
+    #       request_options[:exclude_callback] is set, to reflect 1.0a guidance.
+    #
+    # @param request_options [Hash] OAuth options for the request. Notably
+    #   :oauth_callback can be set to a URL, or OAuth::OUT_OF_BAND ("oob").
+    # @param arguments [Array] Optional POST body and headers
+    # @yield [response_body] If a block is given, yields the raw response body.
+    # @return [OAuth::RequestToken]
     def get_request_token(request_options = {}, *arguments, &block)
       # if oauth_callback wasn't provided, it is assumed that oauth_verifiers
       # will be exchanged out of band

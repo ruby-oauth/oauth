@@ -23,6 +23,7 @@ Please file a bug if you notice a violation of semantic versioning.
   - Stop relying on URI / CGI for escaping and unescaping
   - They are both unstable across supported versions of Ruby (including 3.5 HEAD)
 - Tests against Rails-specific code are now run in CI
+- Documented OAuth 1.0, 1.0a differences
 ### Changed
 - converted minitest => rspec
 ### Deprecated
