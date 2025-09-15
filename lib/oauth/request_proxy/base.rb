@@ -56,6 +56,9 @@ module OAuth
         parameters["oauth_token"]
       end
 
+      # OAuth 1.0a only: value returned to the Consumer after user authorization
+      # and required when exchanging a Request Token for an Access Token.
+      # Not present in OAuth 1.0 flows.
       def oauth_verifier
         parameters["oauth_verifier"]
       end

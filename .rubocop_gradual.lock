@@ -4,16 +4,16 @@
     [33, 5, 44, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 645541231],
     [34, 7, 10, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4071527614]
   ],
-  "lib/oauth/consumer.rb:2772211062": [
-    [210, 9, 4, "Lint/UnderscorePrefixedVariableName: Do not use prefix `_` for a variable that is used.", 2089552532],
-    [368, 21, 4, "Lint/UnderscorePrefixedVariableName: Do not use prefix `_` for a variable that is used.", 2089552529]
+  "lib/oauth/consumer.rb:437026603": [
+    [241, 9, 4, "Lint/UnderscorePrefixedVariableName: Do not use prefix `_` for a variable that is used.", 2089552532],
+    [399, 21, 4, "Lint/UnderscorePrefixedVariableName: Do not use prefix `_` for a variable that is used.", 2089552529]
   ],
   "lib/oauth/request_proxy.rb:1529370509": [
     [5, 5, 76, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 485336097],
     [6, 7, 18, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 1482835337],
     [9, 5, 467, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 4088662367]
   ],
-  "lib/oauth/request_proxy/base.rb:3218240175": [
+  "lib/oauth/request_proxy/base.rb:2146952171": [
     [11, 7, 93, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 2934170116]
   ],
   "lib/oauth/signature.rb:745501939": [

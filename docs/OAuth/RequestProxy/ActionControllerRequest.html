@@ -326,7 +326,11 @@
 27
 28
 29
-30</pre>
+30
+31
+32
+33
+34</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/action_controller_request.rb', line 22</span>
@@ -335,7 +339,11 @@
   <span class='kw'>if</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:clobber_request</span><span class='rbracket'>]</span>
     <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:parameters</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
   <span class='kw'>else</span>
-    <span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='id identifier rubyid_request_params'>request_params</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_query_params'>query_params</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_header_params'>header_params</span><span class='rparen'>)</span>
+    <span class='comment'># Rails proxies should expose array-style values for params to align with
+</span>    <span class='comment'># historical oauth gem behavior / specs. Header params remain scalars.
+</span>    <span class='id identifier rubyid_rq'>rq</span> <span class='op'>=</span> <span class='id identifier rubyid_wrap_values'>wrap_values</span><span class='lparen'>(</span><span class='id identifier rubyid_request_params'>request_params</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_qq'>qq</span> <span class='op'>=</span> <span class='id identifier rubyid_wrap_values'>wrap_values</span><span class='lparen'>(</span><span class='id identifier rubyid_query_params'>query_params</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='id identifier rubyid_rq'>rq</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_qq'>qq</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_header_params'>header_params</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_params'>params</span><span class='period'>.</span><span class='id identifier rubyid_stringify_keys!'>stringify_keys!</span> <span class='kw'>if</span> <span class='id identifier rubyid_params'>params</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:stringify_keys!</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_params'>params</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:parameters</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
@@ -372,10 +380,6 @@ parameter names</p>
       <pre class="lines">
 
 
-35
-36
-37
-38
 39
 40
 41
@@ -388,10 +392,14 @@ parameter names</p>
 48
 49
 50
-51</pre>
+51
+52
+53
+54
+55</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/action_controller_request.rb', line 35</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/action_controller_request.rb', line 39</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_parameters_for_signature'>parameters_for_signature</span>
   <span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -453,12 +461,12 @@ parameter names</p>
       <pre class="lines">
 
 
-53
-54
-55</pre>
+57
+58
+59</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/action_controller_request.rb', line 53</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/action_controller_request.rb', line 57</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_raw_post_signature?'>raw_post_signature?</span>
   <span class='lparen'>(</span><span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_post?'>post?</span> <span class='op'>||</span> <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_put?'>put?</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_content_type'>content_type</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span><span class='period'>.</span><span class='id identifier rubyid_start_with?'>start_with?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>application/x-www-form-urlencoded</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -491,7 +499,7 @@ parameter names</p>
       <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/action_controller_request.rb', line 18</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_uri'>uri</span>
-  <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_url'>url</span>
+  <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:uri</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_url'>url</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -503,7 +511,7 @@ parameter names</p>
 </div>
 
       <div id="footer">
-  Generated on Fri Sep 12 10:55:45 2025 by
+  Generated on Mon Sep 15 00:31:57 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.4.5).
 </div>

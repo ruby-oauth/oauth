@@ -568,7 +568,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class='inline'><p>OAuth 1.0a only: value returned to the Consumer after user authorization and required when exchanging a Request Token for an Access Token.</p>
 </div></span>
   
 </li>
@@ -1054,12 +1054,12 @@
       <pre class="lines">
 
 
-89
-90
-91</pre>
+92
+93
+94</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/base.rb', line 89</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/base.rb', line 92</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_non_oauth_parameters'>non_oauth_parameters</span>
   <span class='id identifier rubyid_parameters'>parameters</span><span class='period'>.</span><span class='id identifier rubyid_select'>select</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span> <span class='id identifier rubyid__v'>_v</span><span class='op'>|</span> <span class='op'>!</span><span class='const'><span class='object_link'><a href="../../OAuth.html" title="OAuth (module)">OAuth</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../OAuth.html#PARAMETERS-constant" title="OAuth::PARAMETERS (constant)">PARAMETERS</a></span></span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_k'>k</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
@@ -1094,12 +1094,12 @@
       <pre class="lines">
 
 
-104
-105
-106</pre>
+107
+108
+109</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/base.rb', line 104</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/base.rb', line 107</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_normalized_parameters'>normalized_parameters</span>
   <span class='id identifier rubyid_normalize'>normalize</span><span class='lparen'>(</span><span class='id identifier rubyid_parameters_for_signature'>parameters_for_signature</span><span class='rparen'>)</span>
@@ -1134,13 +1134,13 @@
       <pre class="lines">
 
 
-98
-99
-100
-101</pre>
+101
+102
+103
+104</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/base.rb', line 98</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/base.rb', line 101</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_normalized_uri'>normalized_uri</span>
   <span class='id identifier rubyid_u'>u</span> <span class='op'>=</span> <span class='const'>URI</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_uri'>uri</span><span class='rparen'>)</span>
@@ -1250,15 +1250,15 @@
       <pre class="lines">
 
 
-145
-146
-147
 148
 149
-150</pre>
+150
+151
+152
+153</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/base.rb', line 145</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/base.rb', line 148</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_oauth_header'>oauth_header</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_header_params_str'>header_params_str</span> <span class='op'>=</span> <span class='id identifier rubyid_oauth_parameters'>oauth_parameters</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='op'>|</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_k'>k</span><span class='embexpr_end'>}</span><span class='tstring_content'>=\&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_escape'>escape</span><span class='lparen'>(</span><span class='id identifier rubyid_v'>v</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'>\&quot;</span><span class='tstring_end'>&quot;</span></span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>, </span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -1320,12 +1320,12 @@
       <pre class="lines">
 
 
-85
-86
-87</pre>
+88
+89
+90</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/base.rb', line 85</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/base.rb', line 88</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_oauth_parameters'>oauth_parameters</span>
   <span class='id identifier rubyid_parameters'>parameters</span><span class='period'>.</span><span class='id identifier rubyid_select'>select</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='op'>|</span> <span class='const'><span class='object_link'><a href="../../OAuth.html" title="OAuth (module)">OAuth</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../OAuth.html#PARAMETERS-constant" title="OAuth::PARAMETERS (constant)">PARAMETERS</a></span></span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_k'>k</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_v'>v</span> <span class='op'>!=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span> <span class='rbrace'>}</span>
@@ -1492,18 +1492,30 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>OAuth 1.0a only: value returned to the Consumer after user authorization<br />
+and required when exchanging a Request Token for an Access Token.<br />
+Not present in OAuth 1.0 flows.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-59
-60
-61</pre>
+62
+63
+64</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/base.rb', line 59</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/base.rb', line 62</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_oauth_verifier'>oauth_verifier</span>
   <span class='id identifier rubyid_parameters'>parameters</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>oauth_verifier</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
@@ -1528,12 +1540,12 @@
       <pre class="lines">
 
 
-63
-64
-65</pre>
+66
+67
+68</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/base.rb', line 63</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/base.rb', line 66</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_oauth_version'>oauth_version</span>
   <span class='id identifier rubyid_parameters'>parameters</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>oauth_version</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
@@ -1581,12 +1593,12 @@
       <pre class="lines">
 
 
-77
-78
-79</pre>
+80
+81
+82</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/base.rb', line 77</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/base.rb', line 80</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_parameters'>parameters</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>NotImplementedError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Must be implemented by subclasses</span><span class='tstring_end'>&quot;</span></span>
@@ -1611,12 +1623,12 @@
       <pre class="lines">
 
 
-81
-82
-83</pre>
+84
+85
+86</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/base.rb', line 81</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/base.rb', line 84</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_parameters_for_signature'>parameters_for_signature</span>
   <span class='id identifier rubyid_parameters'>parameters</span><span class='period'>.</span><span class='id identifier rubyid_select'>select</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span> <span class='id identifier rubyid__v'>_v</span><span class='op'>|</span> <span class='op'>!</span><span class='id identifier rubyid_signature_and_unsigned_parameters'>signature_and_unsigned_parameters</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_k'>k</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
@@ -1664,16 +1676,16 @@
       <pre class="lines">
 
 
-152
-153
-154
 155
 156
 157
-158</pre>
+158
+159
+160
+161</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/base.rb', line 152</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/base.rb', line 155</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_query_string_blank?'>query_string_blank?</span>
   <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_uri'>uri</span> <span class='op'>=</span> <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_env'>env</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>REQUEST_URI</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
@@ -1702,12 +1714,12 @@
       <pre class="lines">
 
 
-108
-109
-110</pre>
+111
+112
+113</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/base.rb', line 108</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/base.rb', line 111</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_sign'>sign</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='const'><span class='object_link'><a href="../../OAuth.html" title="OAuth (module)">OAuth</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Signature.html" title="OAuth::Signature (module)">Signature</a></span></span><span class='period'>.</span><span class='id identifier rubyid_sign'><span class='object_link'><a href="../Signature.html#sign-class_method" title="OAuth::Signature.sign (method)">sign</a></span></span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
@@ -1732,14 +1744,14 @@
       <pre class="lines">
 
 
-112
-113
-114
 115
-116</pre>
+116
+117
+118
+119</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/base.rb', line 112</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/base.rb', line 115</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_sign!'>sign!</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_parameters'>parameters</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>oauth_signature</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_sign'>sign</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
@@ -1766,12 +1778,12 @@
       <pre class="lines">
 
 
-93
-94
-95</pre>
+96
+97
+98</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/base.rb', line 93</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/base.rb', line 96</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_signature_and_unsigned_parameters'>signature_and_unsigned_parameters</span>
   <span class='id identifier rubyid_unsigned_parameters'>unsigned_parameters</span> <span class='op'>+</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>oauth_signature</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
@@ -1806,13 +1818,13 @@
       <pre class="lines">
 
 
-119
-120
-121
-122</pre>
+122
+123
+124
+125</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/base.rb', line 119</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/base.rb', line 122</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_signature_base_string'>signature_base_string</span>
   <span class='id identifier rubyid_base'>base</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_method'>method</span><span class='comma'>,</span> <span class='id identifier rubyid_normalized_uri'>normalized_uri</span><span class='comma'>,</span> <span class='id identifier rubyid_normalized_parameters'>normalized_parameters</span><span class='rbracket'>]</span>
@@ -1861,12 +1873,12 @@
       <pre class="lines">
 
 
-125
-126
-127</pre>
+128
+129
+130</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/base.rb', line 125</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/base.rb', line 128</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_signed?'>signed?</span>
   <span class='ivar'>@signed</span>
@@ -1901,9 +1913,6 @@
       <pre class="lines">
 
 
-130
-131
-132
 133
 134
 135
@@ -1913,10 +1922,13 @@
 139
 140
 141
-142</pre>
+142
+143
+144
+145</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/base.rb', line 130</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy/base.rb', line 133</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_signed_uri'>signed_uri</span><span class='lparen'>(</span><span class='label'>with_oauth:</span> <span class='kw'>true</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_signed?'>signed?</span>
@@ -1941,7 +1953,7 @@
 </div>
 
       <div id="footer">
-  Generated on Fri Sep 12 10:55:44 2025 by
+  Generated on Mon Sep 15 00:31:57 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.4.5).
 </div>

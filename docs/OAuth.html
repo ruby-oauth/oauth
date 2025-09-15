@@ -79,7 +79,7 @@
   <dl>
     <dt>Defined in:</dt>
     <dd>lib/oauth/oauth.rb<span class="defines">,<br />
-  lib/oauth/client.rb,<br /> lib/oauth/helper.rb,<br /> lib/oauth/server.rb,<br /> lib/oauth/version.rb,<br /> lib/oauth/consumer.rb,<br /> lib/oauth/signature.rb,<br /> lib/oauth/errors/error.rb,<br /> lib/oauth/tokens/token.rb,<br /> lib/oauth/client/helper.rb,<br /> lib/oauth/request_proxy.rb,<br /> lib/oauth/errors/problem.rb,<br /> lib/oauth/signature/base.rb,<br /> lib/oauth/oauth_test_helper.rb,<br /> lib/oauth/request_proxy/base.rb,<br /> lib/oauth/signature/rsa/sha1.rb,<br /> lib/oauth/errors/unauthorized.rb,<br /> lib/oauth/signature/hmac/sha1.rb,<br /> lib/oauth/signature/plaintext.rb,<br /> lib/oauth/tokens/access_token.rb,<br /> lib/oauth/tokens/server_token.rb,<br /> lib/oauth/tokens/request_token.rb,<br /> lib/oauth/signature/hmac/sha256.rb,<br /> lib/oauth/tokens/consumer_token.rb,<br /> lib/oauth/request_proxy/net_http.rb,<br /> lib/oauth/request_proxy/curb_request.rb,<br /> lib/oauth/request_proxy/mock_request.rb,<br /> lib/oauth/request_proxy/rack_request.rb,<br /> lib/oauth/request_proxy/jabber_request.rb,<br /> lib/oauth/request_proxy/em_http_request.rb,<br /> lib/oauth/request_proxy/typhoeus_request.rb,<br /> lib/oauth/request_proxy/rest_client_request.rb,<br /> lib/oauth/request_proxy/action_dispatch_request.rb,<br /> lib/oauth/request_proxy/action_controller_request.rb</span>
+  lib/oauth/client.rb,<br /> lib/oauth/helper.rb,<br /> lib/oauth/server.rb,<br /> lib/oauth/version.rb,<br /> lib/oauth/consumer.rb,<br /> lib/oauth/optional.rb,<br /> lib/oauth/signature.rb,<br /> lib/oauth/errors/error.rb,<br /> lib/oauth/tokens/token.rb,<br /> lib/oauth/client/helper.rb,<br /> lib/oauth/request_proxy.rb,<br /> lib/oauth/errors/problem.rb,<br /> lib/oauth/signature/base.rb,<br /> lib/oauth/oauth_test_helper.rb,<br /> lib/oauth/request_proxy/base.rb,<br /> lib/oauth/signature/rsa/sha1.rb,<br /> lib/oauth/errors/unauthorized.rb,<br /> lib/oauth/signature/hmac/sha1.rb,<br /> lib/oauth/signature/plaintext.rb,<br /> lib/oauth/tokens/access_token.rb,<br /> lib/oauth/tokens/server_token.rb,<br /> lib/oauth/tokens/request_token.rb,<br /> lib/oauth/signature/hmac/sha256.rb,<br /> lib/oauth/tokens/consumer_token.rb,<br /> lib/oauth/request_proxy/net_http.rb,<br /> lib/oauth/request_proxy/curb_request.rb,<br /> lib/oauth/request_proxy/mock_request.rb,<br /> lib/oauth/request_proxy/rack_request.rb,<br /> lib/oauth/request_proxy/jabber_request.rb,<br /> lib/oauth/request_proxy/em_http_request.rb,<br /> lib/oauth/request_proxy/typhoeus_request.rb,<br /> lib/oauth/request_proxy/rest_client_request.rb,<br /> lib/oauth/request_proxy/action_dispatch_request.rb,<br /> lib/oauth/request_proxy/action_controller_request.rb</span>
 </dd>
   </dl>
   
@@ -89,7 +89,7 @@
 <p class="children">
   
     
-      <strong class="modules">Modules:</strong> <span class='object_link'><a href="OAuth/Client.html" title="OAuth::Client (module)">Client</a></span>, <span class='object_link'><a href="OAuth/Helper.html" title="OAuth::Helper (module)">Helper</a></span>, <span class='object_link'><a href="OAuth/OAuthTestHelper.html" title="OAuth::OAuthTestHelper (module)">OAuthTestHelper</a></span>, <span class='object_link'><a href="OAuth/RequestProxy.html" title="OAuth::RequestProxy (module)">RequestProxy</a></span>, <span class='object_link'><a href="OAuth/Signature.html" title="OAuth::Signature (module)">Signature</a></span>, <span class='object_link'><a href="OAuth/Version.html" title="OAuth::Version (module)">Version</a></span>
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="OAuth/Client.html" title="OAuth::Client (module)">Client</a></span>, <span class='object_link'><a href="OAuth/Helper.html" title="OAuth::Helper (module)">Helper</a></span>, <span class='object_link'><a href="OAuth/OAuthTestHelper.html" title="OAuth::OAuthTestHelper (module)">OAuthTestHelper</a></span>, <span class='object_link'><a href="OAuth/Optional.html" title="OAuth::Optional (module)">Optional</a></span>, <span class='object_link'><a href="OAuth/RequestProxy.html" title="OAuth::RequestProxy (module)">RequestProxy</a></span>, <span class='object_link'><a href="OAuth/Signature.html" title="OAuth::Signature (module)">Signature</a></span>, <span class='object_link'><a href="OAuth/Version.html" title="OAuth::Version (module)">Version</a></span>
     
   
     
@@ -109,8 +109,11 @@
         <dt id="OUT_OF_BAND-constant" class="">OUT_OF_BAND =
           <div class="docstring">
   <div class="discussion">
-    <p>request tokens are passed between the consumer and the provider out of<br />
-band (i.e. callbacks cannot be used), per section 6.1.1</p>
+    <p>Out-Of-Band callback token value.<br />
+OAuth 1.0 and 1.0a both support out-of-band flows, where callbacks cannot be used.<br />
+See RFC 5849 (OAuth 1.0), Section 6.1.1: Obtaining an Unauthorized Request Token<br />
+and the 1.0a errata. Providers treating “oob” as the callback URL indicate that<br />
+the verifier (for 1.0a) will be communicated out of band to the Consumer.</p>
 
 
   </div>
@@ -125,7 +128,19 @@ band (i.e. callbacks cannot be used), per section 6.1.1</p>
         <dt id="PARAMETERS-constant" class="">PARAMETERS =
           <div class="docstring">
   <div class="discussion">
-    <p>required parameters, per sections 6.1.1, 6.3.1, and 7</p>
+    <p>OAuth parameter keys this library recognizes when normalizing/signing requests.<br />
+Notes on 1.0 vs 1.0a:</p>
+<ul>
+  <li>oauth_verifier: Introduced by OAuth 1.0a. Returned to the Consumer after user<br />
+authorization and required when exchanging a Request Token for an Access Token<br />
+(Section 6.3.1 in RFC 5849 / 1.0a change).</li>
+  <li>oauth_callback: Present in 1.0; 1.0a clarified that the Consumer MUST send it when<br />
+obtaining a Request Token (or use “oob”) and that the Service Provider MUST return<br />
+oauth_callback_confirmed=true with the Request Token response to prevent session<br />
+fixation attacks. Note that oauth_callback_confirmed is a response parameter, not<br />
+a request signing parameter, and thus is not listed here.<br />
+Other keys are common to both 1.0 and 1.0a.</li>
+</ul>
 
 
   </div>
@@ -177,7 +192,7 @@ band (i.e. callbacks cannot be used), per section 6.1.1</p>
 </div>
 
       <div id="footer">
-  Generated on Fri Sep 12 10:55:44 2025 by
+  Generated on Mon Sep 15 00:31:56 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.4.5).
 </div>

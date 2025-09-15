@@ -561,7 +561,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_access_token-instance_method" title="#get_access_token (instance method)">#<strong>get_access_token</strong>(request_token, request_options = {}, *arguments, &amp;block)  &#x21d2; Object </a>
+      <a href="#get_access_token-instance_method" title="#get_access_token (instance method)">#<strong>get_access_token</strong>(request_token, request_options = {}, *arguments) {|response_body| ... } &#x21d2; OAuth::AccessToken </a>
     
 
     
@@ -575,7 +575,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class='inline'><p>Exchanges a verified Request Token for an Access Token.</p>
 </div></span>
   
 </li>
@@ -584,7 +584,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_request_token-instance_method" title="#get_request_token (instance method)">#<strong>get_request_token</strong>(request_options = {}, *arguments, &amp;block)  &#x21d2; Object </a>
+      <a href="#get_request_token-instance_method" title="#get_request_token (instance method)">#<strong>get_request_token</strong>(request_options = {}, *arguments) {|response_body| ... } &#x21d2; OAuth::RequestToken </a>
     
 
     
@@ -1172,12 +1172,12 @@
       <pre class="lines">
 
 
-298
-299
-300</pre>
+329
+330
+331</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 298</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 329</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_site'>site</span>
   <span class='ivar'>@options</span><span class='lbracket'>[</span><span class='symbol'>:site</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
@@ -1209,12 +1209,12 @@
       <pre class="lines">
 
 
-324
-325
-326</pre>
+355
+356
+357</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 324</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 355</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_access_token_path'>access_token_path</span>
   <span class='ivar'>@options</span><span class='lbracket'>[</span><span class='symbol'>:access_token_path</span><span class='rbracket'>]</span>
@@ -1239,12 +1239,12 @@
       <pre class="lines">
 
 
-353
-354
-355</pre>
+384
+385
+386</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 353</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 384</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_access_token_url'>access_token_url</span>
   <span class='ivar'>@options</span><span class='lbracket'>[</span><span class='symbol'>:access_token_url</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='lparen'>(</span><span class='id identifier rubyid_site'>site</span> <span class='op'>+</span> <span class='id identifier rubyid_access_token_path'>access_token_path</span><span class='rparen'>)</span>
@@ -1292,12 +1292,12 @@
       <pre class="lines">
 
 
-357
-358
-359</pre>
+388
+389
+390</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 357</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 388</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_access_token_url?'>access_token_url?</span>
   <span class='ivar'>@options</span><span class='period'>.</span><span class='id identifier rubyid_key?'>key?</span><span class='lparen'>(</span><span class='symbol'>:access_token_url</span><span class='rparen'>)</span>
@@ -1322,12 +1322,12 @@
       <pre class="lines">
 
 
-316
-317
-318</pre>
+347
+348
+349</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 316</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 347</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_authenticate_path'>authenticate_path</span>
   <span class='ivar'>@options</span><span class='lbracket'>[</span><span class='symbol'>:authenticate_path</span><span class='rbracket'>]</span>
@@ -1352,12 +1352,12 @@
       <pre class="lines">
 
 
-337
-338
-339</pre>
+368
+369
+370</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 337</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 368</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_authenticate_url'>authenticate_url</span>
   <span class='ivar'>@options</span><span class='lbracket'>[</span><span class='symbol'>:authenticate_url</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='lparen'>(</span><span class='id identifier rubyid_site'>site</span> <span class='op'>+</span> <span class='id identifier rubyid_authenticate_path'>authenticate_path</span><span class='rparen'>)</span>
@@ -1405,12 +1405,12 @@
       <pre class="lines">
 
 
-341
-342
-343</pre>
+372
+373
+374</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 341</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 372</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_authenticate_url?'>authenticate_url?</span>
   <span class='ivar'>@options</span><span class='period'>.</span><span class='id identifier rubyid_key?'>key?</span><span class='lparen'>(</span><span class='symbol'>:authenticate_url</span><span class='rparen'>)</span>
@@ -1435,12 +1435,12 @@
       <pre class="lines">
 
 
-320
-321
-322</pre>
+351
+352
+353</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 320</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 351</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_authorize_path'>authorize_path</span>
   <span class='ivar'>@options</span><span class='lbracket'>[</span><span class='symbol'>:authorize_path</span><span class='rbracket'>]</span>
@@ -1465,12 +1465,12 @@
       <pre class="lines">
 
 
-345
-346
-347</pre>
+376
+377
+378</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 345</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 376</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_authorize_url'>authorize_url</span>
   <span class='ivar'>@options</span><span class='lbracket'>[</span><span class='symbol'>:authorize_url</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='lparen'>(</span><span class='id identifier rubyid_site'>site</span> <span class='op'>+</span> <span class='id identifier rubyid_authorize_path'>authorize_path</span><span class='rparen'>)</span>
@@ -1518,12 +1518,12 @@
       <pre class="lines">
 
 
-349
-350
-351</pre>
+380
+381
+382</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 349</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 380</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_authorize_url?'>authorize_url?</span>
   <span class='ivar'>@options</span><span class='period'>.</span><span class='id identifier rubyid_key?'>key?</span><span class='lparen'>(</span><span class='symbol'>:authorize_url</span><span class='rparen'>)</span>
@@ -1559,14 +1559,14 @@ It’s recommended to use the Token classes to set this up correctly</p>
       <pre class="lines">
 
 
-243
-244
-245
-246
-247</pre>
+274
+275
+276
+277
+278</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 243</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 274</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create_signed_request'>create_signed_request</span><span class='lparen'>(</span><span class='id identifier rubyid_http_method'>http_method</span><span class='comma'>,</span> <span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='id identifier rubyid_token'>token</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_request_options'>request_options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_arguments'>arguments</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_request'>request</span> <span class='op'>=</span> <span class='id identifier rubyid_create_http_request'>create_http_request</span><span class='lparen'>(</span><span class='id identifier rubyid_http_method'>http_method</span><span class='comma'>,</span> <span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_arguments'>arguments</span><span class='rparen'>)</span>
@@ -1623,32 +1623,133 @@ It’s recommended to use the Token classes to set this up correctly</p>
       <div class="method_details ">
   <h3 class="signature " id="get_access_token-instance_method">
   
-    #<strong>get_access_token</strong>(request_token, request_options = {}, *arguments, &amp;block)  &#x21d2; <tt>Object</tt> 
+    #<strong>get_access_token</strong>(request_token, request_options = {}, *arguments) {|response_body| ... } &#x21d2; <tt><span class='object_link'><a href="AccessToken.html" title="OAuth::AccessToken (class)">OAuth::AccessToken</a></span></tt> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Exchanges a verified Request Token for an Access Token.</p>
+
+<p>OAuth 1.0 vs 1.0a:</p>
+<ul>
+  <li>1.0a requires including oauth_verifier (as returned by the Provider after<br />
+user authorization) when performing this exchange in a 3‑legged flow.</li>
+  <li>1.0 flows did not include oauth_verifier.</li>
+</ul>
+
+<p>Usage (3‑legged):<br />
+  access_token = request_token.get_access_token(oauth_verifier: params[:oauth_verifier])</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>request_token</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="RequestToken.html" title="OAuth::RequestToken (class)">OAuth::RequestToken</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The authorized request token</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>request_options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>OAuth or request options (include :oauth_verifier for 1.0a)</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>arguments</span>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>Optional POST body and headers</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>response_body</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>If a block is given, yields the raw response body.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="AccessToken.html" title="OAuth::AccessToken (class)">OAuth::AccessToken</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-145
-146
-147
-148
-149
-150
-151
-152
-153
-154
-155</pre>
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 145</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 160</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_access_token'>get_access_token</span><span class='lparen'>(</span><span class='id identifier rubyid_request_token'>request_token</span><span class='comma'>,</span> <span class='id identifier rubyid_request_options'>request_options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_arguments'>arguments</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='id identifier rubyid_token_request'>token_request</span><span class='lparen'>(</span>
@@ -1669,7 +1770,7 @@ It’s recommended to use the Token classes to set this up correctly</p>
       <div class="method_details ">
   <h3 class="signature " id="get_request_token-instance_method">
   
-    #<strong>get_request_token</strong>(request_options = {}, *arguments, &amp;block)  &#x21d2; <tt>Object</tt> 
+    #<strong>get_request_token</strong>(request_options = {}, *arguments) {|response_body| ... } &#x21d2; <tt><span class='object_link'><a href="RequestToken.html" title="OAuth::RequestToken (class)">OAuth::RequestToken</a></span></tt> 
   
 
   
@@ -1679,24 +1780,103 @@ It’s recommended to use the Token classes to set this up correctly</p>
   <div class="discussion">
     <p>Makes a request to the service for a new OAuth::RequestToken</p>
 
-<p>@request_token = @consumer.get_request_token</p>
+<p>Example:<br />
+  @request_token = @consumer.get_request_token</p>
 
-<p>To include OAuth parameters:</p>
+<p>To include OAuth parameters:<br />
+  @request_token = @consumer.get_request_token(<br />
+    oauth_callback: “http://example.com/cb”<br />
+  )</p>
 
-<p>@request_token = @consumer.get_request_token \<br />
-   :oauth_callback =&gt; “http://example.com/cb”</p>
+<p>To include application-specific parameters:<br />
+  @request_token = @consumer.get_request_token({}, foo: “bar”)</p>
 
-<p>To include application-specific parameters:</p>
+<p>OAuth 1.0 vs 1.0a:</p>
+<ul>
+  <li>In 1.0a, the Consumer SHOULD send oauth_callback when obtaining a request token<br />
+(or explicitly use OUT_OF_BAND) and the Provider MUST include<br />
+oauth_callback_confirmed=true in the response.</li>
+  <li>This library defaults oauth_callback to OUT_OF_BAND (“oob”) when not provided,<br />
+which works for both 1.0 and 1.0a, and mirrors common provider behavior.</li>
+  <li>The oauth_callback_confirmed response is parsed by the token classes; it is not<br />
+part of the signature base string and thus is not signed.</li>
+</ul>
 
-<p>@request_token = @consumer.get_request_token({}, :foo =&gt; “bar”)</p>
-
-<p>TODO oauth_callback should be a mandatory parameter</p>
+<p>TODO: In a future major release, oauth_callback may be made mandatory unless<br />
+      request_options[:exclude_callback] is set, to reflect 1.0a guidance.</p>
 
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>request_options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>OAuth options for the request. Notably<br />
+:oauth_callback can be set to a URL, or OAuth::OUT_OF_BAND (“oob”).</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>arguments</span>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>Optional POST body and headers</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>response_body</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>If a block is given, yields the raw response body.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="RequestToken.html" title="OAuth::RequestToken (class)">OAuth::RequestToken</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1704,34 +1884,34 @@ It’s recommended to use the Token classes to set this up correctly</p>
       <pre class="lines">
 
 
-171
-172
-173
-174
-175
-176
-177
-178
-179
-180
-181
-182
-183
-184
-185
-186
-187
-188
-189
-190
-191
-192
-193
-194
-195</pre>
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 171</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 202</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_request_token'>get_request_token</span><span class='lparen'>(</span><span class='id identifier rubyid_request_options'>request_options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_arguments'>arguments</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='comment'># if oauth_callback wasn&#39;t provided, it is assumed that oauth_verifiers
@@ -1818,12 +1998,12 @@ It’s recommended to use the Token classes to set this up correctly</p>
       <pre class="lines">
 
 
-361
-362
-363</pre>
+392
+393
+394</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 361</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 392</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_proxy'>proxy</span>
   <span class='ivar'>@options</span><span class='lbracket'>[</span><span class='symbol'>:proxy</span><span class='rbracket'>]</span>
@@ -1866,42 +2046,42 @@ arguments are POST and PUT bodies (a Hash, string-encoded parameters, or<br />
       <pre class="lines">
 
 
-207
-208
-209
-210
-211
-212
-213
-214
-215
-216
-217
-218
-219
-220
-221
-222
-223
-224
-225
-226
-227
-228
-229
-230
-231
-232
-233
-234
-235
-236
-237
 238
-239</pre>
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 207</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 238</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_request'>request</span><span class='lparen'>(</span><span class='id identifier rubyid_http_method'>http_method</span><span class='comma'>,</span> <span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='id identifier rubyid_token'>token</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_request_options'>request_options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_arguments'>arguments</span><span class='rparen'>)</span>
   <span class='kw'>unless</span> <span class='tstring'><span class='regexp_beg'>%r{</span><span class='tstring_content'>^/</span><span class='regexp_end'>}</span></span> <span class='op'>=~</span> <span class='id identifier rubyid_path'>path</span>
@@ -1956,14 +2136,14 @@ arguments are POST and PUT bodies (a Hash, string-encoded parameters, or<br />
       <pre class="lines">
 
 
-302
-303
-304
-305
-306</pre>
+333
+334
+335
+336
+337</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 302</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 333</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_request_endpoint'>request_endpoint</span>
   <span class='kw'>return</span> <span class='kw'>if</span> <span class='ivar'>@options</span><span class='lbracket'>[</span><span class='symbol'>:request_endpoint</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -1990,12 +2170,12 @@ arguments are POST and PUT bodies (a Hash, string-encoded parameters, or<br />
       <pre class="lines">
 
 
-312
-313
-314</pre>
+343
+344
+345</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 312</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 343</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_request_token_path'>request_token_path</span>
   <span class='ivar'>@options</span><span class='lbracket'>[</span><span class='symbol'>:request_token_path</span><span class='rbracket'>]</span>
@@ -2030,12 +2210,12 @@ arguments are POST and PUT bodies (a Hash, string-encoded parameters, or<br />
       <pre class="lines">
 
 
-329
-330
-331</pre>
+360
+361
+362</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 329</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 360</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_request_token_url'>request_token_url</span>
   <span class='ivar'>@options</span><span class='lbracket'>[</span><span class='symbol'>:request_token_url</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='lparen'>(</span><span class='id identifier rubyid_site'>site</span> <span class='op'>+</span> <span class='id identifier rubyid_request_token_path'>request_token_path</span><span class='rparen'>)</span>
@@ -2083,12 +2263,12 @@ arguments are POST and PUT bodies (a Hash, string-encoded parameters, or<br />
       <pre class="lines">
 
 
-333
-334
-335</pre>
+364
+365
+366</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 333</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 364</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_request_token_url?'>request_token_url?</span>
   <span class='ivar'>@options</span><span class='period'>.</span><span class='id identifier rubyid_key?'>key?</span><span class='lparen'>(</span><span class='symbol'>:request_token_url</span><span class='rparen'>)</span>
@@ -2113,12 +2293,12 @@ arguments are POST and PUT bodies (a Hash, string-encoded parameters, or<br />
       <pre class="lines">
 
 
-308
-309
-310</pre>
+339
+340
+341</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 308</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 339</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_scheme'>scheme</span>
   <span class='ivar'>@options</span><span class='lbracket'>[</span><span class='symbol'>:scheme</span><span class='rbracket'>]</span>
@@ -2153,12 +2333,12 @@ arguments are POST and PUT bodies (a Hash, string-encoded parameters, or<br />
       <pre class="lines">
 
 
-289
-290
-291</pre>
+320
+321
+322</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 289</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 320</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_sign!'>sign!</span><span class='lparen'>(</span><span class='id identifier rubyid_request'>request</span><span class='comma'>,</span> <span class='id identifier rubyid_token'>token</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_request_options'>request_options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_oauth!'>oauth!</span><span class='lparen'>(</span><span class='id identifier rubyid_http'>http</span><span class='comma'>,</span> <span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_request_options'>request_options</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -2193,12 +2373,12 @@ arguments are POST and PUT bodies (a Hash, string-encoded parameters, or<br />
       <pre class="lines">
 
 
-294
-295
-296</pre>
+325
+326
+327</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 294</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 325</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_signature_base_string'>signature_base_string</span><span class='lparen'>(</span><span class='id identifier rubyid_request'>request</span><span class='comma'>,</span> <span class='id identifier rubyid_token'>token</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_request_options'>request_options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_signature_base_string'>signature_base_string</span><span class='lparen'>(</span><span class='id identifier rubyid_http'>http</span><span class='comma'>,</span> <span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_request_options'>request_options</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -2233,46 +2413,46 @@ arguments are POST and PUT bodies (a Hash, string-encoded parameters, or<br />
       <pre class="lines">
 
 
-250
-251
-252
-253
-254
-255
-256
-257
-258
-259
-260
-261
-262
-263
-264
-265
-266
-267
-268
-269
-270
-271
-272
-273
-274
-275
-276
-277
-278
-279
-280
 281
 282
 283
 284
 285
-286</pre>
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 250</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/consumer.rb', line 281</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_token_request'>token_request</span><span class='lparen'>(</span><span class='id identifier rubyid_http_method'>http_method</span><span class='comma'>,</span> <span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='id identifier rubyid_token'>token</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_request_options'>request_options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_arguments'>arguments</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_request_options'>request_options</span><span class='lbracket'>[</span><span class='symbol'>:token_request</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='kw'>true</span>
@@ -2371,7 +2551,7 @@ arguments are POST and PUT bodies (a Hash, string-encoded parameters, or<br />
 </div>
 
       <div id="footer">
-  Generated on Fri Sep 12 10:55:44 2025 by
+  Generated on Mon Sep 15 00:31:56 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.4.5).
 </div>
