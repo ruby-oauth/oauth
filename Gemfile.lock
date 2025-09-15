@@ -253,7 +253,7 @@ GEM
       net-protocol
     netrc (0.11.0)
     nio4r (2.7.4)
-    nokogiri (1.18.9-x86_64-linux-gnu)
+    nokogiri (1.18.10-x86_64-linux-gnu)
       racc (~> 1.4)
     ostruct (0.6.3)
     parallel (1.27.0)
@@ -263,7 +263,7 @@ GEM
     pp (0.6.2)
       prettyprint
     prettyprint (0.2.0)
-    prism (1.5.0)
+    prism (1.5.1)
     psych (5.2.6)
       date
       stringio
@@ -507,7 +507,7 @@ DEPENDENCIES
   gem_bench (~> 2.0, >= 2.0.5)
   gitmoji-regex (~> 1.0, >= 1.0.3)
   irb (~> 1.15, >= 1.15.2)
-  kettle-dev (~> 1.1)
+  kettle-dev (~> 1.1, >= 1.1.19)
   kettle-soup-cover (~> 1.0, >= 1.0.10)
   kettle-test (~> 1.0)
   kramdown (~> 2.5, >= 2.5.1)
