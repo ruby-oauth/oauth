@@ -69,7 +69,9 @@ and <a href="https://tom.preston-werner.com/2022/05/23/major-version-numbers-are
 Please file a bug if you notice a violation of semantic versioning.</p>
 
 <h2 id="unreleased"><a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v1.1.0...main">Unreleased</a></h2>
+
 <h3 id="added">Added</h3>
+
 <ul>
   <li>kettle-dev v1.1.18</li>
   <li>Internal escape &amp; unescape methods
@@ -79,26 +81,36 @@ Please file a bug if you notice a violation of semantic versioning.</p>
     </ul>
   </li>
   <li>Tests against Rails-specific code are now run in CI</li>
-  <li>Documented OAuth 1.0, 1.0a differences
-    <h3 id="changed">Changed</h3>
-  </li>
-  <li>converted minitest =&gt; rspec
-    <h3 id="deprecated">Deprecated</h3>
-    <h3 id="removed">Removed</h3>
-  </li>
+  <li>Documented OAuth 1.0, 1.0a differences</li>
+</ul>
+
+<h3 id="changed">Changed</h3>
+
+<ul>
+  <li>converted minitest =&gt; rspec</li>
+</ul>
+
+<h3 id="deprecated">Deprecated</h3>
+
+<h3 id="removed">Removed</h3>
+
+<ul>
   <li>dependency on em-http-request
     <ul>
-      <li>now lazy Loaded so it can be optional, since some systems fail to install it, and it doesn’t seem maintained
-        <h3 id="fixed">Fixed</h3>
-        <h3 id="security">Security</h3>
-      </li>
+      <li>now lazy Loaded so it can be optional, since some systems fail to install it, and it doesn’t seem maintained</li>
     </ul>
   </li>
 </ul>
 
+<h3 id="fixed">Fixed</h3>
+
+<h3 id="security">Security</h3>
+
 <h2 id="110-2022-08-29-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v1.0.1...v1.1.0">1.1.0</a> 2022-08-29 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v1.1.0">tag</a>)</h2>
+
 <h3 id="changed-1">Changed</h3>
+
 <ul>
   <li>
 <code>OAuth::CLI</code> has been extracted to a new gem, <code>oauth-tty</code>, hosted on <a href="https://gitlab.com/ruby-oauth/oauth-tty">Gitlab</a>
@@ -118,7 +130,9 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 
 <h2 id="101-2022-08-29-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v1.0.0...v1.0.1">1.0.1</a> 2022-08-29 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v1.0.1">tag</a>)</h2>
+
 <h3 id="changed-2">Changed</h3>
+
 <ul>
   <li>
 <code>OAuth::Comsumer#options</code> hash is now handled by <code>snaky_hash</code>, which was extracted from <code>oauth2</code>
@@ -130,12 +144,17 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 
 <h2 id="100-2022-08-23-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v0.6.2...v1.0.0">1.0.0</a> 2022-08-23 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v1.0.0">tag</a>)</h2>
+
 <h3 id="changed-3">Changed</h3>
+
 <ul>
   <li>Dropped support for Ruby &lt; 2.7</li>
-  <li>Dropped support for Rails &lt; 6
-    <h3 id="added-1">Added</h3>
-  </li>
+  <li>Dropped support for Rails &lt; 6</li>
+</ul>
+
+<h3 id="added-1">Added</h3>
+
+<ul>
   <li>New EOL Policy
     <ul>
       <li>Non-commercial support for the oldest version of Ruby (which itself is going EOL) will be dropped each year in April</li>
@@ -145,7 +164,9 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 
 <h2 id="062-2022-08-29-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v0.6.1...v0.6.2">0.6.2</a> 2022-08-29 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v0.6.2">tag</a>)</h2>
+
 <h3 id="changed-4">Changed</h3>
+
 <ul>
   <li>
 <code>OAuth::Comsumer#options</code> hash is now handled by <code>snaky_hash</code>, which was extracted from <code>oauth2</code>
@@ -157,75 +178,107 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 
 <h2 id="061-2022-08-23-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v0.6.0...v0.6.1">0.6.1</a> 2022-08-23 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v0.6.1">tag</a>)</h2>
+
 <h3 id="changed-5">Changed</h3>
+
 <ul>
   <li>Fixed documentation in SECURITY.md</li>
-  <li>Change references to master =&gt; main
-    <h3 id="added-2">Added</h3>
-  </li>
+  <li>Change references to master =&gt; main</li>
+</ul>
+
+<h3 id="added-2">Added</h3>
+
+<ul>
   <li>Post install note about v0.6.x EOL approaching in April, 2024</li>
 </ul>
 
 <h2 id="060-2022-08-23-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.14...v0.6.0">0.6.0</a> 2022-08-23 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v0.6.0">tag</a>)</h2>
+
 <h3 id="added-3">Added</h3>
+
 <ul>
   <li>New option <code>body_hash_enabled</code> which defaults to true to maintain backward compatibility with prior releases. Setting to <code>false</code> disables generation of a <code>oauth_body_hash</code> component as part of the signature computation.</li>
   <li>Improved documentation of support policy via Tidelift</li>
-  <li>Stop testing against active_support v2
-    <h3 id="changed-6">Changed</h3>
-  </li>
+  <li>Stop testing against active_support v2</li>
+</ul>
+
+<h3 id="changed-6">Changed</h3>
+
+<ul>
   <li>Utilize version_gem extracted from oauth2 gem for VERSION
     <ul>
       <li>Added new <code>OAuth::Version</code> namespace</li>
       <li>VERSION constant now at <code>OAuth::Version::VERSION</code>
-        <h3 id="removed-1">Removed</h3>
-      </li>
+</li>
     </ul>
   </li>
+</ul>
+
+<h3 id="removed-1">Removed</h3>
+
+<ul>
   <li>Ruby 2.0, 2.1, 2.2, and 2.3 are no longer valid install targets</li>
 </ul>
 
 <h2 id="0514-2022-08-29-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.13...v0.5.14">0.5.14</a> 2022-08-29 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.14">tag</a>)</h2>
+
 <p>The “hopeful last 0.5.x” Release</p>
+
 <h3 id="fixed-1">Fixed</h3>
+
 <ul>
   <li>More typos fixed</li>
 </ul>
 
 <h2 id="0513-2022-08-23-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.12...v0.5.13">0.5.13</a> 2022-08-23 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.13">tag</a>)</h2>
+
 <p>The “I think I caught ‘em all!” Release</p>
+
 <h3 id="fixed-2">Fixed</h3>
+
 <ul>
   <li>Typo oauth2 =&gt; oauth as gem name in one more place.</li>
 </ul>
 
 <h2 id="0512-2022-08-23-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.11...v0.5.12">0.5.12</a> 2022-08-23 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.12">tag</a>)</h2>
+
 <p>The “Typoes are just the worst!” Release</p>
+
 <h3 id="fixed-3">Fixed</h3>
+
 <ul>
   <li>Typo oauth2 =&gt; oauth as gem name in a couple places.</li>
 </ul>
 
 <h2 id="0511-2022-08-23-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.10...v0.5.11">0.5.11</a> 2022-08-23 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.11">tag</a>)</h2>
+
 <p>The “Is this the last release with a silly name?” Release</p>
+
 <h3 id="added-4">Added</h3>
+
 <ul>
-  <li>Post install note about v0.5.x EOL approaching in April, 2023
-    <h3 id="changed-7">Changed</h3>
-  </li>
+  <li>Post install note about v0.5.x EOL approaching in April, 2023</li>
+</ul>
+
+<h3 id="changed-7">Changed</h3>
+
+<ul>
   <li>Improved documentation</li>
   <li>Switched branch references from master to main</li>
   <li>CI builds are now all green!</li>
 </ul>
 
 <h2 id="0510-2022-05-04-tag">[0.5.10] 2022-05-04 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.10">tag</a>)</h2>
+
 <p>The “Can it be the end of the line for 0.5.x?” Release</p>
+
 <h3 id="added-5">Added</h3>
+
 <ul>
   <li>Major updates to Documentation</li>
   <li>More CI Hardening</li>
@@ -239,7 +292,9 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 
 <h2 id="059-2022-05-03-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.8...v0.5.9">0.5.9</a> 2022-05-03 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.9">tag</a>)</h2>
+
 <h3 id="added-6">Added</h3>
+
 <ul>
   <li>Documentation related to Ruby compatibility</li>
   <li>Updated CHANGELOG.md formatting</li>
@@ -257,25 +312,35 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 
 <h2 id="058-2021-11-10-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.7...v0.5.8">0.5.8</a> 2021-11-10 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.8">tag</a>)</h2>
+
 <h3 id="added-7">Added</h3>
+
 <ul>
-  <li>Added more documentation files to packaged gem, e.g. SECURITY.md, CODE_OF_CONDUCT.md
-    <h3 id="fixed-4">Fixed</h3>
-  </li>
+  <li>Added more documentation files to packaged gem, e.g. SECURITY.md, CODE_OF_CONDUCT.md</li>
+</ul>
+
+<h3 id="fixed-4">Fixed</h3>
+
+<ul>
   <li>Removed reference to RUBY_VERSION from gemspec, as it depends on rake release, which is problematic on some ruby engines. (by @pboling)</li>
 </ul>
 
 <h2 id="057-2021-11-02-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.6...v0.5.7">0.5.7</a> 2021-11-02 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.7">tag</a>)</h2>
+
 <h3 id="added-8">Added</h3>
+
 <ul>
   <li>Setup Rubocop (#205, #208 by @pboling)</li>
   <li>Added CODE_OF_CONDUCT.md (#217, #218 by @pboling)</li>
   <li>Added FUNDING.yml (#217, #218 by @pboling)</li>
   <li>Added Client Certificate Options: :ssl_client_cert and :ssl_client_key (#136, #220 by @pboling)</li>
-  <li>Handle a nested array of hashes in OAuth::Helper.normalize (#80, #221 by @pboling)
-    <h3 id="changed-8">Changed</h3>
-  </li>
+  <li>Handle a nested array of hashes in OAuth::Helper.normalize (#80, #221 by @pboling)</li>
+</ul>
+
+<h3 id="changed-8">Changed</h3>
+
+<ul>
   <li>Switch from TravisCI to Github Actions (#202, #207, #176 by @pboling)</li>
   <li>Upgrade webmock to v3.14.0 (#196 by @pboling)</li>
   <li>Upgrade em-http-request to v1.1.7 (#173 by @pboling)</li>
@@ -283,76 +348,110 @@ Please file a bug if you notice a violation of semantic versioning.</p>
   <li>HISTORY renamed to CHANGELOG.md, and follows Keep a Changelog (#214, #215 by @pboling)</li>
   <li>CHANGELOG, LICENSE, and README now ship with packaged gem (#214, #215 by @pboling)</li>
   <li>README.rdoc renamed to README.md (#217, #218 by @pboling)</li>
-  <li>Require plaintext signature method by default (#135 by @confiks &amp; @pboling)
-    <h3 id="fixed-5">Fixed</h3>
-  </li>
+  <li>Require plaintext signature method by default (#135 by @confiks &amp; @pboling)</li>
+</ul>
+
+<h3 id="fixed-5">Fixed</h3>
+
+<ul>
   <li>Fixed Infinite Redirect in v0.5.5, v0.5.6 (#186, #210 by @pboling)</li>
   <li>Fixed NoMethodError on missing leading slash in path (#194, #211 by @pboling)</li>
   <li>Fixed NoMethodError on nil request object (#165, #212 by @pboling)</li>
   <li>Fixed Unsafe String Comparison (#156, #209 by @pboling and @drosseau)</li>
   <li>Fixed typos in Gemspec (#204, #203, #208 by @pboling)</li>
   <li>Copyright Notice in LICENSE - added correct years (#217, #218 by @pboling)</li>
-  <li>Fixed request proxy Class constant reference scopes - was missing <code>::</code> in many places (#225, #226 by @pboling)
-    <h3 id="removed-2">Removed</h3>
-  </li>
+  <li>Fixed request proxy Class constant reference scopes - was missing <code>::</code> in many places (#225, #226 by @pboling)</li>
+</ul>
+
+<h3 id="removed-2">Removed</h3>
+
+<ul>
   <li>Remove direct development dependency on nokogiri (#299 by @pboling)</li>
 </ul>
 
 <h2 id="056-2021-04-02-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.5...v0.5.6">0.5.6</a> 2021-04-02 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.6">tag</a>)</h2>
+
 <h3 id="added-9">Added</h3>
+
 <ul>
   <li>Add metadata to Gemspec file</li>
-  <li>Add support for PUT requests with Action Controller (#181)
-    <h3 id="changed-9">Changed</h3>
-  </li>
+  <li>Add support for PUT requests with Action Controller (#181)</li>
+</ul>
+
+<h3 id="changed-9">Changed</h3>
+
+<ul>
   <li>Change default timeout to be the same as Net::HTTP default, 60 seconds instead of 30 seconds.</li>
 </ul>
 
 <h2 id="055-2020-01-19-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.4...v0.5.5">0.5.5</a> 2020-01-19 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.5">tag</a>)</h2>
+
 <h3 id="added-10">Added</h3>
+
 <ul>
-  <li>Add :allow_empty_params option (#155)
-    <h3 id="changed-10">Changed</h3>
-  </li>
+  <li>Add :allow_empty_params option (#155)</li>
+</ul>
+
+<h3 id="changed-10">Changed</h3>
+
+<ul>
   <li>Allow redirect to different host but same path</li>
-  <li>Various cleanups
-    <h3 id="fixed-6">Fixed</h3>
-  </li>
+  <li>Various cleanups</li>
+</ul>
+
+<h3 id="fixed-6">Fixed</h3>
+
+<ul>
   <li>Fixes ssl-noverify</li>
   <li>Fixed README example (#158, #159, by @pboling)</li>
 </ul>
 
 <h2 id="054-2017-12-08-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.3...v0.5.4">0.5.4</a> 2017-12-08 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.4">tag</a>)</h2>
+
 <h3 id="changed-11">Changed</h3>
+
 <ul>
-  <li>Various cleanups (charliesome)
-    <h3 id="fixed-7">Fixed</h3>
-  </li>
+  <li>Various cleanups (charliesome)</li>
+</ul>
+
+<h3 id="fixed-7">Fixed</h3>
+
+<ul>
   <li>Fixes UnknownRequestType on Rails 5.1 for ActionDispatch::Request (xprazak2)</li>
 </ul>
 
 <h2 id="053-2017-05-24-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.2...v0.5.3">0.5.3</a> 2017-05-24 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.3">tag</a>)</h2>
+
 <h3 id="fixed-8">Fixed</h3>
+
 <ul>
-  <li>Fix #145 - broken CLI required loading active_support (James Pinto)
-    <h3 id="changed-12">Changed</h3>
-  </li>
+  <li>Fix #145 - broken CLI required loading active_support (James Pinto)</li>
+</ul>
+
+<h3 id="changed-12">Changed</h3>
+
+<ul>
   <li>Removing legacy scripts (James Pinto)</li>
 </ul>
 
 <h2 id="052-2017-05-17-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.1...v0.5.2">0.5.2</a> 2017-05-17 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.2">tag</a>)</h2>
+
 <h3 id="added-11">Added</h3>
+
 <ul>
   <li>Adding a development dependency that had not been mentioned (James Pinto)</li>
   <li>Adding CodeClimate (James Pinto)</li>
-  <li>Adding support to Ruby 2.4 and head (James Pinto)
-    <h3 id="changed-13">Changed</h3>
-  </li>
+  <li>Adding support to Ruby 2.4 and head (James Pinto)</li>
+</ul>
+
+<h3 id="changed-13">Changed</h3>
+
+<ul>
   <li>Use assert_nil so as to silence a Minitest 6 deprecation warning (James Pinto)</li>
   <li>Stop bundling tests files in the gem (Michal Papis)</li>
   <li>Minor cleanup on tests (James Pinto)</li>
@@ -367,9 +466,12 @@ Please file a bug if you notice a violation of semantic versioning.</p>
   <li>Silence ‘URI.escape obsolete’ (James Pinto)</li>
   <li>Refactored CLI (James Pinto)</li>
   <li>Moving test files into test/units/ (James Pinto)</li>
-  <li>Reimplementing #82 - Debug Output Option (James Pinto)
-    <h3 id="fixed-9">Fixed</h3>
-  </li>
+  <li>Reimplementing #82 - Debug Output Option (James Pinto)</li>
+</ul>
+
+<h3 id="fixed-9">Fixed</h3>
+
+<ul>
   <li>Fix #113 adding paths when a full URL has been specified   (James Pinto)</li>
   <li>Bug Fix, webmock 2.0 has introduced a new bug (James Pinto)</li>
   <li>Making a test/support dir (James Pinto)</li>
@@ -378,41 +480,60 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 
 <h2 id="051-2016-02-29-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.0...v0.5.1">0.5.1</a> 2016-02-29 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.1">tag</a>)</h2>
+
 <h3 id="added-12">Added</h3>
+
 <ul>
-  <li>Add license info to the gemspec (Robert Reiz)
-    <h3 id="fixed-10">Fixed</h3>
-  </li>
+  <li>Add license info to the gemspec (Robert Reiz)</li>
+</ul>
+
+<h3 id="fixed-10">Fixed</h3>
+
+<ul>
   <li>Proper handling for empty query string in RequestToken#build_authorize_url (midchildan,<br>
 Harald Sitter)</li>
-  <li>Replace calls to String#blank? with its implementation (Sergio Gil Pérez de la Manga)
-    <h3 id="changed-14">Changed</h3>
-  </li>
+  <li>Replace calls to String#blank? with its implementation (Sergio Gil Pérez de la Manga)</li>
+</ul>
+
+<h3 id="changed-14">Changed</h3>
+
+<ul>
   <li>Loosen some development dependencies. Add libcurl-dev to travis</li>
-  <li>Fixes to travis config. Switch to rubygems for installation and loading
-    <h3 id="removed-3">Removed</h3>
-  </li>
+  <li>Fixes to travis config. Switch to rubygems for installation and loading</li>
+</ul>
+
+<h3 id="removed-3">Removed</h3>
+
+<ul>
   <li>Remove obsolete comment (Arthur Nogueira Neves)</li>
   <li>Remove jeweler from gemspec</li>
 </ul>
 
 <h2 id="050-2016-02-20-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v0.4.7...v0.5.0">0.5.0</a> 2016-02-20 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.0">tag</a>)</h2>
+
 <h3 id="added-13">Added</h3>
+
 <ul>
   <li>Add support for HTTP PATCH method (Richard Huang)</li>
   <li>Allow reading private key from a string (Khaja Minhajuddin)</li>
   <li>Add rest-client proxy (Khem Veasna)</li>
   <li>Add byebug. (Kevin Hughes)</li>
-  <li>Allow reading certificate file path from environment variable. Add CentOS cert file path (Danil Vlasov)
-    <h3 id="changed-15">Changed</h3>
-  </li>
+  <li>Allow reading certificate file path from environment variable. Add CentOS cert file path (Danil Vlasov)</li>
+</ul>
+
+<h3 id="changed-15">Changed</h3>
+
+<ul>
   <li>Replace jeweler with real spec and bundler tasks</li>
   <li>Extract version to separate file</li>
   <li>Use OpenSSL for all digest and hashing. Remove signature methods not defined by OAuth spec. (Kevin Hughes)</li>
-  <li>Change token requests to exclude <code>oauth_body_hash</code>. Update doc links in comments. (John Remmen)
-    <h3 id="fixed-11">Fixed</h3>
-  </li>
+  <li>Change token requests to exclude <code>oauth_body_hash</code>. Update doc links in comments. (John Remmen)</li>
+</ul>
+
+<h3 id="fixed-11">Fixed</h3>
+
+<ul>
   <li>Fix ability to pass in an authorize url with a query string (Roger Smith)</li>
   <li>Fix bug in signature verification (r-stu31)</li>
   <li>Use standard key name (<code>oauth_token_secret</code>) in Token#to_query (Craig Walker)</li>
@@ -429,22 +550,32 @@ Harald Sitter)</li>
 
 <h2 id="047-2012-09-03-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v0.4.6...v0.4.7">0.4.7</a> 2012-09-03 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v0.4.7">tag</a>)</h2>
+
 <h3 id="added-14">Added</h3>
+
 <ul>
-  <li>Set a configurable timeout for all requests (Rick Olson)
-    <h3 id="fixed-12">Fixed</h3>
-  </li>
+  <li>Set a configurable timeout for all requests (Rick Olson)</li>
+</ul>
+
+<h3 id="fixed-12">Fixed</h3>
+
+<ul>
   <li>Fix merging paths if the path is not empty</li>
   <li>Fix nested hash params in Consumer#request (Ernie Miller)</li>
 </ul>
 
 <h2 id="046-2012-04-21-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v0.4.5...v0.4.6">0.4.6</a> 2012-04-21 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v0.4.6">tag</a>)</h2>
+
 <h3 id="changed-16">Changed</h3>
+
 <ul>
-  <li>Make use the path component of the :site parameter (Jonathon M. Abbott)
-    <h3 id="fixed-13">Fixed</h3>
-  </li>
+  <li>Make use the path component of the :site parameter (Jonathon M. Abbott)</li>
+</ul>
+
+<h3 id="fixed-13">Fixed</h3>
+
+<ul>
   <li>Fixed nested attributes in #normalize (Shaliko Usubov)</li>
   <li>Fixed post body’s being dropped in 1.9 (Steven Hammond)</li>
   <li>Fixed PUT request handling (Anton Panasenko)</li>
@@ -452,28 +583,41 @@ Harald Sitter)</li>
 
 <h2 id="045-2011-06-25-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v0.4.4...v0.4.5">0.4.5</a> 2011-06-25 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v0.4.5">tag</a>)</h2>
+
 <h3 id="added-15">Added</h3>
+
 <ul>
   <li>Add explicit require for rsa/sha1 (Juris Galang)</li>
-  <li>Add gemtest support (Adrian Feldman)
-    <h3 id="changed-17">Changed</h3>
-  </li>
+  <li>Add gemtest support (Adrian Feldman)</li>
+</ul>
+
+<h3 id="changed-17">Changed</h3>
+
+<ul>
   <li>Use webmock to mock all http-requests in tests (Adrian Feldman)</li>
   <li>Mention Typhoeus require in the README (Kim Ahlström)</li>
-  <li>Use Net::HTTPGenericRequest (Jakub Kuźma)
-    <h3 id="fixed-14">Fixed</h3>
-  </li>
+  <li>Use Net::HTTPGenericRequest (Jakub Kuźma)</li>
+</ul>
+
+<h3 id="fixed-14">Fixed</h3>
+
+<ul>
   <li>Fix POST Requests with Typhoeus proxy (niedhui)</li>
   <li>Fix incorrect hardcoded port (Ian Taylor)</li>
 </ul>
 
 <h2 id="044-2010-10-31-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v0.4.3...v0.4.4">0.4.4</a> 2010-10-31 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v0.4.4">tag</a>)</h2>
+
 <h3 id="added-16">Added</h3>
+
 <ul>
-  <li>Added support for Rails 3 in client/action_controller_request (Pelle)
-    <h3 id="fixed-15">Fixed</h3>
-  </li>
+  <li>Added support for Rails 3 in client/action_controller_request (Pelle)</li>
+</ul>
+
+<h3 id="fixed-15">Fixed</h3>
+
+<ul>
   <li>Fix LoadError rescue in tests: return can’t be used in this context (Hans de Graaff)</li>
   <li>HTTP headers should be strings. (seancribbs)</li>
   <li>ensure consumer uri gets set back to original config even if an error occurs (Brian Finney)</li>
@@ -482,16 +626,25 @@ Harald Sitter)</li>
 
 <h2 id="043-2010-09-01-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v0.4.2...v0.4.3">0.4.3</a> 2010-09-01 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v0.4.3">tag</a>)</h2>
+
 <h3 id="fixed-16">Fixed</h3>
+
 <ul>
-  <li>Fix for em-http proxy (ichverstehe)
-    <h2 id="042-2010-08-13-tag">
+  <li>Fix for em-http proxy (ichverstehe)</li>
+</ul>
+
+<h2 id="042-2010-08-13-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v0.4.1...v0.4.2">0.4.2</a> 2010-08-13 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v0.4.2">tag</a>)</h2>
-    <h3 id="added-17">Added</h3>
-  </li>
-  <li>Added Bundler (rc) Gemfile for easier dev/testing
-    <h3 id="fixed-17">Fixed</h3>
-  </li>
+
+<h3 id="added-17">Added</h3>
+
+<ul>
+  <li>Added Bundler (rc) Gemfile for easier dev/testing</li>
+</ul>
+
+<h3 id="fixed-17">Fixed</h3>
+
+<ul>
   <li>Fixed compatibility with Ruby 1.9.2 (ecavazos)</li>
   <li>Fixed the em-http request proxy (Joshua Hull)</li>
   <li>Fix for oauth proxy string manipulation (Jakub Suder)</li>
@@ -499,18 +652,25 @@ Harald Sitter)</li>
 
 <h2 id="041-2010-06-16-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v0.4.0...v0.4.1">0.4.1</a> 2010-06-16 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v0.4.1">tag</a>)</h2>
+
 <h3 id="added-18">Added</h3>
+
 <ul>
-  <li>Added support for using OAuth with proxies (Marsh Gardiner)
-    <h3 id="fixed-18">Fixed</h3>
-  </li>
+  <li>Added support for using OAuth with proxies (Marsh Gardiner)</li>
+</ul>
+
+<h3 id="fixed-18">Fixed</h3>
+
+<ul>
   <li>Rails 3 Compatibility fixes (Pelle Braendgaard)</li>
   <li>Fixed load errors on tests for missing (non-required) libraries</li>
 </ul>
 
 <h2 id="040-2010-04-22-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v0.3.6...v0.4.0">0.4.0</a> 2010-04-22 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v0.4.0">tag</a>)</h2>
+
 <h3 id="added-19">Added</h3>
+
 <ul>
   <li>Added computation of oauth_body_hash as per OAuth Request Body Hash 1.0 Draft 4 (Michael Reinsch)</li>
   <li>Added the optional <code>oauth_session_handle</code> parameter for the Yahoo implementation (Will Bailey)</li>
@@ -520,13 +680,19 @@ Harald Sitter)</li>
   <li>Support for Typhoeus (Bill Kocik)</li>
   <li>Support for em-http (EventMachine) (Darcy Laycock)</li>
   <li>Support for curb (André Luis Leal Cardoso Junior)</li>
-  <li>New website (Aaron Quint)
-    <h3 id="changed-18">Changed</h3>
-  </li>
+  <li>New website (Aaron Quint)</li>
+</ul>
+
+<h3 id="changed-18">Changed</h3>
+
+<ul>
   <li>Better marshalling implementation (Yoan Blanc)</li>
-  <li>Replaced hoe with Jeweler (Aaron Quint)
-    <h3 id="fixed-19">Fixed</h3>
-  </li>
+  <li>Replaced hoe with Jeweler (Aaron Quint)</li>
+</ul>
+
+<h3 id="fixed-19">Fixed</h3>
+
+<ul>
   <li>Strip extraneous spaces and line breaks from access_token responses (observed in the wild with Yahoo!’s OAuth+OpenID hybrid) (Eric Hartmann)</li>
   <li>Stop double-escaping PLAINTEXT signatures (Jimmy Zimmerman)</li>
   <li>OAuth::Client::Helper won’t override the specified <code>oauth_version</code> (Philip Kromer)</li>
@@ -535,22 +701,32 @@ Harald Sitter)</li>
 
 <h2 id="036-2009-09-14-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v0.3.5...v0.3.6">0.3.6</a> 2009-09-14 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v0.3.6">tag</a>)</h2>
+
 <h3 id="added-20">Added</h3>
+
 <ul>
   <li>Added -B CLI option to use the :body authentication scheme (Seth)</li>
   <li>Support POST and PUT with raw bodies (Yu-Shan Fung et al)</li>
-  <li>Added :ca_file consumer option to allow consumer specific certificate override. (Pelle)
-    <h3 id="changed-19">Changed</h3>
-  </li>
-  <li>Test clean-up (Xavier Shay, Hannes Tydén)
-    <h3 id="fixed-20">Fixed</h3>
-  </li>
+  <li>Added :ca_file consumer option to allow consumer specific certificate override. (Pelle)</li>
+</ul>
+
+<h3 id="changed-19">Changed</h3>
+
+<ul>
+  <li>Test clean-up (Xavier Shay, Hannes Tydén)</li>
+</ul>
+
+<h3 id="fixed-20">Fixed</h3>
+
+<ul>
   <li>Respect <code>--method</code> in <code>authorize</code> CLI command (Seth)</li>
 </ul>
 
 <h2 id="035-2009-06-03-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v0.3.4...v0.3.5">0.3.5</a> 2009-06-03 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v0.3.5">tag</a>)</h2>
+
 <h3 id="added-21">Added</h3>
+
 <ul>
   <li>
 <code>query</code> CLI command to access protected resources (Seth)</li>
@@ -564,26 +740,39 @@ Harald Sitter)</li>
 
 <h2 id="034-2009-05-06-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v0.3.3...v0.3.4">0.3.4</a> 2009-05-06 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v0.3.4">tag</a>)</h2>
+
 <h3 id="changed-20">Changed</h3>
+
 <ul>
-  <li>OAuth::Client::Helper uses OAuth::Version::VERSION (chadisfaction)
-    <h3 id="fixed-21">Fixed</h3>
-  </li>
+  <li>OAuth::Client::Helper uses OAuth::Version::VERSION (chadisfaction)</li>
+</ul>
+
+<h3 id="fixed-21">Fixed</h3>
+
+<ul>
   <li>Fix OAuth::RequestProxy::ActionControllerRequest’s handling of params (Tristan Groléat)</li>
 </ul>
 
 <h2 id="033-2009-05-04-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v0.3.2...v0.3.3">0.3.3</a> 2009-05-04 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v0.3.3">tag</a>)</h2>
+
 <h3 id="added-22">Added</h3>
+
 <ul>
   <li>Support for arguments in OAuth::Consumer#get_access_token (Matt Sanford)</li>
-  <li>Add gem version to user-agent header (Matt Sanford)
-    <h3 id="changed-21">Changed</h3>
-  </li>
+  <li>Add gem version to user-agent header (Matt Sanford)</li>
+</ul>
+
+<h3 id="changed-21">Changed</h3>
+
+<ul>
   <li>Improved error handling for invalid Authorization headers (Matt Sanford)</li>
-  <li>Handle input from aggressive form encoding libraries (Matt Wood)
-    <h3 id="fixed-22">Fixed</h3>
-  </li>
+  <li>Handle input from aggressive form encoding libraries (Matt Wood)</li>
+</ul>
+
+<h3 id="fixed-22">Fixed</h3>
+
+<ul>
   <li>Corrected OAuth XMPP namespace (Seth)</li>
   <li>Fixed signatures for non-ASCII under $KCODE other than ‘u’ (Matt Sanford)</li>
   <li>Fixed edge cases in ActionControllerRequestProxy where params were being incorrectly signed (Marcos Wright Kuhns)</li>
@@ -591,16 +780,21 @@ Harald Sitter)</li>
 
 <h2 id="032-2009-03-23-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v0.3.1...v0.3.2">0.3.2</a> 2009-03-23 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v0.3.2">tag</a>)</h2>
+
 <h3 id="added-23">Added</h3>
+
 <ul>
   <li>Support applications using the MethodOverride Rack middleware (László Bácsi)</li>
   <li>
 <code>authorize</code> command for <code>oauth</code> CLI (Seth)</li>
   <li>Initial support for Problem Reporting extension (Seth)</li>
   <li>Verify SSL certificates if CA certificates are available (Seth)</li>
-  <li>Added help to the ‘oauth’ CLI (Seth)
-    <h3 id="fixed-23">Fixed</h3>
-  </li>
+  <li>Added help to the ‘oauth’ CLI (Seth)</li>
+</ul>
+
+<h3 id="fixed-23">Fixed</h3>
+
+<ul>
   <li>2xx statuses should be treated as success (Anders Conbere)</li>
   <li>Fixed ActionController parameter escaping behavior (Thiago Arrais, László Bácsi, Brett Gibson, et al)</li>
   <li>Fixed signature calculation when both options and a block were provided to OAuth::Signature::Base#initialize (Seth)</li>
@@ -609,63 +803,91 @@ Harald Sitter)</li>
 
 <h2 id="031-2009-01-26-tag">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/compare/v0.3.0...v0.3.1">0.3.1</a> 2009-01-26 (<a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v0.3.1">tag</a>)</h2>
+
 <h3 id="fixed-24">Fixed</h3>
+
 <ul>
   <li>Fixed a problem with relative and absolute token request paths. (Michael Wood)</li>
 </ul>
 
 <h2 id="030-2009-01-25">
 <a href="https://gitlab.com/ruby-oauth/oauth/-/tags/v0.3.0">0.3.0</a> 2009-01-25</h2>
+
 <h3 id="added-24">Added</h3>
+
 <ul>
   <li>Support ActionController::Request from Edge Rails (László Bácsi)</li>
   <li>Added #normalized_parameters to OAuth::RequestProxy::Base (Pelle)</li>
-  <li>Command-line app for generating signatures. (Seth)
-    <h3 id="changed-22">Changed</h3>
-  </li>
+  <li>Command-line app for generating signatures. (Seth)</li>
+</ul>
+
+<h3 id="changed-22">Changed</h3>
+
+<ul>
   <li>OAuth::Signature.sign and friends now yield the RequestProxy instead of the token when the passed block’s arity is 1. (Seth)</li>
-  <li>Improved test-cases and compatibility for encoding issues. (Pelle)
-    <h3 id="fixed-25">Fixed</h3>
-  </li>
+  <li>Improved test-cases and compatibility for encoding issues. (Pelle)</li>
+</ul>
+
+<h3 id="fixed-25">Fixed</h3>
+
+<ul>
   <li>Correctly handle multi-valued parameters (Seth)</li>
   <li>Token requests are made to the configured URL rather than generating a potentially incorrect one.  (Kellan Elliott-McCrea)</li>
 </ul>
 
 <h2 id="027-2008-09-10">0.2.7 2008-09-10</h2>
+
 <p>The lets fix the last release release</p>
+
 <h3 id="fixed-26">Fixed</h3>
+
 <ul>
   <li>Fixed plain text signatures (Andrew Arrow)</li>
   <li>Fixed RSA requests using OAuthTokens. (Philip Lipu Tsai)</li>
 </ul>
 
 <h2 id="026-2008-09-09">0.2.6 2008-09-09</h2>
+
 <p>The lets RSA release</p>
+
 <h3 id="added-25">Added</h3>
+
 <ul>
   <li>Improved support for Ruby 1.8.7 (Bill Kocik)</li>
-  <li>Added support for ‘private_key_file’ option for RSA signatures (Chris Mear)
-    <h3 id="changed-23">Changed</h3>
-  </li>
+  <li>Added support for ‘private_key_file’ option for RSA signatures (Chris Mear)</li>
+</ul>
+
+<h3 id="changed-23">Changed</h3>
+
+<ul>
   <li>Improved RSA testing</li>
-  <li>Omit token when signing with RSA
-    <h3 id="fixed-27">Fixed</h3>
-  </li>
+  <li>Omit token when signing with RSA</li>
+</ul>
+
+<h3 id="fixed-27">Fixed</h3>
+
+<ul>
   <li>Fixed RSA verification to support RSA providers now using Ruby and RSA</li>
   <li>Fixed several edge cases where params were being incorrectly signed (Scott Hill)</li>
   <li>Fixed RSA signing (choonkeat)</li>
 </ul>
 
 <h2 id="022-2008-02-22">0.2.2 2008-02-22</h2>
+
 <p>Lets actually support SSL release</p>
+
 <h3 id="fixed-28">Fixed</h3>
+
 <ul>
   <li>Use HTTPS when required.</li>
 </ul>
 
 <h2 id="02-2008-1-19">0.2 2008-1-19</h2>
+
 <p>All together now release</p>
+
 <h3 id="changed-24">Changed</h3>
+
 <ul>
   <li>This is a big release, where we have merged the efforts of various parties into one common library.<br>
 This means there are definitely some API changes you should be aware of. They should be minimal<br>
@@ -673,14 +895,18 @@ but please have a look at the unit tests.</li>
 </ul>
 
 <h2 id="012-2007-12-1">0.1.2 2007-12-1</h2>
+
 <h3 id="fixed-29">Fixed</h3>
+
 <ul>
   <li>Fixed checks for missing OAuth params to improve performance</li>
   <li>Includes Pat’s fix for getting the realm out.</li>
 </ul>
 
 <h2 id="011-2007-11-26">0.1.1 2007-11-26</h2>
+
 <h3 id="added-26">Added</h3>
+
 <ul>
   <li>First release as a GEM</li>
   <li>Moved all non-Rails functionality from the Rails plugin:<br>
@@ -690,7 +916,7 @@ http://code.google.com/p/oauth-plugin/</li>
 </div></div>
 
       <div id="footer">
-  Generated on Mon Sep 15 00:31:56 2025 by
+  Generated on Sat Sep 20 17:50:29 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.37 (ruby-3.4.5).
 </div>

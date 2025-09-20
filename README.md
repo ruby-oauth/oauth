@@ -7,7 +7,7 @@
 [🖼️oauth-i]: https://logos.galtzo.com/assets/images/oauth/avatar-192px.svg
 [🖼️oauth]: https://github.com/ruby-oauth/oauth
 
-# 🔑 Ruby OAuth
+# 🔑 Ruby OAuth 1.0 / 1.0a
 
 [![Version][👽versioni]][👽version] [![GitHub tag (latest SemVer)][⛳️tag-img]][⛳️tag] [![License: MIT][📄license-img]][📄license-ref] [![Downloads Rank][👽dl-ranki]][👽dl-rank] [![Open Source Helpers][👽oss-helpi]][👽oss-help] [![CodeCov Test Coverage][🏀codecovi]][🏀codecov] [![Coveralls Test Coverage][🏀coveralls-img]][🏀coveralls] [![QLTY Test Coverage][🏀qlty-covi]][🏀qlty-cov] [![QLTY Maintainability][🏀qlty-mnti]][🏀qlty-mnt] [![CI Heads][🚎3-hd-wfi]][🚎3-hd-wf] [![CI Runtime Dependencies @ HEAD][🚎12-crh-wfi]][🚎12-crh-wf] [![CI Current][🚎11-c-wfi]][🚎11-c-wf] [![CI Truffle Ruby][🚎9-t-wfi]][🚎9-t-wf] [![CI JRuby][🚎10-j-wfi]][🚎10-j-wf] [![Deps Locked][🚎13-🔒️-wfi]][🚎13-🔒️-wf] [![Deps Unlocked][🚎14-🔓️-wfi]][🚎14-🔓️-wf] [![CI Supported][🚎6-s-wfi]][🚎6-s-wf] [![CI Legacy][🚎4-lg-wfi]][🚎4-lg-wf] [![CI Unsupported][🚎7-us-wfi]][🚎7-us-wf] [![CI Ancient][🚎1-an-wfi]][🚎1-an-wf] [![CI Test Coverage][🚎2-cov-wfi]][🚎2-cov-wf] [![CI Style][🚎5-st-wfi]][🚎5-st-wf] [![CodeQL][🖐codeQL-img]][🖐codeQL] [![Apache SkyWalking Eyes License Compatibility Check][🚎15-🪪-wfi]][🚎15-🪪-wf]
 
@@ -22,9 +22,12 @@
 ## 🌻 Synopsis
 
 OAuth 1.0a is an industry-standard protocol for authorization.
+It is an update to the original OAuth 1.0 protocol, and is used by many popular services.
 
-This is a RubyGem for implementing both OAuth 1.0a clients and servers in Ruby applications.
+This is a RubyGem for implementing OAuth 1.0 or 1.0a _clients_ and _servers_ in Ruby applications.
 See the sibling `oauth2` gem for OAuth 2.0, 2.1, & OIDC clients in Ruby.
+
+All dependencies of this gem are signed, so it can be installed with a `HighSecurity` profile.
 
 * [OAuth 1.0 Spec][oauth1-spec]
 * [oauth2 sibling gem][sibling-gem] for OAuth 2.0 implementations in Ruby.
@@ -35,7 +38,7 @@ See the sibling `oauth2` gem for OAuth 2.0, 2.1, & OIDC clients in Ruby.
 ## OAuth 1.0 vs 1.0a: What this library implements
 
 This gem targets the OAuth 1.0a behavior (the errata that became RFC 5849), while maintaining compatibility with providers that still behave like classic 1.0.
-Here are the key lines between the two and how this gem handles them:
+Here are the key differences between the two and how this gem handles them:
 
 - oauth_callback
   - 1.0: Optional in practice; some providers accepted flows without it.
@@ -56,7 +59,7 @@ Practical guidance:
 
 References: [RFC 5849 (OAuth 1.0)](https://datatracker.ietf.org/doc/html/rfc5849), sections 5–7; [1.0a security errata](https://oauth.net/core/1.0a/).
 
-OAuth Ruby has been maintained by a large number of talented
+Ruby OAuth has been maintained by a large number of talented
 individuals over the years.
 The primary maintainer since 2020 is Peter Boling (@pboling).
 
@@ -87,7 +90,7 @@ Compatible with MRI Ruby 2.3+, and concordant releases of JRuby, and TruffleRuby
 ### Federated DVCS
 
 <details>
-  <summary>Find this repo on federated forges (Coming soon!)</summary>
+  <summary>Find this repo on federated forges</summary>
 
 | Federated [DVCS][💎d-in-dvcs] Repository        | Status                                                                | Issues                    | PRs                      | Wiki                      | CI                       | Discussions                  |
 |-------------------------------------------------|-----------------------------------------------------------------------|---------------------------|--------------------------|---------------------------|--------------------------|------------------------------|
