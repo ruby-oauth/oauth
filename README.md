@@ -1,10 +1,10 @@
-[![Galtzo FLOSS Logo by Aboling0, CC BY-SA 4.0][🖼️galtzo-i]][🖼️galtzo-discord] [![ruby-lang Logo, Yukihiro Matsumoto, Ruby Visual Identity Team, CC BY-SA 2.5][🖼️ruby-lang-i]][🖼️ruby-lang] [![oauth Logo by Aboling0, CC BY-SA 4.0][🖼️oauth-i]][🖼️oauth]
+[![Galtzo FLOSS Logo by Aboling0, CC BY-SA 4.0][🖼️galtzo-i]][🖼️galtzo-discord] [![ruby-lang Logo, Yukihiro Matsumoto, Ruby Visual Identity Team, CC BY-SA 2.5][🖼️ruby-lang-i]][🖼️ruby-lang] [![oauth Logo by Chris Messina, CC BY-SA 3.0][🖼️oauth-i]][🖼️oauth]
 
 [🖼️galtzo-i]: https://logos.galtzo.com/assets/images/galtzo-floss/avatar-192px.svg
 [🖼️galtzo-discord]: https://discord.gg/3qme4XHNKN
 [🖼️ruby-lang-i]: https://logos.galtzo.com/assets/images/ruby-lang/avatar-192px.svg
 [🖼️ruby-lang]: https://www.ruby-lang.org/
-[🖼️oauth-i]: https://logos.galtzo.com/assets/images/oauth/oauth/avatar-192px.svg
+[🖼️oauth-i]: https://logos.galtzo.com/assets/images/oauth/avatar-192px.svg
 [🖼️oauth]: https://github.com/ruby-oauth/oauth
 
 # 🔑 Ruby OAuth
