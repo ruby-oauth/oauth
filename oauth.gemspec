@@ -18,8 +18,8 @@ Gem::Specification.new do |spec|
   spec.authors = ["Pelle Braendgaard", "Blaine Cook", "Larry Halff", "Jesse Clark", "Jon Crosby", "Seth Fitzsimmons", "Matt Sanford", "Aaron Quint", "Peter Boling"]
   spec.email = ["floss@galtzo.com", "oauth-ruby@googlegroups.com"]
 
-  spec.summary = "🔑 OAuth 1.0a Core Ruby implementation"
-  spec.description = "🔑 A Ruby wrapper for the original OAuth 1.0a spec."
+  spec.summary = "🔑 OAuth 1.0 / 1.0a Core Ruby implementation"
+  spec.description = "🔑 A Ruby wrapper for the original OAuth 1.0 / 1.0a spec."
   spec.homepage = "https://github.com/ruby-oauth/oauth"
   spec.licenses = ["MIT"]
   spec.required_ruby_version = ">= 2.3"

@@ -34,7 +34,7 @@
   "lib/oauth/tokens/consumer_token.rb:3696415131": [
     [9, 5, 155, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 349576019]
   ],
-  "oauth.gemspec:3830118710": [
+  "oauth.gemspec:136086454": [
     [133, 3, 56, "Gemspec/DependencyVersion: Dependency version specification is required.", 644892567],
     [152, 3, 40, "Gemspec/DependencyVersion: Dependency version specification is required.", 2300588954],
     [154, 3, 44, "Gemspec/DependencyVersion: Dependency version specification is required.", 1905290578],
