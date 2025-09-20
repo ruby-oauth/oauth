@@ -30,10 +30,12 @@ See the sibling `oauth2` gem for OAuth 2.0, 2.1, & OIDC clients in Ruby.
 All dependencies of this gem are signed, so it can be installed with a `HighSecurity` profile.
 
 * [OAuth 1.0 Spec][oauth1-spec]
+* [oauth-tty sibling gem][sibling2-gem] is the OAuth 1.0 / 1.0a CLI.
 * [oauth2 sibling gem][sibling-gem] for OAuth 2.0 implementations in Ruby.
 
 [oauth1-spec]: http://oauth.net/core/1.0/
 [sibling-gem]: https://gitlab.com/ruby-oauth/oauth2
+[sibling2-gem]: https://gitlab.com/ruby-oauth/oauth-tty
 
 ## OAuth 1.0 vs 1.0a: What this library implements
 
