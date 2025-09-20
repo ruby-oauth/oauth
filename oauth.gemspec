@@ -124,7 +124,7 @@ Thanks, |7eter l-|. l3oling
   ]
   spec.require_paths = ["lib"]
   spec.bindir = "bin"
-  # files listed are relative paths from bindir above.
+  # Listed files are the relative paths from bindir above.
   spec.executables = []
 
   # "oauth-tty" was extracted from this gem with release 1.1 of this gem
@@ -140,9 +140,8 @@ Thanks, |7eter l-|. l3oling
   #       visibility and discoverability on RubyGems.org.
   #       However, development dependencies in gemspec will install on
   #       all versions of Ruby that will run in CI.
-  #       This gem, and its gemspec runtime dependencies, will install on Ruby down to 2.3.x.
-  #       This gem, and its gemspec development dependencies, will install on Ruby down to 2.3.x.
-  #       This is because in CI easy installation of Ruby, via setup-ruby, is for >= 2.3.
+  #       This gem, and its gemspec runtime dependencies, will install on Ruby down to 2.3.
+  #       This gem, and its gemspec development dependencies, will install on Ruby down to 2.3.
   #       Thus, dev dependencies in gemspec must have
   #
   #       required_ruby_version ">= 2.3" (or lower)
@@ -157,7 +156,7 @@ Thanks, |7eter l-|. l3oling
   spec.add_development_dependency("typhoeus", ">= 0.1.13")
 
   # Dev, Test, & Release Tasks
-  spec.add_development_dependency("kettle-dev", "~> 1.1")            # ruby >= 2.3.0
+  spec.add_development_dependency("kettle-dev", "~> 1.1")                     # ruby >= 2.3.0
 
   # Security
   spec.add_development_dependency("bundler-audit", "~> 0.9.2")                      # ruby >= 2.0.0
