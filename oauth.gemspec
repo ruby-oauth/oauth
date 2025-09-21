@@ -18,45 +18,12 @@ Gem::Specification.new do |spec|
   spec.authors = ["Pelle Braendgaard", "Blaine Cook", "Larry Halff", "Jesse Clark", "Jon Crosby", "Seth Fitzsimmons", "Matt Sanford", "Aaron Quint", "Peter Boling"]
   spec.email = ["floss@galtzo.com", "oauth-ruby@googlegroups.com"]
 
+
   spec.summary = "🔑 OAuth 1.0 / 1.0a Core Ruby implementation"
   spec.description = "🔑 A Ruby wrapper for the original OAuth 1.0 / 1.0a spec."
   spec.homepage = "https://github.com/ruby-oauth/oauth"
   spec.licenses = ["MIT"]
   spec.required_ruby_version = ">= 2.3"
-  spec.post_install_message = "
-You have installed oauth version #{gem_version}, congratulations!
-
-Please see:
-• #{spec.homepage}/-/blob/main/SECURITY.md
-• #{spec.homepage}/-/blob/v#{spec.version}/CHANGELOG.md#111-2022-09-19
-
-Major updates:
-1. master branch renamed to main
-• Update your local: git checkout master; git branch -m master main; git branch --unset-upstream; git branch -u origin/main
-2. Github has been replaced with Gitlab; I wrote about some of the reasons here:
-• https://dev.to/galtzo/im-leaving-github-50ba
-• Update your local: git remote set-url origin git@gitlab.com:ruby-oauth/oauth.git
-3. Google Group is active (again)!
-• https://groups.google.com/g/oauth-ruby/c/QA_dtrXWXaE
-4. Gitter Chat is active (still)!
-• https://gitter.im/oauth-xx/
-5. Non-commercial support for the 1.x series will end by April, 2025. Please make a plan to upgrade to the next version prior to that date.
-Support will be dropped for Ruby 2.7 and any other Ruby versions which will also have reached EOL by then.
-6. Gem releases are now cryptographically signed for security.
-
-If you are a human, please consider a donation as I move toward supporting myself with Open Source work:
-• https://liberapay.com/pboling
-• https://ko-fi.com/pboling
-• https://patreon.com/galtzo
-
-If you are a corporation, please consider supporting this project, and open source work generally, with a TideLift subscription.
-• https://tidelift.com/funding/github/rubygems/oauth
-• Or hire me. I am looking for a job!
-
-Please report issues, and support the project!
-
-Thanks, |7eter l-|. l3oling
-"
 
   # Linux distros often package gems and securely certify them independent
   #   of the official RubyGem certification process. Allowed via ENV["SKIP_GEM_SIGNING"]
@@ -76,13 +43,44 @@ Thanks, |7eter l-|. l3oling
     end
   end
 
+  gl_homepage = "https://gitlab.com/ruby-oauth/#{spec.name}"
+  gh_mirror = spec.homepage
+
+  spec.post_install_message = %{
+---+++--- oauth2 v#{gem_version} ---+++---
+
+(minor) ⚠️ BREAKING CHANGES ⚠️ when upgrading from < v2
+• Summary of breaking changes: #{gl_homepage}#what-is-new-for-v20
+• Changes in this patch: #{gl_homepage}/-/blob/v#{gem_version}/CHANGELOG.md#2015-2025-09-08
+
+News:
+1. New documentation website, covering usage with OAuth 1.0 and 1.0a: https://oauth.galtzo.com
+2. New official Discord for discussion and support: https://discord.gg/3qme4XHNKN
+3. New org name "ruby-oauth" on Open Source Collective, GitHub, GitLab, Codeberg (update git remotes!)
+4. Non-commercial support for the 2.x series will end by April, 2026. Please make a plan to upgrade to the next version prior to that date.
+Support will be dropped for Ruby 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 3.0, 3.1 and any other Ruby versions which will also have reached EOL by then.
+5. Gem releases are cryptographically signed with a 20-year cert; SHA-256 & SHA-512 checksums by stone_checksums.
+6. Please consider supporting this project:
+   • https://opencollective.com/ruby-oauth (new!)
+   • https://liberapay.com/pboling
+   • https://github.com/sponsors/pboling
+   • https://www.paypal.com/paypalme/peterboling
+   • https://ko-fi.com/pboling
+   • https://www.buymeacoffee.com/pboling
+   • https://tidelift.com/funding/github/rubygems/oauth
+   • Hire me - I can build anything
+   • Report issues, and star the project
+Thanks, @pboling / @galtzo
+}
+
   spec.metadata["homepage_uri"] = "https://#{spec.name.tr("_", "-")}.galtzo.com/"
-  spec.metadata["source_code_uri"] = "#{spec.homepage}/tree/v#{spec.version}"
-  spec.metadata["changelog_uri"] = "#{spec.homepage}/blob/v#{spec.version}/CHANGELOG.md"
-  spec.metadata["bug_tracker_uri"] = "#{spec.homepage}/issues"
+  spec.metadata["source_code_uri"] = "#{gh_mirror}/tree/v#{spec.version}"
+  spec.metadata["changelog_uri"] = "#{gh_mirror}/blob/v#{spec.version}/CHANGELOG.md"
+  spec.metadata["bug_tracker_uri"] = "#{gh_mirror}/issues"
   spec.metadata["documentation_uri"] = "https://www.rubydoc.info/gems/#{spec.name}/#{spec.version}"
+  spec.metadata["mailing_list_uri"] = "https://groups.google.com/g/oauth-ruby"
   spec.metadata["funding_uri"] = "https://github.com/sponsors/pboling"
-  spec.metadata["wiki_uri"] = "#{spec.homepage}/wiki"
+  spec.metadata["wiki_uri"] = "#{gl_homepage}/-/wiki"
   spec.metadata["news_uri"] = "https://www.railsbling.com/tags/#{spec.name}"
   spec.metadata["discord_uri"] = "https://discord.gg/3qme4XHNKN"
   spec.metadata["rubygems_mfa_required"] = "true"
