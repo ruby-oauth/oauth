@@ -29,5 +29,3 @@ eval_gemfile "gemfiles/modular/optional.gemfile"
 
 ### Std Lib Extracted Gems
 eval_gemfile "gemfiles/modular/x_std_libs.gemfile"
-
-gem "oauth-tty", github: "ruby-oauth/oauth-tty", branch: "main"

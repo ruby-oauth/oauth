@@ -10,5 +10,3 @@ source "https://rubygems.org"
 # We do not load the standard Gemfile, as it is tailored for local development.
 
 gemspec
-
-gem "oauth-tty", github: "ruby-oauth/oauth-tty", branch: "main"
