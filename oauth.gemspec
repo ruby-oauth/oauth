@@ -18,7 +18,6 @@ Gem::Specification.new do |spec|
   spec.authors = ["Pelle Braendgaard", "Blaine Cook", "Larry Halff", "Jesse Clark", "Jon Crosby", "Seth Fitzsimmons", "Matt Sanford", "Aaron Quint", "Peter Boling"]
   spec.email = ["floss@galtzo.com", "oauth-ruby@googlegroups.com"]
 
-
   spec.summary = "🔑 OAuth 1.0 / 1.0a Core Ruby implementation"
   spec.description = "🔑 A Ruby wrapper for the original OAuth 1.0 / 1.0a spec."
   spec.homepage = "https://github.com/ruby-oauth/oauth"
@@ -57,7 +56,7 @@ News:
 1. New documentation website, covering usage with OAuth 1.0 and 1.0a: https://oauth.galtzo.com
 2. New official Discord for discussion and support: https://discord.gg/3qme4XHNKN
 3. New org name "ruby-oauth" on Open Source Collective, GitHub, GitLab, Codeberg (update git remotes!)
-4. Non-commercial support for the 2.x series will end by April, 2026. Please make a plan to upgrade to the next version prior to that date.
+4. Non-commercial support for the 1.x series will end by April, 2026. Please make a plan to upgrade to the next version prior to that date.
 Support will be dropped for Ruby 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 3.0, 3.1 and any other Ruby versions which will also have reached EOL by then.
 5. Gem releases are cryptographically signed with a 20-year cert; SHA-256 & SHA-512 checksums by stone_checksums.
 6. Please consider supporting this project:
