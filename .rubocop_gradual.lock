@@ -47,7 +47,6 @@
     [6, 16, 29, "RSpec/DescribeClass: The first argument to describe should be the class or module being tested.", 694297794]
   ],
   "spec/oauth/consumer_spec.rb:3729402719": [
-    [5, 1, 30, "RSpec/SpecFilePathFormat: Spec path should end with `o_auth/consumer*_spec.rb`.", 22845032],
     [91, 40, 16, "RSpec/VerifiedDoubleReference: Use a constant class reference for verified doubles. String references are not verifying unless the class is loaded.", 1274889684],
     [92, 7, 22, "RSpec/StubbedMock: Prefer `allow` over `expect` when configuring a response.", 190162250],
     [95, 7, 16, "RSpec/StubbedMock: Prefer `allow` over `expect` when configuring a response.", 3492346277],
@@ -61,52 +60,38 @@
     [212, 7, 83, "RSpec/ReceiveMessages: Use `receive_messages` instead of multiple stubs on lines [214].", 4182076280],
     [214, 7, 96, "RSpec/ReceiveMessages: Use `receive_messages` instead of multiple stubs on lines [212].", 3226867591]
   ],
-  "spec/oauth/helper_spec.rb:3023999608": [
-    [3, 1, 28, "RSpec/SpecFilePathFormat: Spec path should end with `o_auth/helper*_spec.rb`.", 2306013808]
-  ],
   "spec/oauth/net_http_client_spec.rb:797264696": [
     [5, 16, 32, "RSpec/DescribeClass: The first argument to describe should be the class or module being tested.", 1925154217]
   ],
   "spec/oauth/request_proxy/net_http_spec.rb:3313532290": [
-    [6, 1, 58, "RSpec/SpecFilePathFormat: Spec path should end with `o_auth/request_proxy/net/http/http_request*_spec.rb`.", 3090491845]
-  ],
-  "spec/oauth/server_spec.rb:3208154506": [
-    [6, 1, 28, "RSpec/SpecFilePathFormat: Spec path should end with `o_auth/server*_spec.rb`.", 1397279123]
+    [6, 1, 58, "RSpec/SpecFilePathFormat: Spec path should end with `oauth/request_proxy/net/http/http_request*_spec.rb`.", 3090491845]
   ],
   "spec/oauth/server_token_spec.rb:492172103": [
-    [6, 1, 33, "RSpec/SpecFilePathFormat: Spec path should end with `o_auth/server_token*_spec.rb`.", 3471371816],
     [9, 7, 38, "RSpec/AnyInstance: Avoid stubbing using `allow_any_instance_of`.", 3627954156],
     [10, 7, 38, "RSpec/AnyInstance: Avoid stubbing using `allow_any_instance_of`.", 3627954156],
     [19, 7, 38, "RSpec/AnyInstance: Avoid stubbing using `allow_any_instance_of`.", 3627954156],
     [20, 7, 38, "RSpec/AnyInstance: Avoid stubbing using `allow_any_instance_of`.", 3627954156]
   ],
-  "spec/oauth/signature/base_spec.rb:535433": [
-    [6, 1, 37, "RSpec/SpecFilePathFormat: Spec path should end with `o_auth/signature/base*_spec.rb`.", 2859754759]
-  ],
   "spec/oauth/signature/hmac_sha1_spec.rb:820294695": [
-    [5, 1, 43, "RSpec/SpecFilePathFormat: Spec path should end with `o_auth/signature/hmac/sha1*_spec.rb`.", 2640418270]
+    [5, 1, 43, "RSpec/SpecFilePathFormat: Spec path should end with `oauth/signature/hmac/sha1*_spec.rb`.", 2640418270]
   ],
   "spec/oauth/signature/hmac_sha256_spec.rb:1041219499": [
-    [5, 1, 45, "RSpec/SpecFilePathFormat: Spec path should end with `o_auth/signature/hmac/sha256*_spec.rb`.", 2082372222]
+    [5, 1, 45, "RSpec/SpecFilePathFormat: Spec path should end with `oauth/signature/hmac/sha256*_spec.rb`.", 2082372222]
   ],
   "spec/oauth/signature/plaintext_spec.rb:1285578452": [
     [5, 16, 28, "RSpec/DescribeClass: The first argument to describe should be the class or module being tested.", 2918247297]
   ],
   "spec/oauth/signature/rsa_sha1_spec.rb:1684897149": [
-    [9, 1, 42, "RSpec/SpecFilePathFormat: Spec path should end with `o_auth/signature/rsa/sha1*_spec.rb`.", 3568722713]
-  ],
-  "spec/oauth/token_spec.rb:3199047269": [
-    [5, 1, 27, "RSpec/SpecFilePathFormat: Spec path should end with `o_auth/token*_spec.rb`.", 3290795373]
+    [9, 1, 42, "RSpec/SpecFilePathFormat: Spec path should end with `oauth/signature/rsa/sha1*_spec.rb`.", 3568722713]
   ],
   "spec/oauth/tokens/access_token_spec.rb:893947951": [
-    [6, 1, 33, "RSpec/SpecFilePathFormat: Spec path should end with `o_auth/access_token*_spec.rb`.", 3410051945]
+    [6, 1, 33, "RSpec/SpecFilePathFormat: Spec path should end with `oauth/access_token*_spec.rb`.", 3410051945]
   ],
   "spec/oauth/tokens/request_token_spec.rb:4004144261": [
-    [6, 1, 34, "RSpec/SpecFilePathFormat: Spec path should end with `o_auth/request_token*_spec.rb`.", 2527248508],
+    [6, 1, 34, "RSpec/SpecFilePathFormat: Spec path should end with `oauth/request_token*_spec.rb`.", 2527248508],
     [59, 5, 147, "RSpec/LeakyConstantDeclaration: Stub class constant instead of declaring explicitly.", 455072902]
   ],
   "spec/oauth/tty/cli_spec.rb:3404752772": [
-    [3, 1, 30, "RSpec/SpecFilePathFormat: Spec path should end with `o_auth/tty/cli*_spec.rb`.", 2849860169],
     [111, 34, 17, "RSpec/VerifiedDoubleReference: Use a constant class reference for verified doubles. String references are not verifying unless the class is loaded.", 285748316],
     [112, 38, 20, "RSpec/VerifiedDoubleReference: Use a constant class reference for verified doubles. String references are not verifying unless the class is loaded.", 1228090493],
     [113, 34, 10, "RSpec/VerifiedDoubleReference: Use a constant class reference for verified doubles. String references are not verifying unless the class is loaded.", 4294324198],
