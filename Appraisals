@@ -49,22 +49,18 @@ appraise "dep-heads" do
 end
 
 appraise "ruby-2-3" do
-  gem "oauth-tty", github: "ruby-oauth/oauth-tty", branch: "main"
   eval_gemfile "modular/x_std_libs/r2.3/libs.gemfile"
 end
 
 appraise "ruby-2-4" do
-  gem "oauth-tty", github: "ruby-oauth/oauth-tty", branch: "main"
   eval_gemfile "modular/x_std_libs/r2.4/libs.gemfile"
 end
 
 appraise "ruby-2-5" do
-  gem "oauth-tty", github: "ruby-oauth/oauth-tty", branch: "main"
   eval_gemfile "modular/x_std_libs/r2.6/libs.gemfile"
 end
 
 appraise "ruby-2-6" do
-  gem "oauth-tty", github: "ruby-oauth/oauth-tty", branch: "main"
   eval_gemfile "modular/x_std_libs/r2.6/libs.gemfile"
 end
 

@@ -2,7 +2,6 @@
 
 source "https://rubygems.org"
 
-gem "oauth-tty", branch: "main", git: "https://github.com/ruby-oauth/oauth-tty"
 gem "cgi", ">= 0.5"
 gem "benchmark", "~> 0.4", ">= 0.4.1"
 

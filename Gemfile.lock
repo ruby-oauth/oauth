@@ -10,19 +10,11 @@ GIT
       rainbow
       yard
 
-GIT
-  remote: https://github.com/ruby-oauth/oauth-tty
-  revision: 895ffc635f0ce41a97da28d2d96303afe9e9499c
-  branch: main
-  specs:
-    oauth-tty (1.0.5)
-      version_gem (~> 1.1, >= 1.1.8)
-
 PATH
   remote: .
   specs:
     oauth (1.1.1)
-      oauth-tty (~> 1.0, >= 1.0.1)
+      oauth-tty (~> 1.0, >= 1.0.6)
       snaky_hash (~> 2.0)
       version_gem (~> 1.1, >= 1.1.9)
 
@@ -198,7 +190,7 @@ GEM
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
     json (2.14.1)
-    kettle-dev (1.1.26)
+    kettle-dev (1.1.29)
     kettle-soup-cover (1.0.10)
       simplecov (~> 0.22)
       simplecov-cobertura (~> 3.0)
@@ -255,6 +247,8 @@ GEM
     nio4r (2.7.4)
     nokogiri (1.18.10-x86_64-linux-gnu)
       racc (~> 1.4)
+    oauth-tty (1.0.6)
+      version_gem (~> 1.1, >= 1.1.9)
     ostruct (0.6.3)
     parallel (1.27.0)
     parser (3.3.9.0)
@@ -515,7 +509,6 @@ DEPENDENCIES
   mocha
   mutex_m (~> 0.2)
   oauth!
-  oauth-tty!
   rack (>= 2.0.0)
   rack-test
   rails (>= 5.0)

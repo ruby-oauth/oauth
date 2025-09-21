@@ -130,7 +130,7 @@ Thanks, |7eter l-|. l3oling
   # "oauth-tty" was extracted from this gem with release 1.1 of this gem
   # It is now a dependency for backward compatibility.
   # The dependency will be removed with release 2.0, by April 2023.
-  spec.add_dependency("oauth-tty", ["~> 1.0", ">= 1.0.1"])
+  spec.add_dependency("oauth-tty", "~> 1.0", ">= 1.0.6")
   spec.add_dependency("snaky_hash", "~> 2.0")
 
   # Utilities
@@ -156,7 +156,7 @@ Thanks, |7eter l-|. l3oling
   spec.add_development_dependency("typhoeus", ">= 0.1.13")
 
   # Dev, Test, & Release Tasks
-  spec.add_development_dependency("kettle-dev", "~> 1.1")                     # ruby >= 2.3.0
+  spec.add_development_dependency("kettle-dev", "~> 1.1")                           # ruby >= 2.3.0
 
   # Security
   spec.add_development_dependency("bundler-audit", "~> 0.9.2")                      # ruby >= 2.0.0
