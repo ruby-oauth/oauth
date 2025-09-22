@@ -30,6 +30,17 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Security
 
+## [1.1.2] - 2025-09-21
+
+- TAG: [v1.1.2][1.1.2t]
+- COVERAGE: 81.78% -- 817/999 lines in 36 files
+- BRANCH COVERAGE: 50.54% -- 140/277 branches in 36 files
+- 40.71% documented
+
+### Added
+
+- Corrected SHA-256 & SHA-512 checksums for release 1.1.1
+
 ## [1.1.1] - 2025-09-21
 
 - TAG: [v1.1.1][1.1.1t]
@@ -704,7 +715,9 @@ but please have a look at the unit tests.
 * Moved all non-Rails functionality from the Rails plugin:
   http://code.google.com/p/oauth-plugin/
 
-[Unreleased]: https://github.com/ruby-oauth/oauth/compare/v1.1.1...HEAD
+[Unreleased]: https://github.com/ruby-oauth/oauth/compare/v1.1.2...HEAD
+[1.1.2]: https://github.com/ruby-oauth/oauth/compare/v1.1.1...v1.1.2
+[1.1.2t]: https://github.com/ruby-oauth/oauth/releases/tag/v1.1.2
 [1.1.1]: https://github.com/ruby-oauth/oauth/compare/v1.1.0...v1.1.1
 [1.1.1t]: https://github.com/ruby-oauth/oauth/releases/tag/v1.1.1
 [1.1.0]: https://gitlab.com/ruby-oauth/oauth/-/compare/v1.0.1...v1.1.0
