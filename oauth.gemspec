@@ -45,33 +45,6 @@ Gem::Specification.new do |spec|
   gl_homepage = "https://gitlab.com/ruby-oauth/#{spec.name}"
   gh_mirror = spec.homepage
 
-  spec.post_install_message = %{
----+++--- oauth2 v#{gem_version} ---+++---
-
-(minor) ⚠️ BREAKING CHANGES ⚠️ when upgrading from < v2
-• Summary of breaking changes: #{gl_homepage}#what-is-new-for-v20
-• Changes in this patch: #{gl_homepage}/-/blob/v#{gem_version}/CHANGELOG.md#2015-2025-09-08
-
-News:
-1. New documentation website, covering usage with OAuth 1.0 and 1.0a: https://oauth.galtzo.com
-2. New official Discord for discussion and support: https://discord.gg/3qme4XHNKN
-3. New org name "ruby-oauth" on Open Source Collective, GitHub, GitLab, Codeberg (update git remotes!)
-4. Non-commercial support for the 1.x series will end by April, 2026. Please make a plan to upgrade to the next version prior to that date.
-Support will be dropped for Ruby 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 3.0, 3.1 and any other Ruby versions which will also have reached EOL by then.
-5. Gem releases are cryptographically signed with a 20-year cert; SHA-256 & SHA-512 checksums by stone_checksums.
-6. Please consider supporting this project:
-   • https://opencollective.com/ruby-oauth (new!)
-   • https://liberapay.com/pboling
-   • https://github.com/sponsors/pboling
-   • https://www.paypal.com/paypalme/peterboling
-   • https://ko-fi.com/pboling
-   • https://www.buymeacoffee.com/pboling
-   • https://tidelift.com/funding/github/rubygems/oauth
-   • Hire me - I can build anything
-   • Report issues, and star the project
-Thanks, @pboling / @galtzo
-}
-
   spec.metadata["homepage_uri"] = "https://#{spec.name.tr("_", "-")}.galtzo.com/"
   spec.metadata["source_code_uri"] = "#{gh_mirror}/tree/v#{spec.version}"
   spec.metadata["changelog_uri"] = "#{gh_mirror}/blob/v#{spec.version}/CHANGELOG.md"
@@ -126,7 +99,7 @@ Thanks, @pboling / @galtzo
 
   # "oauth-tty" was extracted from this gem with release 1.1 of this gem
   # It is now a dependency for backward compatibility.
-  # The dependency will be removed with release 2.0, by April 2023.
+  # The dependency will cease to be a direct dependency with release 2.0.
   spec.add_dependency("oauth-tty", "~> 1.0", ">= 1.0.6")
   spec.add_dependency("snaky_hash", "~> 2.0")
 
