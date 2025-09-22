@@ -20,6 +20,25 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Added
 
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [1.1.1] - 2025-09-21
+
+- TAG: [v1.1.1][1.1.1t]
+- COVERAGE: 81.70% -- 817/1000 lines in 36 files
+- BRANCH COVERAGE: 50.54% -- 140/277 branches in 36 files
+- 40.71% documented
+
+### Added
+
 - kettle-dev v1.1.18
 - Internal escape & unescape methods
   - Stop relying on URI / CGI for escaping and unescaping
@@ -31,18 +50,14 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - converted minitest => rspec
 
-### Deprecated
-
 ### Removed
 
 - dependency on em-http-request
   - now lazy Loaded so it can be optional, since some systems fail to install it, and it doesn't seem maintained
 
-### Fixed
+## [1.1.0] 2022-08-29
 
-### Security
-
-## [1.1.0] 2022-08-29 ([tag][1.1.0t])
+- TAG: [v1.1.0][1.1.0t]
 
 ### Changed
 
@@ -53,14 +68,18 @@ Please file a bug if you notice a violation of semantic versioning.
 * `OAuth::Comsumer#options` hash is now handled by `snaky_hash`, which was extracted from `oauth2`
   * symbolized keys, dot-access and snake-case are now normalized
 
-## [1.0.1] 2022-08-29 ([tag][1.0.1t])
+## [1.0.1] 2022-08-29
+
+- TAG: [v1.0.1][1.0.1t]
 
 ### Changed
 
 * `OAuth::Comsumer#options` hash is now handled by `snaky_hash`, which was extracted from `oauth2`
   * symbolized keys, dot-access and snake-case are now normalized
 
-## [1.0.0] 2022-08-23 ([tag][1.0.0t])
+## [1.0.0] 2022-08-23
+
+- TAG: [v1.0.0][1.0.0t]
 
 ### Changed
 
@@ -72,14 +91,18 @@ Please file a bug if you notice a violation of semantic versioning.
 * New EOL Policy
   * Non-commercial support for the oldest version of Ruby (which itself is going EOL) will be dropped each year in April
 
-## [0.6.2] 2022-08-29 ([tag][0.6.2t])
+## [0.6.2] 2022-08-29
+
+- TAG: [v0.6.2][0.6.2t]
 
 ### Changed
 
 * `OAuth::Comsumer#options` hash is now handled by `snaky_hash`, which was extracted from `oauth2`
   * symbolized keys, dot-access and snake-case are now normalized
 
-## [0.6.1] 2022-08-23 ([tag][0.6.1t])
+## [0.6.1] 2022-08-23
+
+- TAG: [v0.6.1][0.6.1t]
 
 ### Changed
 
@@ -90,7 +113,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 * Post install note about v0.6.x EOL approaching in April, 2024
 
-## [0.6.0] 2022-08-23 ([tag][0.6.0t])
+## [0.6.0] 2022-08-23
+
+- TAG: [v0.6.0][0.6.0t]
 
 ### Added
 
@@ -108,7 +133,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 * Ruby 2.0, 2.1, 2.2, and 2.3 are no longer valid install targets
 
-## [0.5.14] 2022-08-29 ([tag][0.5.14t])
+## [0.5.14] 2022-08-29
+
+- TAG: [v0.5.14][0.5.14t]
 
 The "hopeful last 0.5.x" Release
 
@@ -116,7 +143,9 @@ The "hopeful last 0.5.x" Release
 
 * More typos fixed
 
-## [0.5.13] 2022-08-23 ([tag][0.5.13t])
+## [0.5.13] 2022-08-23
+
+- TAG: [v0.5.13][0.5.13t]
 
 The "I think I caught 'em all!" Release
 
@@ -124,7 +153,9 @@ The "I think I caught 'em all!" Release
 
 * Typo oauth2 => oauth as gem name in one more place.
 
-## [0.5.12] 2022-08-23 ([tag][0.5.12t])
+## [0.5.12] 2022-08-23
+
+- TAG: [v0.5.12][0.5.12t]
 
 The "Typoes are just the worst!" Release
 
@@ -132,7 +163,9 @@ The "Typoes are just the worst!" Release
 
 * Typo oauth2 => oauth as gem name in a couple places.
 
-## [0.5.11] 2022-08-23 ([tag][0.5.11t])
+## [0.5.11] 2022-08-23
+
+- TAG: [v0.5.11][0.5.11t]
 
 The "Is this the last release with a silly name?" Release
 
@@ -146,7 +179,9 @@ The "Is this the last release with a silly name?" Release
 * Switched branch references from master to main
 * CI builds are now all green!
 
-## [0.5.10] 2022-05-04 ([tag][0.5.10t])
+## [0.5.10] 2022-05-04
+
+- TAG: [v0.5.10][0.5.10t]
 
 The "Can it be the end of the line for 0.5.x?" Release
 
@@ -158,7 +193,9 @@ The "Can it be the end of the line for 0.5.x?" Release
 * Project tooling in preparation for final release of 0.5.x series
   - diffend
 
-## [0.5.9] 2022-05-03 ([tag][0.5.9t])
+## [0.5.9] 2022-05-03
+
+- TAG: [v0.5.9][0.5.9t]
 
 ### Added
 
@@ -172,7 +209,9 @@ The "Can it be the end of the line for 0.5.x?" Release
   - rubocop-ruby2_0
   - overcommit
 
-## [0.5.8] 2021-11-10 ([tag][0.5.8t])
+## [0.5.8] 2021-11-10
+
+- TAG: [v0.5.8][0.5.8t]
 
 ### Added
 
@@ -182,7 +221,9 @@ The "Can it be the end of the line for 0.5.x?" Release
 
 * Removed reference to RUBY_VERSION from gemspec, as it depends on rake release, which is problematic on some ruby engines. (by @pboling)
 
-## [0.5.7] 2021-11-02 ([tag][0.5.7t])
+## [0.5.7] 2021-11-02
+
+- TAG: [v0.5.7][0.5.7t]
 
 ### Added
 
@@ -217,7 +258,9 @@ The "Can it be the end of the line for 0.5.x?" Release
 
 * Remove direct development dependency on nokogiri (#299 by @pboling)
 
-## [0.5.6] 2021-04-02 ([tag][0.5.6t])
+## [0.5.6] 2021-04-02
+
+- TAG: [v0.5.6][0.5.6t]
 
 ### Added
 
@@ -228,7 +271,9 @@ The "Can it be the end of the line for 0.5.x?" Release
 
 * Change default timeout to be the same as Net::HTTP default, 60 seconds instead of 30 seconds.
 
-## [0.5.5] 2020-01-19 ([tag][0.5.5t])
+## [0.5.5] 2020-01-19
+
+- TAG: [v0.5.5][0.5.5t]
 
 ### Added
 
@@ -244,7 +289,9 @@ The "Can it be the end of the line for 0.5.x?" Release
 * Fixes ssl-noverify
 * Fixed README example (#158, #159, by @pboling)
 
-## [0.5.4] 2017-12-08 ([tag][0.5.4t])
+## [0.5.4] 2017-12-08
+
+- TAG: [v0.5.4][0.5.4t]
 
 ### Changed
 
@@ -254,7 +301,9 @@ The "Can it be the end of the line for 0.5.x?" Release
 
 * Fixes UnknownRequestType on Rails 5.1 for ActionDispatch::Request (xprazak2)
 
-## [0.5.3] 2017-05-24 ([tag][0.5.3t])
+## [0.5.3] 2017-05-24
+
+- TAG: [v0.5.3][0.5.3t]
 
 ### Fixed
 
@@ -264,7 +313,9 @@ The "Can it be the end of the line for 0.5.x?" Release
 
 * Removing legacy scripts (James Pinto)
 
-## [0.5.2] 2017-05-17 ([tag][0.5.2t])
+## [0.5.2] 2017-05-17
+
+- TAG: [v0.5.2][0.5.2t]
 
 ### Added
 
@@ -297,7 +348,9 @@ The "Can it be the end of the line for 0.5.x?" Release
 * Making a test/support dir (James Pinto)
 * Fix #177 - Adjusting to webmock latest recommended implementation for minitest (James Pinto)
 
-## [0.5.1] 2016-02-29 ([tag][0.5.1t])
+## [0.5.1] 2016-02-29
+
+- TAG: [v0.5.1][0.5.1t]
 
 ### Added
 
@@ -319,7 +372,9 @@ The "Can it be the end of the line for 0.5.x?" Release
 * Remove obsolete comment (Arthur Nogueira Neves)
 * Remove jeweler from gemspec
 
-## [0.5.0] 2016-02-20 ([tag][0.5.0t])
+## [0.5.0] 2016-02-20
+
+- TAG: [v0.5.0][0.5.0t]
 
 ### Added
 
@@ -351,7 +406,9 @@ The "Can it be the end of the line for 0.5.x?" Release
 * Fix some warnings (amatsuda)
 * Various fixes/updates to README (Evan Arnold, Jonathan Camenisch, Brian John, Ankur Sethi)
 
-## [0.4.7] 2012-09-03 ([tag][0.4.7t])
+## [0.4.7] 2012-09-03
+
+- TAG: [v0.4.7][0.4.7t]
 
 ### Added
 
@@ -362,7 +419,9 @@ The "Can it be the end of the line for 0.5.x?" Release
 * Fix merging paths if the path is not empty
 * Fix nested hash params in Consumer#request (Ernie Miller)
 
-## [0.4.6] 2012-04-21 ([tag][0.4.6t])
+## [0.4.6] 2012-04-21
+
+- TAG: [v0.4.6][0.4.6t]
 
 ### Changed
 
@@ -374,7 +433,9 @@ The "Can it be the end of the line for 0.5.x?" Release
 * Fixed post body's being dropped in 1.9 (Steven Hammond)
 * Fixed PUT request handling (Anton Panasenko)
 
-## [0.4.5] 2011-06-25 ([tag][0.4.5t])
+## [0.4.5] 2011-06-25
+
+- TAG: [v0.4.5][0.4.5t]
 
 ### Added
 
@@ -392,7 +453,9 @@ The "Can it be the end of the line for 0.5.x?" Release
 * Fix POST Requests with Typhoeus proxy (niedhui)
 * Fix incorrect hardcoded port (Ian Taylor)
 
-## [0.4.4] 2010-10-31 ([tag][0.4.4t])
+## [0.4.4] 2010-10-31
+
+- TAG: [v0.4.4][0.4.4t]
 
 ### Added
 
@@ -405,13 +468,17 @@ The "Can it be the end of the line for 0.5.x?" Release
 * ensure consumer uri gets set back to original config even if an error occurs (Brian Finney)
 * Yahoo uses & to split records in OAuth headers (Brian Finney)
 
-## [0.4.3] 2010-09-01 ([tag][0.4.3t])
+## [0.4.3] 2010-09-01
+
+- TAG: [v0.4.3][0.4.3t]
 
 ### Fixed
 
 * Fix for em-http proxy (ichverstehe)
 
-## [0.4.2] 2010-08-13 ([tag][0.4.2t])
+## [0.4.2] 2010-08-13
+
+- TAG: [v0.4.2][0.4.2t]
 
 ### Added
 
@@ -423,7 +490,9 @@ The "Can it be the end of the line for 0.5.x?" Release
 * Fixed the em-http request proxy (Joshua Hull)
 * Fix for oauth proxy string manipulation (Jakub Suder)
 
-## [0.4.1] 2010-06-16 ([tag][0.4.1t])
+## [0.4.1] 2010-06-16
+
+- TAG: [v0.4.1][0.4.1t]
 
 ### Added
 
@@ -434,7 +503,9 @@ The "Can it be the end of the line for 0.5.x?" Release
 * Rails 3 Compatibility fixes (Pelle Braendgaard)
 * Fixed load errors on tests for missing (non-required) libraries
 
-## [0.4.0] 2010-04-22 ([tag][0.4.0t])
+## [0.4.0] 2010-04-22
+
+- TAG: [v0.4.0][0.4.0t]
 
 ### Added
 
@@ -460,7 +531,9 @@ The "Can it be the end of the line for 0.5.x?" Release
 * OAuth::Client::Helper won't override the specified `oauth_version` (Philip Kromer)
 * Fixed an encoding / multibyte issue (成田 一生)
 
-## [0.3.6] 2009-09-14 ([tag][0.3.6t])
+## [0.3.6] 2009-09-14
+
+- TAG: [v0.3.6][0.3.6t]
 
 ### Added
 
@@ -476,7 +549,9 @@ The "Can it be the end of the line for 0.5.x?" Release
 
 * Respect `--method` in `authorize` CLI command (Seth)
 
-## [0.3.5] 2009-06-03 ([tag][0.3.5t])
+## [0.3.5] 2009-06-03
+
+- TAG: [v0.3.5][0.3.5t]
 
 ### Added
 
@@ -488,7 +563,9 @@ The "Can it be the end of the line for 0.5.x?" Release
 * Added proxy support to OAuth::Consumer (Marshall Huss)
 * Added --scope CLI option for Google's 'scope' parameter (Seth)
 
-## [0.3.4] 2009-05-06 ([tag][0.3.4t])
+## [0.3.4] 2009-05-06
+
+- TAG: [v0.3.4][0.3.4t]
 
 ### Changed
 
@@ -498,7 +575,9 @@ The "Can it be the end of the line for 0.5.x?" Release
 
 * Fix OAuth::RequestProxy::ActionControllerRequest's handling of params (Tristan Groléat)
 
-## [0.3.3] 2009-05-04 ([tag][0.3.3t])
+## [0.3.3] 2009-05-04
+
+- TAG: [v0.3.3][0.3.3t]
 
 ### Added
 
@@ -516,7 +595,9 @@ The "Can it be the end of the line for 0.5.x?" Release
 * Fixed signatures for non-ASCII under $KCODE other than 'u' (Matt Sanford)
 * Fixed edge cases in ActionControllerRequestProxy where params were being incorrectly signed (Marcos Wright Kuhns)
 
-## [0.3.2] 2009-03-23 ([tag][0.3.2t])
+## [0.3.2] 2009-03-23
+
+- TAG: [v0.3.2][0.3.2t]
 
 ### Added
 
@@ -533,13 +614,17 @@ The "Can it be the end of the line for 0.5.x?" Release
 * Fixed signature calculation when both options and a block were provided to OAuth::Signature::Base#initialize (Seth)
 * Fixed a problem when attempting to normalize MockRequest URIs (Seth)
 
-## [0.3.1] 2009-01-26 ([tag][0.3.1t])
+## [0.3.1] 2009-01-26
+
+- TAG: [v0.3.1][0.3.1t]
 
 ### Fixed
 
 * Fixed a problem with relative and absolute token request paths. (Michael Wood)
 
 ## [0.3.0] 2009-01-25
+
+- TAG: [v0.3.0][0.3.0t]
 
 ### Added
 
@@ -619,75 +704,77 @@ but please have a look at the unit tests.
 * Moved all non-Rails functionality from the Rails plugin:
   http://code.google.com/p/oauth-plugin/
 
-[Unreleased]: https://gitlab.com/ruby-oauth/oauth/-/compare/v1.1.0...main
+[Unreleased]: https://github.com/ruby-oauth/oauth/compare/v1.1.1...HEAD
+[1.1.1]: https://github.com/ruby-oauth/oauth/compare/v1.1.0...v1.1.1
+[1.1.1t]: https://github.com/ruby-oauth/oauth/releases/tag/v1.1.1
 [1.1.0]: https://gitlab.com/ruby-oauth/oauth/-/compare/v1.0.1...v1.1.0
-[1.1.0t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v1.1.0
+[1.1.0t]: https://github.com/ruby-oauth/oauth/releases/tag/v1.1.0
 [1.0.1]: https://gitlab.com/ruby-oauth/oauth/-/compare/v1.0.0...v1.0.1
-[1.0.1t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v1.0.1
+[1.0.1t]: https://github.com/ruby-oauth/oauth/releases/tag/v1.0.1
 [1.0.0]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.6.2...v1.0.0
-[1.0.0t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v1.0.0
+[1.0.0t]: https://github.com/ruby-oauth/oauth/releases/tag/v1.0.0
 [0.6.2]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.6.1...v0.6.2
-[0.6.2t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.6.2
+[0.6.2t]: https://github.com/ruby-oauth/oauth/releases/tag/v0.6.2
 [0.6.1]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.6.0...v0.6.1
-[0.6.1t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.6.1
+[0.6.1t]: https://github.com/ruby-oauth/oauth/releases/tag/v0.6.1
 [0.6.0]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.14...v0.6.0
-[0.6.0t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.6.0
+[0.6.0t]: https://github.com/ruby-oauth/oauth/releases/tag/v0.6.0
 [0.5.14]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.13...v0.5.14
-[0.5.14t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.14
+[0.5.14t]: https://github.com/ruby-oauth/oauth/releases/tag/v0.5.14
 [0.5.13]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.12...v0.5.13
-[0.5.13t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.13
+[0.5.13t]: https://github.com/ruby-oauth/oauth/releases/tag/v0.5.13
 [0.5.12]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.11...v0.5.12
-[0.5.12t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.12
+[0.5.12t]: https://github.com/ruby-oauth/oauth/releases/tag/v0.5.12
 [0.5.11]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.10...v0.5.11
-[0.5.11t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.11
-[c0.5.10t]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.9...v0.5.10
-[0.5.10t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.10
+[0.5.11t]: https://github.com/ruby-oauth/oauth/releases/tag/v0.5.11
+[0.5.10t]: https://github.com/ruby-oauth/oauth/releases/tag/v0.5.10
 [0.5.9]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.8...v0.5.9
-[0.5.9t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.9
+[0.5.9t]: https://github.com/ruby-oauth/oauth/releases/tag/v0.5.9
 [0.5.8]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.7...v0.5.8
-[0.5.8t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.8
+[0.5.8t]: https://github.com/ruby-oauth/oauth/releases/tag/v0.5.8
 [0.5.7]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.6...v0.5.7
-[0.5.7t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.7
+[0.5.7t]: https://github.com/ruby-oauth/oauth/releases/tag/v0.5.7
 [0.5.6]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.5...v0.5.6
-[0.5.6t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.6
+[0.5.6t]: https://github.com/ruby-oauth/oauth/releases/tag/v0.5.6
 [0.5.5]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.4...v0.5.5
-[0.5.5t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.5
+[0.5.5t]: https://github.com/ruby-oauth/oauth/releases/tag/v0.5.5
 [0.5.4]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.3...v0.5.4
-[0.5.4t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.4
+[0.5.4t]: https://github.com/ruby-oauth/oauth/releases/tag/v0.5.4
 [0.5.3]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.2...v0.5.3
-[0.5.3t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.3
+[0.5.3t]: https://github.com/ruby-oauth/oauth/releases/tag/v0.5.3
 [0.5.2]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.1...v0.5.2
-[0.5.2t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.2
+[0.5.2t]: https://github.com/ruby-oauth/oauth/releases/tag/v0.5.2
 [0.5.1]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.5.0...v0.5.1
-[0.5.1t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.1
+[0.5.1t]: https://github.com/ruby-oauth/oauth/releases/tag/v0.5.1
 [0.5.0]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.4.7...v0.5.0
-[0.5.0t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.5.0
+[0.5.0t]: https://github.com/ruby-oauth/oauth/releases/tag/v0.5.0
 [0.4.7]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.4.6...v0.4.7
-[0.4.7t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.4.7
+[0.4.7t]: https://github.com/ruby-oauth/oauth/releases/tag/v0.4.7
 [0.4.6]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.4.5...v0.4.6
-[0.4.6t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.4.6
+[0.4.6t]: https://github.com/ruby-oauth/oauth/releases/tag/v0.4.6
 [0.4.5]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.4.4...v0.4.5
-[0.4.5t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.4.5
+[0.4.5t]: https://github.com/ruby-oauth/oauth/releases/tag/v0.4.5
 [0.4.4]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.4.3...v0.4.4
-[0.4.4t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.4.4
+[0.4.4t]: https://github.com/ruby-oauth/oauth/releases/tag/v0.4.4
 [0.4.3]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.4.2...v0.4.3
-[0.4.3t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.4.3
+[0.4.3t]: https://github.com/ruby-oauth/oauth/releases/tag/v0.4.3
 [0.4.2]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.4.1...v0.4.2
-[0.4.2t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.4.2
+[0.4.2t]: https://github.com/ruby-oauth/oauth/releases/tag/v0.4.2
 [0.4.1]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.4.0...v0.4.1
-[0.4.1t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.4.1
+[0.4.1t]: https://github.com/ruby-oauth/oauth/releases/tag/v0.4.1
 [0.4.0]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.3.6...v0.4.0
-[0.4.0t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.4.0
+[0.4.0t]: https://github.com/ruby-oauth/oauth/releases/tag/v0.4.0
 [0.3.6]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.3.5...v0.3.6
-[0.3.6t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.3.6
+[0.3.6t]: https://github.com/ruby-oauth/oauth/releases/tag/v0.3.6
 [0.3.5]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.3.4...v0.3.5
-[0.3.5t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.3.5
+[0.3.5t]: https://github.com/ruby-oauth/oauth/releases/tag/v0.3.5
 [0.3.4]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.3.3...v0.3.4
-[0.3.4t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.3.4
+[0.3.4t]: https://github.com/ruby-oauth/oauth/releases/tag/v0.3.4
 [0.3.3]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.3.2...v0.3.3
-[0.3.3t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.3.3
+[0.3.3t]: https://github.com/ruby-oauth/oauth/releases/tag/v0.3.3
 [0.3.2]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.3.1...v0.3.2
-[0.3.2t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.3.2
+[0.3.2t]: https://github.com/ruby-oauth/oauth/releases/tag/v0.3.2
 [0.3.1]: https://gitlab.com/ruby-oauth/oauth/-/compare/v0.3.0...v0.3.1
-[0.3.1t]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.3.1
-[0.3.0]: https://gitlab.com/ruby-oauth/oauth/-/tags/v0.3.0
+[0.3.1t]: https://github.com/ruby-oauth/oauth/releases/tag/v0.3.1
+[0.3.0]: https://github.com/ruby-oauth/oauth/releases/tag/v0.3.0
+[0.3.0t]: https://github.com/ruby-oauth/oauth/releases/tag/v0.3.0
