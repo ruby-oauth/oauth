@@ -190,7 +190,7 @@ GEM
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
     json (2.14.1)
-    kettle-dev (1.1.30)
+    kettle-dev (1.1.31)
     kettle-soup-cover (1.0.10)
       simplecov (~> 0.22)
       simplecov-cobertura (~> 3.0)
