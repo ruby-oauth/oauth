@@ -9,9 +9,5 @@ plugins: rubocop-on-rbs
 RBS:
   Enabled: true
 
-AllCops:
-  Exclude:
-    - 'lib/oauth/helper.rb'
-
 Layout/IndentationConsistency:
   Exclude: ['*.md']
