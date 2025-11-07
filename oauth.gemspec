@@ -101,6 +101,9 @@ Gem::Specification.new do |spec|
   spec.add_dependency("oauth-tty", "~> 1.0", ">= 1.0.6")
   spec.add_dependency("snaky_hash", "~> 2.0")
 
+  # Standard Library Extracted Gems
+  spec.add_dependency("base64", "~> 0.1") # became a bundled gem in ruby 3.4 (was default from 3.0 to 3.3)
+
   # Utilities
   spec.add_dependency("version_gem", "~> 1.1", ">= 1.1.9")              # ruby >= 2.2.0
 

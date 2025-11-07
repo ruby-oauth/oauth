@@ -20,6 +20,8 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Added
 
+- base64 dependency, fixes Ruby 3.4 and 3.5 HEAD compatibility
+
 ### Changed
 
 ### Deprecated
