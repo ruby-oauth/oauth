@@ -34,10 +34,10 @@
   "lib/oauth/tokens/consumer_token.rb:3696415131": [
     [9, 5, 155, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 349576019]
   ],
-  "oauth.gemspec:1162988997": [
-    [122, 3, 40, "Gemspec/DependencyVersion: Dependency version specification is required.", 2300588954],
-    [124, 3, 44, "Gemspec/DependencyVersion: Dependency version specification is required.", 1905290578],
-    [125, 3, 46, "Gemspec/DependencyVersion: Dependency version specification is required.", 4289565910]
+  "oauth.gemspec:1684970822": [
+    [120, 3, 40, "Gemspec/DependencyVersion: Dependency version specification is required.", 2300588954],
+    [122, 3, 44, "Gemspec/DependencyVersion: Dependency version specification is required.", 1905290578],
+    [123, 3, 46, "Gemspec/DependencyVersion: Dependency version specification is required.", 4289565910]
   ],
   "spec/oauth/backwards_compatibility_spec.rb:4041711732": [
     [3, 16, 25, "RSpec/DescribeClass: The first argument to describe should be the class or module being tested.", 3956042931]
