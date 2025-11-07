@@ -40,13 +40,6 @@ module OAuth
           {}
         end
       end
-
-      def wrap_values(hash)
-        return {} unless hash
-        hash.each_with_object({}) do |(k, v), acc|
-          acc[k] = (v.is_a?(Array) || v.nil?) ? v : [v]
-        end
-      end
     end
   end
 end

@@ -13,7 +13,7 @@
     [6, 7, 18, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 1482835337],
     [9, 5, 467, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 4088662367]
   ],
-  "lib/oauth/request_proxy/base.rb:2146952171": [
+  "lib/oauth/request_proxy/base.rb:744821102": [
     [11, 7, 93, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 2934170116]
   ],
   "lib/oauth/signature.rb:745501939": [

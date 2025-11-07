@@ -180,6 +180,17 @@ module OAuth
 
         {}
       end
+
+      # Utility to make parameter values array-style (or keep nil) so that
+      # subclasses can rely on array values for parameter merging/signing.
+      # Mirrors the implementation previously present in
+      # ActionDispatchRequest#wrap_values.
+      def wrap_values(hash)
+        return {} unless hash
+        hash.each_with_object({}) do |(k, v), acc|
+          acc[k] = (v.is_a?(Array) || v.nil?) ? v : [v]
+        end
+      end
     end
   end
 end
