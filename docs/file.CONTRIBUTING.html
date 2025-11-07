@@ -85,10 +85,11 @@ the <a href="https://gitlab.com/ruby-oauth/oauth/-/blob/main/CODE_OF_CONDUCT.md"
 
 <h2 id="executables-vs-rake-tasks">Executables vs Rake tasks</h2>
 
-<p>Executables shipped by oauth can be used with or without generating the binstubs.<br>
-They will work when oauth is installed globally (i.e., <code>gem install oauth</code>) and do not require that oauth be in your bundle.</p>
+<p>Executables shipped by dependencies, such as oauth, and stone_checksums, are available<br>
+after running <code>bin/setup</code>. These include:</p>
 
 <ul>
+  <li>gem_checksums</li>
   <li>kettle-changelog</li>
   <li>kettle-commit-msg</li>
   <li>oauth-setup</li>
@@ -98,18 +99,9 @@ They will work when oauth is installed globally (i.e., <code>gem install oauth</
   <li>kettle-release</li>
 </ul>
 
-<p>However, the rake tasks provided by oauth do require oauth to be added as a development dependency and loaded in your Rakefile.<br>
-See the full list of rake tasks in head of Rakefile</p>
+<p>There are many Rake tasks available as well. You can see them by running:</p>
 
-<p><strong>Gemfile</strong></p>
-<pre class="code language-ruby"><code class="language-ruby">group :development do
-  gem &quot;oauth&quot;, require: false
-end
-</code></pre>
-
-<p><strong>Rakefile</strong></p>
-<pre class="code language-ruby"><code class="language-ruby"># Rakefile
-require &quot;oauth&quot;
+<pre class="code language-shell"><code class="language-shell">bin/rake -T
 </code></pre>
 
 <h2 id="environment-variables-for-local-development">Environment Variables for Local Development</h2>
@@ -187,10 +179,8 @@ They are created and updated with the commands:</p>
 <h3 id="spec-organization-required">Spec organization (required)</h3>
 
 <ul>
-  <li>One spec file per class/module. For each class or module under <code>lib/</code>, keep all of its unit tests in a single spec file under <code>spec/</code> that mirrors the path and file name exactly: <code>lib/oauth/release_cli.rb</code> -&gt; <code>spec/oauth/release_cli_spec.rb</code>.</li>
-  <li>Never add a second spec file for the same class/module. Examples of disallowed names: <code>*_more_spec.rb</code>, <code>*_extra_spec.rb</code>, <code>*_status_spec.rb</code>, or any other suffix that still targets the same class. If you find yourself wanting a second file, merge those examples into the canonical spec file for that class/module.</li>
+  <li>One spec file per class/module. For each class or module under <code>lib/</code>, keep all of its unit tests in a single spec file under <code>spec/</code> that mirrors the path and file name exactly: <code>lib/oauth/my_class.rb</code> -&gt; <code>spec/oauth/my_class_spec.rb</code>.</li>
   <li>Exception: Integration specs that intentionally span multiple classes. Place these under <code>spec/integration/</code> (or a clearly named integration folder), and do not directly mirror a single class. Name them after the scenario, not a class.</li>
-  <li>Migration note: If a duplicate spec file exists, move all examples into the canonical file and delete the duplicate. Do not leave stubs or empty files behind.</li>
 </ul>
 
 <h2 id="lint-it">Lint It</h2>
@@ -213,7 +203,7 @@ They are created and updated with the commands:</p>
 
 <ul>
   <li>Prefer configuration-based exclusions when a rule should not apply to certain paths or files (e.g., via <code>.rubocop.yml</code>).</li>
-  <li>When a violation is temporary and you plan to fix it later, record it in <code>.rubocop_gradual.lock</code> using the gradual workflow:
+  <li>When a violation is temporary, and you plan to fix it later, record it in <code>.rubocop_gradual.lock</code> using the gradual workflow:
     <ul>
       <li>
 <code>bundle exec rake rubocop_gradual:autocorrect</code> (preferred)</li>
@@ -242,7 +232,7 @@ They are created and updated with the commands:</p>
 <p><strong>IMPORTANT</strong>: To sign a build,<br>
 a public key for signing gems will need to be picked up by the line in the<br>
 <code>gemspec</code> defining the <code>spec.cert_chain</code> (check the relevant ENV variables there).<br>
-All releases to RubyGems.org are signed releases.<br>
+All releases are signed releases.<br>
 See: <a href="https://guides.rubygems.org/security/#building-gems">RubyGems Security Guide</a></p>
 
 <p>NOTE: To build without signing the gem set <code>SKIP_GEM_SIGNING</code> to any value in the environment.</p>
@@ -252,7 +242,7 @@ See: <a href="https://guides.rubygems.org/security/#building-gems">RubyGems Secu
 <h4 id="automated-process">Automated process</h4>
 
 <ol>
-  <li>Update version.rb to contian the correct version-to-be-released.</li>
+  <li>Update version.rb to contain the correct version-to-be-released.</li>
   <li>Run <code>bundle exec kettle-changelog</code>.</li>
   <li>Run <code>bundle exec kettle-release</code>.</li>
 </ol>
@@ -301,16 +291,15 @@ to create SHA-256 and SHA-512 checksums. This functionality is provided by the <
     </ul>
   </li>
   <li>Run <code>bundle exec rake release</code> which will create a git tag for the version,<br>
-push git commits and tags, and push the <code>.gem</code> file to <a href="https://rubygems.org">rubygems.org</a>
-</li>
+push git commits and tags, and push the <code>.gem</code> file to the gem host configured in the gemspec.</li>
 </ol>
 
 </div></div>
 
       <div id="footer">
-  Generated on Sun Sep 21 20:58:50 2025 by
+  Generated on Thu Nov  6 19:32:22 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.37 (ruby-3.3.9).
+  0.9.37 (ruby-3.4.7).
 </div>
 
     </div>

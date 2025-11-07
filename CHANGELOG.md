@@ -20,8 +20,6 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Added
 
-- base64 dependency, fixes Ruby 3.4 and 3.5 HEAD compatibility
-
 ### Changed
 
 ### Deprecated
@@ -30,12 +28,25 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
+### Security
+
+## [1.1.3] - 2025-11-06
+
+- TAG: [v1.1.3][1.1.3t]
+- COVERAGE: 81.70% -- 817/1000 lines in 36 files
+- BRANCH COVERAGE: 50.54% -- 140/277 branches in 36 files
+- 40.71% documented
+
+### Added
+
+- base64 dependency, fixes Ruby 3.4 and 3.5 HEAD compatibility
+
+### Fixed
+
 - Fix ActionController request proxy NoMethodError when building signatures
   - define `wrap_values` on `OAuth::RequestProxy::Base`
   - remove duplicate from `ActionDispatchRequest`
   - add specs
-
-### Security
 
 ## [1.1.2] - 2025-09-21
 
@@ -722,7 +733,9 @@ All together now release
 - Moved all non-Rails functionality from the Rails plugin:
   http://code.google.com/p/oauth-plugin/
 
-[Unreleased]: https://github.com/ruby-oauth/oauth/compare/v1.1.2...HEAD
+[Unreleased]: https://github.com/ruby-oauth/oauth/compare/v1.1.3...HEAD
+[1.1.3]: https://github.com/ruby-oauth/oauth/compare/v1.1.2...v1.1.3
+[1.1.3t]: https://github.com/ruby-oauth/oauth/releases/tag/v1.1.3
 [1.1.2]: https://github.com/ruby-oauth/oauth/compare/v1.1.1...v1.1.2
 [1.1.2t]: https://github.com/ruby-oauth/oauth/releases/tag/v1.1.2
 [1.1.1]: https://github.com/ruby-oauth/oauth/compare/v1.1.0...v1.1.1
