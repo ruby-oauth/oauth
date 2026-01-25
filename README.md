@@ -92,7 +92,7 @@ References: [RFC 5849 (OAuth 1.0)](https://datatracker.ietf.org/doc/html/rfc5849
 
 Ruby OAuth has been maintained by a large number of talented
 individuals over the years.
-The primary maintainer since 2020 is Peter Boling (@pboling).
+The primary maintainer since 2020 is Peter Boling ([@pboling](https://github.com/pboling)).
 
 ## 💡 Info you can shake a stick at
 
@@ -282,8 +282,7 @@ hydra.run
 
 * RubyDoc Documentation: [![RubyDoc.info][🚎yard-img]][🚎yard]
 * Mailing List/Google Group: [![Mailing List][⛳mail-list-img]][⛳mail-list]
-* Live Chat on Gitter: [![Join the chat at https://gitter.im/ruby-oauth/oauth-ruby][🏘chat-img]][🏘chat]
-* Maintainer's Blog: [![Blog][🚎blog-img]][🚎blog]
+* Live ruby-oauth Chat: [![Live Chat on Discord][✉️discord-invite-img-ftb]][✉️discord-invite]
 
 ## 🦷 FLOSS Funding
 
