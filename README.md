@@ -131,6 +131,8 @@ Compatible with MRI Ruby 2.3+, and concordant releases of JRuby, and TruffleRuby
 | 🤼 [OAuth Ruby Google Group][⛳gg-discussions] | "Active"                                                              | ➖                         | ➖                        | ➖                         | ➖                        | [💚][⛳gg-discussions]        |
 | 🎮️ [Discord Server][✉️discord-invite]          | [![Live Chat on Discord][✉️discord-invite-img-ftb]][✉️discord-invite] | [Let's][✉️discord-invite] | [talk][✉️discord-invite] | [about][✉️discord-invite] | [this][✉️discord-invite] | [library!][✉️discord-invite] |
 
+[⛳gg-discussions]: https://groups.google.com/g/oauth-ruby
+[⛳gg-discussions-img]: https://img.shields.io/badge/google-group-0093D0.svg?style=for-the-badge&logo=google&logoColor=orange
 </details>
 
 [gh-discussions]: https://github.com/ruby-oauth/oauth/discussions
