@@ -280,8 +280,9 @@ hydra.run
 
 ### More Information
 
-* RubyDoc Documentation: [![RubyDoc.info][🚎yard-img]][🚎yard]
-* Mailing List/Google Group: [![Mailing List][⛳mail-list-img]][⛳mail-list]
+* RubyDoc Documentation: [![Current release on RubyDoc.info][📜docs-cr-rd-img]][🚎yard-current] [![YARD on Galtzo.com][📜docs-head-rd-img]][🚎yard-head]
+* Mailing List/Google Group: 🤼 [OAuth Ruby Google Group][⛳gg-discussions]
+* Maintainer Blog: [![Maintainer Blog][🚂maint-blog-img]][🚂maint-blog]
 * Live ruby-oauth Chat: [![Live Chat on Discord][✉️discord-invite-img-ftb]][✉️discord-invite]
 
 ## 🦷 FLOSS Funding
