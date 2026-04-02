@@ -26,10 +26,6 @@ module OAuth
         end
       end
 
-      def signature
-        parameters["oauth_signature"]
-      end
-
       protected
 
       def query_params
