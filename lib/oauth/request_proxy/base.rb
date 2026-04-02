@@ -23,15 +23,15 @@ module OAuth
       ## OAuth parameters
 
       def oauth_callback
-        parameters["oauth_callback"]
+        [parameters["oauth_callback"]].flatten.first
       end
 
       def oauth_consumer_key
-        parameters["oauth_consumer_key"]
+        [parameters["oauth_consumer_key"]].flatten.first
       end
 
       def oauth_nonce
-        parameters["oauth_nonce"]
+        [parameters["oauth_nonce"]].flatten.first
       end
 
       def oauth_signature
@@ -40,31 +40,26 @@ module OAuth
       end
 
       def oauth_signature_method
-        case parameters["oauth_signature_method"]
-        when Array
-          parameters["oauth_signature_method"].first
-        else
-          parameters["oauth_signature_method"]
-        end
+        [parameters["oauth_signature_method"]].flatten.first
       end
 
       def oauth_timestamp
-        parameters["oauth_timestamp"]
+        [parameters["oauth_timestamp"]].flatten.first
       end
 
       def oauth_token
-        parameters["oauth_token"]
+        [parameters["oauth_token"]].flatten.first
       end
 
       # OAuth 1.0a only: value returned to the Consumer after user authorization
       # and required when exchanging a Request Token for an Access Token.
       # Not present in OAuth 1.0 flows.
       def oauth_verifier
-        parameters["oauth_verifier"]
+        [parameters["oauth_verifier"]].flatten.first
       end
 
       def oauth_version
-        parameters["oauth_version"]
+        [parameters["oauth_version"]].flatten.first
       end
 
       # TODO: deprecate these
