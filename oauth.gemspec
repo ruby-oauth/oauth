@@ -122,10 +122,10 @@ Gem::Specification.new do |spec|
   #       Development dependencies that require strictly newer Ruby versions should be in a "gemfile",
   #       and preferably a modular one (see gemfiles/modular/*.gemfile).
 
-  spec.add_development_dependency("mocha")
+  spec.add_development_dependency("mocha", ">= 0")
   spec.add_development_dependency("rack", ">= 2.0.0")
-  spec.add_development_dependency("rack-test")
-  spec.add_development_dependency("rest-client")
+  spec.add_development_dependency("rack-test", ">= 0")
+  spec.add_development_dependency("rest-client", ">= 0")
   spec.add_development_dependency("typhoeus", ">= 0.1.13")
 
   # Dev, Test, & Release Tasks

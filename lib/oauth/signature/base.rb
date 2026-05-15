@@ -22,11 +22,12 @@ module OAuth
       attr_reader :token_secret, :consumer_secret, :request
       filtered_attributes :options, :consumer_secret, :token_secret
 
-      def self.implements(signature_method = nil)
-        return @implements if signature_method.nil?
+      class << self
+        def implements(signature_method = nil)
+          return OAuth::Signature.available_methods.key(self) if signature_method.nil?
 
-        @implements = signature_method
-        OAuth::Signature.available_methods[@implements] = self
+          OAuth::Signature.available_methods[signature_method] = self
+        end
       end
 
       def initialize(request, options = {}, &block)

@@ -8,8 +8,7 @@ require "oauth/signature/rsa/sha1"
 
 RSpec.describe OAuth::Signature::RSA::SHA1 do
   def project_spec_dir
-    # two levels up from spec/oauth/signature -> spec
-    File.expand_path(File.join(__dir__, "../.."))
+    File.expand_path(File.join(__dir__, "../../.."))
   end
 
   def pem_path

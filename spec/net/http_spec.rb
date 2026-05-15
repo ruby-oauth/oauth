@@ -2,11 +2,11 @@
 
 require "net/http"
 
-RSpec.describe "Net::HTTP client OAuth helpers" do
+RSpec.describe Net::HTTP do
   let(:consumer) { OAuth::Consumer.new("consumer_key_86cad9", "5888bf0345e5d237") }
   let(:token) { OAuth::Token.new("token_411a7f", "3196ffd991c8ebdb") }
   let(:uri) { URI.parse("http://example.com/test?key=value") }
-  let(:http) { Net::HTTP.new(uri.host, uri.port) }
+  let(:http) { described_class.new(uri.host, uri.port) }
   let(:nonce) { 225_579_211_881_198_842_005_988_698_334_675_835_446 }
   let(:timestamp) { "1199645624" }
 

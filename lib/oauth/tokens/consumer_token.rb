@@ -6,10 +6,12 @@ module OAuth
     attr_accessor :consumer, :params
     attr_reader :response
 
-    def self.from_hash(consumer, hash)
-      token = new(consumer, hash[:oauth_token], hash[:oauth_token_secret])
-      token.params = hash
-      token
+    class << self
+      def from_hash(consumer, hash)
+        token = new(consumer, hash[:oauth_token], hash[:oauth_token_secret])
+        token.params = hash
+        token
+      end
     end
 
     def initialize(consumer, token = "", secret = "")

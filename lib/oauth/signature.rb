@@ -2,45 +2,49 @@
 
 module OAuth
   module Signature
-    # Returns a list of available signature methods
-    def self.available_methods
-      @available_methods ||= {}
-    end
+    AVAILABLE_METHODS = {}
 
-    # Build a signature from a +request+.
-    #
-    # Raises UnknownSignatureMethod exception if the signature method is unknown.
-    def self.build(request, options = {}, &block)
-      request = OAuth::RequestProxy.proxy(request, options)
-      klass = available_methods[
-        (request.signature_method ||
-        ((c = request.options[:consumer]) && c.options[:signature_method]) ||
-        "").downcase]
-      raise UnknownSignatureMethod, request.signature_method unless klass
+    class << self
+      # Returns a list of available signature methods
+      def available_methods
+        AVAILABLE_METHODS
+      end
 
-      klass.new(request, options, &block)
-    end
+      # Build a signature from a +request+.
+      #
+      # Raises UnknownSignatureMethod exception if the signature method is unknown.
+      def build(request, options = {}, &block)
+        request = OAuth::RequestProxy.proxy(request, options)
+        klass = available_methods[
+          (request.signature_method ||
+          ((c = request.options[:consumer]) && c.options[:signature_method]) ||
+          "").downcase]
+        raise UnknownSignatureMethod, request.signature_method unless klass
 
-    # Sign a +request+
-    def self.sign(request, options = {}, &block)
-      build(request, options, &block).signature
-    end
+        klass.new(request, options, &block)
+      end
 
-    # Verify the signature of +request+
-    def self.verify(request, options = {}, &block)
-      build(request, options, &block).verify
-    end
+      # Sign a +request+
+      def sign(request, options = {}, &block)
+        build(request, options, &block).signature
+      end
 
-    # Create the signature base string for +request+. This string is the normalized parameter information.
-    #
-    # See Also: {OAuth core spec version 1.0, section 9.1.1}[http://oauth.net/core/1.0#rfc.section.9.1.1]
-    def self.signature_base_string(request, options = {}, &block)
-      build(request, options, &block).signature_base_string
-    end
+      # Verify the signature of +request+
+      def verify(request, options = {}, &block)
+        build(request, options, &block).verify
+      end
 
-    # Create the body hash for a request
-    def self.body_hash(request, options = {}, &block)
-      build(request, options, &block).body_hash
+      # Create the signature base string for +request+. This string is the normalized parameter information.
+      #
+      # See Also: {OAuth core spec version 1.0, section 9.1.1}[http://oauth.net/core/1.0#rfc.section.9.1.1]
+      def signature_base_string(request, options = {}, &block)
+        build(request, options, &block).signature_base_string
+      end
+
+      # Create the body hash for a request
+      def body_hash(request, options = {}, &block)
+        build(request, options, &block).body_hash
+      end
     end
 
     class UnknownSignatureMethod < RuntimeError; end
