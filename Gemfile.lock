@@ -11,12 +11,6 @@ GIT
       yard
 
 PATH
-  remote: ../auth-sanitizer
-  specs:
-    auth-sanitizer (0.1.0)
-      version_gem (~> 1.1, >= 1.1.9)
-
-PATH
   remote: .
   specs:
     oauth (1.1.3)
@@ -112,6 +106,8 @@ GEM
       rake (>= 10)
       thor (>= 0.14)
     ast (2.4.3)
+    auth-sanitizer (0.1.0)
+      version_gem (~> 1.1, >= 1.1.9)
     backports (3.25.3)
     base64 (0.3.0)
     benchmark (0.5.0)
@@ -517,7 +513,6 @@ PLATFORMS
 DEPENDENCIES
   addressable (>= 2.8, < 3)
   appraisal2 (~> 3.0)
-  auth-sanitizer!
   backports (~> 3.25, >= 3.25.1)
   benchmark (~> 0.4, >= 0.4.1)
   bundler-audit (~> 0.9.2)
