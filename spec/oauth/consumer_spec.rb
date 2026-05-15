@@ -56,6 +56,13 @@ RSpec.describe OAuth::Consumer do
       expect(consumer.debug_output).to be($stdout)
     end
 
+    it "redacts secret from inspect" do
+      consumer = described_class.new("key", "super-secret", site: "http://twitter.com")
+
+      expect(consumer.inspect).to include("@secret=[FILTERED]")
+      expect(consumer.inspect).not_to include("super-secret")
+    end
+
     it "accepts an IO for debug_output" do
       io = StringIO.new
       consumer = described_class.new("key", "secret", debug_output: io)

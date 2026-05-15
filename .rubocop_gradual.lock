@@ -4,9 +4,9 @@
     [33, 5, 44, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 645541231],
     [34, 7, 10, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 4071527614]
   ],
-  "lib/oauth/consumer.rb:437026603": [
-    [241, 9, 4, "Lint/UnderscorePrefixedVariableName: Do not use prefix `_` for a variable that is used.", 2089552532],
-    [399, 21, 4, "Lint/UnderscorePrefixedVariableName: Do not use prefix `_` for a variable that is used.", 2089552529]
+  "lib/oauth/consumer.rb:3841660898": [
+    [257, 9, 4, "Lint/UnderscorePrefixedVariableName: Do not use prefix `_` for a variable that is used.", 2089552532],
+    [415, 21, 4, "Lint/UnderscorePrefixedVariableName: Do not use prefix `_` for a variable that is used.", 2089552529]
   ],
   "lib/oauth/request_proxy.rb:1529370509": [
     [5, 5, 76, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 485336097],
@@ -25,19 +25,19 @@
     [37, 5, 129, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 2209191795],
     [42, 5, 105, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 411730387]
   ],
-  "lib/oauth/signature/base.rb:113451864": [
-    [16, 7, 208, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 2665690194],
-    [17, 16, 11, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 2038345433],
-    [19, 9, 11, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 2038345433],
-    [20, 44, 11, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 2038345433]
+  "lib/oauth/signature/base.rb:2730497766": [
+    [25, 7, 208, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 2665690194],
+    [26, 16, 11, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 2038345433],
+    [28, 9, 11, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 2038345433],
+    [29, 44, 11, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 2038345433]
   ],
   "lib/oauth/tokens/consumer_token.rb:3696415131": [
     [9, 5, 155, "Style/ClassMethodsDefinitions: Use `class << self` to define a class method.", 349576019]
   ],
-  "oauth.gemspec:2280471191": [
-    [123, 3, 40, "Gemspec/DependencyVersion: Dependency version specification is required.", 2300588954],
-    [125, 3, 44, "Gemspec/DependencyVersion: Dependency version specification is required.", 1905290578],
-    [126, 3, 46, "Gemspec/DependencyVersion: Dependency version specification is required.", 4289565910]
+  "oauth.gemspec:2367348934": [
+    [125, 3, 40, "Gemspec/DependencyVersion: Dependency version specification is required.", 2300588954],
+    [127, 3, 44, "Gemspec/DependencyVersion: Dependency version specification is required.", 1905290578],
+    [128, 3, 46, "Gemspec/DependencyVersion: Dependency version specification is required.", 4289565910]
   ],
   "spec/oauth/backwards_compatibility_spec.rb:4041711732": [
     [3, 16, 25, "RSpec/DescribeClass: The first argument to describe should be the class or module being tested.", 3956042931]
@@ -45,19 +45,19 @@
   "spec/oauth/consumer_integration_spec.rb:3934173775": [
     [6, 16, 29, "RSpec/DescribeClass: The first argument to describe should be the class or module being tested.", 694297794]
   ],
-  "spec/oauth/consumer_spec.rb:3729402719": [
-    [91, 40, 16, "RSpec/VerifiedDoubleReference: Use a constant class reference for verified doubles. String references are not verifying unless the class is loaded.", 1274889684],
-    [92, 7, 22, "RSpec/StubbedMock: Prefer `allow` over `expect` when configuring a response.", 190162250],
-    [95, 7, 16, "RSpec/StubbedMock: Prefer `allow` over `expect` when configuring a response.", 3492346277],
-    [103, 40, 16, "RSpec/VerifiedDoubleReference: Use a constant class reference for verified doubles. String references are not verifying unless the class is loaded.", 1274889684],
-    [104, 7, 22, "RSpec/StubbedMock: Prefer `allow` over `expect` when configuring a response.", 190162250],
-    [107, 7, 16, "RSpec/StubbedMock: Prefer `allow` over `expect` when configuring a response.", 3492346277],
-    [154, 7, 83, "RSpec/ReceiveMessages: Use `receive_messages` instead of multiple stubs on lines [156].", 4182076280],
-    [156, 7, 96, "RSpec/ReceiveMessages: Use `receive_messages` instead of multiple stubs on lines [154].", 3226867591],
-    [184, 7, 83, "RSpec/ReceiveMessages: Use `receive_messages` instead of multiple stubs on lines [186].", 4182076280],
-    [186, 7, 96, "RSpec/ReceiveMessages: Use `receive_messages` instead of multiple stubs on lines [184].", 3226867591],
-    [212, 7, 83, "RSpec/ReceiveMessages: Use `receive_messages` instead of multiple stubs on lines [214].", 4182076280],
-    [214, 7, 96, "RSpec/ReceiveMessages: Use `receive_messages` instead of multiple stubs on lines [212].", 3226867591]
+  "spec/oauth/consumer_spec.rb:950129012": [
+    [98, 40, 16, "RSpec/VerifiedDoubleReference: Use a constant class reference for verified doubles. String references are not verifying unless the class is loaded.", 1274889684],
+    [99, 7, 22, "RSpec/StubbedMock: Prefer `allow` over `expect` when configuring a response.", 190162250],
+    [102, 7, 16, "RSpec/StubbedMock: Prefer `allow` over `expect` when configuring a response.", 3492346277],
+    [110, 40, 16, "RSpec/VerifiedDoubleReference: Use a constant class reference for verified doubles. String references are not verifying unless the class is loaded.", 1274889684],
+    [111, 7, 22, "RSpec/StubbedMock: Prefer `allow` over `expect` when configuring a response.", 190162250],
+    [114, 7, 16, "RSpec/StubbedMock: Prefer `allow` over `expect` when configuring a response.", 3492346277],
+    [161, 7, 83, "RSpec/ReceiveMessages: Use `receive_messages` instead of multiple stubs on lines [163].", 4182076280],
+    [163, 7, 96, "RSpec/ReceiveMessages: Use `receive_messages` instead of multiple stubs on lines [161].", 3226867591],
+    [191, 7, 83, "RSpec/ReceiveMessages: Use `receive_messages` instead of multiple stubs on lines [193].", 4182076280],
+    [193, 7, 96, "RSpec/ReceiveMessages: Use `receive_messages` instead of multiple stubs on lines [191].", 3226867591],
+    [219, 7, 83, "RSpec/ReceiveMessages: Use `receive_messages` instead of multiple stubs on lines [221].", 4182076280],
+    [221, 7, 96, "RSpec/ReceiveMessages: Use `receive_messages` instead of multiple stubs on lines [219].", 3226867591]
   ],
   "spec/oauth/net_http_client_spec.rb:797264696": [
     [5, 16, 32, "RSpec/DescribeClass: The first argument to describe should be the class or module being tested.", 1925154217]

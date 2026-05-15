@@ -1,0 +1,12 @@
+module OAuth
+  module Signature
+    class Base
+      include Auth::Sanitizer::FilteredAttributes
+
+      attr_accessor options: untyped
+      attr_reader token_secret: untyped
+      attr_reader consumer_secret: untyped
+      attr_reader request: untyped
+    end
+  end
+end

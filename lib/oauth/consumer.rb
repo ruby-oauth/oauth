@@ -8,7 +8,22 @@ require "oauth/errors"
 require "cgi"
 
 module OAuth
+  # Consumer credentials and request configuration for OAuth 1.0 / 1.0a flows.
+  #
+  # Includes {Auth::Sanitizer::FilteredAttributes} so inspect output redacts the
+  # consumer secret while leaving non-sensitive configuration visible.
   class Consumer
+    include Auth::Sanitizer::FilteredAttributes
+
+    # Instance attributes exposed by the consumer.
+    #
+    # @!attribute [rw] options
+    #   @return [Hash] Consumer configuration options
+    # @!attribute [rw] key
+    #   @return [String] OAuth consumer key
+    # @!attribute [rw] secret
+    #   @return [String] OAuth consumer secret (redacted in `#inspect`)
+
     # determine the certificate authority path to verify SSL certs
     if ENV["SSL_CERT_FILE"]
       if File.exist?(ENV["SSL_CERT_FILE"])
@@ -78,6 +93,7 @@ module OAuth
     )
 
     attr_accessor :options, :key, :secret
+    filtered_attributes :secret
     attr_writer :site, :http
 
     # Create a new consumer instance by passing it a configuration hash:

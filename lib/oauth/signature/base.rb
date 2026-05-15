@@ -7,11 +7,20 @@ require "base64"
 
 module OAuth
   module Signature
+    # Base class for OAuth signature implementations.
+    #
+    # Includes {Auth::Sanitizer::FilteredAttributes} so inspect output redacts
+    # secret-bearing fields captured during signature construction.
     class Base
       include OAuth::Helper
+      include Auth::Sanitizer::FilteredAttributes
 
+      # Signature construction options.
+      #
+      # @return [Hash]
       attr_accessor :options
       attr_reader :token_secret, :consumer_secret, :request
+      filtered_attributes :options, :consumer_secret, :token_secret
 
       def self.implements(signature_method = nil)
         return @implements if signature_method.nil?
