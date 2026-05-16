@@ -1,15 +1,3 @@
-GIT
-  remote: https://github.com/pboling/yard-junk.git
-  revision: 54ccebabbfa9a9cd44d0b991687ebbfd22c32b55
-  branch: next
-  specs:
-    yard-junk (0.0.10)
-      backports (>= 3.18)
-      benchmark
-      ostruct
-      rainbow
-      yard
-
 PATH
   remote: .
   specs:
@@ -502,6 +490,11 @@ GEM
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
     yard (0.9.43)
+    yard-junk (0.1.0)
+      benchmark
+      ostruct
+      rainbow
+      yard
     yard-relative_markdown_links (0.5.0)
       nokogiri (>= 1.14.3, < 2)
     zeitwerk (2.7.5)
@@ -551,7 +544,7 @@ DEPENDENCIES
   vcr (>= 4)
   webmock (>= 3)
   yard (~> 0.9, >= 0.9.37)
-  yard-junk (~> 0.0, >= 0.0.10)!
+  yard-junk (~> 0.1, >= 0.1.0)
   yard-relative_markdown_links (~> 0.5.0)
 
 BUNDLED WITH
