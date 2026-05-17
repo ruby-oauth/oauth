@@ -6,13 +6,13 @@
 <title>
   File: CHANGELOG
   
-    &mdash; Documentation by YARD 0.9.37
+    &mdash; Documentation by YARD 0.9.43
   
 </title>
 
-  <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <link rel="stylesheet" href="css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="css/common.css" type="text/css" />
+  <link rel="stylesheet" href="css/common.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "CHANGELOG";
@@ -27,6 +27,8 @@
 
   </head>
   <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
     <div class="nav_wrap">
       <iframe id="nav" src="file_list.html?1"></iframe>
       <div id="resizer"></div>
@@ -68,7 +70,7 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 and <a href="https://tom.preston-werner.com/2022/05/23/major-version-numbers-are-not-sacred.html">yes</a>, platform and engine support are part of the <a href="https://github.com/semver/semver/issues/716#issuecomment-869336139">public API</a>.<br>
 Please file a bug if you notice a violation of semantic versioning.</p>
 
-<h2 id="unreleased"><a href="https://github.com/ruby-oauth/oauth/compare/v1.1.3...HEAD">Unreleased</a></h2>
+<h2 id="unreleased"><a href="https://github.com/ruby-oauth/oauth/compare/v1.1.4...HEAD">Unreleased</a></h2>
 
 <h3 id="added">Added</h3>
 
@@ -82,6 +84,30 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 
 <h3 id="security">Security</h3>
 
+<h2 id="114---2026-05-16">
+<a href="https://github.com/ruby-oauth/oauth/compare/v1.1.3...v1.1.4">1.1.4</a> - 2026-05-16</h2>
+
+<ul>
+  <li>TAG: <a href="https://github.com/ruby-oauth/oauth/releases/tag/v1.1.4">v1.1.4</a>
+</li>
+  <li>COVERAGE: 84.64% – 854/1009 lines in 36 files</li>
+  <li>BRANCH COVERAGE: 54.91% – 151/275 branches in 36 files</li>
+  <li>40.78% documented</li>
+</ul>
+
+<h3 id="added-1">Added</h3>
+
+<ul>
+  <li>Add <code>auth-sanitizer</code> integration for inspect-time secret redaction in core OAuth objects.</li>
+  <li>Traditional OAuth::VERSION constant</li>
+</ul>
+
+<h3 id="changed-1">Changed</h3>
+
+<ul>
+  <li>Redact sensitive values from <code>#inspect</code> in <code>OAuth::Consumer</code>, <code>OAuth::Token</code>, and <code>OAuth::Signature::Base</code>.</li>
+</ul>
+
 <h2 id="113---2025-11-06">
 <a href="https://github.com/ruby-oauth/oauth/compare/v1.1.2...v1.1.3">1.1.3</a> - 2025-11-06</h2>
 
@@ -93,7 +119,7 @@ Please file a bug if you notice a violation of semantic versioning.</p>
   <li>40.71% documented</li>
 </ul>
 
-<h3 id="added-1">Added</h3>
+<h3 id="added-2">Added</h3>
 
 <ul>
   <li>base64 dependency, fixes Ruby 3.4 and 3.5 HEAD compatibility</li>
@@ -124,7 +150,7 @@ Please file a bug if you notice a violation of semantic versioning.</p>
   <li>40.71% documented</li>
 </ul>
 
-<h3 id="added-2">Added</h3>
+<h3 id="added-3">Added</h3>
 
 <ul>
   <li>Corrected SHA-256 &amp; SHA-512 checksums for release 1.1.1</li>
@@ -141,7 +167,7 @@ Please file a bug if you notice a violation of semantic versioning.</p>
   <li>40.71% documented</li>
 </ul>
 
-<h3 id="added-3">Added</h3>
+<h3 id="added-4">Added</h3>
 
 <ul>
   <li>kettle-dev v1.1.18</li>
@@ -155,7 +181,7 @@ Please file a bug if you notice a violation of semantic versioning.</p>
   <li>Documented OAuth 1.0, 1.0a differences</li>
 </ul>
 
-<h3 id="changed-1">Changed</h3>
+<h3 id="changed-2">Changed</h3>
 
 <ul>
   <li>converted minitest =&gt; rspec</li>
@@ -179,7 +205,7 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 </li>
 </ul>
 
-<h3 id="changed-2">Changed</h3>
+<h3 id="changed-3">Changed</h3>
 
 <ul>
   <li>
@@ -206,7 +232,7 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 </li>
 </ul>
 
-<h3 id="changed-3">Changed</h3>
+<h3 id="changed-4">Changed</h3>
 
 <ul>
   <li>
@@ -225,14 +251,14 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 </li>
 </ul>
 
-<h3 id="changed-4">Changed</h3>
+<h3 id="changed-5">Changed</h3>
 
 <ul>
   <li>Dropped support for Ruby &lt; 2.7</li>
   <li>Dropped support for Rails &lt; 6</li>
 </ul>
 
-<h3 id="added-4">Added</h3>
+<h3 id="added-5">Added</h3>
 
 <ul>
   <li>New EOL Policy
@@ -250,7 +276,7 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 </li>
 </ul>
 
-<h3 id="changed-5">Changed</h3>
+<h3 id="changed-6">Changed</h3>
 
 <ul>
   <li>
@@ -269,14 +295,14 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 </li>
 </ul>
 
-<h3 id="changed-6">Changed</h3>
+<h3 id="changed-7">Changed</h3>
 
 <ul>
   <li>Fixed documentation in SECURITY.md</li>
   <li>Change references to master =&gt; main</li>
 </ul>
 
-<h3 id="added-5">Added</h3>
+<h3 id="added-6">Added</h3>
 
 <ul>
   <li>Post install note about v0.6.x EOL approaching in April, 2024</li>
@@ -290,7 +316,7 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 </li>
 </ul>
 
-<h3 id="added-6">Added</h3>
+<h3 id="added-7">Added</h3>
 
 <ul>
   <li>New option <code>body_hash_enabled</code> which defaults to true to maintain backward compatibility with prior releases. Setting to <code>false</code> disables generation of a <code>oauth_body_hash</code> component as part of the signature computation.</li>
@@ -298,7 +324,7 @@ Please file a bug if you notice a violation of semantic versioning.</p>
   <li>Stop testing against active_support v2</li>
 </ul>
 
-<h3 id="changed-7">Changed</h3>
+<h3 id="changed-8">Changed</h3>
 
 <ul>
   <li>Utilize version_gem extracted from oauth2 gem for VERSION
@@ -374,13 +400,13 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 
 <p>The “Is this the last release with a silly name?” Release</p>
 
-<h3 id="added-7">Added</h3>
+<h3 id="added-8">Added</h3>
 
 <ul>
   <li>Post install note about v0.5.x EOL approaching in April, 2023</li>
 </ul>
 
-<h3 id="changed-8">Changed</h3>
+<h3 id="changed-9">Changed</h3>
 
 <ul>
   <li>Improved documentation</li>
@@ -397,7 +423,7 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 
 <p>The “Can it be the end of the line for 0.5.x?” Release</p>
 
-<h3 id="added-8">Added</h3>
+<h3 id="added-9">Added</h3>
 
 <ul>
   <li>Major updates to Documentation</li>
@@ -418,7 +444,7 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 </li>
 </ul>
 
-<h3 id="added-9">Added</h3>
+<h3 id="added-10">Added</h3>
 
 <ul>
   <li>Documentation related to Ruby compatibility</li>
@@ -443,7 +469,7 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 </li>
 </ul>
 
-<h3 id="added-10">Added</h3>
+<h3 id="added-11">Added</h3>
 
 <ul>
   <li>Added more documentation files to packaged gem, e.g. SECURITY.md, CODE_OF_CONDUCT.md</li>
@@ -463,7 +489,7 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 </li>
 </ul>
 
-<h3 id="added-11">Added</h3>
+<h3 id="added-12">Added</h3>
 
 <ul>
   <li>Setup Rubocop (#205, #208 by @pboling)</li>
@@ -473,7 +499,7 @@ Please file a bug if you notice a violation of semantic versioning.</p>
   <li>Handle a nested array of hashes in OAuth::Helper.normalize (#80, #221 by @pboling)</li>
 </ul>
 
-<h3 id="changed-9">Changed</h3>
+<h3 id="changed-10">Changed</h3>
 
 <ul>
   <li>Switch from TravisCI to Github Actions (#202, #207, #176 by @pboling)</li>
@@ -512,14 +538,14 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 </li>
 </ul>
 
-<h3 id="added-12">Added</h3>
+<h3 id="added-13">Added</h3>
 
 <ul>
   <li>Add metadata to Gemspec file</li>
   <li>Add support for PUT requests with Action Controller (#181)</li>
 </ul>
 
-<h3 id="changed-10">Changed</h3>
+<h3 id="changed-11">Changed</h3>
 
 <ul>
   <li>Change default timeout to be the same as Net::HTTP default, 60 seconds instead of 30 seconds.</li>
@@ -533,13 +559,13 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 </li>
 </ul>
 
-<h3 id="added-13">Added</h3>
+<h3 id="added-14">Added</h3>
 
 <ul>
   <li>Add :allow_empty_params option (#155)</li>
 </ul>
 
-<h3 id="changed-11">Changed</h3>
+<h3 id="changed-12">Changed</h3>
 
 <ul>
   <li>Allow redirect to different host but same path</li>
@@ -561,7 +587,7 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 </li>
 </ul>
 
-<h3 id="changed-12">Changed</h3>
+<h3 id="changed-13">Changed</h3>
 
 <ul>
   <li>Various cleanups (charliesome)</li>
@@ -587,7 +613,7 @@ Please file a bug if you notice a violation of semantic versioning.</p>
   <li>Fix #145 - broken CLI required loading active_support (James Pinto)</li>
 </ul>
 
-<h3 id="changed-13">Changed</h3>
+<h3 id="changed-14">Changed</h3>
 
 <ul>
   <li>Removing legacy scripts (James Pinto)</li>
@@ -601,7 +627,7 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 </li>
 </ul>
 
-<h3 id="added-14">Added</h3>
+<h3 id="added-15">Added</h3>
 
 <ul>
   <li>Adding a development dependency that had not been mentioned (James Pinto)</li>
@@ -609,7 +635,7 @@ Please file a bug if you notice a violation of semantic versioning.</p>
   <li>Adding support to Ruby 2.4 and head (James Pinto)</li>
 </ul>
 
-<h3 id="changed-14">Changed</h3>
+<h3 id="changed-15">Changed</h3>
 
 <ul>
   <li>Use assert_nil so as to silence a Minitest 6 deprecation warning (James Pinto)</li>
@@ -646,7 +672,7 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 </li>
 </ul>
 
-<h3 id="added-15">Added</h3>
+<h3 id="added-16">Added</h3>
 
 <ul>
   <li>Add license info to the gemspec (Robert Reiz)</li>
@@ -660,7 +686,7 @@ Harald Sitter)</li>
   <li>Replace calls to String#blank? with its implementation (Sergio Gil Pérez de la Manga)</li>
 </ul>
 
-<h3 id="changed-15">Changed</h3>
+<h3 id="changed-16">Changed</h3>
 
 <ul>
   <li>Loosen some development dependencies. Add libcurl-dev to travis</li>
@@ -682,7 +708,7 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-16">Added</h3>
+<h3 id="added-17">Added</h3>
 
 <ul>
   <li>Add support for HTTP PATCH method (Richard Huang)</li>
@@ -692,7 +718,7 @@ Harald Sitter)</li>
   <li>Allow reading certificate file path from environment variable. Add CentOS cert file path (Danil Vlasov)</li>
 </ul>
 
-<h3 id="changed-16">Changed</h3>
+<h3 id="changed-17">Changed</h3>
 
 <ul>
   <li>Replace jeweler with real spec and bundler tasks</li>
@@ -726,7 +752,7 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-17">Added</h3>
+<h3 id="added-18">Added</h3>
 
 <ul>
   <li>Set a configurable timeout for all requests (Rick Olson)</li>
@@ -747,7 +773,7 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="changed-17">Changed</h3>
+<h3 id="changed-18">Changed</h3>
 
 <ul>
   <li>Make use the path component of the :site parameter (Jonathon M. Abbott)</li>
@@ -769,14 +795,14 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-18">Added</h3>
+<h3 id="added-19">Added</h3>
 
 <ul>
   <li>Add explicit require for rsa/sha1 (Juris Galang)</li>
   <li>Add gemtest support (Adrian Feldman)</li>
 </ul>
 
-<h3 id="changed-18">Changed</h3>
+<h3 id="changed-19">Changed</h3>
 
 <ul>
   <li>Use webmock to mock all http-requests in tests (Adrian Feldman)</li>
@@ -799,7 +825,7 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-19">Added</h3>
+<h3 id="added-20">Added</h3>
 
 <ul>
   <li>Added support for Rails 3 in client/action_controller_request (Pelle)</li>
@@ -836,7 +862,7 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-20">Added</h3>
+<h3 id="added-21">Added</h3>
 
 <ul>
   <li>Added Bundler (rc) Gemfile for easier dev/testing</li>
@@ -858,7 +884,7 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-21">Added</h3>
+<h3 id="added-22">Added</h3>
 
 <ul>
   <li>Added support for using OAuth with proxies (Marsh Gardiner)</li>
@@ -879,7 +905,7 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-22">Added</h3>
+<h3 id="added-23">Added</h3>
 
 <ul>
   <li>Added computation of oauth_body_hash as per OAuth Request Body Hash 1.0 Draft 4 (Michael Reinsch)</li>
@@ -893,7 +919,7 @@ Harald Sitter)</li>
   <li>New website (Aaron Quint)</li>
 </ul>
 
-<h3 id="changed-19">Changed</h3>
+<h3 id="changed-20">Changed</h3>
 
 <ul>
   <li>Better marshalling implementation (Yoan Blanc)</li>
@@ -917,7 +943,7 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-23">Added</h3>
+<h3 id="added-24">Added</h3>
 
 <ul>
   <li>Added -B CLI option to use the :body authentication scheme (Seth)</li>
@@ -925,7 +951,7 @@ Harald Sitter)</li>
   <li>Added :ca_file consumer option to allow consumer specific certificate override. (Pelle)</li>
 </ul>
 
-<h3 id="changed-20">Changed</h3>
+<h3 id="changed-21">Changed</h3>
 
 <ul>
   <li>Test clean-up (Xavier Shay, Hannes Tydén)</li>
@@ -945,7 +971,7 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-24">Added</h3>
+<h3 id="added-25">Added</h3>
 
 <ul>
   <li>
@@ -966,7 +992,7 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="changed-21">Changed</h3>
+<h3 id="changed-22">Changed</h3>
 
 <ul>
   <li>OAuth::Client::Helper uses OAuth::Version::VERSION (chadisfaction)</li>
@@ -986,14 +1012,14 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-25">Added</h3>
+<h3 id="added-26">Added</h3>
 
 <ul>
   <li>Support for arguments in OAuth::Consumer#get_access_token (Matt Sanford)</li>
   <li>Add gem version to user-agent header (Matt Sanford)</li>
 </ul>
 
-<h3 id="changed-22">Changed</h3>
+<h3 id="changed-23">Changed</h3>
 
 <ul>
   <li>Improved error handling for invalid Authorization headers (Matt Sanford)</li>
@@ -1016,7 +1042,7 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-26">Added</h3>
+<h3 id="added-27">Added</h3>
 
 <ul>
   <li>Support applications using the MethodOverride Rack middleware (László Bácsi)</li>
@@ -1058,7 +1084,7 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-27">Added</h3>
+<h3 id="added-28">Added</h3>
 
 <ul>
   <li>Support ActionController::Request from Edge Rails (László Bácsi)</li>
@@ -1066,7 +1092,7 @@ Harald Sitter)</li>
   <li>Command-line app for generating signatures. (Seth)</li>
 </ul>
 
-<h3 id="changed-23">Changed</h3>
+<h3 id="changed-24">Changed</h3>
 
 <ul>
   <li>OAuth::Signature.sign and friends now yield the RequestProxy instead of the token when the passed block’s arity is 1. (Seth)</li>
@@ -1095,14 +1121,14 @@ Harald Sitter)</li>
 
 <p>The lets RSA release</p>
 
-<h3 id="added-28">Added</h3>
+<h3 id="added-29">Added</h3>
 
 <ul>
   <li>Improved support for Ruby 1.8.7 (Bill Kocik)</li>
   <li>Added support for ‘private_key_file’ option for RSA signatures (Chris Mear)</li>
 </ul>
 
-<h3 id="changed-24">Changed</h3>
+<h3 id="changed-25">Changed</h3>
 
 <ul>
   <li>Improved RSA testing</li>
@@ -1131,7 +1157,7 @@ Harald Sitter)</li>
 
 <p>All together now release</p>
 
-<h3 id="changed-25">Changed</h3>
+<h3 id="changed-26">Changed</h3>
 
 <ul>
   <li>This is a big release, where we have merged the efforts of various parties into one common library.<br>
@@ -1150,7 +1176,7 @@ but please have a look at the unit tests.</li>
 
 <h2 id="011-2007-11-26">0.1.1 2007-11-26</h2>
 
-<h3 id="added-29">Added</h3>
+<h3 id="added-30">Added</h3>
 
 <ul>
   <li>First release as a GEM</li>
@@ -1161,9 +1187,9 @@ http://code.google.com/p/oauth-plugin/</li>
 </div></div>
 
       <div id="footer">
-  Generated on Thu Nov  6 19:32:22 2025 by
+  Generated on Sat May 16 20:26:42 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.37 (ruby-3.4.7).
+  0.9.43 (ruby-4.0.4).
 </div>
 
     </div>

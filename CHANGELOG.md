@@ -20,11 +20,7 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Added
 
-- Add `auth-sanitizer` integration for inspect-time secret redaction in core OAuth objects.
-
 ### Changed
-
-- Redact sensitive values from `#inspect` in `OAuth::Consumer`, `OAuth::Token`, and `OAuth::Signature::Base`.
 
 ### Deprecated
 
@@ -33,6 +29,22 @@ Please file a bug if you notice a violation of semantic versioning.
 ### Fixed
 
 ### Security
+
+## [1.1.4] - 2026-05-16
+
+- TAG: [v1.1.4][1.1.4t]
+- COVERAGE: 84.64% -- 854/1009 lines in 36 files
+- BRANCH COVERAGE: 54.91% -- 151/275 branches in 36 files
+- 40.78% documented
+
+### Added
+
+- Add `auth-sanitizer` integration for inspect-time secret redaction in core OAuth objects.
+- Traditional OAuth::VERSION constant
+
+### Changed
+
+- Redact sensitive values from `#inspect` in `OAuth::Consumer`, `OAuth::Token`, and `OAuth::Signature::Base`.
 
 ## [1.1.3] - 2025-11-06
 
@@ -737,7 +749,9 @@ All together now release
 - Moved all non-Rails functionality from the Rails plugin:
   http://code.google.com/p/oauth-plugin/
 
-[Unreleased]: https://github.com/ruby-oauth/oauth/compare/v1.1.3...HEAD
+[Unreleased]: https://github.com/ruby-oauth/oauth/compare/v1.1.4...HEAD
+[1.1.4]: https://github.com/ruby-oauth/oauth/compare/v1.1.3...v1.1.4
+[1.1.4t]: https://github.com/ruby-oauth/oauth/releases/tag/v1.1.4
 [1.1.3]: https://github.com/ruby-oauth/oauth/compare/v1.1.2...v1.1.3
 [1.1.3t]: https://github.com/ruby-oauth/oauth/releases/tag/v1.1.3
 [1.1.2]: https://github.com/ruby-oauth/oauth/compare/v1.1.1...v1.1.2

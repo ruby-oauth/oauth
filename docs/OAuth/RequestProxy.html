@@ -6,13 +6,13 @@
 <title>
   Module: OAuth::RequestProxy
   
-    &mdash; Documentation by YARD 0.9.37
+    &mdash; Documentation by YARD 0.9.43
   
 </title>
 
-  <link rel="stylesheet" href="../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../css/common.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "OAuth::RequestProxy";
@@ -27,6 +27,8 @@
 
   </head>
   <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
     <div class="nav_wrap">
       <iframe id="nav" src="../class_list.html?1"></iframe>
       <div id="resizer"></div>
@@ -78,8 +80,9 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/oauth/request_proxy.rb<span class="defines">,<br />
-  lib/oauth/request_proxy/base.rb,<br /> lib/oauth/request_proxy/net_http.rb,<br /> lib/oauth/request_proxy/curb_request.rb,<br /> lib/oauth/request_proxy/mock_request.rb,<br /> lib/oauth/request_proxy/rack_request.rb,<br /> lib/oauth/request_proxy/jabber_request.rb,<br /> lib/oauth/request_proxy/em_http_request.rb,<br /> lib/oauth/request_proxy/typhoeus_request.rb,<br /> lib/oauth/request_proxy/rest_client_request.rb,<br /> lib/oauth/request_proxy/action_dispatch_request.rb,<br /> lib/oauth/request_proxy/action_controller_request.rb</span>
+    <dd>lib/oauth/request_proxy.rb<span class="defines">,<br>
+  lib/oauth/request_proxy/base.rb,<br> lib/oauth/request_proxy/net_http.rb,<br> lib/oauth/request_proxy/curb_request.rb,<br> lib/oauth/request_proxy/mock_request.rb,<br> lib/oauth/request_proxy/rack_request.rb,<br> lib/oauth/request_proxy/jabber_request.rb,<br> lib/oauth/request_proxy/em_http_request.rb,<br> lib/oauth/request_proxy/typhoeus_request.rb,<br> lib/oauth/request_proxy/rest_client_request.rb,<br> lib/oauth/request_proxy/action_dispatch_request.rb,<br> lib/oauth/request_proxy/action_controller_request.rb</span>
+
 </dd>
   </dl>
   
@@ -97,6 +100,22 @@
     
   
 </p>
+
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="AVAILABLE_PROXIES-constant" class="">AVAILABLE_PROXIES =
+          
+        </dt>
+        <dd><pre class="code"><span class='lbrace'>{</span><span class='rbrace'>}</span></pre></dd>
+      
+    </dl>
+  
 
 
 
@@ -159,6 +178,7 @@
 
       
     </ul>
+    
   
 
 
@@ -192,15 +212,15 @@
       <pre class="lines">
 
 
-5
-6
-7</pre>
+8
+9
+10</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy.rb', line 5</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy.rb', line 8</span>
 
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_available_proxies'>available_proxies</span> <span class='comment'># :nodoc:
-</span>  <span class='ivar'>@available_proxies</span> <span class='op'>||=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_available_proxies'>available_proxies</span> <span class='comment'># :nodoc:
+</span>  <span class='const'><span class='object_link'><a href="#AVAILABLE_PROXIES-constant" title="OAuth::RequestProxy::AVAILABLE_PROXIES (constant)">AVAILABLE_PROXIES</a></span></span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -245,9 +265,6 @@
       <pre class="lines">
 
 
-9
-10
-11
 12
 13
 14
@@ -259,12 +276,15 @@
 20
 21
 22
-23</pre>
+23
+24
+25
+26</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy.rb', line 9</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/request_proxy.rb', line 12</span>
 
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_proxy'>proxy</span><span class='lparen'>(</span><span class='id identifier rubyid_request'>request</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_proxy'>proxy</span><span class='lparen'>(</span><span class='id identifier rubyid_request'>request</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='id identifier rubyid_request'>request</span> <span class='kw'>if</span> <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../OAuth.html" title="OAuth (module)">OAuth</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="OAuth::RequestProxy (module)">RequestProxy</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="RequestProxy/Base.html" title="OAuth::RequestProxy::Base (class)">Base</a></span></span><span class='rparen'>)</span>
 
   <span class='id identifier rubyid_klass'>klass</span> <span class='op'>=</span> <span class='id identifier rubyid_available_proxies'>available_proxies</span><span class='lbracket'>[</span><span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='rbracket'>]</span>
@@ -289,9 +309,9 @@
 </div>
 
       <div id="footer">
-  Generated on Thu Nov  6 19:32:22 2025 by
+  Generated on Sat May 16 20:26:43 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.37 (ruby-3.4.7).
+  0.9.43 (ruby-4.0.4).
 </div>
 
     </div>

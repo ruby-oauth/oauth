@@ -6,13 +6,13 @@
 <title>
   Class: OAuth::Token
   
-    &mdash; Documentation by YARD 0.9.37
+    &mdash; Documentation by YARD 0.9.43
   
 </title>
 
-  <link rel="stylesheet" href="../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../css/common.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "OAuth::Token";
@@ -27,6 +27,8 @@
 
   </head>
   <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
     <div class="nav_wrap">
       <iframe id="nav" src="../class_list.html?1"></iframe>
       <div id="resizer"></div>
@@ -89,7 +91,7 @@
   
   <dl>
       <dt>Includes:</dt>
-      <dd><span class='object_link'><a href="Helper.html" title="OAuth::Helper (module)">Helper</a></span></dd>
+      <dd>Auth::Sanitizer::FilteredAttributes, <span class='object_link'><a href="Helper.html" title="OAuth::Helper (module)">Helper</a></span></dd>
   </dl>
   
   
@@ -99,14 +101,19 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/oauth/tokens/token.rb</dd>
+    <dd>lib/oauth/tokens/token.rb
+</dd>
   </dl>
   
 </div>
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    <p>Superclass for the various tokens used by OAuth</p>
+    <p>Superclass for the various tokens used by OAuth.</p>
+
+<p>Includes Auth::Sanitizer::FilteredAttributes so inspect output redacts the<br />
+token value and token secret while leaving object identity and non-sensitive<br />
+fields visible.</p>
 
 
   </div>
@@ -128,7 +135,7 @@
       <li class="public ">
   <span class="summary_signature">
     
-      <a href="#secret-instance_method" title="#secret (instance method)">#<strong>secret</strong>  &#x21d2; Object </a>
+      <a href="#secret-instance_method" title="#secret (instance method)">#<strong>secret</strong>  &#x21d2; String </a>
     
 
     
@@ -145,7 +152,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'><p>Returns the value of attribute secret.</p>
+    <span class="summary_desc"><div class='inline'><p>OAuth token secret (redacted in <code>#inspect</code>).</p>
 </div></span>
   
 </li>
@@ -154,7 +161,7 @@
       <li class="public ">
   <span class="summary_signature">
     
-      <a href="#token-instance_method" title="#token (instance method)">#<strong>token</strong>  &#x21d2; Object </a>
+      <a href="#token-instance_method" title="#token (instance method)">#<strong>token</strong>  &#x21d2; String </a>
     
 
     
@@ -171,7 +178,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'><p>Returns the value of attribute token.</p>
+    <span class="summary_desc"><div class='inline'><p>OAuth token value (redacted in <code>#inspect</code>).</p>
 </div></span>
   
 </li>
@@ -239,9 +246,12 @@
 
       
     </ul>
+    
   
 
 
+  
+  
   
   
   
@@ -280,13 +290,13 @@
       <pre class="lines">
 
 
-10
-11
-12
-13</pre>
+22
+23
+24
+25</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/tokens/token.rb', line 10</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/tokens/token.rb', line 22</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_secret'>secret</span><span class='rparen'>)</span>
   <span class='ivar'>@token</span> <span class='op'>=</span> <span class='id identifier rubyid_token'>token</span>
@@ -307,7 +317,7 @@
       <div class="method_details first">
   <h3 class="signature first" id="secret-instance_method">
   
-    #<strong>secret</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>secret</strong>  &#x21d2; <tt>String</tt> 
   
 
   
@@ -315,13 +325,30 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p>Returns the value of attribute secret.</p>
+    <p>Returns OAuth token secret (redacted in <code>#inspect</code>).</p>
 
 
   </div>
 </div>
 <div class="tags">
   
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>OAuth token secret (redacted in <code>#inspect</code>)</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -329,16 +356,12 @@
       <pre class="lines">
 
 
-8
-9
-10</pre>
+19</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/tokens/token.rb', line 8</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/tokens/token.rb', line 19</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_secret'>secret</span>
-  <span class='ivar'>@secret</span>
-<span class='kw'>end</span></pre>
+<span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:token</span><span class='comma'>,</span> <span class='symbol'>:secret</span></pre>
     </td>
   </tr>
 </table>
@@ -349,7 +372,7 @@
       <div class="method_details ">
   <h3 class="signature " id="token-instance_method">
   
-    #<strong>token</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>token</strong>  &#x21d2; <tt>String</tt> 
   
 
   
@@ -357,13 +380,30 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p>Returns the value of attribute token.</p>
+    <p>Returns OAuth token value (redacted in <code>#inspect</code>).</p>
 
 
   </div>
 </div>
 <div class="tags">
   
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>OAuth token value (redacted in <code>#inspect</code>)</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -371,12 +411,12 @@
       <pre class="lines">
 
 
-8
-9
-10</pre>
+19
+20
+21</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/tokens/token.rb', line 8</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/tokens/token.rb', line 19</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_token'>token</span>
   <span class='ivar'>@token</span>
@@ -408,12 +448,12 @@
       <pre class="lines">
 
 
-15
-16
-17</pre>
+27
+28
+29</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/tokens/token.rb', line 15</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/tokens/token.rb', line 27</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_query'>to_query</span>
   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>oauth_token=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_escape'>escape</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'>&amp;oauth_token_secret=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_escape'>escape</span><span class='lparen'>(</span><span class='id identifier rubyid_secret'>secret</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
@@ -428,9 +468,9 @@
 </div>
 
       <div id="footer">
-  Generated on Thu Nov  6 19:32:23 2025 by
+  Generated on Sat May 16 20:26:44 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.37 (ruby-3.4.7).
+  0.9.43 (ruby-4.0.4).
 </div>
 
     </div>

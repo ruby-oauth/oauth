@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-  Module: EventMachine
+  File: consumer
   
     &mdash; Documentation by YARD 0.9.43
   
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="css/common.css" type="text/css">
 
 <script type="text/javascript">
-  pathId = "EventMachine";
+  pathId = "consumer";
   relpath = '';
 </script>
 
@@ -30,7 +30,7 @@
     <div id="main_progress" aria-hidden="true"></div>
 
     <div class="nav_wrap">
-      <iframe id="nav" src="class_list.html?1"></iframe>
+      <iframe id="nav" src="file_list.html?1"></iframe>
       <div id="resizer"></div>
     </div>
 
@@ -38,10 +38,8 @@
       <div id="header">
         <div id="menu">
   
-    <a href="_index.html">Index (E)</a> &raquo;
-    
-    
-    <span class="title">EventMachine</span>
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: consumer</span>
   
 </div>
 
@@ -61,65 +59,18 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><h1>Module: EventMachine
-  
-  
-  
-</h1>
-<div class="box_info">
-  
+      <div id="content"><div id='filecontents'><p>module OAuth<br>
+  class Consumer<br>
+    include Auth::Sanitizer::FilteredAttributes</p>
 
-  
-  
-  
-  
-  
-
-  
-
-  
-  <dl>
-    <dt>Defined in:</dt>
-    <dd>lib/oauth/client/em_http.rb
-</dd>
-  </dl>
-  
-</div>
-
-<h2>Overview</h2><div class="docstring">
-  <div class="discussion">
-    <p>Extensions for em-http so that we can use consumer.sign! with an EventMachine::HttpClient<br />
-instance. This is purely syntactic sugar.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><h2>Defined Under Namespace</h2>
-<p class="children">
-  
-    
-  
-    
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="EventMachine/HttpClient.html" title="EventMachine::HttpClient (class)">HttpClient</a></span>
-    
-  
-</p>
-
-
-
-
-
-
-
-
-
-</div>
+<pre class="code ruby"><code class="ruby">attr_accessor options: untyped
+attr_accessor key: untyped
+attr_accessor secret: untyped   end end
+</code></pre>
+</div></div>
 
       <div id="footer">
-  Generated on Sat May 16 20:26:43 2026 by
+  Generated on Sat May 16 20:26:42 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.43 (ruby-4.0.4).
 </div>

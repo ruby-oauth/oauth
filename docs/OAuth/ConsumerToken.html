@@ -6,13 +6,13 @@
 <title>
   Class: OAuth::ConsumerToken
   
-    &mdash; Documentation by YARD 0.9.37
+    &mdash; Documentation by YARD 0.9.43
   
 </title>
 
-  <link rel="stylesheet" href="../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../css/common.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "OAuth::ConsumerToken";
@@ -27,6 +27,8 @@
 
   </head>
   <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
     <div class="nav_wrap">
       <iframe id="nav" src="../class_list.html?1"></iframe>
       <div id="resizer"></div>
@@ -96,7 +98,8 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/oauth/tokens/consumer_token.rb</dd>
+    <dd>lib/oauth/tokens/consumer_token.rb
+</dd>
   </dl>
   
 </div>
@@ -244,6 +247,7 @@
 
       
     </ul>
+    
   
     <h2>
       Instance Method Summary
@@ -324,9 +328,11 @@
 
       
     </ul>
+    
   
 
 
+  
   
   
   
@@ -338,6 +344,8 @@
   <h3 class="inherited">Methods inherited from <span class='object_link'><a href="Token.html" title="OAuth::Token (class)">Token</a></span></h3>
   <p class="inherited"><span class='object_link'><a href="Token.html#to_query-instance_method" title="OAuth::Token#to_query (method)">#to_query</a></span></p>
 
+  
+  
   
   
   
@@ -376,14 +384,14 @@
       <pre class="lines">
 
 
-15
-16
 17
 18
-19</pre>
+19
+20
+21</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/tokens/consumer_token.rb', line 15</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/tokens/consumer_token.rb', line 17</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_consumer'>consumer</span><span class='comma'>,</span> <span class='id identifier rubyid_token'>token</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_secret'>secret</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
   <span class='kw'>super</span><span class='lparen'>(</span><span class='id identifier rubyid_token'>token</span><span class='comma'>,</span> <span class='id identifier rubyid_secret'>secret</span><span class='rparen'>)</span>
@@ -548,16 +556,16 @@
       <pre class="lines">
 
 
-9
 10
 11
 12
-13</pre>
+13
+14</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/tokens/consumer_token.rb', line 9</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/tokens/consumer_token.rb', line 10</span>
 
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_from_hash'>from_hash</span><span class='lparen'>(</span><span class='id identifier rubyid_consumer'>consumer</span><span class='comma'>,</span> <span class='id identifier rubyid_hash'>hash</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_from_hash'>from_hash</span><span class='lparen'>(</span><span class='id identifier rubyid_consumer'>consumer</span><span class='comma'>,</span> <span class='id identifier rubyid_hash'>hash</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_token'>token</span> <span class='op'>=</span> <span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_consumer'>consumer</span><span class='comma'>,</span> <span class='id identifier rubyid_hash'>hash</span><span class='lbracket'>[</span><span class='symbol'>:oauth_token</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_hash'>hash</span><span class='lbracket'>[</span><span class='symbol'>:oauth_token_secret</span><span class='rbracket'>]</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_token'>token</span><span class='period'>.</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='id identifier rubyid_hash'>hash</span>
   <span class='id identifier rubyid_token'>token</span>
@@ -601,12 +609,12 @@
       <pre class="lines">
 
 
-26
-27
-28</pre>
+28
+29
+30</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/tokens/consumer_token.rb', line 26</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/tokens/consumer_token.rb', line 28</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_request'>request</span><span class='lparen'>(</span><span class='id identifier rubyid_http_method'>http_method</span><span class='comma'>,</span> <span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_arguments'>arguments</span><span class='rparen'>)</span>
   <span class='ivar'>@response</span> <span class='op'>=</span> <span class='id identifier rubyid_consumer'>consumer</span><span class='period'>.</span><span class='id identifier rubyid_request'>request</span><span class='lparen'>(</span><span class='id identifier rubyid_http_method'>http_method</span><span class='comma'>,</span> <span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='kw'>self</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_arguments'>arguments</span><span class='rparen'>)</span>
@@ -641,12 +649,12 @@
       <pre class="lines">
 
 
-31
-32
-33</pre>
+33
+34
+35</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/oauth/tokens/consumer_token.rb', line 31</span>
+      <pre class="code"><span class="info file"># File 'lib/oauth/tokens/consumer_token.rb', line 33</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_sign!'>sign!</span><span class='lparen'>(</span><span class='id identifier rubyid_request'>request</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_consumer'>consumer</span><span class='period'>.</span><span class='id identifier rubyid_sign!'>sign!</span><span class='lparen'>(</span><span class='id identifier rubyid_request'>request</span><span class='comma'>,</span> <span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
@@ -661,9 +669,9 @@
 </div>
 
       <div id="footer">
-  Generated on Thu Nov  6 19:32:23 2025 by
+  Generated on Sat May 16 20:26:45 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.37 (ruby-3.4.7).
+  0.9.43 (ruby-4.0.4).
 </div>
 
     </div>
