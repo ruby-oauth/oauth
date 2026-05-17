@@ -1,0 +1,17 @@
+{
+  "spec/oauth/request_proxy/base_accessors_spec.rb:3213069115": [
+    [42, 3, 16, "RSpec/IncludeExamples: Prefer `it_behaves_like` over `include_examples`.", 2874877341],
+    [43, 3, 16, "RSpec/IncludeExamples: Prefer `it_behaves_like` over `include_examples`.", 2874877341],
+    [44, 3, 16, "RSpec/IncludeExamples: Prefer `it_behaves_like` over `include_examples`.", 2874877341],
+    [45, 3, 16, "RSpec/IncludeExamples: Prefer `it_behaves_like` over `include_examples`.", 2874877341],
+    [46, 3, 16, "RSpec/IncludeExamples: Prefer `it_behaves_like` over `include_examples`.", 2874877341],
+    [47, 3, 16, "RSpec/IncludeExamples: Prefer `it_behaves_like` over `include_examples`.", 2874877341],
+    [48, 3, 16, "RSpec/IncludeExamples: Prefer `it_behaves_like` over `include_examples`.", 2874877341],
+    [49, 3, 16, "RSpec/IncludeExamples: Prefer `it_behaves_like` over `include_examples`.", 2874877341]
+  ],
+  "spec/oauth/request_proxy/rack_spec.rb:2912978567": [
+    [28, 17, 32, "RSpec/DescribedClass: Use `described_class` instead of `OAuth::RequestProxy::RackRequest`.", 45369365],
+    [33, 17, 32, "RSpec/DescribedClass: Use `described_class` instead of `OAuth::RequestProxy::RackRequest`.", 45369365],
+    [38, 17, 32, "RSpec/DescribedClass: Use `described_class` instead of `OAuth::RequestProxy::RackRequest`.", 45369365]
+  ]
+}

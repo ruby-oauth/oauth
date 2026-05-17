@@ -39,14 +39,14 @@ RSpec.describe OAuth::RequestProxy::Base do
     end
   end
 
-  include_examples "scalar accessor", :oauth_consumer_key,    "oauth_consumer_key"
-  include_examples "scalar accessor", :oauth_nonce,           "oauth_nonce"
-  include_examples "scalar accessor", :oauth_timestamp,       "oauth_timestamp"
-  include_examples "scalar accessor", :oauth_token,           "oauth_token"
-  include_examples "scalar accessor", :oauth_signature_method,"oauth_signature_method"
-  include_examples "scalar accessor", :oauth_callback,        "oauth_callback"
-  include_examples "scalar accessor", :oauth_verifier,        "oauth_verifier"
-  include_examples "scalar accessor", :oauth_version,         "oauth_version"
+  include_examples "scalar accessor", :oauth_consumer_key, "oauth_consumer_key"
+  include_examples "scalar accessor", :oauth_nonce, "oauth_nonce"
+  include_examples "scalar accessor", :oauth_timestamp, "oauth_timestamp"
+  include_examples "scalar accessor", :oauth_token, "oauth_token"
+  include_examples "scalar accessor", :oauth_signature_method, "oauth_signature_method"
+  include_examples "scalar accessor", :oauth_callback, "oauth_callback"
+  include_examples "scalar accessor", :oauth_verifier, "oauth_verifier"
+  include_examples "scalar accessor", :oauth_version, "oauth_version"
 
   describe "#oauth_signature" do
     it "returns a scalar when the parameter is stored as a single-element array" do
