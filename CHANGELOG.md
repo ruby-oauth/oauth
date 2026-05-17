@@ -20,7 +20,11 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Added
 
+- Add `auth-sanitizer` integration for inspect-time secret redaction in core OAuth objects.
+
 ### Changed
+
+- Redact sensitive values from `#inspect` in `OAuth::Consumer`, `OAuth::Token`, and `OAuth::Signature::Base`.
 
 ### Deprecated
 

@@ -56,6 +56,13 @@ RSpec.describe OAuth::Consumer do
       expect(consumer.debug_output).to be($stdout)
     end
 
+    it "redacts secret from inspect" do
+      consumer = described_class.new("key", "super-secret", site: "http://twitter.com")
+
+      expect(consumer.inspect).to include("@secret=[FILTERED]")
+      expect(consumer.inspect).not_to include("super-secret")
+    end
+
     it "accepts an IO for debug_output" do
       io = StringIO.new
       consumer = described_class.new("key", "secret", debug_output: io)
@@ -88,25 +95,31 @@ RSpec.describe OAuth::Consumer do
 
       # We don't need to actually perform the HTTP call; we just want to verify
       # that the request path sent to Net::HTTP::Get.new is correct.
-      request_double = instance_double("Net::HTTP::Get").as_null_object
-      expect(Net::HTTP::Get).to receive(:new).with("/people", kind_of(Hash)).and_return(request_double)
+      request_double = instance_double(Net::HTTP::Get).as_null_object
+      allow(Net::HTTP::Get).to receive(:new).with("/people", kind_of(Hash)).and_return(request_double)
 
       http_double = double("http", request: double("response", to_hash: {}), address: "identi.ca")
-      expect(consumer).to receive(:create_http).and_return(http_double)
+      allow(consumer).to receive(:create_http).and_return(http_double)
 
       consumer.request(:get, "/people", nil, {})
+
+      expect(Net::HTTP::Get).to have_received(:new).with("/people", kind_of(Hash))
+      expect(consumer).to have_received(:create_http)
     end
 
     it "prefixes site path when site includes a path" do
       consumer = described_class.new("key", "secret", site: "http://identi.ca/api")
 
-      request_double = instance_double("Net::HTTP::Get").as_null_object
-      expect(Net::HTTP::Get).to receive(:new).with("/api/people", kind_of(Hash)).and_return(request_double)
+      request_double = instance_double(Net::HTTP::Get).as_null_object
+      allow(Net::HTTP::Get).to receive(:new).with("/api/people", kind_of(Hash)).and_return(request_double)
 
       http_double = double("http", request: double("response", to_hash: {}), address: "identi.ca")
-      expect(consumer).to receive(:create_http).and_return(http_double)
+      allow(consumer).to receive(:create_http).and_return(http_double)
 
       consumer.request(:get, "/people", nil, {})
+
+      expect(Net::HTTP::Get).to have_received(:new).with("/api/people", kind_of(Hash))
+      expect(consumer).to have_received(:create_http)
     end
   end
 
@@ -151,9 +164,11 @@ RSpec.describe OAuth::Consumer do
       allow(http_instance).to receive(:cert=)
       allow(http_instance).to receive(:key=)
       allow(http_instance).to receive(:set_debug_output)
-      allow(http_instance).to receive(:address).and_return("authentication.mysite.co.nz")
+      allow(http_instance).to receive_messages(
+        address: "authentication.mysite.co.nz",
+        request: double(to_hash: {}, code: "200", body: ""),
+      )
       expect(http_instance).to receive(:verify_mode=).with(OpenSSL::SSL::VERIFY_NONE)
-      allow(http_instance).to receive(:request).and_return(double(to_hash: {}, code: "200", body: ""))
 
       # The request inside get_request_token is not important beyond hitting the code path
       expect { consumer.get_request_token }.not_to raise_error
@@ -181,9 +196,11 @@ RSpec.describe OAuth::Consumer do
       allow(http_instance).to receive(:cert=)
       allow(http_instance).to receive(:key=)
       allow(http_instance).to receive(:set_debug_output)
-      allow(http_instance).to receive(:address).and_return("authentication.mysite.co.nz")
+      allow(http_instance).to receive_messages(
+        address: "authentication.mysite.co.nz",
+        request: double(to_hash: {}, code: "200", body: ""),
+      )
       expect(http_instance).to receive(:verify_mode=).with(OpenSSL::SSL::VERIFY_PEER)
-      allow(http_instance).to receive(:request).and_return(double(to_hash: {}, code: "200", body: ""))
 
       expect { consumer.get_request_token }.not_to raise_error
     end
@@ -209,9 +226,11 @@ RSpec.describe OAuth::Consumer do
       allow(http_instance).to receive(:cert=)
       allow(http_instance).to receive(:key=)
       allow(http_instance).to receive(:set_debug_output)
-      allow(http_instance).to receive(:address).and_return("authentication.mysite.co.nz")
-      allow(http_instance).to receive(:verify_mode=)
-      allow(http_instance).to receive(:request).and_return(double(to_hash: {}, code: "200", body: ""))
+      allow(http_instance).to receive_messages(
+        :verify_mode= => nil,
+        :address => "authentication.mysite.co.nz",
+        :request => double(to_hash: {}, code: "200", body: ""),
+      )
 
       expect { consumer.get_request_token }.not_to raise_error
     end

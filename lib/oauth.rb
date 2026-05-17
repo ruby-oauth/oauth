@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 # third party gems
+require "auth/sanitizer"
 require "snaky_hash"
 require "version_gem"
 

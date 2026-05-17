@@ -8,8 +8,10 @@ module OAuth
     class Base
       include OAuth::Helper
 
-      def self.proxies(klass)
-        OAuth::RequestProxy.available_proxies[klass] = self
+      class << self
+        def proxies(klass)
+          OAuth::RequestProxy.available_proxies[klass] = self
+        end
       end
 
       attr_accessor :request, :options, :unsigned_parameters

@@ -124,10 +124,13 @@ get "/callback" do
 
   puts "\nOAuth complete. Access token acquired.\n"
 
+  # Intentional fire-and-forget shutdown for the ephemeral local callback server.
+  # rubocop:disable ThreadSafety/NewThread
   Thread.new {
     sleep 1
     Sinatra::Application.quit!
   }
+  # rubocop:enable ThreadSafety/NewThread
   "Authorization complete. You can close this window."
 end
 
@@ -238,7 +241,7 @@ def menu
     puts "3) Exit"
     print("> ")
 
-    case STDIN.gets&.strip
+    case $stdin.gets&.strip
     when "1" then list_my_blogs
     when "2" then list_my_blogs_with_latest_posts
     when "3" then exit(0)

@@ -27,5 +27,17 @@ RSpec.describe OAuth::Signature::Base do
         described_class.new(request) { |_token| }
       end.not_to raise_error
     end
+
+    it "redacts consumer and token secrets from inspect" do
+      raw_request = Net::HTTP::Get.new("/test")
+      request = OAuth::RequestProxy.proxy(raw_request)
+
+      signature = described_class.new(request, consumer_secret: "consumer-secret", token_secret: "token-secret")
+
+      expect(signature.inspect).to include("@consumer_secret=[FILTERED]")
+      expect(signature.inspect).to include("@token_secret=[FILTERED]")
+      expect(signature.inspect).not_to include("consumer-secret")
+      expect(signature.inspect).not_to include("token-secret")
+    end
   end
 end

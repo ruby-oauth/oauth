@@ -56,14 +56,16 @@ RSpec.describe OAuth::RequestToken do
   end
 
   describe "private build_url (via stubbed subclass)" do
-    class StubbedToken < OAuth::RequestToken
-      def build_url_promoted(root_domain, params)
-        build_url(root_domain, params)
+    let(:stubbed_token_class) do
+      Class.new(described_class) do
+        def build_url_promoted(root_domain, params)
+          build_url(root_domain, params)
+        end
       end
     end
 
     it "percent-encodes values and joins with ?" do
-      token = StubbedToken.new(nil, nil, nil)
+      token = stubbed_token_class.new(nil, nil, nil)
       expect(token).to respond_to(:build_url_promoted)
       url = token.build_url_promoted("http://github.com/oauth/authorize", {foo: "bar bar"})
       expect(url).to eq("http://github.com/oauth/authorize?foo=bar+bar")

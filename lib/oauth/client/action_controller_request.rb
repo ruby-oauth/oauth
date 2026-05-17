@@ -26,12 +26,16 @@ module ActionController
   end
 
   class TestRequest
-    class << self
-      attr_writer :use_oauth
-    end
+    OAUTH_ENABLED_KEY = :oauth_action_controller_test_request_use_oauth
 
-    def self.use_oauth?
-      @use_oauth
+    class << self
+      def use_oauth=(value)
+        Thread.current[OAUTH_ENABLED_KEY] = value
+      end
+
+      def use_oauth?
+        Thread.current[OAUTH_ENABLED_KEY]
+      end
     end
 
     def configure_oauth(consumer = nil, token = nil, options = {})

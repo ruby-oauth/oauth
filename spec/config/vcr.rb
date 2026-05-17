@@ -1,4 +1,6 @@
 # VCR/WebMock: record and replay HTTP to external services (RubyGems, GitHub, etc.)
+require "cgi"
+require "cgi/core" unless CGI.respond_to?(:parse)
 require "webmock/rspec"
 require "vcr"
 VCR.configure do |c|

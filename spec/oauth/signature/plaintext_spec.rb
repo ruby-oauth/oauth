@@ -2,7 +2,7 @@
 
 require "net/http"
 
-RSpec.describe "OAuth::Signature PLAINTEXT" do
+RSpec.describe OAuth::Signature::PLAINTEXT do
   describe "::available_methods" do
     it "includes 'plaintext'" do
       expect(OAuth::Signature.available_methods).to include("plaintext")

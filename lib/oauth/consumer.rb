@@ -8,7 +8,22 @@ require "oauth/errors"
 require "cgi"
 
 module OAuth
+  # Consumer credentials and request configuration for OAuth 1.0 / 1.0a flows.
+  #
+  # Includes {Auth::Sanitizer::FilteredAttributes} so inspect output redacts the
+  # consumer secret while leaving non-sensitive configuration visible.
   class Consumer
+    include Auth::Sanitizer::FilteredAttributes
+
+    # Instance attributes exposed by the consumer.
+    #
+    # @!attribute [rw] options
+    #   @return [Hash] Consumer configuration options
+    # @!attribute [rw] key
+    #   @return [String] OAuth consumer key
+    # @!attribute [rw] secret
+    #   @return [String] OAuth consumer secret (redacted in `#inspect`)
+
     # determine the certificate authority path to verify SSL certs
     if ENV["SSL_CERT_FILE"]
       if File.exist?(ENV["SSL_CERT_FILE"])
@@ -78,6 +93,7 @@ module OAuth
     )
 
     attr_accessor :options, :key, :secret
+    filtered_attributes :secret
     attr_writer :site, :http
 
     # Create a new consumer instance by passing it a configuration hash:
@@ -238,8 +254,8 @@ module OAuth
     def request(http_method, path, token = nil, request_options = {}, *arguments)
       unless %r{^/} =~ path
         @http = create_http(path)
-        _uri = URI.parse(path)
-        path = "#{_uri.path}#{"?#{_uri.query}" if _uri.query}"
+        uri = URI.parse(path)
+        path = "#{uri.path}#{"?#{uri.query}" if uri.query}"
       end
 
       # override the request with your own, this is useful for file uploads which Net::HTTP does not do
@@ -396,13 +412,13 @@ module OAuth
     protected
 
     # Instantiates the http object
-    def create_http(_url = nil)
-      _url = request_endpoint unless request_endpoint.nil?
+    def create_http(url = nil)
+      url = request_endpoint unless request_endpoint.nil?
 
-      our_uri = if _url.nil? || _url[0] =~ %r{^/}
+      our_uri = if url.nil? || url[0] =~ %r{^/}
         URI.parse(site)
       else
-        your_uri = URI.parse(_url)
+        your_uri = URI.parse(url)
         if your_uri.host.nil?
           # If the _url is a path, missing the leading slash, then it won't have a host,
           # and our_uri *must* have a host, so we parse site instead.

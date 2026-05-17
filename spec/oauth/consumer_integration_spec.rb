@@ -3,9 +3,9 @@
 require "spec_helper"
 require "net/http"
 
-RSpec.describe "OAuth::Consumer integration" do
+RSpec.describe OAuth::Consumer do
   let(:consumer) do
-    OAuth::Consumer.new(
+    described_class.new(
       "consumer_key_86cad9",
       "5888bf0345e5d237",
       {
@@ -161,7 +161,7 @@ RSpec.describe "OAuth::Consumer integration" do
     end
 
     it "can perform a full token dance and call a protected resource" do
-      consumer2 = OAuth::Consumer.new(
+      consumer2 = described_class.new(
         "key",
         "secret",
         {
@@ -198,7 +198,7 @@ RSpec.describe "OAuth::Consumer integration" do
     end
 
     it "builds correct signature base string for request token" do
-      consumer2 = OAuth::Consumer.new(
+      consumer2 = described_class.new(
         "key",
         "secret",
         {
