@@ -98,9 +98,9 @@ Gem::Specification.new do |spec|
   # "oauth-tty" was extracted from this gem with release 1.1 of this gem
   # It is now a dependency for backward compatibility.
   # The dependency will cease to be a direct dependency with release 2.0.
-  spec.add_dependency("auth-sanitizer", "~> 0.1", ">= 0.1.2")
-  spec.add_dependency("oauth-tty", "~> 1.0", ">= 1.0.7")
-  spec.add_dependency("snaky_hash", "~> 2.0", ">= 2.0.4")
+  spec.add_dependency("auth-sanitizer", "~> 0.1", ">= 0.1.3")           # ruby >= 2.2.0
+  spec.add_dependency("oauth-tty", "~> 1.0", ">= 1.0.7")                # ruby >= 2.3.0
+  spec.add_dependency("snaky_hash", "~> 2.0", ">= 2.0.4")               # ruby >= 2.2.0
 
   # Standard Library Extracted Gems
   spec.add_dependency("base64", "~> 0.1") # became a bundled gem in ruby 3.4 (was default from 3.0 to 3.3)
