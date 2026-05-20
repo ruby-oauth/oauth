@@ -25,17 +25,17 @@ begin
 
     describe "#signature" do
       it "returns a scalar when oauth_signature is a plain string" do
-        proxy = OAuth::RequestProxy::RackRequest.new(Object.new, clobber_request: true, parameters: {"oauth_signature" => "sig"})
+        proxy = described_class.new(Object.new, clobber_request: true, parameters: {"oauth_signature" => "sig"})
         expect(proxy.signature).to eq("sig")
       end
 
       it "returns a scalar when oauth_signature is a single-element array" do
-        proxy = OAuth::RequestProxy::RackRequest.new(Object.new, clobber_request: true, parameters: {"oauth_signature" => ["sig"]})
+        proxy = described_class.new(Object.new, clobber_request: true, parameters: {"oauth_signature" => ["sig"]})
         expect(proxy.signature).to eq("sig")
       end
 
       it "returns an empty string when oauth_signature is absent" do
-        proxy = OAuth::RequestProxy::RackRequest.new(Object.new, clobber_request: true, parameters: {})
+        proxy = described_class.new(Object.new, clobber_request: true, parameters: {})
         expect(proxy.signature).to eq("")
       end
     end

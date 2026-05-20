@@ -2,8 +2,8 @@
 
 source "https://gem.coop"
 
-gem "oauth-tty", :branch => "main", :git => "https://github.com/ruby-oauth/oauth-tty"
+gem "oauth-tty", branch: "main", git: "https://github.com/ruby-oauth/oauth-tty"
 
-gemspec :path => "../"
+gemspec path: "../"
 
 eval_gemfile("modular/runtime_heads.gemfile")

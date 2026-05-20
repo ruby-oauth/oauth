@@ -3,7 +3,7 @@
 require "open3"
 require "rbconfig"
 
-RSpec.describe OAuth::AUTH_SANITIZER do
+RSpec.describe "OAuth::AUTH_SANITIZER" do
   it "keeps auth-sanitizer constants isolated inside the OAuth namespace" do
     lib = File.expand_path("../../../lib", __dir__)
     script = <<~RUBY
@@ -19,8 +19,8 @@ RSpec.describe OAuth::AUTH_SANITIZER do
   end
 
   it "provides filtered attributes for OAuth objects" do
-    expect(OAuth::Consumer.ancestors).to include(described_class::FilteredAttributes)
-    expect(OAuth::Token.ancestors).to include(described_class::FilteredAttributes)
-    expect(OAuth::Signature::Base.ancestors).to include(described_class::FilteredAttributes)
+    expect(OAuth::Consumer.ancestors).to include(OAuth::AUTH_SANITIZER::FilteredAttributes)
+    expect(OAuth::Token.ancestors).to include(OAuth::AUTH_SANITIZER::FilteredAttributes)
+    expect(OAuth::Signature::Base.ancestors).to include(OAuth::AUTH_SANITIZER::FilteredAttributes)
   end
 end
