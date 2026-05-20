@@ -22,6 +22,8 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
+- auth-sanitizer v0.1.3
+
 ### Deprecated
 
 ### Removed
