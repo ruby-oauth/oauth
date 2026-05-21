@@ -22,17 +22,28 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
-- auth-sanitizer v0.1.3
-
 ### Deprecated
 
 ### Removed
 
 ### Fixed
 
-- Load `auth-sanitizer` through an internal isolated loader so requiring `oauth` does not add top-level `Auth` or `AuthSanitizer` constants that may collide with downstream applications.
-
 ### Security
+
+## [1.1.5] - 2026-05-20
+
+- TAG: [v1.1.5][1.1.5t]
+- COVERAGE: 84.79% -- 864/1019 lines in 37 files
+- BRANCH COVERAGE: 54.91% -- 151/275 branches in 37 files
+- 40.86% documented
+
+### Changed
+
+- auth-sanitizer v0.1.3
+
+### Fixed
+
+- Load `auth-sanitizer` through an internal isolated loader so requiring `oauth` does not add top-level `Auth` or `AuthSanitizer` constants that may collide with downstream applications.
 
 ## [1.1.4] - 2026-05-16
 
@@ -753,7 +764,9 @@ All together now release
 - Moved all non-Rails functionality from the Rails plugin:
   http://code.google.com/p/oauth-plugin/
 
-[Unreleased]: https://github.com/ruby-oauth/oauth/compare/v1.1.4...HEAD
+[Unreleased]: https://github.com/ruby-oauth/oauth/compare/v1.1.5...HEAD
+[1.1.5]: https://github.com/ruby-oauth/oauth/compare/v1.1.4...v1.1.5
+[1.1.5t]: https://github.com/ruby-oauth/oauth/releases/tag/v1.1.5
 [1.1.4]: https://github.com/ruby-oauth/oauth/compare/v1.1.3...v1.1.4
 [1.1.4t]: https://github.com/ruby-oauth/oauth/releases/tag/v1.1.4
 [1.1.3]: https://github.com/ruby-oauth/oauth/compare/v1.1.2...v1.1.3
