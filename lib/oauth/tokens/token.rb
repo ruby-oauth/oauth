@@ -3,12 +3,12 @@
 module OAuth
   # Superclass for the various tokens used by OAuth.
   #
-  # Includes {Auth::Sanitizer::FilteredAttributes} so inspect output redacts the
+  # Includes {OAuth::AUTH_SANITIZER::FilteredAttributes} so inspect output redacts the
   # token value and token secret while leaving object identity and non-sensitive
   # fields visible.
   class Token
     include OAuth::Helper
-    include Auth::Sanitizer::FilteredAttributes
+    include OAuth::AUTH_SANITIZER::FilteredAttributes
 
     # Token attributes.
     #

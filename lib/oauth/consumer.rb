@@ -10,10 +10,10 @@ require "cgi"
 module OAuth
   # Consumer credentials and request configuration for OAuth 1.0 / 1.0a flows.
   #
-  # Includes {Auth::Sanitizer::FilteredAttributes} so inspect output redacts the
+  # Includes {OAuth::AUTH_SANITIZER::FilteredAttributes} so inspect output redacts the
   # consumer secret while leaving non-sensitive configuration visible.
   class Consumer
-    include Auth::Sanitizer::FilteredAttributes
+    include OAuth::AUTH_SANITIZER::FilteredAttributes
 
     # Instance attributes exposed by the consumer.
     #

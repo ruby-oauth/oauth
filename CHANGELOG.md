@@ -22,11 +22,15 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
+- auth-sanitizer v0.1.3
+
 ### Deprecated
 
 ### Removed
 
 ### Fixed
+
+- Load `auth-sanitizer` through an internal isolated loader so requiring `oauth` does not add top-level `Auth` or `AuthSanitizer` constants that may collide with downstream applications.
 
 ### Security
 

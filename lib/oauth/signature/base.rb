@@ -9,11 +9,11 @@ module OAuth
   module Signature
     # Base class for OAuth signature implementations.
     #
-    # Includes {Auth::Sanitizer::FilteredAttributes} so inspect output redacts
+    # Includes {OAuth::AUTH_SANITIZER::FilteredAttributes} so inspect output redacts
     # secret-bearing fields captured during signature construction.
     class Base
       include OAuth::Helper
-      include Auth::Sanitizer::FilteredAttributes
+      include OAuth::AUTH_SANITIZER::FilteredAttributes
 
       # Signature construction options.
       #

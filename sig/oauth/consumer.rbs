@@ -1,6 +1,6 @@
 module OAuth
   class Consumer
-    include Auth::Sanitizer::FilteredAttributes
+    include OAuth::AUTH_SANITIZER::FilteredAttributes
 
     attr_accessor options: untyped
     attr_accessor key: untyped
