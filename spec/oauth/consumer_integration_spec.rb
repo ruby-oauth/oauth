@@ -227,4 +227,56 @@ RSpec.describe OAuth::Consumer do
       expect(response.body).to eq("oauth_token=requestkey&oauth_token_secret=requestsecret")
     end
   end
+
+  describe "token endpoint redirect security", :vcr do
+    it "does not follow request-token redirects to an absolute cross-origin URL" do
+      provider_request = stub_request(:post, "http://provider.example/oauth/request_token")
+        .to_return(status: 302, headers: {"Location" => "http://evil.example/oauth/request_token"})
+      evil_request = stub_request(:any, %r{\Ahttp://evil\.example/})
+        .to_return(status: 200, body: "oauth_token=evil&oauth_token_secret=evilsecret")
+      consumer2 = described_class.new("key", "secret", site: "http://provider.example")
+
+      expect { consumer2.get_request_token }.to raise_error(Net::HTTPRetriableError)
+      expect(provider_request).to have_been_requested.once
+      expect(evil_request).not_to have_been_requested
+      expect(consumer2.site).to eq("http://provider.example")
+    end
+
+    it "does not follow request-token redirects to a protocol-relative cross-origin URL" do
+      provider_request = stub_request(:post, "https://provider.example/oauth/request_token")
+        .to_return(status: 302, headers: {"Location" => "//evil.example/oauth/request_token"})
+      evil_request = stub_request(:any, %r{\Ahttps://evil\.example/})
+        .to_return(status: 200, body: "oauth_token=evil&oauth_token_secret=evilsecret")
+      consumer2 = described_class.new("key", "secret", site: "https://provider.example")
+
+      expect { consumer2.get_request_token }.to raise_error(Net::HTTPRetriableError)
+      expect(provider_request).to have_been_requested.once
+      expect(evil_request).not_to have_been_requested
+    end
+
+    it "resolves relative redirects against an absolute request_token_url origin" do
+      first_request = stub_request(:post, "https://auth.example/oauth/request_token")
+        .to_return(status: 302, headers: {"Location" => "/oauth/request_token_next"})
+      redirected_request = stub_request(:post, "https://auth.example/oauth/request_token_next")
+        .with(headers: {"Authorization" => /oauth_signature=/})
+        .to_return(status: 200, body: "oauth_token=requestkey&oauth_token_secret=requestsecret")
+      api_request = stub_request(:any, %r{\Ahttps://api\.example/})
+        .to_return(status: 500, body: "wrong host")
+      consumer2 = described_class.new(
+        "key",
+        "secret",
+        site: "https://api.example",
+        request_token_url: "https://auth.example/oauth/request_token",
+      )
+
+      request_token = consumer2.get_request_token
+
+      expect(request_token.token).to eq("requestkey")
+      expect(request_token.secret).to eq("requestsecret")
+      expect(first_request).to have_been_requested.once
+      expect(redirected_request).to have_been_requested.once
+      expect(api_request).not_to have_been_requested
+      expect(consumer2.site).to eq("https://api.example")
+    end
+  end
 end
