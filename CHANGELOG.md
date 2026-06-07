@@ -24,6 +24,8 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - Retemplated project workflows, appraisals, and development tooling with the
   current `kettle-jem` template.
+- Documented current `OAuth::Consumer` configuration options, including token
+  request redirect safety settings, and corrected the OAuth 1.0a usage example.
 - Raised the runtime dependency floor for `auth-sanitizer` to `>= 0.2.1`.
 - Raised the runtime dependency floor for `snaky_hash` to `>= 2.0.5`.
 

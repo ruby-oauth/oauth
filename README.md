@@ -153,6 +153,20 @@ This is a ruby library which is intended to be used in creating Ruby Consumer
 and Service Provider applications. It is NOT a Rails plugin, but could easily
 be used for the foundation for such a Rails plugin.
 
+The main client entry point is `OAuth::Consumer.new(consumer_key, consumer_secret, options)`.
+Common options include:
+
+- `:site` - Provider origin, for example `https://provider.example`.
+- `:request_token_path`, `:authorize_path`, `:authenticate_path`, `:access_token_path` - Provider endpoint paths. Defaults are `/oauth/request_token`, `/oauth/authorize`, `/oauth/authenticate`, and `/oauth/access_token`.
+- `:request_token_url`, `:authorize_url`, `:access_token_url` - Full endpoint URLs. Use these when endpoints are not all under the same `:site` origin.
+- `:scheme` - Where OAuth parameters are sent: `:header` by default, or `:body` / `:query_string`.
+- `:http_method` - HTTP method for token endpoint requests, `:post` by default.
+- `:signature_method` - Signature method, `HMAC-SHA1` by default.
+- `:body_hash_enabled` - Whether request body hashes are signed where applicable. Defaults to `true`.
+- `:ca_file`, `:proxy`, `:debug_output` - Net::HTTP transport options.
+- `:token_request_max_redirects` - Maximum redirects followed while requesting OAuth tokens. Defaults to `10`.
+- `:token_request_cross_origin_redirects` - Whether token requests may follow redirects to a different scheme, host, or effective port. Defaults to `false`; only enable this when the provider's token endpoints intentionally redirect across origins.
+
 This gem was originally extracted from @pelle's [oauth-plugin](https://github.com/pelle/oauth-plugin)
 gem. After extraction that gem was made to depend on this gem.
 
@@ -168,8 +182,10 @@ into a separate gem with the 1.x minor updates of this gem.
 
 ### Examples
 
-We need to specify the `oauth_callback` url explicitly, otherwise it defaults to
-"oob" (Out of Band)
+For browser-based three-legged OAuth 1.0a flows, pass an explicit
+`oauth_callback` URL when requesting the request token. If you do not pass
+`oauth_callback`, this gem defaults it to `"oob"` (out of band), which is
+intended for command-line and non-HTTP clients.
 
 ```ruby
 callback_url = "http://127.0.0.1:3000/oauth/callback"
@@ -178,29 +194,37 @@ callback_url = "http://127.0.0.1:3000/oauth/callback"
 Create a new `OAuth::Consumer` instance by passing it a configuration hash:
 
 ```ruby
-oauth_consumer = OAuth::Consumer.new("key", "secret", site: "https://agree2")
+oauth_consumer = OAuth::Consumer.new(
+  "consumer_key",
+  "consumer_secret",
+  site: "https://provider.example"
+)
 ```
 
-Start the process by requesting a token
+Start the process by requesting a token:
 
 ```ruby
 request_token = oauth_consumer.get_request_token(oauth_callback: callback_url)
 
 session[:token] = request_token.token
 session[:token_secret] = request_token.secret
-redirect_to request_token.authorize_url(oauth_callback: callback_url)
+redirect_to request_token.authorize_url
 ```
 
-When user returns create an access_token
+When the user returns to your callback URL, rebuild the request token from the
+values you stored and exchange it for an access token. OAuth 1.0a providers
+return `oauth_verifier` in the callback, and it must be included in this
+exchange.
 
 ```ruby
 hash = {oauth_token: session[:token], oauth_token_secret: session[:token_secret]}
 request_token = OAuth::RequestToken.from_hash(oauth_consumer, hash)
-access_token = request_token.get_access_token
-# For 3-legged authorization, flow oauth_verifier is passed as param in callback
-# access_token = request_token.get_access_token(oauth_verifier: params[:oauth_verifier])
+access_token = request_token.get_access_token(oauth_verifier: params[:oauth_verifier])
 @photos = access_token.get("/photos.xml")
 ```
+
+For OAuth 1.0 providers that do not use `oauth_verifier`, call
+`request_token.get_access_token` without the verifier.
 
 Now that you have an access token, you can use Typhoeus to interact with the
 OAuth provider if you choose.
@@ -208,10 +232,15 @@ OAuth provider if you choose.
 ```ruby
 require "typhoeus"
 require "oauth/request_proxy/typhoeus_request"
+
+uri = "https://provider.example/photos.xml"
+options = {method: :get, headers: {}}
 oauth_params = {consumer: oauth_consumer, token: access_token}
+
 hydra = Typhoeus::Hydra.new
 req = Typhoeus::Request.new(uri, options) # :method needs to be specified in options
 oauth_helper = OAuth::Client::Helper.new(req, oauth_params.merge(request_uri: uri))
+req.options[:headers] ||= {}
 req.options[:headers]["Authorization"] = oauth_helper.header # Signs the request
 hydra.queue(req)
 hydra.run
