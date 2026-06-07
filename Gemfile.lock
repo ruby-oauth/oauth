@@ -6,7 +6,7 @@ PATH
       base64 (~> 0.1)
       cgi
       oauth-tty (~> 1.0, >= 1.0.8)
-      snaky_hash (~> 2.0, >= 2.0.4)
+      snaky_hash (~> 2.0, >= 2.0.5)
       version_gem (~> 1.1, >= 1.1.9)
 
 GEM
@@ -438,7 +438,7 @@ GEM
     simplecov-rcov (0.3.7)
       simplecov (>= 0.4.1)
     simplecov_json_formatter (0.1.4)
-    snaky_hash (2.0.4)
+    snaky_hash (2.0.5)
       hashie (>= 0.1.0, < 6)
       version_gem (>= 1.1.8, < 3)
     standard (1.54.0)
@@ -482,7 +482,7 @@ GEM
     uri (1.1.1)
     useragent (0.16.11)
     vcr (6.4.0)
-    version_gem (1.1.9)
+    version_gem (1.1.11)
     webmock (3.26.2)
       addressable (>= 2.8.0)
       crack (>= 0.3.2)

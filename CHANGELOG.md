@@ -22,6 +22,8 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
+- Raised the runtime dependency floor for `snaky_hash` to `>= 2.0.5`.
+
 ### Deprecated
 
 ### Removed
