@@ -18,6 +18,7 @@ DEBUG = "false"
 FLOSS_CFG_FUND_DEBUG = "false"
 FLOSS_CFG_FUND_LOGFILE = "tmp/log/debug.log"
 RUBOCOP_LTS_LOCAL = "false"
+RUBY_OAUTH_DEV = "false"
 OPENCOLLECTIVE_HANDLE = "ruby-oauth"
 FUNDING_ORG = "ruby-oauth"
 _.path = ["exe", "bin"]
