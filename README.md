@@ -254,6 +254,9 @@ hydra.run
 * Maintainer Blog: [![Maintainer Blog][🚂maint-blog-img]][🚂maint-blog]
 * Live ruby-oauth Chat: [![Live Chat on Discord][✉️discord-invite-img-ftb]][✉️discord-invite]
 
+[⛳gg-discussions]: https://groups.google.com/g/oauth-ruby
+[⛳gg-discussions-img]: https://img.shields.io/badge/google-group-0093D0.svg?style=for-the-badge&logo=google&logoColor=orange
+
 ## 🦷 FLOSS Funding
 
 While ruby-oauth tools are free software and will always be, the project would benefit immensely from some funding.
