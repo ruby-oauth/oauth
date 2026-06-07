@@ -6,7 +6,7 @@
 <title>
   File: CONTRIBUTING
   
-    &mdash; Documentation by YARD 0.9.43
+    &mdash; Documentation by YARD 0.9.44
   
 </title>
 
@@ -61,40 +61,49 @@
 
       <div id="content"><div id='filecontents'><h1 id="contributing">Contributing</h1>
 
-<p>Bug reports and pull requests are welcome on <a href="https://codeberg.org/ruby-oauth/oauth">CodeBerg</a>, <a href="https://gitlab.com/ruby-oauth/oauth/">GitLab</a>, or <a href="https://github.com/ruby-oauth/oauth">GitHub</a>.<br>
+<p>Bug reports and pull requests are welcome on <a href="https://codeberg.org/ruby-oauth/oauth">CodeBerg</a>, <a href="https://gitlab.com/ruby-oauth/oauth">GitLab</a>, or <a href="https://github.com/ruby-oauth/oauth">GitHub</a>.<br>
 This project should be a safe, welcoming space for collaboration, so contributors agree to adhere to<br>
-the <a href="https://gitlab.com/ruby-oauth/oauth/-/blob/main/CODE_OF_CONDUCT.md">code of conduct</a>.</p>
+the <a href="https://github.com/ruby-oauth/oauth/blob/main/CODE_OF_CONDUCT.md">code of conduct</a>.</p>
 
 <p>To submit a patch, please fork the project, create a patch with tests, and send a pull request.</p>
 
 <p>Remember to <a href="https://keepachangelog.com/en/1.0.0/"><img src="https://img.shields.io/badge/keep--a--changelog-1.0.0-FFDD67.svg?style=flat" alt="Keep A Changelog"></a> if you make changes.</p>
 
+<h2 id="developer-certificate-of-origin">Developer Certificate of Origin</h2>
+
+<p>In order to protect users of this project, we require all contributors to comply with the<br>
+<a href="https://developercertificate.org/">Developer Certificate of Origin</a>.<br>
+This ensures that all contributions are properly licensed and attributed.</p>
+
 <h2 id="help-out">Help out!</h2>
 
-<p>Take a look at the <code>reek</code> list which is the file called <code>REEK</code> and find something to improve.</p>
+<p>Take a look at the open issues and pull requests, or use the gem and find something to improve.</p>
 
 <p>Follow these instructions:</p>
 
 <ol>
+  <li>Join the Discord: <a href="https://discord.gg/3qme4XHNKN">![Live Chat on Discord][✉️discord-invite-img]</a>
+</li>
   <li>Fork the repository</li>
-  <li>Create a feature branch (<code>git checkout -b my-new-feature</code>)</li>
+  <li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
   <li>Make some fixes.</li>
-  <li>Commit changes (<code>git commit -am 'Added some feature'</code>)</li>
+  <li>Commit your changes (<code>git commit -am 'Added some feature'</code>)</li>
   <li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
   <li>Make sure to add tests for it. This is important, so it doesn’t break in a future release.</li>
   <li>Create new Pull Request.</li>
+  <li>Announce it in the channel for this org in the <a href="https://discord.gg/3qme4XHNKN">Discord</a>!</li>
 </ol>
 
 <h2 id="executables-vs-rake-tasks">Executables vs Rake tasks</h2>
 
-<p>Executables shipped by dependencies, such as oauth, and stone_checksums, are available<br>
+<p>Executables shipped by dependencies, such as kettle-dev, and stone_checksums, are available<br>
 after running <code>bin/setup</code>. These include:</p>
 
 <ul>
   <li>gem_checksums</li>
   <li>kettle-changelog</li>
   <li>kettle-commit-msg</li>
-  <li>oauth-setup</li>
+  <li>kettle-dev-setup</li>
   <li>kettle-dvcs</li>
   <li>kettle-pre-release</li>
   <li>kettle-readme-backers</li>
@@ -104,6 +113,20 @@ after running <code>bin/setup</code>. These include:</p>
 <p>There are many Rake tasks available as well. You can see them by running:</p>
 
 <pre class="code language-shell"><code class="language-shell">bin/rake -T
+</code></pre>
+
+<h2 id="code-quality-checks">Code quality checks</h2>
+
+<p>Run the Reek task when you want a smell check that fails on current findings:</p>
+
+<pre class="code language-shell"><code class="language-shell">bin/rake reek
+</code></pre>
+
+<p>Refresh the checked-in <code>REEK</code> backlog through the rake task, not by redirecting<br>
+the raw <code>reek</code> executable output. The rake task uses the project bundle and<br>
+avoids stale generated binstubs shadowing the Reek gem executable:</p>
+
+<pre class="code language-shell"><code class="language-shell">bin/rake reek:update
 </code></pre>
 
 <h2 id="environment-variables-for-local-development">Environment Variables for Local Development</h2>
@@ -119,7 +142,7 @@ after running <code>bin/setup</code>. These include:</p>
 
 <p>Coverage (kettle-soup-cover / SimpleCov)</p>
 <ul>
-  <li>K_SOUP_COV_DO: Enable coverage collection (default: true in .envrc)</li>
+  <li>K_SOUP_COV_DO: Enable coverage collection (default: true in <code>mise.toml</code>)</li>
   <li>K_SOUP_COV_FORMATTERS: Comma-separated list of formatters (html, xml, rcov, lcov, json, tty)</li>
   <li>K_SOUP_COV_MIN_LINE: Minimum line coverage threshold (integer, e.g., 100)</li>
   <li>K_SOUP_COV_MIN_BRANCH: Minimum branch coverage threshold (integer, e.g., 100)</li>
@@ -139,7 +162,13 @@ Tip: When running a single spec file locally, you may want <code>K_SOUP_COV_MIN_
 <ul>
   <li>SKIP_GEM_SIGNING: If set, skip gem signing during build/release</li>
   <li>GEM_CERT_USER: Username for selecting your public cert in <code>certs/&lt;USER&gt;.pem</code> (defaults to $USER)</li>
-  <li>SOURCE_DATE_EPOCH: Reproducible build timestamp. <code>kettle-release</code> will set this automatically for the session.</li>
+  <li>SOURCE_DATE_EPOCH: Reproducible build timestamp.
+    <ul>
+      <li>
+<code>kettle-release</code> will set this automatically for the session.</li>
+      <li>Not needed on bundler &gt;= 2.7.0, as reproducible builds have become the default.</li>
+    </ul>
+  </li>
 </ul>
 
 <p>Git hooks and commit message helpers (exe/kettle-commit-msg)</p>
@@ -150,32 +179,59 @@ Tip: When running a single spec file locally, you may want <code>K_SOUP_COV_MIN_
   <li>GIT_HOOK_FOOTER_APPEND_DEBUG: Extra debug output in the footer template (true/false)</li>
 </ul>
 
-<p>For a quick starting point, this repository’s <code>.envrc</code> shows sane defaults, and <code>.env.local</code> can override them locally.</p>
+<p>Git diff driver setup</p>
+<ul>
+  <li>Local setup writes repository <code>.gitattributes</code> entries and local Git <code>diff.smorg-*</code> command config so this checkout uses StructuredMerge semantic diffs.</li>
+  <li>Global setup registers <code>diff.smorg-*</code> commands once in the user Git config; use it when you work across several StructuredMerge-enabled repositories.</li>
+  <li>Include-file setup writes <code>.git/smorg/config</code> and includes it from local Git config, keeping command registrations out of the repository files.</li>
+  <li>Git hosting forges generally ignore external diff drivers, so pull request views may still show raw textual diffs even when local <code>git diff</code> uses semantic drivers.</li>
+</ul>
+
+<pre class="code language-console"><code class="language-console">K_JEM_TEMPLATING=true bundle exec kettle-jem install
+</code></pre>
+
+<p>Troubleshooting Git diffs</p>
+<ul>
+  <li>Use <code>git diff --no-ext-diff</code> to compare against Git’s built-in diff output.</li>
+  <li>Use <code>git diff --no-textconv</code> when a textconv projection obscures the raw file bytes you need to inspect.</li>
+  <li>If Git reports a missing <code>smorg-*</code> executable, rerun <code>bundle install</code> and the setup command above, then check <code>git config --local --get-regexp '^diff\.smorg-'</code>.</li>
+  <li>To remove managed local entries, run <code>K_JEM_TEMPLATING=true bundle exec kettle-jem install --undo</code>; remove global command registrations with <code>git config --global --unset-all diff.smorg-ruby.command</code>.</li>
+</ul>
+
+<p>For a quick starting point, this repository’s <code>mise.toml</code> defines the shared defaults, and <code>.env.local</code> can override them locally. Copy <code>.env.local.example</code> to <code>.env.local</code>, use <code>KEY=value</code> lines, and either activate <code>mise</code> in your shell or run commands through <code>mise exec -C /path/to/project -- ...</code>.</p>
 
 <h2 id="appraisals">Appraisals</h2>
 
 <p>From time to time the <a href="https://github.com/appraisal-rb/appraisal2">appraisal2</a> gemfiles in <code>gemfiles/</code> will need to be updated.<br>
-They are created and updated with the commands:</p>
+Generated appraisal and CI workflow floors are controlled by <code>ruby.test_minimum</code><br>
+in <code>.structuredmerge/kettle-jem.yml</code>; this project was templated with <code>ruby.test_minimum: 2.4</code>.<br>
+That value describes the lowest Ruby version expected to run the test/development<br>
+toolchain, and it may be higher than the gemspec runtime floor.</p>
+
+<p>They are created and updated with the commands:</p>
 
 <pre class="code language-console"><code class="language-console">bin/rake appraisal:update
 </code></pre>
 
-<p>When adding an appraisal to CI, check the <a href="https://github.com/ruby/ruby-builder/releases/tag/toolcache">runner tool cache</a> to see which runner to use.</p>
+<p>If you need to reset all gemfiles/*.gemfile.lock files:</p>
 
-<h2 id="the-reek-list">The Reek List</h2>
-
-<p>Take a look at the <code>reek</code> list which is the file called <code>REEK</code> and find something to improve.</p>
-
-<p>To refresh the <code>reek</code> list:</p>
-
-<pre class="code language-console"><code class="language-console">bundle exec reek &gt; REEK
+<pre class="code language-console"><code class="language-console">bin/rake appraisal:reset
 </code></pre>
+
+<p>When adding an appraisal to CI, check the <a href="https://github.com/ruby/ruby-builder/releases/tag/toolcache">runner tool cache</a> to see which runner to use.</p>
 
 <h2 id="run-tests">Run Tests</h2>
 
-<p>To run all tests</p>
+<p>Run tests via <code>kettle-test</code> (provided by <code>kettle-test</code>). It runs RSpec, writes the full log to<br>
+<code>tmp/kettle-test/rspec-TIMESTAMP.log</code>, and prints a compact highlight block with timing, seed,<br>
+pass/fail count, failing example list, and SimpleCov coverage percentages.</p>
 
-<pre class="code language-console"><code class="language-console">bundle exec rake test
+<pre class="code language-console"><code class="language-console">bundle exec kettle-test
+</code></pre>
+
+<p>For targeted runs, disable the hard coverage threshold to avoid false failures:</p>
+
+<pre class="code language-console"><code class="language-console">K_SOUP_COV_MIN_HARD=false bundle exec kettle-test spec/path/to/spec.rb
 </code></pre>
 
 <h3 id="spec-organization-required">Spec organization (required)</h3>
@@ -197,7 +253,7 @@ They are created and updated with the commands:</p>
 <pre class="code language-console"><code class="language-console">bundle exec rake rubocop_gradual:autocorrect
 </code></pre>
 
-<p>For more detailed information about using RuboCop in this project, please see the <a href="file.RUBOCOP.html" title="RUBOCOP.md">RUBOCOP.md</a> guide. This project uses <code>rubocop_gradual</code> instead of vanilla RuboCop, which requires specific commands for checking violations.</p>
+<p>For more detailed information about using RuboCop in this project, please see the <a href="RUBOCOP.md">RUBOCOP.md</a> guide. This project uses <code>rubocop_gradual</code> instead of vanilla RuboCop, which requires specific commands for checking violations.</p>
 
 <h3 id="important-do-not-add-inline-rubocop-disables">Important: Do not add inline RuboCop disables</h3>
 
@@ -247,6 +303,7 @@ See: <a href="https://guides.rubygems.org/security/#building-gems">RubyGems Secu
   <li>Update version.rb to contain the correct version-to-be-released.</li>
   <li>Run <code>bundle exec kettle-changelog</code>.</li>
   <li>Run <code>bundle exec kettle-release</code>.</li>
+  <li>Stay awake and monitor the release process for any errors, and answer any prompts.</li>
 </ol>
 
 <h4 id="manual-process">Manual process</h4>
@@ -256,6 +313,7 @@ See: <a href="https://guides.rubygems.org/security/#building-gems">RubyGems Secu
   <li>Update the version number in <code>version.rb</code>, and ensure <code>CHANGELOG.md</code> reflects changes</li>
   <li>Run <code>bin/setup &amp;&amp; bin/rake</code> again as a secondary check, and to update <code>Gemfile.lock</code>
 </li>
+  <li>Run <code>bin/rake yard</code> to regenerate the docs site using the canonical docs task</li>
   <li>Run <code>git commit -am "🔖 Prepare release v&lt;VERSION&gt;"</code> to commit the changes</li>
   <li>Run <code>git push</code> to trigger the final CI pipeline before release, and merge PRs
     <ul>
@@ -299,9 +357,9 @@ push git commits and tags, and push the <code>.gem</code> file to the gem host c
 </div></div>
 
       <div id="footer">
-  Generated on Wed May 20 18:41:59 2026 by
+  Generated on Sun Jun  7 02:24:03 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.43 (ruby-4.0.4).
+  0.9.44 (ruby-4.0.5).
 </div>
 
     </div>

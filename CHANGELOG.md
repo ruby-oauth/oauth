@@ -22,18 +22,29 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [1.1.6] - 2026-06-07
+
+- TAG: [v1.1.6][1.1.6t]
+- COVERAGE: 89.05% -- 838/941 lines in 33 files
+- BRANCH COVERAGE: 60.46% -- 159/263 branches in 33 files
+- 40.38% documented
+
+### Changed
+
 - Retemplated project workflows, appraisals, and development tooling with the
   current `kettle-jem` template.
 - Documented current `OAuth::Consumer` configuration options, including token
   request redirect safety settings, and corrected the OAuth 1.0a usage example.
 - Raised the runtime dependency floor for `auth-sanitizer` to `>= 0.2.1`.
 - Raised the runtime dependency floor for `snaky_hash` to `>= 2.0.5`.
-
-### Deprecated
-
-### Removed
-
-### Fixed
 
 ### Security
 
@@ -775,7 +786,9 @@ All together now release
 - Moved all non-Rails functionality from the Rails plugin:
   http://code.google.com/p/oauth-plugin/
 
-[Unreleased]: https://github.com/ruby-oauth/oauth/compare/v1.1.5...HEAD
+[Unreleased]: https://github.com/ruby-oauth/oauth/compare/v1.1.6...HEAD
+[1.1.6]: https://github.com/ruby-oauth/oauth/compare/v1.1.5...v1.1.6
+[1.1.6t]: https://github.com/ruby-oauth/oauth/releases/tag/v1.1.6
 [1.1.5]: https://github.com/ruby-oauth/oauth/compare/v1.1.4...v1.1.5
 [1.1.5t]: https://github.com/ruby-oauth/oauth/releases/tag/v1.1.5
 [1.1.4]: https://github.com/ruby-oauth/oauth/compare/v1.1.3...v1.1.4

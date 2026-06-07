@@ -2,7 +2,7 @@
 
 source "https://gem.coop"
 
-gem "oauth-tty", branch: "main", git: "https://github.com/ruby-oauth/oauth-tty"
+gem "oauth-tty", github: "ruby-oauth/oauth-tty", branch: "main"
 
 gemspec path: "../"
 
