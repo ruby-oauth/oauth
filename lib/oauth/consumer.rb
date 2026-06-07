@@ -89,6 +89,12 @@ module OAuth
         body_hash_enabled: true,
 
         oauth_version: "1.0",
+
+        # Token endpoint redirects are followed only within the same origin by
+        # default. Cross-origin redirects can re-sign token requests for an
+        # attacker-controlled endpoint, so they require explicit opt-in.
+        token_request_max_redirects: 10,
+        token_request_cross_origin_redirects: false,
       },
     )
 
@@ -294,14 +300,13 @@ module OAuth
     end
 
     # Creates a request and parses the result as url_encoded. This is used internally for the RequestToken and AccessToken requests.
-    def token_request(http_method, path, token = nil, request_options = {}, *arguments)
-      request_options[:token_request] ||= true
-      response = request(http_method, path, token, request_options, *arguments)
+    def token_request(http_method, path, token = nil, request_options = {}, *arguments, &block)
+      response = request(http_method, path, token, token_request_options(request_options), *arguments)
       case response.code.to_i
 
       when (200..299)
-        if block_given?
-          yield response.body
+        if block
+          block.call(response.body)
         else
           # symbolize keys
           # TODO this could be considered unexpected behavior; symbols or not?
@@ -312,24 +317,71 @@ module OAuth
           end
         end
       when (300..399)
-        # Parse redirect to follow
-        uri = URI.parse(response["location"])
-        our_uri = URI.parse(site)
+        current_uri = token_request_uri(path)
+        redirected_uri = token_request_redirect_uri(current_uri, response)
+        response.error! unless redirected_uri
 
-        # Guard against infinite redirects
-        response.error! if uri.path == path && our_uri.host == uri.host
+        redirect_count = request_options[:token_request_redirect_count].to_i + 1
+        response.error! if redirect_count > token_request_max_redirects(request_options)
+        response.error! if token_request_cross_origin?(current_uri, redirected_uri) &&
+          !token_request_cross_origin_redirects?(request_options)
 
-        if uri.path == path && our_uri.host != uri.host
-          options[:site] = "#{uri.scheme}://#{uri.host}"
-          @http = create_http
-        end
-
-        token_request(http_method, uri.path, token, request_options, arguments)
+        redirect_options = request_options.merge(token_request_redirect_count: redirect_count)
+        token_request(http_method, token_request_redirect_path(current_uri, redirected_uri), token, redirect_options, *arguments, &block)
       when (400..499)
         raise OAuth::Unauthorized, response
       else
         response.error!
       end
+    end
+
+    def token_request_options(request_options)
+      request_options.merge(token_request: true).tap do |options|
+        options.delete(:token_request_redirect_count)
+        options.delete(:token_request_max_redirects)
+        options.delete(:token_request_cross_origin_redirects)
+      end
+    end
+
+    def token_request_uri(path)
+      uri = URI.parse(path)
+      return uri if uri.absolute?
+
+      URI.parse(site).merge(path)
+    end
+
+    def token_request_redirect_uri(current_uri, response)
+      location = response["location"]
+      return if location.nil? || location.to_s.empty?
+
+      current_uri.merge(location)
+    end
+
+    def token_request_redirect_path(current_uri, redirected_uri)
+      return redirected_uri.to_s if token_request_cross_origin?(current_uri, redirected_uri)
+
+      redirected_uri.request_uri
+    end
+
+    def token_request_max_redirects(request_options)
+      request_options[:token_request_max_redirects] || options[:token_request_max_redirects]
+    end
+
+    def token_request_cross_origin_redirects?(request_options)
+      request_options.fetch(:token_request_cross_origin_redirects, options[:token_request_cross_origin_redirects])
+    end
+
+    def token_request_cross_origin?(current_uri, redirected_uri)
+      current_uri.scheme.to_s.downcase != redirected_uri.scheme.to_s.downcase ||
+        current_uri.host.to_s.downcase != redirected_uri.host.to_s.downcase ||
+        token_request_effective_port(current_uri) != token_request_effective_port(redirected_uri)
+    end
+
+    def token_request_effective_port(uri)
+      return uri.port if uri.port
+      return 443 if uri.scheme == "https"
+
+      80 if uri.scheme == "http"
     end
 
     # Sign the Request object. Use this if you have an externally generated http request object you want to sign.

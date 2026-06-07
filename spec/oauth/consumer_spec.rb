@@ -140,6 +140,136 @@ RSpec.describe OAuth::Consumer do
     end
   end
 
+  describe "#token_request redirects" do
+    let(:redirect_error) { Class.new(StandardError) }
+    let(:response_class) do
+      error_class = redirect_error
+
+      Class.new do
+        attr_reader :code, :body
+
+        define_method(:initialize) do |code, body = "", headers = {}|
+          @code = code
+          @body = body
+          @headers = headers
+        end
+
+        define_method(:[]) do |key|
+          @headers[key] || @headers[key.to_s] || @headers[key.to_s.downcase]
+        end
+
+        define_method(:to_hash) do
+          {}
+        end
+
+        define_method(:error!) do
+          raise error_class, "redirect refused"
+        end
+      end
+    end
+
+    def token_response(response_class, code, body = "", headers = {})
+      response_class.new(code, body, headers)
+    end
+
+    def stub_token_request_sequence(consumer, responses, seen_paths, seen_options = [])
+      allow(consumer).to receive(:request) do |_http_method, path, _token, request_options, *_arguments|
+        seen_paths << path
+        seen_options << request_options
+        responses.shift
+      end
+    end
+
+    it "follows same-origin absolute redirects without mutating the consumer site" do
+      consumer = described_class.new("key", "secret", site: "http://twitter.com")
+      seen_paths = []
+      seen_options = []
+      responses = [
+        token_response(response_class, "302", "", "location" => "http://twitter.com/oauth/next?step=1"),
+        token_response(response_class, "200", "oauth_token=requestkey&oauth_token_secret=requestsecret"),
+      ]
+      stub_token_request_sequence(consumer, responses, seen_paths, seen_options)
+
+      token = consumer.token_request(:post, "/oauth/request_token", nil, token_request_max_redirects: 2)
+
+      expect(token[:oauth_token]).to eq("requestkey")
+      expect(seen_paths).to eq(["/oauth/request_token", "/oauth/next?step=1"])
+      expect(seen_options).to all(include(token_request: true))
+      expect(seen_options).not_to include(include(:token_request_redirect_count))
+      expect(seen_options).not_to include(include(:token_request_max_redirects))
+      expect(consumer.site).to eq("http://twitter.com")
+    end
+
+    it "resolves relative redirects against the current token request path" do
+      consumer = described_class.new("key", "secret", site: "https://api.example.com")
+      seen_paths = []
+      responses = [
+        token_response(response_class, "302", "", "location" => "continued"),
+        token_response(response_class, "200", "oauth_token=requestkey&oauth_token_secret=requestsecret"),
+      ]
+      stub_token_request_sequence(consumer, responses, seen_paths)
+
+      consumer.token_request(:post, "/oauth/request_token", nil, {})
+
+      expect(seen_paths).to eq(["/oauth/request_token", "/oauth/continued"])
+    end
+
+    it "rejects absolute cross-origin redirects by default" do
+      consumer = described_class.new("key", "secret", site: "https://api.example.com")
+      seen_paths = []
+      responses = [
+        token_response(response_class, "302", "", "location" => "https://evil.example/oauth/request_token"),
+      ]
+      stub_token_request_sequence(consumer, responses, seen_paths)
+
+      expect { consumer.token_request(:post, "/oauth/request_token", nil, {}) }.to raise_error(redirect_error)
+      expect(seen_paths).to eq(["/oauth/request_token"])
+      expect(consumer.site).to eq("https://api.example.com")
+    end
+
+    it "rejects protocol-relative cross-origin redirects by default" do
+      consumer = described_class.new("key", "secret", site: "https://api.example.com")
+      seen_paths = []
+      responses = [
+        token_response(response_class, "302", "", "location" => "//evil.example/oauth/request_token"),
+      ]
+      stub_token_request_sequence(consumer, responses, seen_paths)
+
+      expect { consumer.token_request(:post, "/oauth/request_token", nil, {}) }.to raise_error(redirect_error)
+      expect(seen_paths).to eq(["/oauth/request_token"])
+    end
+
+    it "follows explicit opt-in cross-origin redirects without mutating the consumer site" do
+      consumer = described_class.new("key", "secret", site: "https://api.example.com")
+      seen_paths = []
+      responses = [
+        token_response(response_class, "302", "", "location" => "https://issuer.example/oauth/request_token?via=redirect"),
+        token_response(response_class, "200", "oauth_token=requestkey&oauth_token_secret=requestsecret"),
+      ]
+      stub_token_request_sequence(consumer, responses, seen_paths)
+
+      consumer.token_request(:post, "/oauth/request_token", nil, token_request_cross_origin_redirects: true)
+
+      expect(seen_paths).to eq(["/oauth/request_token", "https://issuer.example/oauth/request_token?via=redirect"])
+      expect(consumer.site).to eq("https://api.example.com")
+    end
+
+    it "rejects redirect chains longer than the configured maximum" do
+      consumer = described_class.new("key", "secret", site: "https://api.example.com")
+      seen_paths = []
+      responses = [
+        token_response(response_class, "302", "", "location" => "/oauth/first"),
+        token_response(response_class, "302", "", "location" => "/oauth/second"),
+      ]
+      stub_token_request_sequence(consumer, responses, seen_paths)
+
+      expect do
+        consumer.token_request(:post, "/oauth/request_token", nil, token_request_max_redirects: 1)
+      end.to raise_error(redirect_error)
+      expect(seen_paths).to eq(["/oauth/request_token", "/oauth/first"])
+    end
+  end
+
   describe "SSL verify toggle" do
     it "sets VERIFY_NONE when no_verify: true" do
       consumer = described_class.new(

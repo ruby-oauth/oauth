@@ -32,6 +32,10 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Security
 
+- Hardened OAuth token endpoint redirect handling after the GHSA-pp92-crg2-gfv9
+  review: token redirects are now bounded, resolved explicitly, and rejected
+  when they cross origins unless explicitly enabled.
+
 ## [1.1.5] - 2026-05-20
 
 - TAG: [v1.1.5][1.1.5t]
