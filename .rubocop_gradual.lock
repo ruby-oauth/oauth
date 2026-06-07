@@ -1,0 +1,165 @@
+{
+  ".yard_gfm_support.rb:1155118867": [
+    [10, 5, 22, "Style/SuperArguments: Call `super` without arguments and parentheses when the signature is identical.", 1905555812],
+    [21, 33, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545]
+  ],
+  "Appraisals:3944018818": [
+    [12, 30, 11, "Style/HashSyntax: Use the new Ruby 1.9 hash syntax.", 476532049],
+    [12, 64, 12, "Style/HashSyntax: Use the new Ruby 1.9 hash syntax.", 3823002898]
+  ],
+  "Gemfile:4167340807": [
+    [39, 34, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545]
+  ],
+  "lib/oauth/auth_sanitizer.rb:1572485143": [
+    [15, 37, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [28, 8, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545]
+  ],
+  "lib/oauth/client/action_controller_request.rb:2693868669": [
+    [17, 9, 24, "Style/SuperArguments: Call `super` without arguments and parentheses when the signature is identical.", 1145070011],
+    [48, 23, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
+    [57, 93, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545]
+  ],
+  "lib/oauth/client/em_http.rb:94721376": [
+    [37, 25, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
+    [65, 25, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545]
+  ],
+  "lib/oauth/client/helper.rb:3306582671": [
+    [41, 67, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
+    [56, 61, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
+    [65, 39, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545]
+  ],
+  "lib/oauth/client/net_http.rb:168823263": [
+    [69, 32, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545]
+  ],
+  "lib/oauth/consumer.rb:582260930": [
+    [97, 52, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
+    [98, 8, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [144, 7, 15, "Lint/EmptyWhen: Avoid `when` branches without a body.", 602070219],
+    [244, 21, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [493, 29, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545]
+  ],
+  "lib/oauth/request_proxy/mock_request.rb:3991545552": [
+    [35, 7, 20, "Style/RescueStandardError: Omit the error class when rescuing `StandardError` by itself.", 3081355729]
+  ],
+  "lib/oauth/server.rb:2680073882": [
+    [16, 47, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
+    [43, 47, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
+    [44, 10, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545]
+  ],
+  "lib/oauth/signature/rsa/sha1.rb:620280250": [
+    [32, 11, 20, "Style/RescueStandardError: Omit the error class when rescuing `StandardError` by itself.", 3081355729],
+    [57, 16, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545]
+  ],
+  "lib/oauth/tokens/access_token.rb:2785199334": [
+    [14, 21, 36, "Style/SuperArguments: Call `super` without arguments and parentheses when the signature is identical.", 310437946]
+  ],
+  "lib/oauth/tokens/request_token.rb:39013634": [
+    [33, 19, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545]
+  ],
+  "oauth.gemspec:2776376965": [
+    [173, 3, 68, "Gemspec/OrderedDependencies: Dependencies should be sorted in an alphabetical order within their section of the gemspec. Dependency `backports` should appear before `typhoeus`.", 4213155631]
+  ],
+  "spec/config/warnings.rb:1925595072": [
+    [21, 1, 20, "Style/RescueStandardError: Omit the error class when rescuing `StandardError` by itself.", 3081355729]
+  ],
+  "spec/net/http_spec.rb:4016916716": [
+    [22, 51, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [25, 37, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [27, 71, 2, "Style/RedundantRegexpEscape: Redundant escape inside regexp literal", 5862715],
+    [27, 82, 2, "Style/RedundantRegexpEscape: Redundant escape inside regexp literal", 5862715],
+    [27, 108, 2, "Style/RedundantRegexpEscape: Redundant escape inside regexp literal", 5862715],
+    [27, 119, 2, "Style/RedundantRegexpEscape: Redundant escape inside regexp literal", 5862715]
+  ],
+  "spec/oauth/access_token_spec.rb:893947951": [
+    [11, 35, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545]
+  ],
+  "spec/oauth/consumer_integration_spec.rb:1224440676": [
+    [18, 26, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
+    [19, 8, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [52, 77, 2, "Style/RedundantRegexpEscape: Redundant escape inside regexp literal", 5862715],
+    [52, 88, 2, "Style/RedundantRegexpEscape: Redundant escape inside regexp literal", 5862715],
+    [53, 73, 2, "Style/RedundantRegexpEscape: Redundant escape inside regexp literal", 5862715],
+    [53, 84, 2, "Style/RedundantRegexpEscape: Redundant escape inside regexp literal", 5862715],
+    [99, 27, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [116, 11, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [134, 11, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [171, 57, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
+    [172, 10, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [209, 26, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
+    [210, 10, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [218, 235, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [269, 70, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545]
+  ],
+  "spec/oauth/consumer_spec.rb:1365684158": [
+    [20, 26, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [79, 59, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [135, 33, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [189, 105, 1, "Style/TrailingCommaInArrayLiteral: Avoid comma after the last item of an array.", 177545],
+    [208, 105, 1, "Style/TrailingCommaInArrayLiteral: Avoid comma after the last item of an array.", 177545],
+    [221, 108, 1, "Style/TrailingCommaInArrayLiteral: Avoid comma after the last item of an array.", 177545],
+    [234, 102, 1, "Style/TrailingCommaInArrayLiteral: Avoid comma after the last item of an array.", 177545],
+    [247, 105, 1, "Style/TrailingCommaInArrayLiteral: Avoid comma after the last item of an array.", 177545],
+    [262, 81, 1, "Style/TrailingCommaInArrayLiteral: Avoid comma after the last item of an array.", 177545],
+    [280, 24, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [299, 60, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [313, 25, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [331, 60, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [343, 84, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [362, 63, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545]
+  ],
+  "spec/oauth/helper_spec.rb:3023999608": [
+    [54, 33, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
+    [58, 42, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [71, 33, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
+    [75, 42, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [89, 113, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [93, 47, 1, "Style/TrailingCommaInArrayLiteral: Avoid comma after the last item of an array.", 177545],
+    [155, 27, 1, "Style/TrailingCommaInArrayLiteral: Avoid comma after the last item of an array.", 177545]
+  ],
+  "spec/oauth/request_proxy/action_controller_spec.rb:456493269": [
+    [15, 34, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545]
+  ],
+  "spec/oauth/request_proxy/action_dispatch_spec.rb:4109639709": [
+    [13, 31, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545]
+  ],
+  "spec/oauth/signature/hmac/sha1_spec.rb:820294695": [
+    [18, 62, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
+    [19, 10, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [37, 62, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
+    [38, 10, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545]
+  ],
+  "spec/oauth/signature/hmac/sha256_spec.rb:1041219499": [
+    [18, 78, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
+    [19, 10, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [37, 62, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
+    [38, 10, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545]
+  ],
+  "spec/oauth/signature/plaintext_spec.rb:3968649396": [
+    [24, 50, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [25, 10, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [40, 50, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [41, 10, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545]
+  ],
+  "spec/oauth/signature/rsa/sha1_spec.rb:3262441617": [
+    [59, 46, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
+    [63, 258, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [70, 46, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
+    [74, 181, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [84, 46, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
+    [88, 181, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [99, 48, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
+    [100, 9, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [110, 48, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
+    [111, 9, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [124, 5, 20, "Style/RescueStandardError: Omit the error class when rescuing `StandardError` by itself.", 3081355729],
+    [171, 46, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
+    [185, 111, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545]
+  ],
+  "spec/oauth/tty/cli_spec.rb:4252070912": [
+    [90, 56, 1, "Style/TrailingCommaInArrayLiteral: Avoid comma after the last item of an array.", 177545],
+    [117, 49, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [164, 49, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [178, 35, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
+    [209, 49, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545]
+  ]
+}

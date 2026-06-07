@@ -1,0 +1,6 @@
+# <<kettle-jem:generated>> do not edit below this line
+gem "rack", ">= 2.0.0" # ruby >= 2.4.0
+gem "typhoeus", ">= 0.1.13" # ruby >= 2.6
+gem "vcr", ">= 4" # ruby >= 2.7
+gem "webmock", ">= 3" # ruby >= 2.6
+# <</kettle-jem:generated>>

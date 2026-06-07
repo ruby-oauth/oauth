@@ -3,6 +3,7 @@
 # third party gems
 require "snaky_hash"
 require "version_gem"
+require_relative "oauth/version"
 
 require "oauth/version"
 require "oauth/auth_sanitizer"
