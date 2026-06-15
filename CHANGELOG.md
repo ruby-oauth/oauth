@@ -22,6 +22,8 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
+- Raised the `oauth-tty` runtime dependency floor to `>= 1.0.9`.
+
 ### Deprecated
 
 ### Removed
