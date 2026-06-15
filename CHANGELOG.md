@@ -22,6 +22,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
+- Raised the `oauth-tty` runtime dependency floor to `>= 1.0.10`, removing
+  the transitive external `cgi` runtime dependency for Ruby 2.4 consumers.
+
 ### Deprecated
 
 ### Removed
