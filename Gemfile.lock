@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    oauth (1.1.6)
+    oauth (1.1.7)
       auth-sanitizer (~> 0.2, >= 0.2.1)
       base64 (~> 0.1)
       cgi

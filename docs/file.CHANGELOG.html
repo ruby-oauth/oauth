@@ -76,11 +76,24 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 
 <h3 id="changed">Changed</h3>
 
+<ul>
+  <li>Retemplated repository metadata, workflows, modular gemfiles, documentation<br>
+scaffolding, <code>version_gem</code> &gt;= 1.1.12, and templating-isolated local workspace<br>
+Gemfile wiring with the current <code>kettle-jem</code> template.</li>
+  <li>Raised the <code>auth-sanitizer</code> runtime dependency floor to <code>&gt;= 0.2.1</code>, so OAuth<br>
+consumers get hash and nested-attribute inspect redaction fixes plus<br>
+downstream RBS duplicate-declaration fixes.</li>
+</ul>
+
 <h3 id="deprecated">Deprecated</h3>
 
 <h3 id="removed">Removed</h3>
 
 <h3 id="fixed">Fixed</h3>
+
+<ul>
+  <li>Restored <code>docs/CNAME</code> so the generated documentation site keeps its custom domain.</li>
+</ul>
 
 <h3 id="security">Security</h3>
 
@@ -1240,7 +1253,7 @@ http://code.google.com/p/oauth-plugin/</li>
 </div></div>
 
       <div id="footer">
-  Generated on Sun Jun  7 02:24:03 2026 by
+  Generated on Mon Jun 15 01:56:11 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.44 (ruby-4.0.5).
 </div>

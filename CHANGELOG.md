@@ -22,6 +22,23 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [1.1.7] - 2026-06-15
+
+- TAG: [v1.1.7][1.1.7t]
+- COVERAGE: 89.05% -- 838/941 lines in 33 files
+- BRANCH COVERAGE: 60.46% -- 159/263 branches in 33 files
+- 40.38% documented
+
+### Changed
+
 - Retemplated repository metadata, workflows, modular gemfiles, documentation
   scaffolding, `version_gem` >= 1.1.12, and templating-isolated local workspace
   Gemfile wiring with the current `kettle-jem` template.
@@ -29,15 +46,9 @@ Please file a bug if you notice a violation of semantic versioning.
   consumers get hash and nested-attribute inspect redaction fixes plus
   downstream RBS duplicate-declaration fixes.
 
-### Deprecated
-
-### Removed
-
 ### Fixed
 
 - Restored `docs/CNAME` so the generated documentation site keeps its custom domain.
-
-### Security
 
 ## [1.1.6] - 2026-06-07
 
@@ -795,7 +806,9 @@ All together now release
 - Moved all non-Rails functionality from the Rails plugin:
   http://code.google.com/p/oauth-plugin/
 
-[Unreleased]: https://github.com/ruby-oauth/oauth/compare/v1.1.6...HEAD
+[Unreleased]: https://github.com/ruby-oauth/oauth/compare/v1.1.7...HEAD
+[1.1.7]: https://github.com/ruby-oauth/oauth/compare/v1.1.6...v1.1.7
+[1.1.7t]: https://github.com/ruby-oauth/oauth/releases/tag/v1.1.7
 [1.1.6]: https://github.com/ruby-oauth/oauth/compare/v1.1.5...v1.1.6
 [1.1.6t]: https://github.com/ruby-oauth/oauth/releases/tag/v1.1.6
 [1.1.5]: https://github.com/ruby-oauth/oauth/compare/v1.1.4...v1.1.5
