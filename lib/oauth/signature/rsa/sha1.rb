@@ -19,6 +19,8 @@ module OAuth
             decode_public_key
           when OpenSSL::X509::Certificate
             consumer_secret.public_key
+          when OpenSSL::PKey::RSA
+            consumer_secret.public_key
           else
             consumer_secret
           end

@@ -28,6 +28,12 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
+- Excluded `cgi` v0.1.1 from the runtime dependency range because that release
+  calls `String#delete_prefix`, which is unavailable on Ruby 2.4.
+- Derived an RSA public key from PEM private-key objects before signature
+  verification, matching JRuby OpenSSL behavior while preserving RSA-SHA1
+  verification semantics.
+
 ### Security
 
 ## [1.1.7] - 2026-06-15
