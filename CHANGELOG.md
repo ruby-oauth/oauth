@@ -25,8 +25,9 @@ Please file a bug if you notice a violation of semantic versioning.
 - Retemplated repository metadata, workflows, modular gemfiles, documentation
   scaffolding, `version_gem` >= 1.1.12, and templating-isolated local workspace
   Gemfile wiring with the current `kettle-jem` template.
-- Refreshed locked `auth-sanitizer` dependency metadata so local OAuth
-  workspace consumers resolve the v0.2.1 runtime floor.
+- Raised the `auth-sanitizer` runtime dependency floor to `>= 0.2.1`, so OAuth
+  consumers get the current inspect redaction behavior and downstream RBS
+  duplicate-declaration fixes.
 
 ### Deprecated
 
