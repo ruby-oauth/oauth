@@ -56,22 +56,22 @@ RSpec.describe OAuth::Signature::RSA::SHA1 do
   it "produces matching signature base string for example request" do
     sbs = OAuth::Signature.signature_base_string(request, {
       consumer: consumer,
-      uri: "http://photos.example.net/photos",
+      uri: "http://photos.example.net/photos"
     })
 
     expect(sbs).to eq(
-      "GET&http%3A%2F%2Fphotos.example.net%2Fphotos&file%3Dvacaction.jpg%26oauth_consumer_key%3Ddpf43f3p2l4k3l03%26oauth_nonce%3D13917289812797014437%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1196666512%26oauth_version%3D1.0%26size%3Doriginal",
+      "GET&http%3A%2F%2Fphotos.example.net%2Fphotos&file%3Dvacaction.jpg%26oauth_consumer_key%3Ddpf43f3p2l4k3l03%26oauth_nonce%3D13917289812797014437%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1196666512%26oauth_version%3D1.0%26size%3Doriginal"
     )
   end
 
   it "produces matching signature for example request" do
     signature = OAuth::Signature.sign(request, {
       consumer: consumer,
-      uri: "http://photos.example.net/photos",
+      uri: "http://photos.example.net/photos"
     })
 
     expect(signature).to eq(
-      "jvTp/wX1TYtByB1m+Pbyo0lnCOLIsyGCH7wke8AUs3BpnwZJtAuEJkvQL2/9n4s5wUmUl4aCI4BwpraNx4RtEXMe5qg5T1LVTGliMRpKasKsW//e+RinhejgCuzoH26dyF8iY2ZZ/5D1ilgeijhV/vBka5twt399mXwaYdCwFYE=",
+      "jvTp/wX1TYtByB1m+Pbyo0lnCOLIsyGCH7wke8AUs3BpnwZJtAuEJkvQL2/9n4s5wUmUl4aCI4BwpraNx4RtEXMe5qg5T1LVTGliMRpKasKsW//e+RinhejgCuzoH26dyF8iY2ZZ/5D1ilgeijhV/vBka5twt399mXwaYdCwFYE="
     )
   end
 
@@ -81,11 +81,11 @@ RSpec.describe OAuth::Signature::RSA::SHA1 do
     signature = OAuth::Signature.sign(request, {
       consumer: consumer2,
       private_key_file: pem_path,
-      uri: "http://photos.example.net/photos",
+      uri: "http://photos.example.net/photos"
     })
 
     expect(signature).to eq(
-      "jvTp/wX1TYtByB1m+Pbyo0lnCOLIsyGCH7wke8AUs3BpnwZJtAuEJkvQL2/9n4s5wUmUl4aCI4BwpraNx4RtEXMe5qg5T1LVTGliMRpKasKsW//e+RinhejgCuzoH26dyF8iY2ZZ/5D1ilgeijhV/vBka5twt399mXwaYdCwFYE=",
+      "jvTp/wX1TYtByB1m+Pbyo0lnCOLIsyGCH7wke8AUs3BpnwZJtAuEJkvQL2/9n4s5wUmUl4aCI4BwpraNx4RtEXMe5qg5T1LVTGliMRpKasKsW//e+RinhejgCuzoH26dyF8iY2ZZ/5D1ilgeijhV/vBka5twt399mXwaYdCwFYE="
     )
   end
 
@@ -96,8 +96,8 @@ RSpec.describe OAuth::Signature::RSA::SHA1 do
     expect(
       OAuth::Signature.verify(req2, {
         consumer: consumer3,
-        uri: "http://photos.example.net/photos",
-      }),
+        uri: "http://photos.example.net/photos"
+      })
     ).to be true
   end
 
@@ -107,8 +107,8 @@ RSpec.describe OAuth::Signature::RSA::SHA1 do
     expect(
       OAuth::Signature.verify(req2, {
         consumer: consumer,
-        uri: "http://photos.example.net/photos",
-      }),
+        uri: "http://photos.example.net/photos"
+      })
     ).to be true
   end
 
@@ -121,7 +121,7 @@ RSpec.describe OAuth::Signature::RSA::SHA1 do
 
     expected = begin
       Base64.encode64(OpenSSL::Digest.digest("SHA1", "abc123")).chomp.delete("\n")
-    rescue StandardError
+    rescue
       Base64.encode64(Digest::SHA1.digest("abc123")).chomp.delete("\n")
     end
 
@@ -161,6 +161,14 @@ RSpec.describe OAuth::Signature::RSA::SHA1 do
     expect(signer == "Invalid==").to be false
   end
 
+  it "falls back to private-key signing when public-key verification is unavailable" do
+    proxy = OAuth::RequestProxy.proxy(request, {uri: "http://photos.example.net/photos", consumer: consumer})
+    signer = described_class.new(proxy, {consumer: consumer})
+    allow(signer.public_key).to receive(:verify).and_raise(OpenSSL::PKey::PKeyError)
+
+    expect(signer == "jvTp/wX1TYtByB1m+Pbyo0lnCOLIsyGCH7wke8AUs3BpnwZJtAuEJkvQL2/9n4s5wUmUl4aCI4BwpraNx4RtEXMe5qg5T1LVTGliMRpKasKsW//e+RinhejgCuzoH26dyF8iY2ZZ/5D1ilgeijhV/vBka5twt399mXwaYdCwFYE=").to be true
+  end
+
   it "honors :private_key option for digest/signature" do
     consumer_nil = OAuth::Consumer.new(consumer_key, nil)
     proxy = OAuth::RequestProxy.proxy(request, {uri: "http://photos.example.net/photos"})
@@ -168,7 +176,7 @@ RSpec.describe OAuth::Signature::RSA::SHA1 do
     sig1 = OAuth::Signature.sign(request, {
       consumer: consumer_nil,
       private_key: File.read(pem_path),
-      uri: "http://photos.example.net/photos",
+      uri: "http://photos.example.net/photos"
     })
 
     signer = described_class.new(proxy, {consumer: consumer_nil, private_key: File.read(pem_path)})
@@ -182,7 +190,7 @@ RSpec.describe OAuth::Signature::RSA::SHA1 do
     consumer_cert = OAuth::Consumer.new(consumer_key, x509_certificate)
 
     expect(
-      OAuth::Signature.verify(bad_request, {consumer: consumer_cert, uri: "http://photos.example.net/photos"}),
+      OAuth::Signature.verify(bad_request, {consumer: consumer_cert, uri: "http://photos.example.net/photos"})
     ).to be false
   end
 end

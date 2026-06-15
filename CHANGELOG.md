@@ -28,11 +28,15 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
-- Excluded `cgi` v0.1.1 from the runtime dependency range because that release
-  calls `String#delete_prefix`, which is unavailable on Ruby 2.4.
-- Derived an RSA public key from PEM private-key objects before signature
-  verification, matching JRuby OpenSSL behavior while preserving RSA-SHA1
-  verification semantics.
+- Removed the external `cgi` runtime dependency because the only `cgi` gem
+  releases installable on Ruby 2.4 call `String#delete_prefix`, which is
+  unavailable on Ruby 2.4.
+- Removed the external `erb` dependency from the Ruby 2.4 appraisal because
+  Ruby 2.4 already provides ERB and the released `erb` gem depends on external
+  `cgi`.
+- Added a private-key-backed RSA-SHA1 verification fallback for JRuby OpenSSL
+  versions that raise `OpenSSL::PKey::PKeyError` during public-key
+  verification.
 
 ### Security
 

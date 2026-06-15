@@ -11,6 +11,11 @@ module OAuth
         def ==(other)
           decoded = Base64.decode64(other.is_a?(Array) ? other.first : other)
           public_key.verify(OpenSSL::Digest.new("SHA1"), decoded, signature_base_string)
+        rescue OpenSSL::PKey::PKeyError
+          private_key = private_key_from_consumer_secret
+          raise unless private_key
+
+          private_key.sign(OpenSSL::Digest.new("SHA1"), signature_base_string) == decoded
         end
 
         def public_key
@@ -45,6 +50,17 @@ module OAuth
             OpenSSL::X509::Certificate.new(consumer_secret).public_key
           else
             OpenSSL::PKey::RSA.new(consumer_secret).public_key
+          end
+        end
+
+        def private_key_from_consumer_secret
+          case consumer_secret
+          when String
+            return nil if consumer_secret =~ /-----BEGIN CERTIFICATE-----/
+
+            OpenSSL::PKey::RSA.new(consumer_secret)
+          when OpenSSL::PKey::RSA
+            consumer_secret
           end
         end
 

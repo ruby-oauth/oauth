@@ -118,21 +118,6 @@
     [40, 50, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
     [41, 10, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545]
   ],
-  "spec/oauth/signature/rsa/sha1_spec.rb:3262441617": [
-    [59, 46, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
-    [63, 258, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
-    [70, 46, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
-    [74, 181, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
-    [84, 46, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
-    [88, 181, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
-    [99, 48, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
-    [100, 9, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
-    [110, 48, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
-    [111, 9, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
-    [124, 5, 20, "Style/RescueStandardError: Omit the error class when rescuing `StandardError` by itself.", 3081355729],
-    [171, 46, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],
-    [185, 111, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545]
-  ],
   "spec/oauth/tty/cli_spec.rb:2083670688": [
     [90, 56, 1, "Style/TrailingCommaInArrayLiteral: Avoid comma after the last item of an array.", 177545],
     [117, 49, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
