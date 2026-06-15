@@ -22,8 +22,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
-- Retemplated repository metadata, workflows, modular gemfiles, and documentation
-  scaffolding with the current `kettle-jem` template.
+- Retemplated repository metadata, workflows, modular gemfiles, documentation
+  scaffolding, `version_gem` >= 1.1.12, and templating-isolated local workspace
+  Gemfile wiring with the current `kettle-jem` template.
 - Refreshed locked `auth-sanitizer` dependency metadata so local OAuth
   workspace consumers resolve the v0.2.1 runtime floor.
 
