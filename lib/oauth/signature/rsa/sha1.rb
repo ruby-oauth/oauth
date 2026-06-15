@@ -29,7 +29,7 @@ module OAuth
           data = request.body || ""
           begin
             digest_bytes = OpenSSL::Digest.digest("SHA1", data)
-          rescue StandardError
+          rescue
             digest_bytes = ::Digest::SHA1.digest(data)
           end
           Base64.encode64(digest_bytes).chomp.delete("\n")
@@ -42,7 +42,7 @@ module OAuth
           when /-----BEGIN CERTIFICATE-----/
             OpenSSL::X509::Certificate.new(consumer_secret).public_key
           else
-            OpenSSL::PKey::RSA.new(consumer_secret)
+            OpenSSL::PKey::RSA.new(consumer_secret).public_key
           end
         end
 
@@ -54,7 +54,7 @@ module OAuth
               options[:private_key]
             else
               consumer_secret
-            end,
+            end
           )
 
           private_key.sign(OpenSSL::Digest.new("SHA1"), signature_base_string)

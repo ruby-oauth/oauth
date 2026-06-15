@@ -28,6 +28,12 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
+- Pinned older Ruby appraisals to Rack 2.2 so `rack-test` remains compatible
+  with the Ruby 2.4, Ruby 2.5, and JRuby 9.2 CI jobs.
+- Derived an RSA public key from PEM private-key strings before signature
+  verification, matching JRuby OpenSSL behavior while preserving RSA-SHA1
+  verification semantics.
+
 ### Security
 
 ## [1.1.7] - 2026-06-15

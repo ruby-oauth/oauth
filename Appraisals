@@ -9,7 +9,7 @@
 # HOW TO UPDATE APPRAISALS (Appraisal2 RuboCop plugin normalizes generated gemfiles on modern Ruby):
 #   bin/rake appraisal:update
 
-plugin "appraisal2-rubocop", :require => "appraisal2/rubocop", :optional => true
+plugin "appraisal2-rubocop", require: "appraisal2/rubocop", optional: true
 
 # HOW TO UPDATE APPRAISALS (will run rubocop_gradual's autocorrect afterward):
 #   bin/rake appraisals:update
@@ -72,10 +72,12 @@ appraise "dep-heads" do
 end
 
 appraise "ruby-2-4" do
+  gem "rack", "~> 2.2", ">= 2.2.17"
   eval_gemfile "modular/x_std_libs/r2.4/libs.gemfile"
 end
 
 appraise "ruby-2-5" do
+  gem "rack", "~> 2.2", ">= 2.2.17"
   eval_gemfile "modular/x_std_libs/r2.6/libs.gemfile"
 end
 

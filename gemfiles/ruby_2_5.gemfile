@@ -2,6 +2,8 @@
 
 source "https://gem.coop"
 
+gem "rack", "~> 2.2", ">= 2.2.17"
+
 gemspec path: "../"
 
 eval_gemfile("modular/x_std_libs/r2.6/libs.gemfile")
