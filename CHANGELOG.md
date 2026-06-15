@@ -22,6 +22,8 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
+- Retemplated repository metadata, workflows, modular gemfiles, and documentation
+  scaffolding with the current `kettle-jem` template.
 - Refreshed locked `auth-sanitizer` dependency metadata so local OAuth
   workspace consumers resolve the v0.2.1 runtime floor.
 
@@ -32,6 +34,7 @@ Please file a bug if you notice a violation of semantic versioning.
 ### Fixed
 
 - Restored `docs/CNAME` so the generated documentation site keeps its custom domain.
+
 ### Security
 
 ## [1.1.6] - 2026-06-07

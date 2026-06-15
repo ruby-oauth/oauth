@@ -73,12 +73,12 @@ RSpec.describe OAuth::TTY::CLI do
   describe "#run", :check_output do
     it "prints help when empty args" do
       out = run_command
-      expect(out).to match(/Usage: /)
+      expect(out).to include("Usage: ")
     end
 
     it "prints help" do
       out = run_command(%w[help])
-      expect(out).to match(/Usage: /)
+      expect(out).to include("Usage: ")
     end
 
     it "prints version" do

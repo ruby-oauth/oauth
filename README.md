@@ -1,6 +1,6 @@
 <a href="https://github.com/ruby-oauth"><img alt="ruby-oauth Logo by Aboling0, CC BY-SA 4.0" src="https://logos.galtzo.com/assets/images/ruby-oauth/avatar-128px.svg" width="14%" align="right"/></a>
 
-# 🔑 OAuth
+# 🔮 OAuth
 
 [![Version][👽versioni]][👽version] [![GitHub tag (latest SemVer)][⛳️tag-img]][⛳️tag] [![License: MIT][📄license-img]][📄license] [![Downloads Rank][👽dl-ranki]][👽dl-rank] [![CodeCov Test Coverage][🏀codecovi]][🏀codecov] [![Coveralls Test Coverage][🏀coveralls-img]][🏀coveralls] [![QLTY Test Coverage][🏀qlty-covi]][🏀qlty-cov] [![QLTY Maintainability][🏀qlty-mnti]][🏀qlty-mnt] [![CI Heads][🚎3-hd-wfi]][🚎3-hd-wf] [![CI Runtime Dependencies @ HEAD][🚎12-crh-wfi]][🚎12-crh-wf] [![CI Current][🚎11-c-wfi]][🚎11-c-wf] [![CI Truffle Ruby][🚎9-t-wfi]][🚎9-t-wf] [![CI JRuby][🚎10-j-wfi]][🚎10-j-wf] [![Deps Locked][🚎13-🔒️-wfi]][🚎13-🔒️-wf] [![Deps Unlocked][🚎14-🔓️-wfi]][🚎14-🔓️-wf] [![CI Test Coverage][🚎2-cov-wfi]][🚎2-cov-wf] [![CI Style][🚎5-st-wfi]][🚎5-st-wf] [![Apache SkyWalking Eyes License Compatibility Check][🚎15-🪪-wfi]][🚎15-🪪-wf]
 
@@ -282,7 +282,7 @@ and [Tidelift][🏙️entsup-tidelift].
 
 ### Open Collective for Individuals
 
-Support us with a monthly donation and help us continue our activities. [[Become a backer](https://opencollective.com/ruby-oauth#backer)]
+Support us with a monthly donation and help us continue our activities. [[Become a backer](https://opencollective.com/#backer)]
 
 NOTE: [kettle-readme-backers][kettle-readme-backers] updates this list every day, automatically.
 
@@ -292,7 +292,7 @@ No backers yet. Be the first!
 
 ### Open Collective for Organizations
 
-Become a sponsor and get your logo on our README on GitHub with a link to your site. [[Become a sponsor](https://opencollective.com/ruby-oauth#sponsor)]
+Become a sponsor and get your logo on our README on GitHub with a link to your site. [[Become a sponsor](https://opencollective.com/#sponsor)]
 
 NOTE: [kettle-readme-backers][kettle-readme-backers] updates this list every day, automatically.
 
@@ -489,7 +489,7 @@ To join the community or get help 👇️ Join the Discord.
 
 To say "thanks!" ☝️ Join the Discord or 👇️ send money.
 
-[![Sponsor ruby-oauth/oauth on Open Source Collective][🖇osc-all-bottom-img]][🖇osc] 💌 [![Sponsor me on GitHub Sponsors][🖇sponsor-bottom-img]][🖇sponsor] 💌 [![Sponsor me on Liberapay][⛳liberapay-bottom-img]][⛳liberapay] 💌 [![Donate on PayPal][🖇paypal-bottom-img]][🖇paypal]
+[![Sponsor /oauth on Open Source Collective][🖇osc-all-bottom-img]][🖇osc] 💌 [![Sponsor me on GitHub Sponsors][🖇sponsor-bottom-img]][🖇sponsor] 💌 [![Sponsor me on Liberapay][⛳liberapay-bottom-img]][⛳liberapay] 💌 [![Donate on PayPal][🖇paypal-bottom-img]][🖇paypal]
 
 ### Please give the project a star ⭐ ♥.
 
@@ -500,17 +500,17 @@ Thanks for RTFM. ☺️
 [⛳liberapay-img]: https://img.shields.io/liberapay/goal/pboling.svg?logo=liberapay&color=a51611&style=flat
 [⛳liberapay-bottom-img]: https://img.shields.io/liberapay/goal/pboling.svg?style=for-the-badge&logo=liberapay&color=a51611
 [⛳liberapay]: https://liberapay.com/pboling/donate
-[🖇osc-all-img]: https://img.shields.io/opencollective/all/ruby-oauth
-[🖇osc-sponsors-img]: https://img.shields.io/opencollective/sponsors/ruby-oauth
-[🖇osc-backers-img]: https://img.shields.io/opencollective/backers/ruby-oauth
-[🖇osc-backers]: https://opencollective.com/ruby-oauth#backer
-[🖇osc-backers-i]: https://opencollective.com/ruby-oauth/backers/badge.svg?style=flat
-[🖇osc-sponsors]: https://opencollective.com/ruby-oauth#sponsor
-[🖇osc-sponsors-i]: https://opencollective.com/ruby-oauth/sponsors/badge.svg?style=flat
-[🖇osc-all-bottom-img]: https://img.shields.io/opencollective/all/ruby-oauth?style=for-the-badge
-[🖇osc-sponsors-bottom-img]: https://img.shields.io/opencollective/sponsors/ruby-oauth?style=for-the-badge
-[🖇osc-backers-bottom-img]: https://img.shields.io/opencollective/backers/ruby-oauth?style=for-the-badge
-[🖇osc]: https://opencollective.com/ruby-oauth
+[🖇osc-all-img]: https://img.shields.io/opencollective/all/
+[🖇osc-sponsors-img]: https://img.shields.io/opencollective/sponsors/
+[🖇osc-backers-img]: https://img.shields.io/opencollective/backers/
+[🖇osc-backers]: https://opencollective.com/#backer
+[🖇osc-backers-i]: https://opencollective.com//backers/badge.svg?style=flat
+[🖇osc-sponsors]: https://opencollective.com/#sponsor
+[🖇osc-sponsors-i]: https://opencollective.com//sponsors/badge.svg?style=flat
+[🖇osc-all-bottom-img]: https://img.shields.io/opencollective/all/?style=for-the-badge
+[🖇osc-sponsors-bottom-img]: https://img.shields.io/opencollective/sponsors/?style=for-the-badge
+[🖇osc-backers-bottom-img]: https://img.shields.io/opencollective/backers/?style=for-the-badge
+[🖇osc]: https://opencollective.com/
 [🖇sponsor-img]: https://img.shields.io/badge/Sponsor_Me!-pboling.svg?style=social&logo=github
 [🖇sponsor-bottom-img]: https://img.shields.io/badge/Sponsor_Me!-pboling-blue?style=for-the-badge&logo=github
 [🖇sponsor]: https://github.com/sponsors/pboling
@@ -710,9 +710,9 @@ Thanks for RTFM. ☺️
 | Field | Value |
 |---|---|
 | Package | oauth |
-| Description | 🔑 A Ruby wrapper for the original OAuth 1.0 / 1.0a spec. |
+| Description | 🔮 A Ruby wrapper for the original OAuth 1.0 / 1.0a spec. |
 | Homepage | https://github.com/ruby-oauth/oauth |
-| Source | https://github.com/ruby-oauth/oauth/tree/v1.1.5 |
+| Source | https://github.com/ruby-oauth/oauth/tree/v1.1.6 |
 | License | `MIT` |
 | Funding | https://github.com/sponsors/pboling, https://issuehunt.io/u/pboling, https://ko-fi.com/pboling, https://liberapay.com/pboling/donate, https://opencollective.com/ruby-oauth, https://patreon.com/galtzo, https://polar.sh/pboling, https://thanks.dev/u/gh/pboling, https://tidelift.com/funding/github/rubygems/oauth, https://www.buymeacoffee.com/pboling |
 <!-- kettle-jem:metadata:end -->

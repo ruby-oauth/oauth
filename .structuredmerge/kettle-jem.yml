@@ -77,7 +77,7 @@
 # Set this to a single emoji that represents your gem. Examples: 🪙 🔑 🛠️ 🔮
 # This key is REQUIRED. kettle-jem will abort if it is absent.
 # ENV override: KJ_PROJECT_EMOJI
-project_emoji: 🔑
+project_emoji: 🔮
 
 # Engines this project supports.
 # List the Ruby engines that your gem targets. kettle-jem uses this to decide
@@ -115,7 +115,7 @@ rubygems:
 #
 # ENV override: KJ_REPOSITORY_TOPOLOGY
 repository:
-  topology: "standalone"
+  topology: "monorepo-subproject"
 
 # Framework matrix workflows.
 # When your gem tests against multiple versions of a framework (Rails,
@@ -295,7 +295,7 @@ yard_host: "{KJ|YARD_HOST}"
 # Full URL used for gemspec metadata["homepage_uri"].
 # Defaults to https://{KJ|YARD_HOST}.
 # ENV override: KJ_HOMEPAGE_URI
-homepage_uri: "{KJ|HOMEPAGE_URI}"
+homepage_uri: "https://structuredmerge.org"
 
 # Template source inventory.
 # The packaged inventory is the canonical kettle-jem project template. It

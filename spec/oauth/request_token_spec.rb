@@ -11,18 +11,18 @@ RSpec.describe OAuth::RequestToken do
     it "includes oauth_token and additional params when provided" do
       url = request_token.authorize_url(oauth_callback: "github.com")
       expect(url).to be_a(String)
-      expect(url).to match(/oauth_token=/)
-      expect(url).to match(/oauth_callback=/)
+      expect(url).to include("oauth_token=")
+      expect(url).to include("oauth_callback=")
     end
 
     it "includes only oauth_token when no params provided" do
       url = request_token.authorize_url(nil)
       expect(url).to be_a(String)
-      expect(url).to match(/\?oauth_token=/)
+      expect(url).to include("?oauth_token=")
 
       url2 = request_token.authorize_url
       expect(url2).to be_a(String)
-      expect(url2).to match(/\?oauth_token=/)
+      expect(url2).to include("?oauth_token=")
     end
 
     it "returns nil when token is nil" do
@@ -35,18 +35,18 @@ RSpec.describe OAuth::RequestToken do
     it "includes oauth_token and additional params when provided" do
       url = request_token.authenticate_url(oauth_callback: "github.com")
       expect(url).to be_a(String)
-      expect(url).to match(/oauth_token=/)
-      expect(url).to match(/oauth_callback=/)
+      expect(url).to include("oauth_token=")
+      expect(url).to include("oauth_callback=")
     end
 
     it "includes only oauth_token when no params provided" do
       url = request_token.authenticate_url(nil)
       expect(url).to be_a(String)
-      expect(url).to match(/\?oauth_token=/)
+      expect(url).to include("?oauth_token=")
 
       url2 = request_token.authenticate_url
       expect(url2).to be_a(String)
-      expect(url2).to match(/\?oauth_token=/)
+      expect(url2).to include("?oauth_token=")
     end
 
     it "returns nil when token is nil" do

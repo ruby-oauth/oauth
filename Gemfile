@@ -19,7 +19,7 @@ git_source(:gitlab) { |repo_name| "https://gitlab.com/#{repo_name}" }
 gemspec
 
 # Local workspace dependency wiring for *_local.gemfile overrides
-gem "nomono", "~> 1.0", ">= 1.0.2", require: false # ruby >= 2.2
+gem "nomono", "~> 1.0", ">= 1.0.4", require: false # ruby >= 2.2
 
 # Templating (env-switched: SMORG_RB_DEV=/path/to/structuredmerge/ruby/gems for local paths)
 eval_gemfile "gemfiles/modular/templating.gemfile" if ENV.fetch("K_JEM_TEMPLATING", "false").casecmp("true").zero?
@@ -36,7 +36,7 @@ unless %w[false 0 no off].include?(ENV.fetch("RUBY_OAUTH_DEV", "false").downcase
     prefix: "RUBY_OAUTH",
     path_env: "RUBY_OAUTH_DEV",
     root: %w[code src ruby-oauth],
-    debug_env: "RUBY_OAUTH_DEBUG",
+    debug_env: "RUBY_OAUTH_DEBUG"
   )
 end
 

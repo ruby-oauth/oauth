@@ -49,8 +49,8 @@ RSpec.describe OAuth::Consumer do
 
       other_token.sign!(request, {nonce: nonce, timestamp: timestamp})
 
-      expect(request["authorization"]).not_to match(/oauth_signature_method=\"HMAC-SHA1\"/)
-      expect(request["authorization"]).to match(/oauth_signature_method=\"PLAINTEXT\"/)
+      expect(request["authorization"]).not_to include('oauth_signature_method="HMAC-SHA1"')
+      expect(request["authorization"]).to include('oauth_signature_method="PLAINTEXT"')
     end
 
     it "affects signature_base_string when signature_method is PLAINTEXT" do
@@ -59,7 +59,7 @@ RSpec.describe OAuth::Consumer do
       request = Net::HTTP::Get.new("/")
 
       signature_base_string = other_consumer.signature_base_string(request)
-      expect(signature_base_string).not_to match(/HMAC-SHA1/)
+      expect(signature_base_string).not_to include("HMAC-SHA1")
       expect(signature_base_string).to eq("#{other_consumer.secret}&")
     end
 
