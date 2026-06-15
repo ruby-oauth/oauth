@@ -22,6 +22,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
+- Refreshed locked `auth-sanitizer` dependency metadata so local OAuth
+  workspace consumers resolve the v0.2.1 runtime floor.
+
 ### Deprecated
 
 ### Removed
