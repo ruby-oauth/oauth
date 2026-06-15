@@ -76,28 +76,11 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 
 <h3 id="changed">Changed</h3>
 
-<ul>
-  <li>Raised the <code>oauth-tty</code> runtime dependency floor to <code>&gt;= 1.0.10</code>, removing<br>
-the transitive external <code>cgi</code> runtime dependency for Ruby 2.4 consumers.</li>
-</ul>
-
 <h3 id="deprecated">Deprecated</h3>
 
 <h3 id="removed">Removed</h3>
 
 <h3 id="fixed">Fixed</h3>
-
-<ul>
-  <li>Removed the external <code>cgi</code> runtime dependency because the only <code>cgi</code> gem<br>
-releases installable on Ruby 2.4 call <code>String#delete_prefix</code>, which is<br>
-unavailable on Ruby 2.4.</li>
-  <li>Removed the external <code>erb</code> dependency from the Ruby 2.4 appraisal because<br>
-Ruby 2.4 already provides ERB and the released <code>erb</code> gem depends on external<br>
-<code>cgi</code>.</li>
-  <li>Added a private-key-backed RSA-SHA1 verification fallback for JRuby OpenSSL<br>
-versions that raise <code>OpenSSL::PKey::PKeyError</code> during public-key<br>
-verification.</li>
-</ul>
 
 <h3 id="security">Security</h3>
 
@@ -107,8 +90,8 @@ verification.</li>
 <ul>
   <li>TAG: <a href="https://github.com/ruby-oauth/oauth/releases/tag/v1.1.7">v1.1.7</a>
 </li>
-  <li>COVERAGE: 89.05% – 838/941 lines in 33 files</li>
-  <li>BRANCH COVERAGE: 60.46% – 159/263 branches in 33 files</li>
+  <li>COVERAGE: 88.32% – 839/950 lines in 33 files</li>
+  <li>BRANCH COVERAGE: 58.67% – 159/271 branches in 33 files</li>
   <li>40.38% documented</li>
 </ul>
 
@@ -123,7 +106,11 @@ Gemfile wiring with the current <code>kettle-jem</code> template.</li>
 consumers get hash and nested-attribute inspect redaction fixes plus<br>
 downstream RBS duplicate-declaration fixes.</p>
   </li>
-  <li>Raised the <code>oauth-tty</code> runtime dependency floor to <code>&gt;= 1.0.9</code>.</li>
+  <li>
+    <p>Raised the <code>oauth-tty</code> runtime dependency floor to <code>&gt;= 1.0.9</code>.</p>
+  </li>
+  <li>Raised the <code>oauth-tty</code> runtime dependency floor to <code>&gt;= 1.0.10</code>, removing<br>
+the transitive external <code>cgi</code> runtime dependency for Ruby 2.4 consumers.</li>
 </ul>
 
 <h3 id="fixed-1">Fixed</h3>
@@ -134,9 +121,20 @@ downstream RBS duplicate-declaration fixes.</p>
   </li>
   <li>Pinned older Ruby appraisals to Rack 2.2 so <code>rack-test</code> remains compatible<br>
 with the Ruby 2.4, Ruby 2.5, and JRuby 9.2 CI jobs.</li>
-  <li>Derived an RSA public key from PEM private-key strings before signature<br>
+  <li>
+    <p>Derived an RSA public key from PEM private-key strings before signature<br>
 verification, matching JRuby OpenSSL behavior while preserving RSA-SHA1<br>
-verification semantics.</li>
+verification semantics.</p>
+  </li>
+  <li>Removed the external <code>cgi</code> runtime dependency because the only <code>cgi</code> gem<br>
+releases installable on Ruby 2.4 call <code>String#delete_prefix</code>, which is<br>
+unavailable on Ruby 2.4.</li>
+  <li>Removed the external <code>erb</code> dependency from the Ruby 2.4 appraisal because<br>
+Ruby 2.4 already provides ERB and the released <code>erb</code> gem depends on external<br>
+<code>cgi</code>.</li>
+  <li>Added a private-key-backed RSA-SHA1 verification fallback for JRuby OpenSSL<br>
+versions that raise <code>OpenSSL::PKey::PKeyError</code> during public-key<br>
+verification.</li>
 </ul>
 
 <h2 id="116---2026-06-07">
@@ -1295,7 +1293,7 @@ http://code.google.com/p/oauth-plugin/</li>
 </div></div>
 
       <div id="footer">
-  Generated on Mon Jun 15 05:16:04 2026 by
+  Generated on Mon Jun 15 05:23:39 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.44 (ruby-4.0.5).
 </div>

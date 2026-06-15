@@ -22,32 +22,19 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
-- Raised the `oauth-tty` runtime dependency floor to `>= 1.0.10`, removing
-  the transitive external `cgi` runtime dependency for Ruby 2.4 consumers.
-
 ### Deprecated
 
 ### Removed
 
 ### Fixed
 
-- Removed the external `cgi` runtime dependency because the only `cgi` gem
-  releases installable on Ruby 2.4 call `String#delete_prefix`, which is
-  unavailable on Ruby 2.4.
-- Removed the external `erb` dependency from the Ruby 2.4 appraisal because
-  Ruby 2.4 already provides ERB and the released `erb` gem depends on external
-  `cgi`.
-- Added a private-key-backed RSA-SHA1 verification fallback for JRuby OpenSSL
-  versions that raise `OpenSSL::PKey::PKeyError` during public-key
-  verification.
-
 ### Security
 
 ## [1.1.7] - 2026-06-15
 
 - TAG: [v1.1.7][1.1.7t]
-- COVERAGE: 89.05% -- 838/941 lines in 33 files
-- BRANCH COVERAGE: 60.46% -- 159/263 branches in 33 files
+- COVERAGE: 88.32% -- 839/950 lines in 33 files
+- BRANCH COVERAGE: 58.67% -- 159/271 branches in 33 files
 - 40.38% documented
 
 ### Changed
@@ -61,6 +48,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - Raised the `oauth-tty` runtime dependency floor to `>= 1.0.9`.
 
+- Raised the `oauth-tty` runtime dependency floor to `>= 1.0.10`, removing
+  the transitive external `cgi` runtime dependency for Ruby 2.4 consumers.
+
 ### Fixed
 
 - Restored `docs/CNAME` so the generated documentation site keeps its custom domain.
@@ -70,6 +60,16 @@ Please file a bug if you notice a violation of semantic versioning.
 - Derived an RSA public key from PEM private-key strings before signature
   verification, matching JRuby OpenSSL behavior while preserving RSA-SHA1
   verification semantics.
+
+- Removed the external `cgi` runtime dependency because the only `cgi` gem
+  releases installable on Ruby 2.4 call `String#delete_prefix`, which is
+  unavailable on Ruby 2.4.
+- Removed the external `erb` dependency from the Ruby 2.4 appraisal because
+  Ruby 2.4 already provides ERB and the released `erb` gem depends on external
+  `cgi`.
+- Added a private-key-backed RSA-SHA1 verification fallback for JRuby OpenSSL
+  versions that raise `OpenSSL::PKey::PKeyError` during public-key
+  verification.
 
 ## [1.1.6] - 2026-06-07
 
