@@ -26,8 +26,8 @@ Please file a bug if you notice a violation of semantic versioning.
   scaffolding, `version_gem` >= 1.1.12, and templating-isolated local workspace
   Gemfile wiring with the current `kettle-jem` template.
 - Raised the `auth-sanitizer` runtime dependency floor to `>= 0.2.1`, so OAuth
-  consumers get the current inspect redaction behavior and downstream RBS
-  duplicate-declaration fixes.
+  consumers get hash and nested-attribute inspect redaction fixes plus
+  downstream RBS duplicate-declaration fixes.
 
 ### Deprecated
 
