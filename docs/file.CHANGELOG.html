@@ -82,14 +82,6 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 
 <h3 id="fixed">Fixed</h3>
 
-<ul>
-  <li>Pinned older Ruby appraisals to Rack 2.2 so <code>rack-test</code> remains compatible<br>
-with the Ruby 2.4, Ruby 2.5, and JRuby 9.2 CI jobs.</li>
-  <li>Derived an RSA public key from PEM private-key strings before signature<br>
-verification, matching JRuby OpenSSL behavior while preserving RSA-SHA1<br>
-verification semantics.</li>
-</ul>
-
 <h3 id="security">Security</h3>
 
 <h2 id="117---2026-06-15">
@@ -120,7 +112,14 @@ downstream RBS duplicate-declaration fixes.</p>
 <h3 id="fixed-1">Fixed</h3>
 
 <ul>
-  <li>Restored <code>docs/CNAME</code> so the generated documentation site keeps its custom domain.</li>
+  <li>
+    <p>Restored <code>docs/CNAME</code> so the generated documentation site keeps its custom domain.</p>
+  </li>
+  <li>Pinned older Ruby appraisals to Rack 2.2 so <code>rack-test</code> remains compatible<br>
+with the Ruby 2.4, Ruby 2.5, and JRuby 9.2 CI jobs.</li>
+  <li>Derived an RSA public key from PEM private-key strings before signature<br>
+verification, matching JRuby OpenSSL behavior while preserving RSA-SHA1<br>
+verification semantics.</li>
 </ul>
 
 <h2 id="116---2026-06-07">
@@ -1279,7 +1278,7 @@ http://code.google.com/p/oauth-plugin/</li>
 </div></div>
 
       <div id="footer">
-  Generated on Mon Jun 15 04:25:02 2026 by
+  Generated on Mon Jun 15 04:30:33 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.44 (ruby-4.0.5).
 </div>
