@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    oauth (1.1.7)
+    oauth (1.1.8)
       anonymous_loader (~> 0.1, >= 0.1.1)
       auth-sanitizer (~> 0.2, >= 0.2.2)
       base64 (~> 0.1)

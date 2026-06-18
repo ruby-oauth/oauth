@@ -22,12 +22,6 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
-- Raised the `anonymous_loader` runtime dependency floor to `>= 0.1.1`.
-- Raised the `auth-sanitizer` runtime dependency floor to `>= 0.2.2` and
-  switched isolated sanitizer loading to the released `anonymous_loader` gem,
-  including local workspace wiring for the new runtime dependency.
-- Raised the `oauth-tty` runtime dependency floor to `>= 1.0.11`.
-
 ### Deprecated
 
 ### Removed
@@ -35,6 +29,21 @@ Please file a bug if you notice a violation of semantic versioning.
 ### Fixed
 
 ### Security
+
+## [1.1.8] - 2026-06-18
+
+- TAG: [v1.1.8][1.1.8t]
+- COVERAGE: 88.27% -- 835/946 lines in 33 files
+- BRANCH COVERAGE: 58.67% -- 159/271 branches in 33 files
+- 40.38% documented
+
+### Changed
+
+- Raised the `anonymous_loader` runtime dependency floor to `>= 0.1.1`.
+- Raised the `auth-sanitizer` runtime dependency floor to `>= 0.2.2` and
+  switched isolated sanitizer loading to the released `anonymous_loader` gem,
+  including local workspace wiring for the new runtime dependency.
+- Raised the `oauth-tty` runtime dependency floor to `>= 1.0.11`.
 
 ## [1.1.7] - 2026-06-15
 
@@ -833,7 +842,9 @@ All together now release
 - Moved all non-Rails functionality from the Rails plugin:
   http://code.google.com/p/oauth-plugin/
 
-[Unreleased]: https://github.com/ruby-oauth/oauth/compare/v1.1.7...HEAD
+[Unreleased]: https://github.com/ruby-oauth/oauth/compare/v1.1.8...HEAD
+[1.1.8]: https://github.com/ruby-oauth/oauth/compare/v1.1.7...v1.1.8
+[1.1.8t]: https://github.com/ruby-oauth/oauth/releases/tag/v1.1.8
 [1.1.7]: https://github.com/ruby-oauth/oauth/compare/v1.1.6...v1.1.7
 [1.1.7t]: https://github.com/ruby-oauth/oauth/releases/tag/v1.1.7
 [1.1.6]: https://github.com/ruby-oauth/oauth/compare/v1.1.5...v1.1.6
