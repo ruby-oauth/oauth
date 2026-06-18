@@ -20,7 +20,7 @@ gem_version =
 Gem::Specification.new do |spec|
   spec.name = "oauth"
   spec.version = gem_version
-  spec.authors = ["Pelle Braendgaard", "Blaine Cook", "Larry Halff", "Jesse Clark", "Jon Crosby", "Seth Fitzsimmons", "Matt Sanford", "Aaron Quint", "Peter Boling"]
+  spec.authors = ["Pelle Braendgaard", "Chris Mear", "Jon Crosby", "Seth Fitzsimmons", "Tilmann Singer", "Tom Insam", "tsailipu", "Aaron Quint", "Anders Conbere", "Bill Kocik", "Darcy Laycock", "Eric Hartmann", "Greg Weber", "Laszlo Bacsi", "Marshall Huss", "Matt Sanford", "Neill Pearman", "Seth Cousins", "Yoan Blanc", "andrehjr", "Brian Finney", "ecavazos", "Joshua Hull", "Marsh Gardiner", "Michael Reinsch", "Sean Cribbs", "Steven Parkes", "成田 一生", "Shaliko Usubov", "Ernie Miller", "Jonathon M. Abbott", "Richard Huang", "rick", "Steven Hammond", "Craig Walker", "Khem Veasna", "Brian John", "Michal Papis", "raeno", "jremmen", "Kevin Hughes", "Eric True", "James Pinto", "jianben", "Nik Wakelin", "Ondrej Prazak", "Nicholas Souphandavong", "Yvonne", "Agora@Ubuntu-dev", "Shohei Maeda", "Khem", "Chuck Remes", "iamibi", "Jeremy Sioui", "Nick Morgan", "Peter H. Boling", "Richard Vowles", "Shalvah", "Annibelle Boling", "Aboling0", "David Varga", "StepSecurity Bot"]
   spec.email = ["floss@galtzo.com"]
 
   spec.summary = "🔮 OAuth 1.0 / 1.0a Core Ruby implementation"
@@ -127,7 +127,7 @@ Gem::Specification.new do |spec|
   #       and preferably a modular one (see gemfiles/modular/*.gemfile).
 
   # Dev, Test, & Release Tasks
-  spec.add_development_dependency("kettle-dev", "~> 2.2", ">= 2.2.9")      # ruby >= 2.4
+  spec.add_development_dependency("kettle-dev", "~> 2.2", ">= 2.2.12")     # ruby >= 2.4
 
   # Security
   spec.add_development_dependency("bundler-audit", "~> 0.9.3")                      # ruby >= 2.0.0
@@ -141,7 +141,7 @@ Gem::Specification.new do |spec|
   # Testing
   spec.add_development_dependency("appraisal2", "~> 3.1", ">= 3.1.2")               # ruby >= 1.8.7, for testing against multiple versions of dependencies
   spec.add_development_dependency("kettle-test", "~> 2.0", ">= 2.0.5")             # ruby >= 2.4
-  spec.add_development_dependency("turbo_tests2", "~> 3.1", ">= 3.1.3")            # ruby >= 2.4.0, default kettle-test runner
+  spec.add_development_dependency("turbo_tests2", "~> 3.1", ">= 3.1.4")            # ruby >= 2.4.0, default kettle-test runner
 
   # Releasing
   spec.add_development_dependency("ruby-progressbar", "~> 1.13")                    # ruby >= 0
