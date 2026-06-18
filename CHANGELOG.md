@@ -26,6 +26,7 @@ Please file a bug if you notice a violation of semantic versioning.
 - Raised the `auth-sanitizer` runtime dependency floor to `>= 0.2.2` and
   switched isolated sanitizer loading to the released `anonymous_loader` gem,
   including local workspace wiring for the new runtime dependency.
+- Raised the `oauth-tty` runtime dependency floor to `>= 1.0.11`.
 
 ### Deprecated
 
