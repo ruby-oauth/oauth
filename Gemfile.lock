@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     oauth (1.1.7)
-      anonymous_loader (~> 0.1, >= 0.1.0)
+      anonymous_loader (~> 0.1, >= 0.1.1)
       auth-sanitizer (~> 0.2, >= 0.2.2)
       base64 (~> 0.1)
       oauth-tty (~> 1.0, >= 1.0.10)
@@ -14,7 +14,7 @@ GEM
   specs:
     addressable (2.9.0)
       public_suffix (>= 2.0.2, < 8.0)
-    anonymous_loader (0.1.0)
+    anonymous_loader (0.1.1)
       version_gem (~> 1.1, >= 1.1.12)
     ansi (1.6.0)
     appraisal2 (3.1.2)
