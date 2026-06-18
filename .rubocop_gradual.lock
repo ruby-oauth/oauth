@@ -1,8 +1,4 @@
 {
-  "lib/oauth/auth_sanitizer.rb:1572485143": [
-    [15, 37, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545],
-    [28, 8, 1, "Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.", 177545]
-  ],
   "lib/oauth/client/action_controller_request.rb:2693868669": [
     [17, 9, 24, "Style/SuperArguments: Call `super` without arguments and parentheses when the signature is identical.", 1145070011],
     [48, 23, 1, "Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.", 177545],

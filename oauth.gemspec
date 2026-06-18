@@ -106,7 +106,8 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   # Utilities
-  spec.add_dependency("auth-sanitizer", "~> 0.2", ">= 0.2.1")           # ruby >= 2.2.0
+  spec.add_dependency("anonymous_loader", "~> 0.1", ">= 0.1.0")          # ruby >= 2.2.0
+  spec.add_dependency("auth-sanitizer", "~> 0.2", ">= 0.2.2")           # ruby >= 2.2.0
   spec.add_dependency("base64", "~> 0.1") # became a bundled gem in ruby 3.4 (was default from 3.0 to 3.3)
   spec.add_dependency("oauth-tty", "~> 1.0", ">= 1.0.10")               # ruby >= 2.3.0
   spec.add_dependency("snaky_hash", "~> 2.0", ">= 2.0.5")               # ruby >= 2.2.0

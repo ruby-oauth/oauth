@@ -33,7 +33,7 @@ unless ENV.fetch("K_JEM_TEMPLATING", "false").casecmp("true").zero?
     end
 
     eval_nomono_gems(
-      gems: %w[auth-sanitizer oauth-tty snaky_hash version_gem],
+      gems: %w[anonymous_loader auth-sanitizer oauth-tty snaky_hash version_gem],
       prefix: "RUBY_OAUTH",
       path_env: "RUBY_OAUTH_DEV",
       root: %w[code src ruby-oauth],
