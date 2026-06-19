@@ -6,9 +6,12 @@ require "rbconfig"
 RSpec.describe "OAuth::AUTH_SANITIZER" do
   it "keeps auth-sanitizer constants isolated inside the OAuth namespace" do
     lib = File.expand_path("../../../lib", __dir__)
+    spec = File.expand_path("..", __dir__)
     script = <<~RUBY
       $LOAD_PATH.unshift(#{lib.inspect})
-      require "oauth"
+      $LOAD_PATH.unshift(#{spec.inspect})
+      require "rspec/core"
+      require "spec_helper"
       abort "Auth was defined" if Object.const_defined?(:Auth, false)
       abort "AuthSanitizer was defined" if Object.const_defined?(:AuthSanitizer, false)
     RUBY

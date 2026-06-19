@@ -47,8 +47,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
-- Constrained the Ruby 2.4 appraisal away from `cgi` 0.1.1, which calls
-  `String#delete_prefix` before oauth's test backports are loaded.
+- Updated the auth-sanitizer subprocess isolation spec to load the standard
+  test bootstrap, including Ruby 2.4 backports.
+- Made the Ruby 2.4 appraisal's legacy `cgi` dependency explicit.
 
 ## [1.1.7] - 2026-06-15
 
