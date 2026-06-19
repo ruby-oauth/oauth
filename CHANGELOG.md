@@ -28,6 +28,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
+- Constrained the Ruby 2.4 appraisal away from `cgi` 0.1.1, which calls
+  `String#delete_prefix` before oauth's test backports are loaded.
+
 ### Security
 
 ## [1.1.8] - 2026-06-18

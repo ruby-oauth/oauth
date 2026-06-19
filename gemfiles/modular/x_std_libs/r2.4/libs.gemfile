@@ -1,3 +1,4 @@
 eval_gemfile "../../erb/r2.6/v2.2.gemfile"
+gem "cgi", "< 0.1.1" # cgi 0.1.1 calls String#delete_prefix, which Ruby 2.4 lacks.
 eval_gemfile "../../mutex_m/r2.4/v0.1.gemfile"
 eval_gemfile "../../stringio/r2.4/v0.0.2.gemfile"
