@@ -90,10 +90,12 @@ This test floor is configured by `ruby.test_minimum` in `.kettle-jem.yml` and
 may be higher than the gem's runtime compatibility floor when legacy Rubies are
 not practical for the current toolchain.
 
-The _amazing_ test matrix is powered by the Kettle dev/test stack.
+<a href="https://github.com/kettle-dev"><img alt="kettle-dev Logo by Aboling0, CC BY-SA 4.0" src="https://logos.galtzo.com/assets/images/kettle-dev/avatar-128px.svg" width="14%" align="right"/></a>
+
+The _amazing_ test matrix is powered by the kettle-dev stack.
 
 <details markdown="1">
-<summary>How We Manage Complexity In Tests</summary>
+<summary>How kettle-dev manages complexity in tests</summary>
 
 | Gem | Source | Role | Daily download rank |
 |-----|--------|------|---------------------|
