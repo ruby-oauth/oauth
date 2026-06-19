@@ -74,9 +74,9 @@
 <p><a href="https://opencollective.com/ruby-oauth#backer"><img src="https://opencollective.com/ruby-oauth/backers/badge.svg?style=flat" alt="OpenCollective Backers"></a> <a href="https://opencollective.com/ruby-oauth#sponsor"><img src="https://opencollective.com/ruby-oauth/sponsors/badge.svg?style=flat" alt="OpenCollective Sponsors"></a> <a href="https://github.com/sponsors/pboling"><img src="https://img.shields.io/badge/Sponsor_Me!-pboling.svg?style=social&amp;logo=github" alt="Sponsor Me on Github"></a> <a href="https://liberapay.com/pboling/donate"><img src="https://img.shields.io/liberapay/goal/pboling.svg?logo=liberapay&amp;color=a51611&amp;style=flat" alt="Liberapay Goal Progress"></a> <a href="https://www.paypal.com/paypalme/peterboling"><img src="https://img.shields.io/badge/donate-paypal-a51611.svg?style=flat&amp;logo=paypal" alt="Donate on PayPal"></a> <a href="https://www.buymeacoffee.com/pboling"><img src="https://img.shields.io/badge/buy_me_a_coffee-%E2%9C%93-a51611.svg?style=flat" alt="Buy me a coffee"></a> <a href="https://polar.sh/pboling"><img src="https://img.shields.io/badge/polar-donate-a51611.svg?style=flat" alt="Donate on Polar"></a> <a href="https://ko-fi.com/pboling"><img src="https://img.shields.io/badge/ko--fi-%E2%9C%93-a51611.svg?style=flat" alt="Donate at ko-fi.com"></a></p>
 
 <details>
- <summary>👣 How will this project approach the September 2025 hostile takeover of RubyGems? 🚑️</summary>
+  <summary>👣 How will this project approach the September 2025 hostile takeover of RubyGems? 🚑️</summary>
 
-I've summarized my thoughts in [this blog post](https://dev.to/galtzo/hostile-takeover-of-rubygems-my-thoughts-5hlo).
+  <p>I’ve summarized my thoughts in <a href="https://dev.to/galtzo/hostile-takeover-of-rubygems-my-thoughts-5hlo">this blog post</a>.</p>
 
 </details>
 
@@ -236,20 +236,73 @@ This test floor is configured by <code>ruby.test_minimum</code> in <code>.kettle
 may be higher than the gem’s runtime compatibility floor when legacy Rubies are<br>
 not practical for the current toolchain.</p>
 
-<p>| 🚚 <em>Amazing</em> test matrix was brought to you by | The Kettle dev/test stack |<br>
-|————————————————|—————————|</p>
+<p><a href="https://github.com/kettle-dev"><img alt="kettle-dev Logo by Aboling0, CC BY-SA 4.0" src="https://logos.galtzo.com/assets/images/kettle-dev/avatar-128px.svg" width="14%" align="right"></a></p>
+
+<p>The <em>amazing</em> test matrix is powered by the kettle-dev stack.</p>
 
 <details>
-<summary>How We Manage Complexity In Tests</summary>
+  <summary>How kettle-dev manages complexity in tests</summary>
 
-| Gem | Source | Role | Daily download rank |
-|-----|--------|------|---------------------|
-| [appraisal2](https://bestgems.org/gems/appraisal2) | [GitHub](https://github.com/appraisal-rb/appraisal2) | multi-dependency Appraisal matrix generation | [![Daily download rank for appraisal2](https://img.shields.io/gem/rd/appraisal2.svg?style=flat-square)](https://bestgems.org/gems/appraisal2) |
-| [appraisal2-rubocop](https://bestgems.org/gems/appraisal2-rubocop) | [GitHub](https://github.com/appraisal-rb/appraisal2-rubocop) | RuboCop Appraisal generator integration | [![Daily download rank for appraisal2-rubocop](https://img.shields.io/gem/rd/appraisal2-rubocop.svg?style=flat-square)](https://bestgems.org/gems/appraisal2-rubocop) |
-| [turbo_tests2](https://bestgems.org/gems/turbo_tests2) | [GitHub](https://github.com/galtzo-floss/turbo_tests2) | parallel test execution | [![Daily download rank for turbo_tests2](https://img.shields.io/gem/rd/turbo_tests2.svg?style=flat-square)](https://bestgems.org/gems/turbo_tests2) |
-| [kettle-test](https://bestgems.org/gems/kettle-test) | [GitHub](https://github.com/kettle-dev/kettle-test) | standard test runner and coverage harness | [![Daily download rank for kettle-test](https://img.shields.io/gem/rd/kettle-test.svg?style=flat-square)](https://bestgems.org/gems/kettle-test) |
-| [kettle-soup-cover](https://bestgems.org/gems/kettle-soup-cover) | [GitHub](https://github.com/kettle-dev/kettle-soup-cover) | SimpleCov coverage policy and reporting | [![Daily download rank for kettle-soup-cover](https://img.shields.io/gem/rd/kettle-soup-cover.svg?style=flat-square)](https://bestgems.org/gems/kettle-soup-cover) |
-| [rubocop-lts](https://bestgems.org/gems/rubocop-lts) | [GitHub](https://github.com/rubocop-lts/rubocop-lts) | Ruby-version-aware linting | [![Daily download rank for rubocop-lts](https://img.shields.io/gem/rd/rubocop-lts.svg?style=flat-square)](https://bestgems.org/gems/rubocop-lts) |
+  <table>
+    <thead>
+      <tr>
+        <th>Gem</th>
+        <th>Source</th>
+        <th>Role</th>
+        <th>Daily download rank</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="https://bestgems.org/gems/appraisal2">appraisal2</a></td>
+        <td><a href="https://github.com/appraisal-rb/appraisal2">GitHub</a></td>
+        <td>multi-dependency Appraisal matrix generation</td>
+        <td><a href="https://bestgems.org/gems/appraisal2"><img src="https://img.shields.io/gem/rd/appraisal2.svg?style=flat-square" alt="Daily download rank for appraisal2"></a></td>
+      </tr>
+      <tr>
+        <td><a href="https://bestgems.org/gems/appraisal2-rubocop">appraisal2-rubocop</a></td>
+        <td><a href="https://github.com/appraisal-rb/appraisal2-rubocop">GitHub</a></td>
+        <td>RuboCop Appraisal generator integration</td>
+        <td><a href="https://bestgems.org/gems/appraisal2-rubocop"><img src="https://img.shields.io/gem/rd/appraisal2-rubocop.svg?style=flat-square" alt="Daily download rank for appraisal2-rubocop"></a></td>
+      </tr>
+      <tr>
+        <td><a href="https://bestgems.org/gems/kettle-dev">kettle-dev</a></td>
+        <td><a href="https://github.com/kettle-dev/kettle-dev">GitHub</a></td>
+        <td>development, release, and CI workflow tooling</td>
+        <td><a href="https://bestgems.org/gems/kettle-dev"><img src="https://img.shields.io/gem/rd/kettle-dev.svg?style=flat-square" alt="Daily download rank for kettle-dev"></a></td>
+      </tr>
+      <tr>
+        <td><a href="https://bestgems.org/gems/kettle-jem">kettle-jem</a></td>
+        <td><a href="https://github.com/kettle-dev/kettle-jem">GitHub</a></td>
+        <td>Appraisals &amp; CI workflow templates</td>
+        <td><a href="https://bestgems.org/gems/kettle-jem"><img src="https://img.shields.io/gem/rd/kettle-jem.svg?style=flat-square" alt="Daily download rank for kettle-jem"></a></td>
+      </tr>
+      <tr>
+        <td><a href="https://bestgems.org/gems/kettle-soup-cover">kettle-soup-cover</a></td>
+        <td><a href="https://github.com/kettle-dev/kettle-soup-cover">GitHub</a></td>
+        <td>SimpleCov coverage policy and reporting</td>
+        <td><a href="https://bestgems.org/gems/kettle-soup-cover"><img src="https://img.shields.io/gem/rd/kettle-soup-cover.svg?style=flat-square" alt="Daily download rank for kettle-soup-cover"></a></td>
+      </tr>
+      <tr>
+        <td><a href="https://bestgems.org/gems/kettle-test">kettle-test</a></td>
+        <td><a href="https://github.com/kettle-dev/kettle-test">GitHub</a></td>
+        <td>standard test runner and coverage harness</td>
+        <td><a href="https://bestgems.org/gems/kettle-test"><img src="https://img.shields.io/gem/rd/kettle-test.svg?style=flat-square" alt="Daily download rank for kettle-test"></a></td>
+      </tr>
+      <tr>
+        <td><a href="https://bestgems.org/gems/rubocop-lts">rubocop-lts</a></td>
+        <td><a href="https://github.com/rubocop-lts/rubocop-lts">GitHub</a></td>
+        <td>Ruby-version-aware linting</td>
+        <td><a href="https://bestgems.org/gems/rubocop-lts"><img src="https://img.shields.io/gem/rd/rubocop-lts.svg?style=flat-square" alt="Daily download rank for rubocop-lts"></a></td>
+      </tr>
+      <tr>
+        <td><a href="https://bestgems.org/gems/turbo_tests2">turbo_tests2</a></td>
+        <td><a href="https://github.com/galtzo-floss/turbo_tests2">GitHub</a></td>
+        <td>parallel test execution</td>
+        <td><a href="https://bestgems.org/gems/turbo_tests2"><img src="https://img.shields.io/gem/rd/turbo_tests2.svg?style=flat-square" alt="Daily download rank for turbo_tests2"></a></td>
+      </tr>
+    </tbody>
+  </table>
 
 </details>
 
@@ -589,15 +642,15 @@ chat rooms and mailing lists agrees to follow the <a href="https://github.com/ru
 <p>Also see GitLab Contributors: <a href="https://gitlab.com/ruby-oauth/oauth/-/graphs/main">https://gitlab.com/ruby-oauth/oauth/-/graphs/main</a></p>
 
 <details>
- <summary>⭐️ Star History</summary>
+  <summary>⭐️ Star History</summary>
 
-<a href="https://star-history.com/ruby-oauth/oauth&amp;Date">
- <picture>
+  <p><a href="https://star-history.com/ruby-oauth/oauth&amp;Date"></a></p>
+  <picture>
  <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=ruby-oauth/oauth&amp;type=Date&amp;theme=dark"></source>
  <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=ruby-oauth/oauth&amp;type=Date"></source>
  <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=ruby-oauth/oauth&amp;type=Date">
  </picture>
-</a>
+  <p>&lt;/a&gt;</p>
 
 </details>
 
@@ -743,7 +796,7 @@ Please consider sponsoring me or the project.</p>
 </div></div>
 
       <div id="footer">
-  Generated on Thu Jun 18 17:52:14 2026 by
+  Generated on Thu Jun 18 21:15:13 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.44 (ruby-4.0.5).
 </div>
