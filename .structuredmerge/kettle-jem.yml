@@ -295,7 +295,7 @@ yard_host: "{KJ|YARD_HOST}"
 # Full URL used for gemspec metadata["homepage_uri"].
 # Defaults to https://{KJ|YARD_HOST}.
 # ENV override: KJ_HOMEPAGE_URI
-homepage_uri: "https://structuredmerge.org"
+homepage_uri: "https://oauth.galtzo.com"
 
 # Template source inventory.
 # The packaged inventory is the canonical kettle-jem project template. It

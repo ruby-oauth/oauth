@@ -48,7 +48,7 @@ kettle_rb_local_gems_to_eval = kettle_rb_local_gems - %w[oauth] - declared_gems
 
 tree_sitter_language_pack_dev = ENV.fetch("TREE_SITTER_LANGUAGE_PACK_DEV", nil)
 if tree_sitter_language_pack_dev.to_s.empty? && ENV.fetch("SMORG_RB_DEV", "false").casecmp("false") != 0
-  candidate = File.expand_path("../../tree-sitter-language-pack/packages/ruby", ENV.fetch("SMORG_RB_DEV"))
+  candidate = File.expand_path("../../vendor/tree-sitter-language-pack/packages/ruby", ENV.fetch("SMORG_RB_DEV"))
   tree_sitter_language_pack_dev = candidate if Dir.exist?(candidate)
 end
 
