@@ -32,6 +32,8 @@ Please file a bug if you notice a violation of semantic versioning.
 ### Fixed
 
 - Corrected RubyGems homepage metadata to point at the gem documentation site.
+- Corrected persisted Open Collective and repository topology metadata used by
+  future template runs.
 
 ### Security
 
