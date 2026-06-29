@@ -413,6 +413,8 @@ files:
     strategy: accept_template
   Appraisal.root.gemfile:
     strategy: accept_template
+  Gemfile:
+    strategy: accept_template
   Rakefile:
     strategy: accept_template
   .github:

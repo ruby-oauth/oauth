@@ -30,7 +30,7 @@ module OAuth
         (consumer.access_token_url? ? consumer.access_token_url : consumer.access_token_path),
         self,
         options,
-        *arguments,
+        *arguments
       )
       OAuth::AccessToken.from_hash(consumer, response)
     end

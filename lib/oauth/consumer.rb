@@ -94,8 +94,8 @@ module OAuth
         # default. Cross-origin redirects can re-sign token requests for an
         # attacker-controlled endpoint, so they require explicit opt-in.
         token_request_max_redirects: 10,
-        token_request_cross_origin_redirects: false,
-      },
+        token_request_cross_origin_redirects: false
+      }
     )
 
     attr_accessor :options, :key, :secret
@@ -241,7 +241,7 @@ module OAuth
           (request_token_url? ? request_token_url : request_token_path),
           nil,
           request_options,
-          *arguments,
+          *arguments
         )
       end
       OAuth::RequestToken.from_hash(self, response)
@@ -490,7 +490,7 @@ module OAuth
           proxy_uri.host,
           proxy_uri.port,
           proxy_uri.user,
-          proxy_uri.password,
+          proxy_uri.password
         )
       end
 

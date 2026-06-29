@@ -66,7 +66,7 @@ module Net
         signature_method: nil,
         nonce: nil,
         timestamp: nil,
-        body_hash_enabled: true,
+        body_hash_enabled: true
       }.merge(options)
     end
 

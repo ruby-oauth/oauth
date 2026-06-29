@@ -38,7 +38,7 @@ module OAuth
           "oauth_nonce" => nonce,
           "oauth_verifier" => options[:oauth_verifier],
           "oauth_version" => options[:oauth_version] || "1.0",
-          "oauth_session_handle" => options[:oauth_session_handle],
+          "oauth_session_handle" => options[:oauth_session_handle]
         }
         allowed_empty_params = options[:allow_empty_params]
         if allowed_empty_params != true && !allowed_empty_params.is_a?(Array)
@@ -53,7 +53,7 @@ module OAuth
           uri: options[:request_uri],
           consumer: options[:consumer],
           token: options[:token],
-          unsigned_parameters: options[:unsigned_parameters],
+          unsigned_parameters: options[:unsigned_parameters]
         }.merge(extra_options))
       end
 
@@ -62,7 +62,7 @@ module OAuth
           uri: options[:request_uri],
           consumer: options[:consumer],
           token: options[:token],
-          parameters: oauth_parameters,
+          parameters: oauth_parameters
         }.merge(extra_options))
       end
 

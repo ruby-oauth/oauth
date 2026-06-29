@@ -18,7 +18,7 @@ begin
       original_warning_warn.call(message)
     end
   end
-rescue StandardError # rubocop:disable Lint/SuppressedException -- best-effort; don't break older Rubies
+rescue # rubocop:disable Lint/SuppressedException -- best-effort; don't break older Rubies
   # If Warning.method(:warn) is not available on this Ruby, or redefining fails,
   # silently skip — tests can proceed without the filter.
 end

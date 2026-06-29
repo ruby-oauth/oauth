@@ -32,7 +32,7 @@ module OAuth
 
       def normalized_uri
         super
-      rescue StandardError
+      rescue
         # if this is a non-standard URI, it may not parse properly
         # in that case, assume that it's already been normalized
         uri

@@ -17,7 +17,7 @@ RSpec.describe OAuth::Consumer do
         access_token_path: "/oauth/example/access_token.php",
         authorize_path: "/oauth/example/authorize.php",
         scheme: :header,
-        http_method: :get,
+        http_method: :get
       )
 
       expect(consumer.key).to eq(consumer_key)
@@ -76,7 +76,7 @@ RSpec.describe OAuth::Consumer do
         site: "http://twitter.com",
         request_token_url: "http://oauth.twitter.com/request_token",
         access_token_url: "http://oauth.twitter.com/access_token",
-        authorize_url: "http://site.twitter.com/authorize",
+        authorize_url: "http://site.twitter.com/authorize"
       )
 
       expect(consumer.request_token_path).to eq("/oauth/request_token")
@@ -132,7 +132,7 @@ RSpec.describe OAuth::Consumer do
         "/people",
         nil,
         {},
-        {key: {subkey: "value"}},
+        {key: {subkey: "value"}}
       )
 
       expect(request.body).to eq("key%5Bsubkey%5D=value")
@@ -186,7 +186,7 @@ RSpec.describe OAuth::Consumer do
       seen_options = []
       responses = [
         token_response(response_class, "302", "", "location" => "http://twitter.com/oauth/next?step=1"),
-        token_response(response_class, "200", "oauth_token=requestkey&oauth_token_secret=requestsecret"),
+        token_response(response_class, "200", "oauth_token=requestkey&oauth_token_secret=requestsecret")
       ]
       stub_token_request_sequence(consumer, responses, seen_paths, seen_options)
 
@@ -205,7 +205,7 @@ RSpec.describe OAuth::Consumer do
       seen_paths = []
       responses = [
         token_response(response_class, "302", "", "location" => "continued"),
-        token_response(response_class, "200", "oauth_token=requestkey&oauth_token_secret=requestsecret"),
+        token_response(response_class, "200", "oauth_token=requestkey&oauth_token_secret=requestsecret")
       ]
       stub_token_request_sequence(consumer, responses, seen_paths)
 
@@ -218,7 +218,7 @@ RSpec.describe OAuth::Consumer do
       consumer = described_class.new("key", "secret", site: "https://api.example.com")
       seen_paths = []
       responses = [
-        token_response(response_class, "302", "", "location" => "https://evil.example/oauth/request_token"),
+        token_response(response_class, "302", "", "location" => "https://evil.example/oauth/request_token")
       ]
       stub_token_request_sequence(consumer, responses, seen_paths)
 
@@ -231,7 +231,7 @@ RSpec.describe OAuth::Consumer do
       consumer = described_class.new("key", "secret", site: "https://api.example.com")
       seen_paths = []
       responses = [
-        token_response(response_class, "302", "", "location" => "//evil.example/oauth/request_token"),
+        token_response(response_class, "302", "", "location" => "//evil.example/oauth/request_token")
       ]
       stub_token_request_sequence(consumer, responses, seen_paths)
 
@@ -244,7 +244,7 @@ RSpec.describe OAuth::Consumer do
       seen_paths = []
       responses = [
         token_response(response_class, "302", "", "location" => "https://issuer.example/oauth/request_token?via=redirect"),
-        token_response(response_class, "200", "oauth_token=requestkey&oauth_token_secret=requestsecret"),
+        token_response(response_class, "200", "oauth_token=requestkey&oauth_token_secret=requestsecret")
       ]
       stub_token_request_sequence(consumer, responses, seen_paths)
 
@@ -259,7 +259,7 @@ RSpec.describe OAuth::Consumer do
       seen_paths = []
       responses = [
         token_response(response_class, "302", "", "location" => "/oauth/first"),
-        token_response(response_class, "302", "", "location" => "/oauth/second"),
+        token_response(response_class, "302", "", "location" => "/oauth/second")
       ]
       stub_token_request_sequence(consumer, responses, seen_paths)
 
@@ -277,7 +277,7 @@ RSpec.describe OAuth::Consumer do
         "secret",
         site: "https://api.mysite.co.nz/v1",
         request_token_url: "https://authentication.mysite.co.nz/Oauth/RequestToken",
-        no_verify: true,
+        no_verify: true
       )
 
       stub_request(:post, "https://authentication.mysite.co.nz/Oauth/RequestToken").to_return(body: "success", status: 200)
@@ -296,7 +296,7 @@ RSpec.describe OAuth::Consumer do
       allow(http_instance).to receive(:set_debug_output)
       allow(http_instance).to receive_messages(
         address: "authentication.mysite.co.nz",
-        request: double(to_hash: {}, code: "200", body: ""),
+        request: double(to_hash: {}, code: "200", body: "")
       )
       expect(http_instance).to receive(:verify_mode=).with(OpenSSL::SSL::VERIFY_NONE)
 
@@ -310,7 +310,7 @@ RSpec.describe OAuth::Consumer do
         "secret",
         site: "https://api.mysite.co.nz/v1",
         request_token_url: "https://authentication.mysite.co.nz/Oauth/RequestToken",
-        no_verify: false,
+        no_verify: false
       )
 
       stub_request(:post, "https://authentication.mysite.co.nz/Oauth/RequestToken").to_return(body: "success", status: 200)
@@ -328,7 +328,7 @@ RSpec.describe OAuth::Consumer do
       allow(http_instance).to receive(:set_debug_output)
       allow(http_instance).to receive_messages(
         address: "authentication.mysite.co.nz",
-        request: double(to_hash: {}, code: "200", body: ""),
+        request: double(to_hash: {}, code: "200", body: "")
       )
       expect(http_instance).to receive(:verify_mode=).with(OpenSSL::SSL::VERIFY_PEER)
 
@@ -340,7 +340,7 @@ RSpec.describe OAuth::Consumer do
         "key",
         "secret",
         site: "https://api.mysite.co.nz/v1",
-        request_token_url: "https://authentication.mysite.co.nz/Oauth/RequestToken",
+        request_token_url: "https://authentication.mysite.co.nz/Oauth/RequestToken"
       )
 
       stub_request(:post, "https://authentication.mysite.co.nz/Oauth/RequestToken").to_return(body: "success", status: 200)
@@ -359,7 +359,7 @@ RSpec.describe OAuth::Consumer do
       allow(http_instance).to receive_messages(
         :verify_mode= => nil,
         :address => "authentication.mysite.co.nz",
-        :request => double(to_hash: {}, code: "200", body: ""),
+        :request => double(to_hash: {}, code: "200", body: "")
       )
 
       expect { consumer.get_request_token }.not_to raise_error

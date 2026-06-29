@@ -34,7 +34,7 @@ if OAuth::Optional.em_http_available?
           scheme: "header",
           signature_method: nil,
           nonce: nil,
-          timestamp: nil,
+          timestamp: nil
         }.merge(options)
 
         @oauth_helper = OAuth::Client::Helper.new(self, options)
@@ -62,7 +62,7 @@ if OAuth::Optional.em_http_available?
           scheme: "header",
           signature_method: nil,
           nonce: nil,
-          timestamp: nil,
+          timestamp: nil
         }.merge(options)
 
         OAuth::Client::Helper.new(self, options).signature_base_string

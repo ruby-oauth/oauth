@@ -12,7 +12,7 @@ begin
         "REQUEST_METHOD" => "POST",
         "rack.input" => StringIO.new("foo=bar"),
         "CONTENT_TYPE" => "application/x-www-form-urlencoded",
-        "PATH_INFO" => "/widgets",
+        "PATH_INFO" => "/widgets"
       }
       req = ActionDispatch::Request.new(env)
 

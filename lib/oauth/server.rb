@@ -13,7 +13,7 @@ module OAuth
     @@server_paths = {
       request_token_path: "/oauth/request_token",
       authorize_path: "/oauth/authorize",
-      access_token_path: "/oauth/access_token",
+      access_token_path: "/oauth/access_token"
     }
 
     # Create a new server instance
@@ -40,8 +40,8 @@ module OAuth
           site: base_url,
           request_token_path: request_token_path,
           authorize_path: authorize_path,
-          access_token_path: access_token_path,
-        },
+          access_token_path: access_token_path
+        }
       )
     end
 

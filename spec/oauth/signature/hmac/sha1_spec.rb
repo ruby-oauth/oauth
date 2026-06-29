@@ -15,8 +15,8 @@ RSpec.describe OAuth::Signature::HMAC::SHA1 do
           "oauth_nonce" => "wIjqoS",
           "oauth_callback" => "http://printer.example.com/ready",
           "oauth_version" => "1.0",
-          "oauth_signature" => "xcHYBV3AbyoDz7L4dV10P3oLCjY=",
-        },
+          "oauth_signature" => "xcHYBV3AbyoDz7L4dV10P3oLCjY="
+        }
       )
 
       expect(described_class.new(request, consumer_secret: "kd94hf93k423kf44").verify).to be true
@@ -34,8 +34,8 @@ RSpec.describe OAuth::Signature::HMAC::SHA1 do
           "oauth_nonce" => "wIjqoS",
           "oauth_callback" => "http://printer.example.com/ready",
           "oauth_version" => "1.0",
-          "oauth_signature" => "xcHYBV3AbyoDz7L4dV10P3oLCjZ=",
-        },
+          "oauth_signature" => "xcHYBV3AbyoDz7L4dV10P3oLCjZ="
+        }
       )
 
       expect(described_class.new(request, consumer_secret: "kd94hf93k423kf44").verify).to be false

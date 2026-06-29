@@ -14,7 +14,7 @@ module ActionController
     if defined? ActionDispatch
       def process_with_new_base_test(request, response = nil)
         request.apply_oauth! if request.respond_to?(:apply_oauth!)
-        super(request, response)
+        super
       end
     else
       def process_with_oauth(request, response = nil)
@@ -45,7 +45,7 @@ module ActionController
         scheme: "header",
         signature_method: nil,
         nonce: nil,
-        timestamp: nil,
+        timestamp: nil
       }.merge(options)
     end
 
@@ -54,7 +54,7 @@ module ActionController
 
       @oauth_helper = OAuth::Client::Helper.new(
         self,
-        @oauth_options.merge(request_uri: (respond_to?(:fullpath) ? fullpath : request_uri)),
+        @oauth_options.merge(request_uri: (respond_to?(:fullpath) ? fullpath : request_uri))
       )
       @oauth_helper.amend_user_agent_header(env)
 

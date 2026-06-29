@@ -51,11 +51,11 @@ RSpec.describe OAuth::Helper do
         "oauth_timestamp" => "1240004133",
         "oauth_consumer_key" => "vince_clortho",
         "oauth_token" => "token_value",
-        "oauth_version" => "1.0",
+        "oauth_version" => "1.0"
       }
 
       expect(
-        described_class.normalize(params),
+        described_class.normalize(params)
       ).to eq("oauth_consumer_key=vince_clortho&oauth_nonce=nonce&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1240004133&oauth_token=token_value&oauth_version=1.0&weight%5Bvalue%5D=65")
     end
 
@@ -68,11 +68,11 @@ RSpec.describe OAuth::Helper do
         "oauth_timestamp" => "1240004133",
         "oauth_consumer_key" => "vince_clortho",
         "oauth_token" => "token_value",
-        "oauth_version" => "1.0",
+        "oauth_version" => "1.0"
       }
 
       expect(
-        described_class.normalize(params),
+        described_class.normalize(params)
       ).to eq("items%5B%5D%5Ba%5D=1&items%5B%5D%5Bb%5D=2&oauth_consumer_key=vince_clortho&oauth_nonce=nonce&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1240004133&oauth_token=token_value&oauth_version=1.0&weight%5Bvalue%5D=65")
     end
   end
@@ -86,11 +86,11 @@ RSpec.describe OAuth::Helper do
 
     it "handles nested hash with ordering" do
       expect(
-        described_class.normalize_nested_query({user: {twitter_id: 123, date: "2011-10-05", age: 12}}, "prefix"),
+        described_class.normalize_nested_query({user: {twitter_id: 123, date: "2011-10-05", age: 12}}, "prefix")
       ).to eq([
         "prefix%5Buser%5D%5Bage%5D=12",
         "prefix%5Buser%5D%5Bdate%5D=2011-10-05",
-        "prefix%5Buser%5D%5Btwitter_id%5D=123",
+        "prefix%5Buser%5D%5Btwitter_id%5D=123"
       ])
     end
   end
@@ -152,7 +152,7 @@ RSpec.describe OAuth::Helper do
         "AZaz09-._~",
         "a b+c&d=e/f%g*h",
         "Café",
-        "\u2603 and space",
+        "\u2603 and space"
       ]
       samples.each do |s|
         enc = described_class.escape(s)

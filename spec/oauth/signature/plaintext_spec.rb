@@ -21,8 +21,8 @@ RSpec.describe OAuth::Signature::PLAINTEXT do
           request,
           consumer: consumer,
           token: token,
-          uri: "http://photos.example.net/photos",
-        ),
+          uri: "http://photos.example.net/photos"
+        )
       ).to be true
     end
 
@@ -37,8 +37,8 @@ RSpec.describe OAuth::Signature::PLAINTEXT do
           request,
           consumer: consumer,
           token: token,
-          uri: "http://photos.example.net/photos",
-        ),
+          uri: "http://photos.example.net/photos"
+        )
       ).to be true
     end
   end

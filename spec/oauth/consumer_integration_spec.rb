@@ -15,8 +15,8 @@ RSpec.describe OAuth::Consumer do
         access_token_path: "/oauth/example/access_token.php",
         authorize_path: "/oauth/example/authorize.php",
         scheme: :header,
-        http_method: :get,
-      },
+        http_method: :get
+      }
     )
   end
   let(:token) { OAuth::ConsumerToken.new(consumer, "token_411a7f", "3196ffd991c8ebdb") }
@@ -96,7 +96,7 @@ RSpec.describe OAuth::Consumer do
         "#{request_uri.path}?key=value",
         token,
         {nonce: nonce, timestamp: timestamp},
-        request_parameters,
+        request_parameters
       )
 
       expect(request.method).to eq("GET")
@@ -113,7 +113,7 @@ RSpec.describe OAuth::Consumer do
         token,
         {nonce: nonce, timestamp: timestamp},
         request_parameters,
-        {},
+        {}
       )
 
       expect(request.method).to eq("POST")
@@ -131,7 +131,7 @@ RSpec.describe OAuth::Consumer do
         token,
         {scheme: "body", nonce: nonce, timestamp: timestamp},
         request_parameters,
-        {},
+        {}
       )
 
       expect(request.method).to eq("POST")
@@ -168,8 +168,8 @@ RSpec.describe OAuth::Consumer do
           site: "http://term.ie",
           request_token_path: "/oauth/example/request_token.php",
           access_token_path: "/oauth/example/access_token.php",
-          authorize_path: "/oauth/example/authorize.php",
-        },
+          authorize_path: "/oauth/example/authorize.php"
+        }
       )
 
       expect(consumer2.request_token_url).to eq("http://term.ie/oauth/example/request_token.php")
@@ -206,8 +206,8 @@ RSpec.describe OAuth::Consumer do
           request_token_path: "/oauth/example/request_token.php",
           access_token_path: "/oauth/example/access_token.php",
           authorize_path: "/oauth/example/authorize.php",
-          scheme: :header,
-        },
+          scheme: :header
+        }
       )
       options = {nonce: "nonce", timestamp: Time.now.to_i.to_s}
 
@@ -215,7 +215,7 @@ RSpec.describe OAuth::Consumer do
       signature_base_string = consumer2.signature_base_string(request, nil, options)
 
       expect(signature_base_string).to eq(
-        "GET&http%3A%2F%2Fterm.ie%2Foauth%2Fexample%2Frequest_token.php&oauth_consumer_key%3Dkey%26oauth_nonce%3D#{options[:nonce]}%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D#{options[:timestamp]}%26oauth_version%3D1.0",
+        "GET&http%3A%2F%2Fterm.ie%2Foauth%2Fexample%2Frequest_token.php&oauth_consumer_key%3Dkey%26oauth_nonce%3D#{options[:nonce]}%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D#{options[:timestamp]}%26oauth_version%3D1.0"
       )
 
       consumer2.sign!(request, nil, options)
@@ -266,7 +266,7 @@ RSpec.describe OAuth::Consumer do
         "key",
         "secret",
         site: "https://api.example",
-        request_token_url: "https://auth.example/oauth/request_token",
+        request_token_url: "https://auth.example/oauth/request_token"
       )
 
       request_token = consumer2.get_request_token

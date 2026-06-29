@@ -87,7 +87,7 @@ RSpec.describe OAuth::TTY::CLI do
       normalized = out.lines.map { |l| l.strip }
       expected = [
         "OAuth Gem #{OAuth::Version::VERSION}",
-        "OAuth TTY Gem #{OAuth::TTY::Version::VERSION}",
+        "OAuth TTY Gem #{OAuth::TTY::Version::VERSION}"
       ]
       expect(normalized).to eq(expected)
     end
@@ -114,7 +114,7 @@ RSpec.describe OAuth::TTY::CLI do
 
       allow(OAuth::Helper).to receive_messages(
         generate_key: "GENERATE_KEY",
-        generate_timestamp: "GENERATE_TIMESTAMP",
+        generate_timestamp: "GENERATE_TIMESTAMP"
       )
 
       expect(OAuth::Consumer).to receive(:new) do |key, secret, options|
@@ -161,7 +161,7 @@ RSpec.describe OAuth::TTY::CLI do
 
       allow(OAuth::Helper).to receive_messages(
         generate_key: "GENERATE_KEY",
-        generate_timestamp: "GENERATE_TIMESTAMP",
+        generate_timestamp: "GENERATE_TIMESTAMP"
       )
 
       expect(OAuth::Consumer).to receive(:new) do |key, secret, options|
@@ -175,7 +175,7 @@ RSpec.describe OAuth::TTY::CLI do
       allow(consumer).to receive(:get_request_token).with({oauth_callback: nil}, {}).and_return(request_token)
       allow(request_token).to receive_messages(
         authorize_url: "!url1!",
-        callback_confirmed?: false,
+        callback_confirmed?: false
       )
       allow(request_token).to receive(:get_access_token).with({oauth_verifier: nil}).and_return(access_token)
 
@@ -206,7 +206,7 @@ RSpec.describe OAuth::TTY::CLI do
 
       allow(OAuth::Helper).to receive_messages(
         generate_key: "GENERATE_KEY",
-        generate_timestamp: "GENERATE_TIMESTAMP",
+        generate_timestamp: "GENERATE_TIMESTAMP"
       )
 
       out = []

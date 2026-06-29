@@ -8,7 +8,7 @@ RSpec.describe OAuth::AccessToken do
     {
       user_id: 5_734_758_743_895,
       oauth_token: "key",
-      oauth_token_secret: "secret",
+      oauth_token_secret: "secret"
     }
   end
 

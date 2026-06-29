@@ -15,8 +15,8 @@ RSpec.describe OAuth::Signature::HMAC::SHA256 do
           "oauth_nonce" => "wIjqoS",
           "oauth_callback" => "http://printer.example.com/ready",
           "oauth_version" => "1.0",
-          "oauth_signature" => "tkpCGNHi3laWBHQ9+Ka5IOeixEuhxg12LTMlLJxQxKc=",
-        },
+          "oauth_signature" => "tkpCGNHi3laWBHQ9+Ka5IOeixEuhxg12LTMlLJxQxKc="
+        }
       )
 
       # This test in MiniTest asserts truthiness for a specific vector; here we assert it verifies.
@@ -34,8 +34,8 @@ RSpec.describe OAuth::Signature::HMAC::SHA256 do
           "oauth_nonce" => "wIjqoS",
           "oauth_callback" => "http://printer.example.com/ready",
           "oauth_version" => "1.0",
-          "oauth_signature" => "not-a-real-valid-signature==",
-        },
+          "oauth_signature" => "not-a-real-valid-signature=="
+        }
       )
 
       expect(described_class.new(request, consumer_secret: "kd94hf93k423kf44").verify).to be false

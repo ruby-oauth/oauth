@@ -19,12 +19,12 @@ RSpec.describe Net::HTTP do
     expect(request["authorization"]).to include("OAuth ")
     # Do not assert the exact signature bytes here; just ensure core fields are present
     expect(request["authorization"]).to include(
-      "oauth_consumer_key=\"consumer_key_86cad9\"",
+      "oauth_consumer_key=\"consumer_key_86cad9\""
     )
     expect(request["authorization"]).to include(
-      "oauth_token=\"token_411a7f\"",
+      "oauth_token=\"token_411a7f\""
     )
-    expect(request["authorization"]).to match(/oauth_signature_method=\"HMAC-SHA1\"|oauth_signature_method=\"PLAINTEXT\"/)
+    expect(request["authorization"]).to match(/oauth_signature_method="HMAC-SHA1"|oauth_signature_method="PLAINTEXT"/)
   end
 
   it "adds body hash for POST with data and content type" do

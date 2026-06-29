@@ -10,7 +10,7 @@ begin
         "REQUEST_METHOD" => "GET",
         "rack.input" => StringIO.new(""),
         "QUERY_STRING" => "a=1&b=2",
-        "PATH_INFO" => "/test",
+        "PATH_INFO" => "/test"
       }
       req = ActionDispatch::Request.new(env)
 
