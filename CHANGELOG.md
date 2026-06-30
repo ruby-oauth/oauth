@@ -38,6 +38,8 @@ Please file a bug if you notice a violation of semantic versioning.
 - Corrected persisted Open Collective and repository topology metadata used by
   future template runs.
 
+- Package configured license files in gem release file lists.
+
 ### Security
 
 ## [1.1.8] - 2026-06-18
