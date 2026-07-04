@@ -3,9 +3,9 @@
     {
       "file": "CHANGELOG.md",
       "lines": [
-        219,
-        228,
-        251
+        221,
+        230,
+        253
       ]
     }
   ],
@@ -52,15 +52,6 @@
         44,
         51,
         58
-      ]
-    }
-  ],
-  "prefix: \"RUBY_OAUTH\",\npath_env: \"RUBY_OAUTH_DEV\",": [
-    {
-      "file": "Gemfile",
-      "lines": [
-        65,
-        95
       ]
     }
   ]
