@@ -114,7 +114,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency("base64", "~> 0.1") # became a bundled gem in ruby 3.4 (was default from 3.0 to 3.3)
   spec.add_dependency("oauth-tty", "~> 1.0", ">= 1.0.12")               # ruby >= 2.3.0
   spec.add_dependency("snaky_hash", "~> 2.0", ">= 2.0.5")               # ruby >= 2.2.0
-  spec.add_dependency("version_gem", "~> 1.1", ">= 1.1.14")  # ruby >= 2.2.0
+  spec.add_dependency("version_gem", "~> 1.1", ">= 1.1.14")              # ruby >= 2.2.0
 
   # NOTE: It is preferable to list development dependencies in the gemspec due to increased
   #       visibility and discoverability.
@@ -130,7 +130,7 @@ Gem::Specification.new do |spec|
   #       and preferably a modular one (see gemfiles/modular/*.gemfile).
 
   # Dev, Test, & Release Tasks
-  spec.add_development_dependency("kettle-dev", "~> 2.3", ">= 2.3.2")     # ruby >= 2.4
+  spec.add_development_dependency("kettle-dev", "~> 2.3", ">= 2.3.3")     # ruby >= 2.4
 
   # Security
   spec.add_development_dependency("bundler-audit", "~> 0.9.3")                      # ruby >= 2.0.0
