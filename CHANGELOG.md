@@ -28,6 +28,10 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
+- Updated the dep-heads workflow so current TruffleRuby uses the generated
+  `gemfiles/dep_heads.gemfile` directly, avoiding Appraisal bootstrap failures
+  with TruffleRuby's bundled RubyGems/Bundler and gem.coop.
+
 ### Security
 
 ## [1.1.8] - 2026-07-15
