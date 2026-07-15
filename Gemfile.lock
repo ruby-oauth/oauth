@@ -387,7 +387,7 @@ GEM
       rspec (~> 3.0)
       timecop (>= 0.7, < 1)
     tsort (0.2.0)
-    turbo_tests2 (3.1.8)
+    turbo_tests2 (3.1.9)
       parallel_tests (>= 3.3.0, < 6)
       rspec (>= 3.10)
       version_gem (~> 1.1, >= 1.1.14)
@@ -475,7 +475,7 @@ DEPENDENCIES
   standard (~> 1.54, >= 1.54.0)
   stone_checksums (~> 1.0, >= 1.0.6)
   stringio (>= 3.0)
-  turbo_tests2 (~> 3.1, >= 3.1.8)
+  turbo_tests2 (~> 3.1, >= 3.1.9)
   typhoeus (>= 0.1.13)
   vcr (>= 4)
   version_gem!
@@ -627,7 +627,7 @@ CHECKSUMS
   timecop (0.9.11) sha256=41284dc6e5041f2184f781ace766f942108c842f8d8c1386a26e6343decc7542
   timecop-rspec (1.0.3) sha256=005f14841bb606dcaefb060e321b5388e2e59537742bee8b3a9a9a40e598fab9
   tsort (0.2.0) sha256=9650a793f6859a43b6641671278f79cfead60ac714148aabe4e3f0060480089f
-  turbo_tests2 (3.1.8) sha256=eb9b9db42b982ceeded7e5b8cc034b4c2994730fe6bfc572092aef0ce9d7ed26
+  turbo_tests2 (3.1.9) sha256=535e6f081de0821f6cb8a1a4ee1a106d0dc6fb817f4f9d4268776d8a94c4879f
   typhoeus (1.6.0) sha256=bacc41c23e379547e29801dc235cd1699b70b955a1ba3d32b2b877aa844c331d
   unicode-display_width (3.2.0) sha256=0cdd96b5681a5949cdbc2c55e7b420facae74c4aaf9a9815eee1087cb1853c42
   unicode-emoji (4.2.0) sha256=519e69150f75652e40bf736106cfbc8f0f73aa3fb6a65afe62fefa7f80b0f80f
