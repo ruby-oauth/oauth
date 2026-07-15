@@ -123,7 +123,12 @@ test bootstrap, including Ruby 2.4 backports.</li>
     <p>Corrected persisted Open Collective and repository topology metadata used by<br>
 future template runs.</p>
   </li>
-  <li>Package configured license files in gem release file lists.</li>
+  <li>
+    <p>Package configured license files in gem release file lists.</p>
+  </li>
+  <li>Updated the dep-heads workflow so current TruffleRuby uses the generated<br>
+<code>gemfiles/dep_heads.gemfile</code> directly, avoiding Appraisal bootstrap failures<br>
+with TruffleRuby’s bundled RubyGems/Bundler and gem.coop.</li>
 </ul>
 
 <h3 id="added-1">Added</h3>
@@ -1336,7 +1341,7 @@ http://code.google.com/p/oauth-plugin/</li>
 </div></div>
 
       <div id="footer">
-  Generated on Wed Jul 15 00:44:55 2026 by
+  Generated on Wed Jul 15 08:34:02 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.45 (ruby-4.0.6).
 </div>
