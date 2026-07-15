@@ -6,7 +6,7 @@
 <title>
   File: CHANGELOG
   
-    &mdash; Documentation by YARD 0.9.44
+    &mdash; Documentation by YARD 0.9.45
   
 </title>
 
@@ -84,14 +84,14 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 
 <h3 id="security">Security</h3>
 
-<h2 id="118---2026-06-18">
-<a href="https://github.com/ruby-oauth/oauth/compare/v1.1.7...v1.1.8">1.1.8</a> - 2026-06-18</h2>
+<h2 id="118---2026-07-15">
+<a href="https://github.com/ruby-oauth/oauth/compare/v1.1.7...v1.1.8">1.1.8</a> - 2026-07-15</h2>
 
 <ul>
   <li>TAG: <a href="https://github.com/ruby-oauth/oauth/releases/tag/v1.1.8">v1.1.8</a>
 </li>
-  <li>COVERAGE: 88.27% – 835/946 lines in 33 files</li>
-  <li>BRANCH COVERAGE: 58.67% – 159/271 branches in 33 files</li>
+  <li>COVERAGE: 69.47% – 835/1202 lines in 42 files</li>
+  <li>BRANCH COVERAGE: 47.75% – 159/333 branches in 42 files</li>
   <li>40.38% documented</li>
 </ul>
 
@@ -102,7 +102,12 @@ Please file a bug if you notice a violation of semantic versioning.</p>
   <li>Raised the <code>auth-sanitizer</code> runtime dependency floor to <code>&gt;= 0.2.2</code> and<br>
 switched isolated sanitizer loading to the released <code>anonymous_loader</code> gem,<br>
 including local workspace wiring for the new runtime dependency.</li>
-  <li>Raised the <code>oauth-tty</code> runtime dependency floor to <code>&gt;= 1.0.11</code>.</li>
+  <li>
+    <p>Raised the <code>oauth-tty</code> runtime dependency floor to <code>&gt;= 1.0.11</code>.</p>
+  </li>
+  <li>Raised the <code>anonymous_loader</code> runtime dependency floor to <code>&gt;= 0.1.2</code>.</li>
+  <li>Retemplated generated project metadata, support documentation, CI workflows,<br>
+binstubs, and development dependency floors with <code>kettle-jem</code> v7.0.0.</li>
 </ul>
 
 <h3 id="fixed-1">Fixed</h3>
@@ -110,7 +115,21 @@ including local workspace wiring for the new runtime dependency.</li>
 <ul>
   <li>Updated the auth-sanitizer subprocess isolation spec to load the standard<br>
 test bootstrap, including Ruby 2.4 backports.</li>
-  <li>Made the Ruby 2.4 appraisal’s legacy <code>cgi</code> dependency explicit.</li>
+  <li>
+    <p>Made the Ruby 2.4 appraisal’s legacy <code>cgi</code> dependency explicit.</p>
+  </li>
+  <li>Corrected RubyGems homepage metadata to point at the gem documentation site.</li>
+  <li>
+    <p>Corrected persisted Open Collective and repository topology metadata used by<br>
+future template runs.</p>
+  </li>
+  <li>Package configured license files in gem release file lists.</li>
+</ul>
+
+<h3 id="added-1">Added</h3>
+
+<ul>
+  <li>Added support for JRuby 10.1 and TruffleRuby 34.0.</li>
 </ul>
 
 <h2 id="117---2026-06-15">
@@ -225,7 +244,7 @@ when they cross origins unless explicitly enabled.</li>
   <li>40.78% documented</li>
 </ul>
 
-<h3 id="added-1">Added</h3>
+<h3 id="added-2">Added</h3>
 
 <ul>
   <li>Add <code>auth-sanitizer</code> integration for inspect-time secret redaction in core OAuth objects.</li>
@@ -249,7 +268,7 @@ when they cross origins unless explicitly enabled.</li>
   <li>40.71% documented</li>
 </ul>
 
-<h3 id="added-2">Added</h3>
+<h3 id="added-3">Added</h3>
 
 <ul>
   <li>base64 dependency, fixes Ruby 3.4 and 3.5 HEAD compatibility</li>
@@ -280,7 +299,7 @@ when they cross origins unless explicitly enabled.</li>
   <li>40.71% documented</li>
 </ul>
 
-<h3 id="added-3">Added</h3>
+<h3 id="added-4">Added</h3>
 
 <ul>
   <li>Corrected SHA-256 &amp; SHA-512 checksums for release 1.1.1</li>
@@ -297,7 +316,7 @@ when they cross origins unless explicitly enabled.</li>
   <li>40.71% documented</li>
 </ul>
 
-<h3 id="added-4">Added</h3>
+<h3 id="added-5">Added</h3>
 
 <ul>
   <li>kettle-dev v1.1.18</li>
@@ -388,7 +407,7 @@ when they cross origins unless explicitly enabled.</li>
   <li>Dropped support for Rails &lt; 6</li>
 </ul>
 
-<h3 id="added-5">Added</h3>
+<h3 id="added-6">Added</h3>
 
 <ul>
   <li>New EOL Policy
@@ -432,7 +451,7 @@ when they cross origins unless explicitly enabled.</li>
   <li>Change references to master =&gt; main</li>
 </ul>
 
-<h3 id="added-6">Added</h3>
+<h3 id="added-7">Added</h3>
 
 <ul>
   <li>Post install note about v0.6.x EOL approaching in April, 2024</li>
@@ -446,7 +465,7 @@ when they cross origins unless explicitly enabled.</li>
 </li>
 </ul>
 
-<h3 id="added-7">Added</h3>
+<h3 id="added-8">Added</h3>
 
 <ul>
   <li>New option <code>body_hash_enabled</code> which defaults to true to maintain backward compatibility with prior releases. Setting to <code>false</code> disables generation of a <code>oauth_body_hash</code> component as part of the signature computation.</li>
@@ -530,7 +549,7 @@ when they cross origins unless explicitly enabled.</li>
 
 <p>The “Is this the last release with a silly name?” Release</p>
 
-<h3 id="added-8">Added</h3>
+<h3 id="added-9">Added</h3>
 
 <ul>
   <li>Post install note about v0.5.x EOL approaching in April, 2023</li>
@@ -553,7 +572,7 @@ when they cross origins unless explicitly enabled.</li>
 
 <p>The “Can it be the end of the line for 0.5.x?” Release</p>
 
-<h3 id="added-9">Added</h3>
+<h3 id="added-10">Added</h3>
 
 <ul>
   <li>Major updates to Documentation</li>
@@ -574,7 +593,7 @@ when they cross origins unless explicitly enabled.</li>
 </li>
 </ul>
 
-<h3 id="added-10">Added</h3>
+<h3 id="added-11">Added</h3>
 
 <ul>
   <li>Documentation related to Ruby compatibility</li>
@@ -599,7 +618,7 @@ when they cross origins unless explicitly enabled.</li>
 </li>
 </ul>
 
-<h3 id="added-11">Added</h3>
+<h3 id="added-12">Added</h3>
 
 <ul>
   <li>Added more documentation files to packaged gem, e.g. SECURITY.md, CODE_OF_CONDUCT.md</li>
@@ -619,7 +638,7 @@ when they cross origins unless explicitly enabled.</li>
 </li>
 </ul>
 
-<h3 id="added-12">Added</h3>
+<h3 id="added-13">Added</h3>
 
 <ul>
   <li>Setup Rubocop (#205, #208 by @pboling)</li>
@@ -668,7 +687,7 @@ when they cross origins unless explicitly enabled.</li>
 </li>
 </ul>
 
-<h3 id="added-13">Added</h3>
+<h3 id="added-14">Added</h3>
 
 <ul>
   <li>Add metadata to Gemspec file</li>
@@ -689,7 +708,7 @@ when they cross origins unless explicitly enabled.</li>
 </li>
 </ul>
 
-<h3 id="added-14">Added</h3>
+<h3 id="added-15">Added</h3>
 
 <ul>
   <li>Add :allow_empty_params option (#155)</li>
@@ -757,7 +776,7 @@ when they cross origins unless explicitly enabled.</li>
 </li>
 </ul>
 
-<h3 id="added-15">Added</h3>
+<h3 id="added-16">Added</h3>
 
 <ul>
   <li>Adding a development dependency that had not been mentioned (James Pinto)</li>
@@ -802,7 +821,7 @@ when they cross origins unless explicitly enabled.</li>
 </li>
 </ul>
 
-<h3 id="added-16">Added</h3>
+<h3 id="added-17">Added</h3>
 
 <ul>
   <li>Add license info to the gemspec (Robert Reiz)</li>
@@ -838,7 +857,7 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-17">Added</h3>
+<h3 id="added-18">Added</h3>
 
 <ul>
   <li>Add support for HTTP PATCH method (Richard Huang)</li>
@@ -882,7 +901,7 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-18">Added</h3>
+<h3 id="added-19">Added</h3>
 
 <ul>
   <li>Set a configurable timeout for all requests (Rick Olson)</li>
@@ -925,7 +944,7 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-19">Added</h3>
+<h3 id="added-20">Added</h3>
 
 <ul>
   <li>Add explicit require for rsa/sha1 (Juris Galang)</li>
@@ -955,7 +974,7 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-20">Added</h3>
+<h3 id="added-21">Added</h3>
 
 <ul>
   <li>Added support for Rails 3 in client/action_controller_request (Pelle)</li>
@@ -992,7 +1011,7 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-21">Added</h3>
+<h3 id="added-22">Added</h3>
 
 <ul>
   <li>Added Bundler (rc) Gemfile for easier dev/testing</li>
@@ -1014,7 +1033,7 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-22">Added</h3>
+<h3 id="added-23">Added</h3>
 
 <ul>
   <li>Added support for using OAuth with proxies (Marsh Gardiner)</li>
@@ -1035,7 +1054,7 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-23">Added</h3>
+<h3 id="added-24">Added</h3>
 
 <ul>
   <li>Added computation of oauth_body_hash as per OAuth Request Body Hash 1.0 Draft 4 (Michael Reinsch)</li>
@@ -1073,7 +1092,7 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-24">Added</h3>
+<h3 id="added-25">Added</h3>
 
 <ul>
   <li>Added -B CLI option to use the :body authentication scheme (Seth)</li>
@@ -1101,7 +1120,7 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-25">Added</h3>
+<h3 id="added-26">Added</h3>
 
 <ul>
   <li>
@@ -1142,7 +1161,7 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-26">Added</h3>
+<h3 id="added-27">Added</h3>
 
 <ul>
   <li>Support for arguments in OAuth::Consumer#get_access_token (Matt Sanford)</li>
@@ -1172,7 +1191,7 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-27">Added</h3>
+<h3 id="added-28">Added</h3>
 
 <ul>
   <li>Support applications using the MethodOverride Rack middleware (László Bácsi)</li>
@@ -1214,7 +1233,7 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-28">Added</h3>
+<h3 id="added-29">Added</h3>
 
 <ul>
   <li>Support ActionController::Request from Edge Rails (László Bácsi)</li>
@@ -1251,7 +1270,7 @@ Harald Sitter)</li>
 
 <p>The lets RSA release</p>
 
-<h3 id="added-29">Added</h3>
+<h3 id="added-30">Added</h3>
 
 <ul>
   <li>Improved support for Ruby 1.8.7 (Bill Kocik)</li>
@@ -1306,7 +1325,7 @@ but please have a look at the unit tests.</li>
 
 <h2 id="011-2007-11-26">0.1.1 2007-11-26</h2>
 
-<h3 id="added-30">Added</h3>
+<h3 id="added-31">Added</h3>
 
 <ul>
   <li>First release as a GEM</li>
@@ -1317,9 +1336,9 @@ http://code.google.com/p/oauth-plugin/</li>
 </div></div>
 
       <div id="footer">
-  Generated on Thu Jun 18 21:15:13 2026 by
+  Generated on Wed Jul 15 00:44:55 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.44 (ruby-4.0.5).
+  0.9.45 (ruby-4.0.6).
 </div>
 
     </div>

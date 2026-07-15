@@ -6,7 +6,7 @@
 <title>
   Class: OAuth::Consumer
   
-    &mdash; Documentation by YARD 0.9.44
+    &mdash; Documentation by YARD 0.9.45
   
 </title>
 
@@ -175,8 +175,8 @@ consumer secret while leaving non-sensitive configuration visible.</p>
 </span>    <span class='comment'># default. Cross-origin redirects can re-sign token requests for an
 </span>    <span class='comment'># attacker-controlled endpoint, so they require explicit opt-in.
 </span>    <span class='label'>token_request_max_redirects:</span> <span class='int'>10</span><span class='comma'>,</span>
-    <span class='label'>token_request_cross_origin_redirects:</span> <span class='kw'>false</span><span class='comma'>,</span>
-  <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='label'>token_request_cross_origin_redirects:</span> <span class='kw'>false</span>
+  <span class='rbrace'>}</span>
 <span class='rparen'>)</span></pre></dd>
       
     </dl>
@@ -2184,7 +2184,7 @@ part of the signature base string and thus is not signed.</li>
       <span class='lparen'>(</span><span class='id identifier rubyid_request_token_url?'>request_token_url?</span> <span class='op'>?</span> <span class='id identifier rubyid_request_token_url'>request_token_url</span> <span class='op'>:</span> <span class='id identifier rubyid_request_token_path'>request_token_path</span><span class='rparen'>)</span><span class='comma'>,</span>
       <span class='kw'>nil</span><span class='comma'>,</span>
       <span class='id identifier rubyid_request_options'>request_options</span><span class='comma'>,</span>
-      <span class='op'>*</span><span class='id identifier rubyid_arguments'>arguments</span><span class='comma'>,</span>
+      <span class='op'>*</span><span class='id identifier rubyid_arguments'>arguments</span>
     <span class='rparen'>)</span>
   <span class='kw'>end</span>
   <span class='const'><span class='object_link'><a href="../OAuth.html" title="OAuth (module)">OAuth</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="RequestToken.html" title="OAuth::RequestToken (class)">RequestToken</a></span></span><span class='period'>.</span><span class='id identifier rubyid_from_hash'><span class='object_link'><a href="ConsumerToken.html#from_hash-class_method" title="OAuth::ConsumerToken.from_hash (method)">from_hash</a></span></span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_response'>response</span><span class='rparen'>)</span>
@@ -3116,9 +3116,9 @@ arguments are POST and PUT bodies (a Hash, string-encoded parameters, or<br />
 </div>
 
       <div id="footer">
-  Generated on Sun Jun  7 02:24:03 2026 by
+  Generated on Wed Jul 15 00:44:56 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.44 (ruby-4.0.5).
+  0.9.45 (ruby-4.0.6).
 </div>
 
     </div>

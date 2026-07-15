@@ -20,13 +20,7 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Added
 
-- Added support for JRuby 10.1 and TruffleRuby 34.0.
-
 ### Changed
-
-- Raised the `anonymous_loader` runtime dependency floor to `>= 0.1.2`.
-- Retemplated generated project metadata, support documentation, CI workflows,
-  binstubs, and development dependency floors with `kettle-jem` v7.0.0.
 
 ### Deprecated
 
@@ -34,19 +28,13 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
-- Corrected RubyGems homepage metadata to point at the gem documentation site.
-- Corrected persisted Open Collective and repository topology metadata used by
-  future template runs.
-
-- Package configured license files in gem release file lists.
-
 ### Security
 
-## [1.1.8] - 2026-06-18
+## [1.1.8] - 2026-07-15
 
 - TAG: [v1.1.8][1.1.8t]
-- COVERAGE: 88.27% -- 835/946 lines in 33 files
-- BRANCH COVERAGE: 58.67% -- 159/271 branches in 33 files
+- COVERAGE: 69.47% -- 835/1202 lines in 42 files
+- BRANCH COVERAGE: 47.75% -- 159/333 branches in 42 files
 - 40.38% documented
 
 ### Changed
@@ -57,11 +45,25 @@ Please file a bug if you notice a violation of semantic versioning.
   including local workspace wiring for the new runtime dependency.
 - Raised the `oauth-tty` runtime dependency floor to `>= 1.0.11`.
 
+- Raised the `anonymous_loader` runtime dependency floor to `>= 0.1.2`.
+- Retemplated generated project metadata, support documentation, CI workflows,
+  binstubs, and development dependency floors with `kettle-jem` v7.0.0.
+
 ### Fixed
 
 - Updated the auth-sanitizer subprocess isolation spec to load the standard
   test bootstrap, including Ruby 2.4 backports.
 - Made the Ruby 2.4 appraisal's legacy `cgi` dependency explicit.
+
+- Corrected RubyGems homepage metadata to point at the gem documentation site.
+- Corrected persisted Open Collective and repository topology metadata used by
+  future template runs.
+
+- Package configured license files in gem release file lists.
+
+### Added
+
+- Added support for JRuby 10.1 and TruffleRuby 34.0.
 
 ## [1.1.7] - 2026-06-15
 
