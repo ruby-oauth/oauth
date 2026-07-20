@@ -2,7 +2,7 @@
 
 module OAuth
   module Version
-    VERSION = "1.1.8"
+    VERSION = "1.1.9"
   end
   VERSION = Version::VERSION # Traditional Constant Location
 end
