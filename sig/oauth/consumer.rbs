@@ -1,9 +1,0 @@
-module OAuth
-  class Consumer
-    include OAuth::AUTH_SANITIZER::FilteredAttributes
-
-    attr_accessor options: untyped
-    attr_accessor key: untyped
-    attr_accessor secret: untyped
-  end
-end

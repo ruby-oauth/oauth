@@ -1,8 +1,0 @@
-module OAuth
-  class Token
-    include OAuth::AUTH_SANITIZER::FilteredAttributes
-
-    attr_accessor token: untyped
-    attr_accessor secret: untyped
-  end
-end
