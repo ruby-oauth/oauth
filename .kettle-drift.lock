@@ -3,9 +3,9 @@
     {
       "file": "CHANGELOG.md",
       "lines": [
-        232,
-        241,
-        264
+        291,
+        300,
+        323
       ]
     }
   ],
@@ -22,9 +22,9 @@
     {
       "file": ".github/workflows/dep-heads.yml",
       "lines": [
-        44,
-        105,
-        159
+        43,
+        100,
+        157
       ]
     }
   ],
@@ -35,6 +35,16 @@
         43,
         104,
         162
+      ]
+    }
+  ],
+  "exec_cmd: \"kettle-test\"\n# Run directly from the generated appraisal Gemfile so setup-ruby": [
+    {
+      "file": ".github/workflows/dep-heads.yml",
+      "lines": [
+        44,
+        101,
+        158
       ]
     }
   ],

@@ -8,6 +8,7 @@ require_relative "ext/backports"
 
 # External RSpec & related config
 require "kettle/test/rspec"
+# `kettle/test/rspec` installs harness helpers documented in spec/README.md.
 
 # Internal ENV config
 require_relative "config/debug"
