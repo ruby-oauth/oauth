@@ -3,9 +3,9 @@
     {
       "file": "CHANGELOG.md",
       "lines": [
-        291,
-        300,
-        323
+        295,
+        304,
+        327
       ]
     }
   ],
@@ -15,46 +15,6 @@
       "lines": [
         11,
         22
-      ]
-    }
-  ],
-  "appraisal: \"dep-heads\"\nexec_cmd: \"kettle-test\"": [
-    {
-      "file": ".github/workflows/dep-heads.yml",
-      "lines": [
-        43,
-        100,
-        157
-      ]
-    }
-  ],
-  "appraisal: \"head\"\nexec_cmd: \"kettle-test\"": [
-    {
-      "file": ".github/workflows/heads.yml",
-      "lines": [
-        43,
-        104,
-        162
-      ]
-    }
-  ],
-  "exec_cmd: \"kettle-test\"\n# Run directly from the generated appraisal Gemfile so setup-ruby": [
-    {
-      "file": ".github/workflows/dep-heads.yml",
-      "lines": [
-        44,
-        101,
-        158
-      ]
-    }
-  ],
-  "exec_cmd: \"kettle-test\"\nrubygems: default": [
-    {
-      "file": ".github/workflows/heads.yml",
-      "lines": [
-        44,
-        105,
-        163
       ]
     }
   ]

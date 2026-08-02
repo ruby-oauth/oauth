@@ -38,8 +38,6 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
-- kettle-jem-template-20260716-001 - Shim gemspec manifests now include
-  `LICENSE.md` instead of nonexistent `LICENSE.txt`.
 - kettle-jem-template-20260716-002 - Generated gemspec manifests now ship fewer
   repository-only files by default to reduce downstream distro packaging churn.
 
@@ -52,6 +50,9 @@ Please file a bug if you notice a violation of semantic versioning.
   setup-ruby-flash planning and can prepare appraisal-only jobs without
   installing the main Gemfile bundle.
 
+- kettle-jem-template-20260801-001 - Generated README gem dashboard links now
+  use ClickGems instead of BestGems.
+
 ### Deprecated
 
 ### Removed
@@ -60,8 +61,6 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - kettle-jem-template-20260720-003 - StructuredMerge Git diff driver config now
   uses the installed `smorg-rb` driver command.
-- kettle-jem-template-20260720-004 - MRI-only projects now omit JRuby and
-  TruffleRuby workflow jobs.
 - kettle-jem-template-20260725-001 - Release pull request branches beginning
   with `feature/release` now run JRuby and TruffleRuby workflows.
 - kettle-jem-template-20260726-002 - Generated version files now document their
@@ -84,18 +83,23 @@ Please file a bug if you notice a violation of semantic versioning.
 - kettle-jem-template-20260729-001 - Generated JRuby 9.4 workflows now use the
   legacy manual bundle install path, avoiding setup-time Bundler full-index
   failures against `gem.coop`.
-- kettle-jem-template-20260729-002 - VersionGem bootstrap now preserves
-  and templates dedicated `version_gem.rb` entrypoints even when the gemspec
-  dependency is intentionally omitted, and generated anonymous-loader specs
-  cover both `version.rb` and `version_gem.rb`.
-- kettle-jem-template-20260729-003 - Old-Ruby gems below the VersionGem runtime
-  floor now get managed minimal `version.rb` files and anonymous-loader version
-  specs without adding `version_gem`.
 - kettle-jem-template-20260730-001 - Gemspec package file enumeration now runs
   relative to the gemspec directory, so release package contents stay correct
   even when the gemspec is loaded from another working directory.
 
 - Remove duplicate loading of the version file from the public entrypoint.
+
+- kettle-jem-template-20260801-002 - Generated RSpec helpers now normalize
+  managed configuration block bindings structurally, preventing mixed block
+  parameter names from producing invalid configuration after a merge.
+- kettle-jem-template-20260801-003 - Generated project metadata and
+  documentation now normalize configured underscore hostnames to valid
+  hyphenated hostnames.
+- kettle-jem-template-20260801-004 - Generated organization README logos now
+  use GitHub's stable organization avatar endpoint instead of assuming a
+  matching Galtzo-hosted asset exists.
+- kettle-jem-template-20260802-001 - Devcontainer JSON files now merge as JSONC,
+  preserving comments and trailing commas during template updates.
 
 ### Security
 

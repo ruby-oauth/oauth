@@ -30,6 +30,7 @@ plugin "appraisal2-rubocop", require: "appraisal2/rubocop", optional: true
 #    - Matches what contributors and maintainers use locally for development
 #    - Broken workflow indicates that a new contributor will have a bad time
 #
+
 appraise "unlocked_deps" do
   # Seems to be an undeclared dependency of yard.
   # /opt/hostedtoolcache/Ruby/4.0.0/x64/lib/ruby/gems/4.0.0/gems/yard-0.9.38/lib/yard/parser/ruby/legacy/irb/slex.rb:13: warning: irb/notifier is found in irb, which is not part of the default gems since Ruby 4.0.0.
@@ -52,20 +53,14 @@ appraise "unlocked_deps" do
   eval_gemfile "modular/x_std_libs.gemfile"
 end
 
-# Used for head (nightly) releases of ruby, truffleruby, and jruby.
-# Split into discrete appraisals if one of them needs a dependency locked discretely.
 appraise "head" do
-  gem "benchmark", "~> 0.4", ">= 0.4.1"
   eval_gemfile "modular/x_std_libs.gemfile"
 end
 
-# Used for current releases of ruby, truffleruby, and jruby.
-# Split into discrete appraisals if one of them needs a dependency locked discretely.
 appraise "current" do
   eval_gemfile "modular/x_std_libs.gemfile"
 end
 
-# Test current Rubies against head versions of runtime dependencies
 appraise "dep-heads" do
   gem "oauth-tty", github: "ruby-oauth/oauth-tty", branch: "main"
   eval_gemfile "modular/runtime_heads.gemfile"
@@ -112,23 +107,21 @@ appraise "ruby-3-4" do
   eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
 end
 
-# Only run security audit on the latest version of Ruby
 appraise "audit" do
   eval_gemfile "modular/x_std_libs.gemfile"
 end
 
-# Only run coverage on the latest version of Ruby
 appraise "coverage" do
   eval_gemfile "modular/coverage.gemfile"
   eval_gemfile "modular/optional.gemfile"
   eval_gemfile "modular/x_std_libs.gemfile"
 end
 
-# Only run linter on the latest version of Ruby (but, in support of oldest supported Ruby version)
 appraise "style" do
   eval_gemfile "modular/style.gemfile"
   eval_gemfile "modular/x_std_libs.gemfile"
 end
+
 appraise "templating" do
   eval_gemfile "modular/templating.gemfile"
   eval_gemfile "modular/x_std_libs.gemfile"
