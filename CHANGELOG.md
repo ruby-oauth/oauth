@@ -95,6 +95,8 @@ Please file a bug if you notice a violation of semantic versioning.
   relative to the gemspec directory, so release package contents stay correct
   even when the gemspec is loaded from another working directory.
 
+- Remove duplicate loading of the version file from the public entrypoint.
+
 ### Security
 
 ## [1.1.8] - 2026-07-15
