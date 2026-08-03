@@ -17,5 +17,50 @@
         22
       ]
     }
+  ],
+  "action: remove_modular_gem\nreason: \"oauth.gemspec owns this development dependency.\"": [
+    {
+      "file": ".structuredmerge/kettle-jem.yml",
+      "lines": [
+        100,
+        105,
+        110,
+        115,
+        120,
+        125,
+        130,
+        135
+      ]
+    }
+  ],
+  "direct: oauth.gemspec\nmodular: gemfiles/modular/injected.gemfile": [
+    {
+      "file": ".structuredmerge/kettle-jem.yml",
+      "lines": [
+        98,
+        103,
+        108,
+        113,
+        118,
+        123,
+        128,
+        133
+      ]
+    }
+  ],
+  "modular: gemfiles/modular/injected.gemfile\naction: remove_modular_gem": [
+    {
+      "file": ".structuredmerge/kettle-jem.yml",
+      "lines": [
+        99,
+        104,
+        109,
+        114,
+        119,
+        124,
+        129,
+        134
+      ]
+    }
   ]
 }
