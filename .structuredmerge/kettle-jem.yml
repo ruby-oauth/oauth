@@ -70,6 +70,70 @@
 #
 # Everything else should be set explicitly here or via ENV.
 
+# Direct dependency ownership decisions.
+# On first templating, kettle-jem discovers dependencies declared directly by
+# Gemfile/gemspec and also by modular Gemfiles, and writes them here for review.
+# Resolve each entry by choosing one supported action, then add a reason.
+#
+# Every entry must include gem, direct, modular, action, and reason:
+# dependency_conflicts:
+#   resolve:
+#     - gem: yard-relative_markdown_links
+#       direct: shields-badge.gemspec
+#       modular: gemfiles/modular/documentation.gemfile
+#       action: remove_modular_gem
+#       reason: "The gemspec owns the project's documentation integration."
+# Supported actions (the destination project must explicitly choose one):
+#   remove_modular_gem       - remove the modular Gemfile's direct gem call.
+#   remove_x_std_lib_eval    - remove x_std_libs eval references for the gem.
+#   keep_both                - retain both declarations when their requirements
+#                              overlap. This is intended for a broad direct
+#                              requirement narrowed by framework/engine Gemfiles;
+#                              incompatible ranges remain an error.
+dependency_conflicts:
+  # Review each entry and choose a supported action.
+  # keep_both is for a broad direct requirement plus a compatible modular narrowing.
+  resolve:
+    - gem: appraisal2
+      direct: oauth.gemspec
+      modular: gemfiles/modular/injected.gemfile
+      action: remove_modular_gem
+      reason: "oauth.gemspec owns this development dependency."
+    - gem: bundler-audit
+      direct: oauth.gemspec
+      modular: gemfiles/modular/injected.gemfile
+      action: remove_modular_gem
+      reason: "oauth.gemspec owns this development dependency."
+    - gem: gitmoji-regex
+      direct: oauth.gemspec
+      modular: gemfiles/modular/injected.gemfile
+      action: remove_modular_gem
+      reason: "oauth.gemspec owns this development dependency."
+    - gem: kettle-test
+      direct: oauth.gemspec
+      modular: gemfiles/modular/injected.gemfile
+      action: remove_modular_gem
+      reason: "oauth.gemspec owns this development dependency."
+    - gem: rake
+      direct: oauth.gemspec
+      modular: gemfiles/modular/injected.gemfile
+      action: remove_modular_gem
+      reason: "oauth.gemspec owns this development dependency."
+    - gem: require_bench
+      direct: oauth.gemspec
+      modular: gemfiles/modular/injected.gemfile
+      action: remove_modular_gem
+      reason: "oauth.gemspec owns this development dependency."
+    - gem: ruby-progressbar
+      direct: oauth.gemspec
+      modular: gemfiles/modular/injected.gemfile
+      action: remove_modular_gem
+      reason: "oauth.gemspec owns this development dependency."
+    - gem: stone_checksums
+      direct: oauth.gemspec
+      modular: gemfiles/modular/injected.gemfile
+      action: remove_modular_gem
+      reason: "oauth.gemspec owns this development dependency."
 # This project's identifying emoji.
 # Used as the leading emoji in the README H1 heading and in the gemspec
 # summary and description. Every gem should have its own unique emoji.
