@@ -16,5 +16,19 @@ SimpleCov.configure do
     track_files "{lib/**/*.rb,lib/**/*.rake,exe/*.rb}"
   end
   cover "lib/**/*.rb", "lib/**/*.rake", "exe/*.rb"
+
+  # These adapters are exercised only by appraisals that install their
+  # optional framework/client dependencies. The default bundle cannot load
+  # them, so counting them would make the core coverage threshold misleading.
+  %w[
+    lib/oauth/client/action_controller_request.rb
+    lib/oauth/client/em_http.rb
+    lib/oauth/oauth_test_helper.rb
+    lib/oauth/optional.rb
+    lib/oauth/request_proxy/action_controller_request.rb
+    lib/oauth/request_proxy/action_dispatch_request.rb
+    lib/oauth/request_proxy/curb_request.rb
+    lib/oauth/request_proxy/em_http_request.rb
+  ].each { |path| skip path }
 end
 # It is controlled by ENV variables, which are set in .envrc and loaded via `direnv allow`
