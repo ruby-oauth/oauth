@@ -3,9 +3,9 @@
     {
       "file": "CHANGELOG.md",
       "lines": [
-        295,
-        304,
-        327
+        297,
+        306,
+        329
       ]
     }
   ],
@@ -22,6 +22,21 @@
     {
       "file": ".structuredmerge/kettle-jem.yml",
       "lines": [
+        102,
+        107,
+        112,
+        117,
+        122,
+        127,
+        132,
+        137
+      ]
+    }
+  ],
+  "direct: oauth.gemspec\nmodular: gemfiles/modular/injected.gemfile": [
+    {
+      "file": ".structuredmerge/kettle-jem.yml",
+      "lines": [
         100,
         105,
         110,
@@ -33,33 +48,18 @@
       ]
     }
   ],
-  "direct: oauth.gemspec\nmodular: gemfiles/modular/injected.gemfile": [
-    {
-      "file": ".structuredmerge/kettle-jem.yml",
-      "lines": [
-        98,
-        103,
-        108,
-        113,
-        118,
-        123,
-        128,
-        133
-      ]
-    }
-  ],
   "modular: gemfiles/modular/injected.gemfile\naction: remove_modular_gem": [
     {
       "file": ".structuredmerge/kettle-jem.yml",
       "lines": [
-        99,
-        104,
-        109,
-        114,
-        119,
-        124,
-        129,
-        134
+        101,
+        106,
+        111,
+        116,
+        121,
+        126,
+        131,
+        136
       ]
     }
   ]
