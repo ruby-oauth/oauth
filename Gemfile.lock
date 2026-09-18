@@ -18,43 +18,13 @@ PATH
       snaky_hash (~> 2.0, >= 2.0.7)
       version_gem (~> 1.1, >= 1.1.15)
 
-PATH
-  remote: /var/home/pboling/src/my/ruby-oauth/anonymous_loader
-  specs:
-    anonymous_loader (0.1.4)
-      version_gem (~> 1.1, >= 1.1.15)
-
-PATH
-  remote: /var/home/pboling/src/my/ruby-oauth/auth-sanitizer
-  specs:
-    auth-sanitizer (0.2.4)
-      version_gem (~> 1.1, >= 1.1.15)
-
-PATH
-  remote: ../oauth-tty
-  specs:
-    oauth-tty (1.0.14)
-      anonymous_loader (~> 0.1, >= 0.1.3)
-      auth-sanitizer (~> 0.2, >= 0.2.3)
-      version_gem (~> 1.1, >= 1.1.15)
-
-PATH
-  remote: /var/home/pboling/src/my/ruby-oauth/snaky_hash
-  specs:
-    snaky_hash (2.0.8)
-      hashie (>= 0.1.0, < 6)
-      version_gem (~> 1.1, >= 1.1.15)
-
-PATH
-  remote: /var/home/pboling/src/my/ruby-oauth/version_gem
-  specs:
-    version_gem (1.1.15)
-
 GEM
   remote: https://gem.coop/
   specs:
     addressable (2.9.0)
       public_suffix (>= 2.0.2, < 8.0)
+    anonymous_loader (0.1.3)
+      version_gem (~> 1.1, >= 1.1.14)
     ansi (1.6.0)
     appraisal2 (3.2.4)
       bundler (>= 1.17.3)
@@ -83,6 +53,8 @@ GEM
       token-resolver (~> 2.0, >= 2.0.4)
       tree_haver (= 7.1.9)
       version_gem (~> 1.1, >= 1.1.15)
+    auth-sanitizer (0.2.3)
+      version_gem (~> 1.1, >= 1.1.14)
     backports (3.25.3)
     base64 (0.3.0)
     bash-merge (7.1.9)
@@ -320,6 +292,10 @@ GEM
     nokogiri (1.19.4-x86_64-linux-gnu)
       racc (~> 1.4)
     nomono (1.1.5)
+    oauth-tty (1.0.13)
+      anonymous_loader (~> 0.1, >= 0.1.3)
+      auth-sanitizer (~> 0.2, >= 0.2.3)
+      version_gem (~> 1.1, >= 1.1.14)
     openssl (4.0.2)
     ostruct (0.6.3)
     parallel (1.28.0)
@@ -524,6 +500,9 @@ GEM
       simplecov (>= 0.4.1)
     simplecov_lcov_formatter (0.9.0)
       simplecov (>= 0.18)
+    snaky_hash (2.0.7)
+      hashie (>= 0.1.0, < 6)
+      version_gem (~> 1.1, >= 1.1.14)
     sorbet-runtime (0.6.13505)
     standard (1.56.0)
       language_server-protocol (~> 3.17.0.2)
@@ -598,6 +577,7 @@ GEM
       ethon (>= 0.18.0)
     unicode-display_width (2.6.0)
     vcr (6.4.0)
+    version_gem (1.1.15)
     webmock (3.26.4)
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
@@ -640,10 +620,8 @@ PLATFORMS
 
 DEPENDENCIES
   addressable (>= 2.8, < 3)
-  anonymous_loader!
   appraisal2 (~> 3.2, >= 3.2.4)
   appraisal2-rubocop (~> 1.0, >= 1.0.3)
-  auth-sanitizer!
   backports (~> 3.25, >= 3.25.1)
   benchmark (~> 0.5, >= 0.5.0)
   bundler-audit (~> 0.9.3)
@@ -664,7 +642,6 @@ DEPENDENCIES
   mutex_m (~> 0.2)
   nomono (~> 1.1, >= 1.1.5)
   oauth!
-  oauth-tty!
   ostruct (~> 0.6)
   rack (>= 2.0.0)
   rack-test
@@ -681,14 +658,12 @@ DEPENDENCIES
   rubocop-packaging!
   rubocop-ruby2_3 (~> 3.0, >= 3.0.7)
   ruby-progressbar (~> 1.13)
-  snaky_hash!
   standard (~> 1.56, >= 1.56.0)
   stone_checksums (~> 1.0, >= 1.0.9)
   stringio (>= 3.0)
   turbo_tests2 (~> 3.2, >= 3.2.9)
   typhoeus (>= 0.1.13)
   vcr (>= 4)
-  version_gem!
   webmock (>= 3)
   webrick (~> 1.9)
   yaml-converter (~> 0.2, >= 0.2.6)
@@ -702,7 +677,7 @@ DEPENDENCIES
 
 CHECKSUMS
   addressable (2.9.0) sha256=7fdf6ac3660f7f4e867a0838be3f6cf722ace541dd97767fa42bc6cfa980c7af
-  anonymous_loader (0.1.4)
+  anonymous_loader (0.1.3) sha256=084a18e2439144d955447dc11dfc982f41fcd1583ad32d4d55151325dc44cb55
   ansi (1.6.0) sha256=ac9ea0c0ea8d32fb4e271348e609963ac78882f34b73836c2a02b3622e666658
   appraisal2 (3.2.4) sha256=0259bf2b77e345c5fe9295a6536d7364a25f3f5c54851c3293b3856bc01cbaaa
   appraisal2-rubocop (1.0.3) sha256=fb0fb679d98008be1a948d9c40bb0dbe4005f8da0e04ece2149d5c87dc9c5e76
@@ -711,7 +686,7 @@ CHECKSUMS
   ast-crispr-markdown-markly (7.1.9) sha256=b6bb793288830de6d6a1c5ea42064ac5da189e0e6bf566b456049f965408c7dd
   ast-crispr-ruby-prism (7.1.9) sha256=7dfe9796b4b6e2a2b3e87eb2655eff437ddc6a68a3f7a3dbfa14310b831b22c5
   ast-merge (7.1.9) sha256=d80ff5e17ec34afbfe9ad5ab580a1fa3b8e840e027d0b865bb39ad28eaa79e4d
-  auth-sanitizer (0.2.4)
+  auth-sanitizer (0.2.3) sha256=db10aac92cfbe4c64ab637eebcbe1d67395d1694798041362173370f59933e3c
   backports (3.25.3) sha256=94298d32dc3c40ca15633b54e282780b49e2db0c045f602ea1907e4f63a17235
   base64 (0.3.0) sha256=27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b
   bash-merge (7.1.9) sha256=fde66a0e5eaaa2df0eae456bd5a45be631e61806c356f345d2a43085e4138757
@@ -794,7 +769,7 @@ CHECKSUMS
   nokogiri (1.19.4-x86_64-linux-gnu) sha256=379fae440b28915e3f19d752ce2dcf8465ed2b2fbefd2a7ca0dd497bc981a06a
   nomono (1.1.5) sha256=e8c739eb6a1cf216645af2722cf7d005744d507e2bb038e7232be1ad9a60eb01
   oauth (1.1.9)
-  oauth-tty (1.0.14)
+  oauth-tty (1.0.13) sha256=71ad5f93ceea6fd21fe9a731dc02a4b892c5de9d77e0b303e81bd73f9daeb4a3
   openssl (4.0.2) sha256=1037ad2868ae58df9ad917891c0c0f9815a1172f6846d4bcdd508e4c2ee747c2
   ostruct (0.6.3) sha256=95a2ed4a4bd1d190784e666b47b2d3f078e4a9efda2fccf18f84ddc6538ed912
   parallel (1.28.0) sha256=33e6de1484baf2524792d178b0913fc8eb94c628d6cfe45599ad4458c638c970
@@ -866,7 +841,7 @@ CHECKSUMS
   simplecov-console (0.9.5) sha256=b1108bcfff5f210143e2b8301698c367b01586f20d25a73e95475a5df6fc6ff6
   simplecov-rcov (0.3.7) sha256=372f50bf6df6b6350b7d0c840f2f8bdabe021861a43c26877b747c9ac96139fc
   simplecov_lcov_formatter (0.9.0) sha256=4c1839bb31dcf7a8f7a6474c94ed228aa03b994e9dd5e1965e58b4121b049bed
-  snaky_hash (2.0.8)
+  snaky_hash (2.0.7) sha256=7d02c70012a3f932e48860cd024577908300c9aa615e0cb9b450aaa749cbcb4d
   sorbet-runtime (0.6.13505) sha256=999b604242829ec42d977c901412f873fa72cd6babceef68eba4df0382a7cb03
   standard (1.56.0) sha256=ae2af4d9669589162ac69ed5ef59dcf9f346d4afc81f7e62b84339310dfcb787
   standard-custom (1.0.2) sha256=424adc84179a074f1a2a309bb9cf7cd6bfdb2b6541f20c6bf9436c0ba22a652b
@@ -895,7 +870,7 @@ CHECKSUMS
   typhoeus (1.6.0) sha256=bacc41c23e379547e29801dc235cd1699b70b955a1ba3d32b2b877aa844c331d
   unicode-display_width (2.6.0) sha256=12279874bba6d5e4d2728cef814b19197dbb10d7a7837a869bab65da943b7f5a
   vcr (6.4.0) sha256=077ac92cc16efc5904eb90492a18153b5e6ca5398046d8a249a7c96a9ea24ae6
-  version_gem (1.1.15)
+  version_gem (1.1.15) sha256=a73241587b29252e3567e0c818ded80730eb754d43b508f6ce4db22ca9ba27d0
   webmock (3.26.4) sha256=8d8da206d217ebe6968cfb09c77f4533c23074e1432bad865f3994eacbaad50d
   webrick (1.9.2) sha256=beb4a15fc474defed24a3bda4ffd88a490d517c9e4e6118c3edce59e45864131
   yaml-converter (0.2.6) sha256=f270e8bcf19a20830056c77acf3bf942545e445455f20825af6a6884384611e9
