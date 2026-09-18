@@ -70,7 +70,7 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 and <a href="https://tom.preston-werner.com/2022/05/23/major-version-numbers-are-not-sacred.html">yes</a>, platform and engine support are part of the <a href="https://github.com/semver/semver/issues/716#issuecomment-869336139">public API</a>.<br>
 Please file a bug if you notice a violation of semantic versioning.</p>
 
-<h2 id="unreleased"><a href="https://github.com/ruby-oauth/oauth/compare/v1.1.8...HEAD">Unreleased</a></h2>
+<h2 id="unreleased"><a href="https://github.com/ruby-oauth/oauth/compare/v1.1.9...HEAD">Unreleased</a></h2>
 
 <h3 id="added">Added</h3>
 
@@ -84,6 +84,133 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 
 <h3 id="security">Security</h3>
 
+<h2 id="119---2026-09-18">
+<a href="https://github.com/ruby-oauth/oauth/compare/v1.1.8...v1.1.9">1.1.9</a> - 2026-09-18</h2>
+
+<ul>
+  <li>TAG: <a href="https://github.com/ruby-oauth/oauth/releases/tag/v1.1.9">v1.1.9</a>
+</li>
+  <li>COVERAGE: 87.71% – 849/968 lines in 34 files</li>
+  <li>BRANCH COVERAGE: 61.37% – 170/277 branches in 34 files</li>
+  <li>41.13% documented</li>
+</ul>
+
+<h3 id="added-1">Added</h3>
+
+<ul>
+  <li>Spec coverage for <code>OAuth::Client::Helper</code>, the <code>query_string</code> OAuth signing scheme in<br>
+<code>lib/oauth/client/net_http.rb</code>, and the <code>OAuth::Error</code>/<code>OAuth::Unauthorized</code>/<code>OAuth::Problem</code><br>
+classes — none previously had a dedicated spec file.</li>
+  <li>kettle-jem-template-20260720-005 - README Support &amp; Community links now<br>
+include RubyForum.</li>
+  <li>kettle-jem-template-20260726-001 - Projects now include YARD lint<br>
+configuration and documentation dependencies so documentation issues fail<br>
+before generated docs are refreshed.</li>
+  <li>kettle-jem-template-20260727-001 - Spec harness documentation now lists the<br>
+RSpec helpers provided by <code>kettle-test</code>.</li>
+  <li>
+    <p>kettle-jem-template-20260729-005 - Gemspec metadata now publishes this<br>
+project’s RubyForum tag as <code>mailing_list_uri</code>, and support docs link to the<br>
+tagged RubyForum community alongside Discord.</p>
+  </li>
+  <li>kettle-jem-template-20260913-001 - Templating now also surfaces a review<br>
+entry in <code>dependency_conflicts.resolve</code> when a direct development<br>
+dependency doesn’t support one or more of this project’s declared<br>
+<code>engines:</code> and has no template-managed modular home (e.g. <code>sqlite3</code> on<br>
+<code>jruby</code>). Review each entry and pick a resolution per the project’s own<br>
+engine support needs.</li>
+</ul>
+
+<h3 id="changed-1">Changed</h3>
+
+<ul>
+  <li>
+    <p>kettle-jem-template-20260716-002 - Generated gemspec manifests now ship fewer<br>
+repository-only files by default to reduce downstream distro packaging churn.</p>
+  </li>
+  <li>kettle-jem-template-20260720-002 - Development Gemfiles now use the released<br>
+<code>tree_sitter_language_pack</code> gem 1.13.3 or newer by default.</li>
+  <li>kettle-jem-template-20260725-002 - Version specs now use <code>anonymous_loader</code> to<br>
+cover <code>version.rb</code> without redefining constants, or are removed when version<br>
+specs are not managed for the project.</li>
+  <li>
+    <p>kettle-jem-template-20260728-001 - Generated Ruby workflows now use clearer<br>
+setup-ruby-flash planning and can prepare appraisal-only jobs without<br>
+installing the main Gemfile bundle.</p>
+  </li>
+  <li>
+    <p>kettle-jem-template-20260801-001 - Generated README gem dashboard links now<br>
+use ClickGems instead of BestGems.</p>
+  </li>
+  <li>[kc] kettle-jem/prepare: updated 15 project files:
+    <ul>
+      <li>configuration (1)</li>
+      <li>dependencies (14)</li>
+    </ul>
+  </li>
+  <li>[kc] kettle-jem/template: updated 50 project files:
+    <ul>
+      <li>code and tests (1)</li>
+      <li>configuration (1)</li>
+      <li>dependencies (12)</li>
+      <li>documentation (1)</li>
+      <li>other (3)</li>
+      <li>workflows (32)</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="fixed-1">Fixed</h3>
+
+<ul>
+  <li>kettle-jem-template-20260720-003 - StructuredMerge Git diff driver config now<br>
+uses the installed <code>smorg-rb</code> driver command.</li>
+  <li>kettle-jem-template-20260725-001 - Release pull request branches beginning<br>
+with <code>feature/release</code> now run JRuby and TruffleRuby workflows.</li>
+  <li>kettle-jem-template-20260726-002 - Generated version files now document their<br>
+version namespace and constants, reducing warning-only YARD lint output.</li>
+  <li>kettle-jem-template-20260726-003 - Coverage upload steps now treat Coveralls,<br>
+QLTY, and Codecov as optional, so provider outages do not fail CI when local<br>
+coverage thresholds still pass.</li>
+  <li>kettle-jem-template-20260728-002 - Generated RuboCop configs now ignore the<br>
+same <code>gemfiles/vendor/bundle</code> tree as <code>.gitignore</code>, so vendored dependency<br>
+installs are not reported as project lint debt.</li>
+  <li>kettle-jem-template-20260728-003 - Generated dep-heads workflows now run<br>
+TruffleRuby jobs with current RubyGems and Bundler, avoiding setup failures<br>
+before the test suite starts.</li>
+  <li>kettle-jem-template-20260728-004 - Generated dep-heads workflows now use the<br>
+setup-ruby Bundler install path for direct appraisal Gemfiles, avoiding rv<br>
+lockfile parser failures on Git and path dependencies.</li>
+  <li>kettle-jem-template-20260728-005 - VersionGem bootstrap now creates the<br>
+missing canonical version spec when a project only has shim namespace version<br>
+specs.</li>
+  <li>kettle-jem-template-20260729-001 - Generated JRuby 9.4 workflows now use the<br>
+legacy manual bundle install path, avoiding setup-time Bundler full-index<br>
+failures against <code>gem.coop</code>.</li>
+  <li>
+    <p>kettle-jem-template-20260730-001 - Gemspec package file enumeration now runs<br>
+relative to the gemspec directory, so release package contents stay correct<br>
+even when the gemspec is loaded from another working directory.</p>
+  </li>
+  <li>
+    <p>Remove duplicate loading of the version file from the public entrypoint.</p>
+  </li>
+  <li>kettle-jem-template-20260801-002 - Generated RSpec helpers now normalize<br>
+managed configuration block bindings structurally, preventing mixed block<br>
+parameter names from producing invalid configuration after a merge.</li>
+  <li>kettle-jem-template-20260801-003 - Generated project metadata and<br>
+documentation now normalize configured underscore hostnames to valid<br>
+hyphenated hostnames.</li>
+  <li>kettle-jem-template-20260801-004 - Generated organization README logos now<br>
+use GitHub’s stable organization avatar endpoint instead of assuming a<br>
+matching Galtzo-hosted asset exists.</li>
+  <li>
+    <p>kettle-jem-template-20260802-001 - Devcontainer JSON files now merge as JSONC,<br>
+preserving comments and trailing commas during template updates.</p>
+  </li>
+  <li>Exclude optional OAuth adapters from the default coverage scope.</li>
+</ul>
+
 <h2 id="118---2026-07-15">
 <a href="https://github.com/ruby-oauth/oauth/compare/v1.1.7...v1.1.8">1.1.8</a> - 2026-07-15</h2>
 
@@ -95,7 +222,7 @@ Please file a bug if you notice a violation of semantic versioning.</p>
   <li>40.38% documented</li>
 </ul>
 
-<h3 id="changed-1">Changed</h3>
+<h3 id="changed-2">Changed</h3>
 
 <ul>
   <li>Raised the <code>anonymous_loader</code> runtime dependency floor to <code>&gt;= 0.1.1</code>.</li>
@@ -110,7 +237,7 @@ including local workspace wiring for the new runtime dependency.</li>
 binstubs, and development dependency floors with <code>kettle-jem</code> v7.0.0.</li>
 </ul>
 
-<h3 id="fixed-1">Fixed</h3>
+<h3 id="fixed-2">Fixed</h3>
 
 <ul>
   <li>Updated the auth-sanitizer subprocess isolation spec to load the standard<br>
@@ -131,7 +258,7 @@ future template runs.</p>
 with TruffleRuby’s bundled RubyGems/Bundler and gem.coop.</li>
 </ul>
 
-<h3 id="added-1">Added</h3>
+<h3 id="added-2">Added</h3>
 
 <ul>
   <li>Added support for JRuby 10.1 and TruffleRuby 34.0.</li>
@@ -148,7 +275,7 @@ with TruffleRuby’s bundled RubyGems/Bundler and gem.coop.</li>
   <li>40.38% documented</li>
 </ul>
 
-<h3 id="changed-2">Changed</h3>
+<h3 id="changed-3">Changed</h3>
 
 <ul>
   <li>Retemplated repository metadata, workflows, modular gemfiles, documentation<br>
@@ -161,7 +288,7 @@ downstream RBS duplicate-declaration fixes.</li>
 the transitive external <code>cgi</code> runtime dependency for Ruby 2.4 consumers.</li>
 </ul>
 
-<h3 id="fixed-2">Fixed</h3>
+<h3 id="fixed-3">Fixed</h3>
 
 <ul>
   <li>
@@ -196,7 +323,7 @@ verification.</li>
   <li>40.38% documented</li>
 </ul>
 
-<h3 id="changed-3">Changed</h3>
+<h3 id="changed-4">Changed</h3>
 
 <ul>
   <li>Retemplated project workflows, appraisals, and development tooling with the<br>
@@ -226,13 +353,13 @@ when they cross origins unless explicitly enabled.</li>
   <li>40.86% documented</li>
 </ul>
 
-<h3 id="changed-4">Changed</h3>
+<h3 id="changed-5">Changed</h3>
 
 <ul>
   <li>auth-sanitizer v0.1.3</li>
 </ul>
 
-<h3 id="fixed-3">Fixed</h3>
+<h3 id="fixed-4">Fixed</h3>
 
 <ul>
   <li>Load <code>auth-sanitizer</code> through an internal isolated loader so requiring <code>oauth</code> does not add top-level <code>Auth</code> or <code>AuthSanitizer</code> constants that may collide with downstream applications.</li>
@@ -249,14 +376,14 @@ when they cross origins unless explicitly enabled.</li>
   <li>40.78% documented</li>
 </ul>
 
-<h3 id="added-2">Added</h3>
+<h3 id="added-3">Added</h3>
 
 <ul>
   <li>Add <code>auth-sanitizer</code> integration for inspect-time secret redaction in core OAuth objects.</li>
   <li>Traditional OAuth::VERSION constant</li>
 </ul>
 
-<h3 id="changed-5">Changed</h3>
+<h3 id="changed-6">Changed</h3>
 
 <ul>
   <li>Redact sensitive values from <code>#inspect</code> in <code>OAuth::Consumer</code>, <code>OAuth::Token</code>, and <code>OAuth::Signature::Base</code>.</li>
@@ -273,13 +400,13 @@ when they cross origins unless explicitly enabled.</li>
   <li>40.71% documented</li>
 </ul>
 
-<h3 id="added-3">Added</h3>
+<h3 id="added-4">Added</h3>
 
 <ul>
   <li>base64 dependency, fixes Ruby 3.4 and 3.5 HEAD compatibility</li>
 </ul>
 
-<h3 id="fixed-4">Fixed</h3>
+<h3 id="fixed-5">Fixed</h3>
 
 <ul>
   <li>Fix ActionController request proxy NoMethodError when building signatures
@@ -304,7 +431,7 @@ when they cross origins unless explicitly enabled.</li>
   <li>40.71% documented</li>
 </ul>
 
-<h3 id="added-4">Added</h3>
+<h3 id="added-5">Added</h3>
 
 <ul>
   <li>Corrected SHA-256 &amp; SHA-512 checksums for release 1.1.1</li>
@@ -321,7 +448,7 @@ when they cross origins unless explicitly enabled.</li>
   <li>40.71% documented</li>
 </ul>
 
-<h3 id="added-5">Added</h3>
+<h3 id="added-6">Added</h3>
 
 <ul>
   <li>kettle-dev v1.1.18</li>
@@ -335,7 +462,7 @@ when they cross origins unless explicitly enabled.</li>
   <li>Documented OAuth 1.0, 1.0a differences</li>
 </ul>
 
-<h3 id="changed-6">Changed</h3>
+<h3 id="changed-7">Changed</h3>
 
 <ul>
   <li>converted minitest =&gt; rspec</li>
@@ -359,7 +486,7 @@ when they cross origins unless explicitly enabled.</li>
 </li>
 </ul>
 
-<h3 id="changed-7">Changed</h3>
+<h3 id="changed-8">Changed</h3>
 
 <ul>
   <li>
@@ -386,7 +513,7 @@ when they cross origins unless explicitly enabled.</li>
 </li>
 </ul>
 
-<h3 id="changed-8">Changed</h3>
+<h3 id="changed-9">Changed</h3>
 
 <ul>
   <li>
@@ -405,14 +532,14 @@ when they cross origins unless explicitly enabled.</li>
 </li>
 </ul>
 
-<h3 id="changed-9">Changed</h3>
+<h3 id="changed-10">Changed</h3>
 
 <ul>
   <li>Dropped support for Ruby &lt; 2.7</li>
   <li>Dropped support for Rails &lt; 6</li>
 </ul>
 
-<h3 id="added-6">Added</h3>
+<h3 id="added-7">Added</h3>
 
 <ul>
   <li>New EOL Policy
@@ -430,7 +557,7 @@ when they cross origins unless explicitly enabled.</li>
 </li>
 </ul>
 
-<h3 id="changed-10">Changed</h3>
+<h3 id="changed-11">Changed</h3>
 
 <ul>
   <li>
@@ -449,14 +576,14 @@ when they cross origins unless explicitly enabled.</li>
 </li>
 </ul>
 
-<h3 id="changed-11">Changed</h3>
+<h3 id="changed-12">Changed</h3>
 
 <ul>
   <li>Fixed documentation in SECURITY.md</li>
   <li>Change references to master =&gt; main</li>
 </ul>
 
-<h3 id="added-7">Added</h3>
+<h3 id="added-8">Added</h3>
 
 <ul>
   <li>Post install note about v0.6.x EOL approaching in April, 2024</li>
@@ -470,7 +597,7 @@ when they cross origins unless explicitly enabled.</li>
 </li>
 </ul>
 
-<h3 id="added-8">Added</h3>
+<h3 id="added-9">Added</h3>
 
 <ul>
   <li>New option <code>body_hash_enabled</code> which defaults to true to maintain backward compatibility with prior releases. Setting to <code>false</code> disables generation of a <code>oauth_body_hash</code> component as part of the signature computation.</li>
@@ -478,7 +605,7 @@ when they cross origins unless explicitly enabled.</li>
   <li>Stop testing against active_support v2</li>
 </ul>
 
-<h3 id="changed-12">Changed</h3>
+<h3 id="changed-13">Changed</h3>
 
 <ul>
   <li>Utilize version_gem extracted from oauth2 gem for VERSION
@@ -506,7 +633,7 @@ when they cross origins unless explicitly enabled.</li>
 
 <p>The “hopeful last 0.5.x” Release</p>
 
-<h3 id="fixed-5">Fixed</h3>
+<h3 id="fixed-6">Fixed</h3>
 
 <ul>
   <li>More typos fixed</li>
@@ -522,7 +649,7 @@ when they cross origins unless explicitly enabled.</li>
 
 <p>The “I think I caught ‘em all!” Release</p>
 
-<h3 id="fixed-6">Fixed</h3>
+<h3 id="fixed-7">Fixed</h3>
 
 <ul>
   <li>Typo oauth2 =&gt; oauth as gem name in one more place.</li>
@@ -538,7 +665,7 @@ when they cross origins unless explicitly enabled.</li>
 
 <p>The “Typoes are just the worst!” Release</p>
 
-<h3 id="fixed-7">Fixed</h3>
+<h3 id="fixed-8">Fixed</h3>
 
 <ul>
   <li>Typo oauth2 =&gt; oauth as gem name in a couple places.</li>
@@ -554,13 +681,13 @@ when they cross origins unless explicitly enabled.</li>
 
 <p>The “Is this the last release with a silly name?” Release</p>
 
-<h3 id="added-9">Added</h3>
+<h3 id="added-10">Added</h3>
 
 <ul>
   <li>Post install note about v0.5.x EOL approaching in April, 2023</li>
 </ul>
 
-<h3 id="changed-13">Changed</h3>
+<h3 id="changed-14">Changed</h3>
 
 <ul>
   <li>Improved documentation</li>
@@ -577,7 +704,7 @@ when they cross origins unless explicitly enabled.</li>
 
 <p>The “Can it be the end of the line for 0.5.x?” Release</p>
 
-<h3 id="added-10">Added</h3>
+<h3 id="added-11">Added</h3>
 
 <ul>
   <li>Major updates to Documentation</li>
@@ -598,7 +725,7 @@ when they cross origins unless explicitly enabled.</li>
 </li>
 </ul>
 
-<h3 id="added-11">Added</h3>
+<h3 id="added-12">Added</h3>
 
 <ul>
   <li>Documentation related to Ruby compatibility</li>
@@ -623,13 +750,13 @@ when they cross origins unless explicitly enabled.</li>
 </li>
 </ul>
 
-<h3 id="added-12">Added</h3>
+<h3 id="added-13">Added</h3>
 
 <ul>
   <li>Added more documentation files to packaged gem, e.g. SECURITY.md, CODE_OF_CONDUCT.md</li>
 </ul>
 
-<h3 id="fixed-8">Fixed</h3>
+<h3 id="fixed-9">Fixed</h3>
 
 <ul>
   <li>Removed reference to RUBY_VERSION from gemspec, as it depends on rake release, which is problematic on some ruby engines. (by @pboling)</li>
@@ -643,7 +770,7 @@ when they cross origins unless explicitly enabled.</li>
 </li>
 </ul>
 
-<h3 id="added-13">Added</h3>
+<h3 id="added-14">Added</h3>
 
 <ul>
   <li>Setup Rubocop (#205, #208 by @pboling)</li>
@@ -653,7 +780,7 @@ when they cross origins unless explicitly enabled.</li>
   <li>Handle a nested array of hashes in OAuth::Helper.normalize (#80, #221 by @pboling)</li>
 </ul>
 
-<h3 id="changed-14">Changed</h3>
+<h3 id="changed-15">Changed</h3>
 
 <ul>
   <li>Switch from TravisCI to Github Actions (#202, #207, #176 by @pboling)</li>
@@ -666,7 +793,7 @@ when they cross origins unless explicitly enabled.</li>
   <li>Require plaintext signature method by default (#135 by @confiks &amp; @pboling)</li>
 </ul>
 
-<h3 id="fixed-9">Fixed</h3>
+<h3 id="fixed-10">Fixed</h3>
 
 <ul>
   <li>Fixed Infinite Redirect in v0.5.5, v0.5.6 (#186, #210 by @pboling)</li>
@@ -692,14 +819,14 @@ when they cross origins unless explicitly enabled.</li>
 </li>
 </ul>
 
-<h3 id="added-14">Added</h3>
+<h3 id="added-15">Added</h3>
 
 <ul>
   <li>Add metadata to Gemspec file</li>
   <li>Add support for PUT requests with Action Controller (#181)</li>
 </ul>
 
-<h3 id="changed-15">Changed</h3>
+<h3 id="changed-16">Changed</h3>
 
 <ul>
   <li>Change default timeout to be the same as Net::HTTP default, 60 seconds instead of 30 seconds.</li>
@@ -713,20 +840,20 @@ when they cross origins unless explicitly enabled.</li>
 </li>
 </ul>
 
-<h3 id="added-15">Added</h3>
+<h3 id="added-16">Added</h3>
 
 <ul>
   <li>Add :allow_empty_params option (#155)</li>
 </ul>
 
-<h3 id="changed-16">Changed</h3>
+<h3 id="changed-17">Changed</h3>
 
 <ul>
   <li>Allow redirect to different host but same path</li>
   <li>Various cleanups</li>
 </ul>
 
-<h3 id="fixed-10">Fixed</h3>
+<h3 id="fixed-11">Fixed</h3>
 
 <ul>
   <li>Fixes ssl-noverify</li>
@@ -741,13 +868,13 @@ when they cross origins unless explicitly enabled.</li>
 </li>
 </ul>
 
-<h3 id="changed-17">Changed</h3>
+<h3 id="changed-18">Changed</h3>
 
 <ul>
   <li>Various cleanups (charliesome)</li>
 </ul>
 
-<h3 id="fixed-11">Fixed</h3>
+<h3 id="fixed-12">Fixed</h3>
 
 <ul>
   <li>Fixes UnknownRequestType on Rails 5.1 for ActionDispatch::Request (xprazak2)</li>
@@ -761,13 +888,13 @@ when they cross origins unless explicitly enabled.</li>
 </li>
 </ul>
 
-<h3 id="fixed-12">Fixed</h3>
+<h3 id="fixed-13">Fixed</h3>
 
 <ul>
   <li>Fix #145 - broken CLI required loading active_support (James Pinto)</li>
 </ul>
 
-<h3 id="changed-18">Changed</h3>
+<h3 id="changed-19">Changed</h3>
 
 <ul>
   <li>Removing legacy scripts (James Pinto)</li>
@@ -781,7 +908,7 @@ when they cross origins unless explicitly enabled.</li>
 </li>
 </ul>
 
-<h3 id="added-16">Added</h3>
+<h3 id="added-17">Added</h3>
 
 <ul>
   <li>Adding a development dependency that had not been mentioned (James Pinto)</li>
@@ -789,7 +916,7 @@ when they cross origins unless explicitly enabled.</li>
   <li>Adding support to Ruby 2.4 and head (James Pinto)</li>
 </ul>
 
-<h3 id="changed-19">Changed</h3>
+<h3 id="changed-20">Changed</h3>
 
 <ul>
   <li>Use assert_nil so as to silence a Minitest 6 deprecation warning (James Pinto)</li>
@@ -809,7 +936,7 @@ when they cross origins unless explicitly enabled.</li>
   <li>Reimplementing #82 - Debug Output Option (James Pinto)</li>
 </ul>
 
-<h3 id="fixed-13">Fixed</h3>
+<h3 id="fixed-14">Fixed</h3>
 
 <ul>
   <li>Fix #113 adding paths when a full URL has been specified (James Pinto)</li>
@@ -826,13 +953,13 @@ when they cross origins unless explicitly enabled.</li>
 </li>
 </ul>
 
-<h3 id="added-17">Added</h3>
+<h3 id="added-18">Added</h3>
 
 <ul>
   <li>Add license info to the gemspec (Robert Reiz)</li>
 </ul>
 
-<h3 id="fixed-14">Fixed</h3>
+<h3 id="fixed-15">Fixed</h3>
 
 <ul>
   <li>Proper handling for empty query string in RequestToken#build_authorize_url (midchildan,<br>
@@ -840,7 +967,7 @@ Harald Sitter)</li>
   <li>Replace calls to String#blank? with its implementation (Sergio Gil Pérez de la Manga)</li>
 </ul>
 
-<h3 id="changed-20">Changed</h3>
+<h3 id="changed-21">Changed</h3>
 
 <ul>
   <li>Loosen some development dependencies. Add libcurl-dev to travis</li>
@@ -862,7 +989,7 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-18">Added</h3>
+<h3 id="added-19">Added</h3>
 
 <ul>
   <li>Add support for HTTP PATCH method (Richard Huang)</li>
@@ -872,7 +999,7 @@ Harald Sitter)</li>
   <li>Allow reading certificate file path from environment variable. Add CentOS cert file path (Danil Vlasov)</li>
 </ul>
 
-<h3 id="changed-21">Changed</h3>
+<h3 id="changed-22">Changed</h3>
 
 <ul>
   <li>Replace jeweler with real spec and bundler tasks</li>
@@ -881,7 +1008,7 @@ Harald Sitter)</li>
   <li>Change token requests to exclude <code>oauth_body_hash</code>. Update doc links in comments. (John Remmen)</li>
 </ul>
 
-<h3 id="fixed-15">Fixed</h3>
+<h3 id="fixed-16">Fixed</h3>
 
 <ul>
   <li>Fix ability to pass in an authorize url with a query string (Roger Smith)</li>
@@ -906,13 +1033,13 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-19">Added</h3>
+<h3 id="added-20">Added</h3>
 
 <ul>
   <li>Set a configurable timeout for all requests (Rick Olson)</li>
 </ul>
 
-<h3 id="fixed-16">Fixed</h3>
+<h3 id="fixed-17">Fixed</h3>
 
 <ul>
   <li>Fix merging paths if the path is not empty</li>
@@ -927,13 +1054,13 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="changed-22">Changed</h3>
+<h3 id="changed-23">Changed</h3>
 
 <ul>
   <li>Make use the path component of the :site parameter (Jonathon M. Abbott)</li>
 </ul>
 
-<h3 id="fixed-17">Fixed</h3>
+<h3 id="fixed-18">Fixed</h3>
 
 <ul>
   <li>Fixed nested attributes in #normalize (Shaliko Usubov)</li>
@@ -949,14 +1076,14 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-20">Added</h3>
+<h3 id="added-21">Added</h3>
 
 <ul>
   <li>Add explicit require for rsa/sha1 (Juris Galang)</li>
   <li>Add gemtest support (Adrian Feldman)</li>
 </ul>
 
-<h3 id="changed-23">Changed</h3>
+<h3 id="changed-24">Changed</h3>
 
 <ul>
   <li>Use webmock to mock all http-requests in tests (Adrian Feldman)</li>
@@ -964,7 +1091,7 @@ Harald Sitter)</li>
   <li>Use Net::HTTPGenericRequest (Jakub Kuźma)</li>
 </ul>
 
-<h3 id="fixed-18">Fixed</h3>
+<h3 id="fixed-19">Fixed</h3>
 
 <ul>
   <li>Fix POST Requests with Typhoeus proxy (niedhui)</li>
@@ -979,13 +1106,13 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-21">Added</h3>
+<h3 id="added-22">Added</h3>
 
 <ul>
   <li>Added support for Rails 3 in client/action_controller_request (Pelle)</li>
 </ul>
 
-<h3 id="fixed-19">Fixed</h3>
+<h3 id="fixed-20">Fixed</h3>
 
 <ul>
   <li>Fix LoadError rescue in tests: return can’t be used in this context (Hans de Graaff)</li>
@@ -1002,7 +1129,7 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="fixed-20">Fixed</h3>
+<h3 id="fixed-21">Fixed</h3>
 
 <ul>
   <li>Fix for em-http proxy (ichverstehe)</li>
@@ -1016,13 +1143,13 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-22">Added</h3>
+<h3 id="added-23">Added</h3>
 
 <ul>
   <li>Added Bundler (rc) Gemfile for easier dev/testing</li>
 </ul>
 
-<h3 id="fixed-21">Fixed</h3>
+<h3 id="fixed-22">Fixed</h3>
 
 <ul>
   <li>Fixed compatibility with Ruby 1.9.2 (ecavazos)</li>
@@ -1038,13 +1165,13 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-23">Added</h3>
+<h3 id="added-24">Added</h3>
 
 <ul>
   <li>Added support for using OAuth with proxies (Marsh Gardiner)</li>
 </ul>
 
-<h3 id="fixed-22">Fixed</h3>
+<h3 id="fixed-23">Fixed</h3>
 
 <ul>
   <li>Rails 3 Compatibility fixes (Pelle Braendgaard)</li>
@@ -1059,7 +1186,7 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-24">Added</h3>
+<h3 id="added-25">Added</h3>
 
 <ul>
   <li>Added computation of oauth_body_hash as per OAuth Request Body Hash 1.0 Draft 4 (Michael Reinsch)</li>
@@ -1073,14 +1200,14 @@ Harald Sitter)</li>
   <li>New website (Aaron Quint)</li>
 </ul>
 
-<h3 id="changed-24">Changed</h3>
+<h3 id="changed-25">Changed</h3>
 
 <ul>
   <li>Better marshalling implementation (Yoan Blanc)</li>
   <li>Replaced hoe with Jeweler (Aaron Quint)</li>
 </ul>
 
-<h3 id="fixed-23">Fixed</h3>
+<h3 id="fixed-24">Fixed</h3>
 
 <ul>
   <li>Strip extraneous spaces and line breaks from access_token responses (observed in the wild with Yahoo!’s OAuth+OpenID hybrid) (Eric Hartmann)</li>
@@ -1097,7 +1224,7 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-25">Added</h3>
+<h3 id="added-26">Added</h3>
 
 <ul>
   <li>Added -B CLI option to use the :body authentication scheme (Seth)</li>
@@ -1105,13 +1232,13 @@ Harald Sitter)</li>
   <li>Added :ca_file consumer option to allow consumer specific certificate override. (Pelle)</li>
 </ul>
 
-<h3 id="changed-25">Changed</h3>
+<h3 id="changed-26">Changed</h3>
 
 <ul>
   <li>Test clean-up (Xavier Shay, Hannes Tydén)</li>
 </ul>
 
-<h3 id="fixed-24">Fixed</h3>
+<h3 id="fixed-25">Fixed</h3>
 
 <ul>
   <li>Respect <code>--method</code> in <code>authorize</code> CLI command (Seth)</li>
@@ -1125,7 +1252,7 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-26">Added</h3>
+<h3 id="added-27">Added</h3>
 
 <ul>
   <li>
@@ -1146,13 +1273,13 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="changed-26">Changed</h3>
+<h3 id="changed-27">Changed</h3>
 
 <ul>
   <li>OAuth::Client::Helper uses OAuth::Version::VERSION (chadisfaction)</li>
 </ul>
 
-<h3 id="fixed-25">Fixed</h3>
+<h3 id="fixed-26">Fixed</h3>
 
 <ul>
   <li>Fix OAuth::RequestProxy::ActionControllerRequest’s handling of params (Tristan Groléat)</li>
@@ -1166,21 +1293,21 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-27">Added</h3>
+<h3 id="added-28">Added</h3>
 
 <ul>
   <li>Support for arguments in OAuth::Consumer#get_access_token (Matt Sanford)</li>
   <li>Add gem version to user-agent header (Matt Sanford)</li>
 </ul>
 
-<h3 id="changed-27">Changed</h3>
+<h3 id="changed-28">Changed</h3>
 
 <ul>
   <li>Improved error handling for invalid Authorization headers (Matt Sanford)</li>
   <li>Handle input from aggressive form encoding libraries (Matt Wood)</li>
 </ul>
 
-<h3 id="fixed-26">Fixed</h3>
+<h3 id="fixed-27">Fixed</h3>
 
 <ul>
   <li>Corrected OAuth XMPP namespace (Seth)</li>
@@ -1196,7 +1323,7 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-28">Added</h3>
+<h3 id="added-29">Added</h3>
 
 <ul>
   <li>Support applications using the MethodOverride Rack middleware (László Bácsi)</li>
@@ -1207,7 +1334,7 @@ Harald Sitter)</li>
   <li>Added help to the ‘oauth’ CLI (Seth)</li>
 </ul>
 
-<h3 id="fixed-27">Fixed</h3>
+<h3 id="fixed-28">Fixed</h3>
 
 <ul>
   <li>2xx statuses should be treated as success (Anders Conbere)</li>
@@ -1224,7 +1351,7 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="fixed-28">Fixed</h3>
+<h3 id="fixed-29">Fixed</h3>
 
 <ul>
   <li>Fixed a problem with relative and absolute token request paths. (Michael Wood)</li>
@@ -1238,7 +1365,7 @@ Harald Sitter)</li>
 </li>
 </ul>
 
-<h3 id="added-29">Added</h3>
+<h3 id="added-30">Added</h3>
 
 <ul>
   <li>Support ActionController::Request from Edge Rails (László Bácsi)</li>
@@ -1246,14 +1373,14 @@ Harald Sitter)</li>
   <li>Command-line app for generating signatures. (Seth)</li>
 </ul>
 
-<h3 id="changed-28">Changed</h3>
+<h3 id="changed-29">Changed</h3>
 
 <ul>
   <li>OAuth::Signature.sign and friends now yield the RequestProxy instead of the token when the passed block’s arity is 1. (Seth)</li>
   <li>Improved test-cases and compatibility for encoding issues. (Pelle)</li>
 </ul>
 
-<h3 id="fixed-29">Fixed</h3>
+<h3 id="fixed-30">Fixed</h3>
 
 <ul>
   <li>Correctly handle multi-valued parameters (Seth)</li>
@@ -1264,7 +1391,7 @@ Harald Sitter)</li>
 
 <p>The lets fix the last release release</p>
 
-<h3 id="fixed-30">Fixed</h3>
+<h3 id="fixed-31">Fixed</h3>
 
 <ul>
   <li>Fixed plain text signatures (Andrew Arrow)</li>
@@ -1275,21 +1402,21 @@ Harald Sitter)</li>
 
 <p>The lets RSA release</p>
 
-<h3 id="added-30">Added</h3>
+<h3 id="added-31">Added</h3>
 
 <ul>
   <li>Improved support for Ruby 1.8.7 (Bill Kocik)</li>
   <li>Added support for ‘private_key_file’ option for RSA signatures (Chris Mear)</li>
 </ul>
 
-<h3 id="changed-29">Changed</h3>
+<h3 id="changed-30">Changed</h3>
 
 <ul>
   <li>Improved RSA testing</li>
   <li>Omit token when signing with RSA</li>
 </ul>
 
-<h3 id="fixed-31">Fixed</h3>
+<h3 id="fixed-32">Fixed</h3>
 
 <ul>
   <li>Fixed RSA verification to support RSA providers now using Ruby and RSA</li>
@@ -1301,7 +1428,7 @@ Harald Sitter)</li>
 
 <p>Lets actually support SSL release</p>
 
-<h3 id="fixed-32">Fixed</h3>
+<h3 id="fixed-33">Fixed</h3>
 
 <ul>
   <li>Use HTTPS when required.</li>
@@ -1311,7 +1438,7 @@ Harald Sitter)</li>
 
 <p>All together now release</p>
 
-<h3 id="changed-30">Changed</h3>
+<h3 id="changed-31">Changed</h3>
 
 <ul>
   <li>This is a big release, where we have merged the efforts of various parties into one common library.<br>
@@ -1321,7 +1448,7 @@ but please have a look at the unit tests.</li>
 
 <h2 id="012-2007-12-1">0.1.2 2007-12-1</h2>
 
-<h3 id="fixed-33">Fixed</h3>
+<h3 id="fixed-34">Fixed</h3>
 
 <ul>
   <li>Fixed checks for missing OAuth params to improve performance</li>
@@ -1330,7 +1457,7 @@ but please have a look at the unit tests.</li>
 
 <h2 id="011-2007-11-26">0.1.1 2007-11-26</h2>
 
-<h3 id="added-31">Added</h3>
+<h3 id="added-32">Added</h3>
 
 <ul>
   <li>First release as a GEM</li>

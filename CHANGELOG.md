@@ -20,6 +20,25 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Added
 
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [1.1.9] - 2026-09-18
+
+- TAG: [v1.1.9][1.1.9t]
+- COVERAGE: 87.71% -- 849/968 lines in 34 files
+- BRANCH COVERAGE: 61.37% -- 170/277 branches in 34 files
+- 41.13% documented
+
+### Added
+
 - Spec coverage for `OAuth::Client::Helper`, the `query_string` OAuth signing scheme in
   `lib/oauth/client/net_http.rb`, and the `OAuth::Error`/`OAuth::Unauthorized`/`OAuth::Problem`
   classes — none previously had a dedicated spec file.
@@ -70,10 +89,6 @@ Please file a bug if you notice a violation of semantic versioning.
   - other (3)
   - workflows (32)
 
-### Deprecated
-
-### Removed
-
 ### Fixed
 
 - kettle-jem-template-20260720-003 - StructuredMerge Git diff driver config now
@@ -119,8 +134,6 @@ Please file a bug if you notice a violation of semantic versioning.
   preserving comments and trailing commas during template updates.
 
 - Exclude optional OAuth adapters from the default coverage scope.
-
-### Security
 
 ## [1.1.8] - 2026-07-15
 
@@ -955,7 +968,9 @@ All together now release
 - Moved all non-Rails functionality from the Rails plugin:
   http://code.google.com/p/oauth-plugin/
 
-[Unreleased]: https://github.com/ruby-oauth/oauth/compare/v1.1.8...HEAD
+[Unreleased]: https://github.com/ruby-oauth/oauth/compare/v1.1.9...HEAD
+[1.1.9]: https://github.com/ruby-oauth/oauth/compare/v1.1.8...v1.1.9
+[1.1.9t]: https://github.com/ruby-oauth/oauth/releases/tag/v1.1.9
 [1.1.8]: https://github.com/ruby-oauth/oauth/compare/v1.1.7...v1.1.8
 [1.1.8t]: https://github.com/ruby-oauth/oauth/releases/tag/v1.1.8
 [1.1.7]: https://github.com/ruby-oauth/oauth/compare/v1.1.6...v1.1.7
