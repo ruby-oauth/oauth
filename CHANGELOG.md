@@ -28,6 +28,8 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
+- Token inspection specs no longer treat hexadecimal object identifiers as leaked secrets.
+
 ### Security
 
 ## [1.1.9] - 2026-09-18

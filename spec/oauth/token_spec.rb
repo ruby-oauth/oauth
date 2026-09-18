@@ -15,8 +15,8 @@ RSpec.describe OAuth::Token do
 
       expect(token.inspect).to include("@token=[FILTERED]")
       expect(token.inspect).to include("@secret=[FILTERED]")
-      expect(token.inspect).not_to include("xyz")
-      expect(token.inspect).not_to include("123")
+      expect(token.inspect).not_to include('@token="xyz"')
+      expect(token.inspect).not_to include('@secret="123"')
     end
   end
 end
