@@ -8,6 +8,14 @@ GIT
       rubocop (>= 1.72.1, < 2.0)
 
 PATH
+  remote: ../oauth-tty
+  specs:
+    oauth-tty (1.0.14)
+      anonymous_loader (~> 0.1, >= 0.1.3)
+      auth-sanitizer (~> 0.2, >= 0.2.3)
+      version_gem (~> 1.1, >= 1.1.15)
+
+PATH
   remote: .
   specs:
     oauth (1.1.9)
@@ -28,14 +36,6 @@ PATH
   remote: /var/home/pboling/src/my/ruby-oauth/auth-sanitizer
   specs:
     auth-sanitizer (0.2.4)
-      version_gem (~> 1.1, >= 1.1.15)
-
-PATH
-  remote: ../oauth-tty
-  specs:
-    oauth-tty (1.0.14)
-      anonymous_loader (~> 0.1, >= 0.1.3)
-      auth-sanitizer (~> 0.2, >= 0.2.3)
       version_gem (~> 1.1, >= 1.1.15)
 
 PATH
