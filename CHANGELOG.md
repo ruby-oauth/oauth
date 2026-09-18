@@ -20,6 +20,10 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Added
 
+- Spec coverage for `OAuth::Client::Helper`, the `query_string` OAuth signing scheme in
+  `lib/oauth/client/net_http.rb`, and the `OAuth::Error`/`OAuth::Unauthorized`/`OAuth::Problem`
+  classes — none previously had a dedicated spec file.
+
 ### Changed
 
 ### Deprecated
