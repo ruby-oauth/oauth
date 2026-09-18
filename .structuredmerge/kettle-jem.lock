@@ -34,6 +34,7 @@ template_state:
     - ".github/workflows/jruby-9.4.yml"
     - ".github/workflows/jruby.yml"
     - ".github/workflows/locked_deps.yml"
+    - ".github/workflows/macos.yml"
     - ".github/workflows/opencollective.yml"
     - ".github/workflows/ruby-2.4.yml"
     - ".github/workflows/ruby-2.5.yml"
@@ -54,14 +55,23 @@ template_state:
     - ".github/workflows/truffleruby-25.0.yml"
     - ".github/workflows/truffleruby-33.0.yml"
     - ".github/workflows/unlocked_deps.yml"
+    - ".github/workflows/windows.yml"
+    - ".gitignore"
+    - ".rubocop.yml"
     - ".simplecov"
+    - AGENTS.md
     - Appraisals
     - Gemfile
     - README.md
+    - Rakefile
+    - gemfiles/modular/coverage_local.gemfile
     - gemfiles/modular/documentation.gemfile
+    - gemfiles/modular/documentation_local.gemfile
     - gemfiles/modular/ostruct/r4/v0.6.gemfile
     - gemfiles/modular/style.gemfile
+    - gemfiles/modular/style_local.gemfile
     - gemfiles/modular/templating.gemfile
+    - gemfiles/modular/templating_local.gemfile
     - gemfiles/modular/x_std_libs/r4/libs.gemfile
     - oauth.gemspec
   checksums:
