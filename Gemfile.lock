@@ -212,8 +212,6 @@ GEM
       kettle-test (~> 2.0, >= 2.0.22)
       ruby-progressbar (~> 1.13)
       tty-progressbar (~> 0.18)
-    kettle-drift (1.0.14)
-      version_gem (~> 1.1, >= 1.1.15)
     kettle-family (1.3.1)
       command_kit (~> 0.6)
       command_kit-completion (~> 0.1)
@@ -657,9 +655,7 @@ DEPENDENCIES
   irb (~> 1.17)
   kettle-changelog (~> 1.0, >= 1.0.7)
   kettle-dev (~> 3.1, >= 3.1.0)
-  kettle-drift (~> 1.0, >= 1.0.13)
   kettle-family (~> 1.3, >= 1.3.1)
-  kettle-jem (~> 7.1, >= 7.1.28)
   kettle-soup-cover (~> 3.0, >= 3.0.10)
   kettle-test (~> 2.0, >= 2.0.22)
   kramdown (~> 2.5, >= 2.5.2)
@@ -689,7 +685,6 @@ DEPENDENCIES
   standard (~> 1.56, >= 1.56.0)
   stone_checksums (~> 1.0, >= 1.0.9)
   stringio (>= 3.0)
-  tree_sitter_language_pack (~> 1.16, >= 1.16.2)
   turbo_tests2 (~> 3.2, >= 3.2.9)
   typhoeus (>= 0.1.13)
   vcr (>= 4)
@@ -712,28 +707,28 @@ CHECKSUMS
   appraisal2 (3.2.4) sha256=0259bf2b77e345c5fe9295a6536d7364a25f3f5c54851c3293b3856bc01cbaaa
   appraisal2-rubocop (1.0.3) sha256=fb0fb679d98008be1a948d9c40bb0dbe4005f8da0e04ece2149d5c87dc9c5e76
   ast (2.4.3) sha256=954615157c1d6a382bc27d690d973195e79db7f55e9765ac7c481c60bdb4d383
-  ast-crispr (7.1.9)
-  ast-crispr-markdown-markly (7.1.9)
-  ast-crispr-ruby-prism (7.1.9)
-  ast-merge (7.1.9)
+  ast-crispr (7.1.9) sha256=f764423c473a815d793014636aa939bc0e80148b29dc9ad861f2d516242c1d08
+  ast-crispr-markdown-markly (7.1.9) sha256=b6bb793288830de6d6a1c5ea42064ac5da189e0e6bf566b456049f965408c7dd
+  ast-crispr-ruby-prism (7.1.9) sha256=7dfe9796b4b6e2a2b3e87eb2655eff437ddc6a68a3f7a3dbfa14310b831b22c5
+  ast-merge (7.1.9) sha256=d80ff5e17ec34afbfe9ad5ab580a1fa3b8e840e027d0b865bb39ad28eaa79e4d
   auth-sanitizer (0.2.4)
   backports (3.25.3) sha256=94298d32dc3c40ca15633b54e282780b49e2db0c045f602ea1907e4f63a17235
   base64 (0.3.0) sha256=27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b
-  bash-merge (7.1.9)
+  bash-merge (7.1.9) sha256=fde66a0e5eaaa2df0eae456bd5a45be631e61806c356f345d2a43085e4138757
   benchmark (0.5.0) sha256=465df122341aedcb81a2a24b4d3bd19b6c67c1530713fd533f3ff034e419236c
   bigdecimal (4.1.3) sha256=61ebe1e5e559bdc3cc6f2c0ee7f427321fc838f59611c294356eb04d6e21cf66
   bundler (4.1.0.beta1) sha256=8a2dac8ca276ff4eff5efc2c6457b0044080fc1e431534ad7c5cc6187232b800
   bundler-audit (0.9.3) sha256=81c8766c71e47d0d28a0f98c7eed028539f21a6ea3cd8f685eb6f42333c9b4e9
   cgi (0.5.2) sha256=61ca30298171190fd4fa0d8018e57ada456eae9b7a2b78526debf7f0a0e6f8bb
   citrus (3.0.2) sha256=4ec2412fc389ad186735f4baee1460f7900a8e130ffe3f216b30d4f9c684f650
-  citrus-toml-merge (7.1.9)
+  citrus-toml-merge (7.1.9) sha256=04354a92f0ff53dfcdbddb33824ced56ded8542f0897bb6230da0a55e6bf53f5
   cmdparse (3.0.7) sha256=f7c5cace10bec6abf853370ae095e4b97a84ed9d847b3fb38f41cc4fbc950739
   colsole (1.0.1) sha256=7632a300ace2db877c024ffe413c684954cf37e41264b75ace9f456c9d657b02
   command_kit (0.6.0) sha256=e57f29cf5aee4f571c210041d910ff87f85749e42dfe75139c57cc93d84afa90
   command_kit-completion (0.3.0) sha256=d9c498555125bcdd0c9d869f2a64a25a2f0205102a7f28c81c7937ae633ea737
-  commonmarker (2.10.0)
+  commonmarker (2.10.0) sha256=1884529957bf59bcd4f19fcc29e931f2042760ced273353e8010a20fe4ae68cb
   commonmarker (2.10.0-x86_64-linux) sha256=945c510c0bfca9022245928e2248468fe3ddad58c939be0c37b20082cc392880
-  commonmarker-merge (7.1.9)
+  commonmarker-merge (7.1.9) sha256=ee0b253d7c37e941102941f6354d4fc06158a41e5d4c868ebbfc4ae55d073b8a
   completely (0.8.0) sha256=e493cd5d84805f47917a41f277ecbfe5f35363bed670be5a957d3acaed8c6c5e
   concurrent-ruby (1.3.8) sha256=b2f1be836e968ccc78ccfce277ea79c72a88633f22306782c16ff23fb415d1e1
   crack (1.0.1) sha256=ff4a10390cd31d66440b7524eb1841874db86201d5b70032028553130b6d4c7e
@@ -744,7 +739,7 @@ CHECKSUMS
   diffy (3.4.4) sha256=79384ab5ca82d0e115b2771f0961e27c164c456074bd2ec46b637ebf7b6e47e3
   docopt_ng (0.7.1) sha256=a024148ee4fa3ab1a8a04411aa4370f39cf2b446e63562097d418b7974a15667
   domain_name (0.6.20260907) sha256=5517a7f82c4464a61fc17133c3f6a02833faa13533c16c07e8f73b11d872cb03
-  dotenv-merge (7.1.9)
+  dotenv-merge (7.1.9) sha256=6c82edd192ff6cb679e235d2b58f38d268a1d0c95101f8756494a37924359fcc
   dry-configurable (1.4.0) sha256=e35d1b5f3c081753ef361f564919db79000f32cfa6f20ee3a3ba5921b41b73ce
   dry-core (1.2.0) sha256=0cc5a7da88df397f153947eeeae42e876e999c1e30900f3c536fb173854e96a1
   dry-inflector (1.3.1) sha256=7fb0c2bb04f67638f25c52e7ba39ab435d922a3a5c3cd196120f63accb682dcc
@@ -768,27 +763,26 @@ CHECKSUMS
   io-console (0.9.4) sha256=a403304f32928ee85e56d457b4612ca43f2703b561a3258844992bd24085fbb1
   irb (1.18.0) sha256=de9454a0703a54704b9811a5ef31a60c86949fbf4013fcf244fabc7c775248e3
   json (2.21.2) sha256=1f1d3b7cf2b3ba1a69beca0bb6db13d5438b80bff3cd54cdaaa620b9b07c1c6a
-  json-merge (7.1.9)
+  json-merge (7.1.9) sha256=13c979c1398e6e3126ec6c1d4acccd08a138fb06a58152f51ad9079caf03b39e
   kettle-changelog (1.0.7) sha256=42b9307e46e1e551434e8054ca4f467e8b13b69bd65e5dea4544b279179a50ff
   kettle-dev (3.1.1) sha256=9ac5992f5842f2ec218dc5048814e57c7260cdc6069ad1d3c3581334c94f1459
-  kettle-drift (1.0.14)
   kettle-family (1.3.1) sha256=0e77fb67d8e989a806ae453fdcac43a44e3dd43e1d2dae7a51418504309e27d6
   kettle-gha-pins (0.3.15) sha256=0607ef5952dc2de9d47618307f89e4a1f176f78ee540aaf8ee9e537633ad0b17
-  kettle-jem (7.1.28)
+  kettle-jem (7.1.28) sha256=6bd38a850bc3a73786cd26f3c3489f37ab6040832143df8fbd5e41ad73085d14
   kettle-ndjson (0.1.16) sha256=a8653859eece3eba5a40f9d735e5a0720b115ed88d0e9354d242136e57823653
   kettle-rb (0.1.14) sha256=22b124f56d4c45a6ccebb686e9c7a802bc23a6636f572b2f07d5b9365bcc03d1
   kettle-soup-cover (3.0.10) sha256=579e09d382d5c46b2a4787df492fdf598c774545d4ab1b7bd8cfaf6104424edd
   kettle-test (2.0.22) sha256=2c6a63974c29ffd0c459c830c8b06057dd33d5a70185433fe8a689378fd6062d
   kettle-wash (0.1.7) sha256=ceb7ad5975c7a6353052f564ca2068e7e612d4042441ddee19de830b079e4f9a
   kramdown (2.5.2) sha256=1ba542204c66b6f9111ff00dcc26075b95b220b07f2905d8261740c82f7f02fa
-  kramdown-merge (7.1.9)
+  kramdown-merge (7.1.9) sha256=ce3ab38361aaf43dfd60b5df56a3b799ca69be18cd815495dcce265b8c8f62a3
   kramdown-parser-gfm (1.1.0) sha256=fb39745516427d2988543bf01fc4cf0ab1149476382393e0e9c48592f6581729
   language_server-protocol (3.17.0.6) sha256=5ef2c0c138f8267e1bc631d3328347d354f96724b0af22f2c79516120443b7f0
   lint_roller (1.1.0) sha256=2c0c845b632a7d172cb849cc90c1bce937a28c5c8ccccb50dfd46a485003cc87
   logger (1.7.0) sha256=196edec7cc44b66cfb40f9755ce11b392f21f7967696af15d274dde7edff0203
-  markdown-merge (7.1.9)
+  markdown-merge (7.1.9) sha256=1b27684e1ca62aee0b7c24b49a0271d5a50a11315312408b0f854eb77054d04f
   markly (0.19.0) sha256=cd2c0e86eaf3660ed2a3a94104877f8bd41adda78e7c295c017d03de0d4044ca
-  markly-merge (7.1.9)
+  markly-merge (7.1.9) sha256=2ca361e3ae4d9af7cab148727770a1330662e83d940dc59f1d1a1130affa674a
   mime-types (3.7.0) sha256=dcebf61c246f08e15a4de34e386ebe8233791e868564a470c3fe77c00eed5e56
   mime-types-data (3.2026.0701) sha256=cd8811e1fb89d836499ba0582368a10ee74cef929ba956d1d5ddca045e6a730f
   mini_portile2 (2.8.9) sha256=0cd7c7f824e010c072e33f68bc02d85a00aeb6fce05bb4819c03dfd3c140c289
@@ -807,23 +801,23 @@ CHECKSUMS
   parallel_tests (5.8.0) sha256=181898cbee2ffb1c796274ce31d27f792a421324609bfc7e9b5531d929d91eda
   parser (3.3.12.0) sha256=21a6d7f755d5a24dfbdc6e6b772e4e879a52e7631a88bc5a3a134606052c9828
   parslet (2.0.0) sha256=d45130695d39b43d7e6a91f4d2ec66b388a8d822bae38de9b4de9a5fbde1f606
-  plain-merge (7.1.9)
+  plain-merge (7.1.9) sha256=0ce835a4377abc085aa7fe2f4ad058d8c3fd36aec845f9e4b0481fb485593b91
   pp (0.6.4) sha256=dfcb0fce700c41456265922884f9fe195d7fbb0674a3578e6c0f69588e82b570
   prettyprint (0.2.0) sha256=2bc9e15581a94742064a3cc8b0fb9d45aae3d03a1baa6ef80922627a0766f193
   prism (1.9.0) sha256=7b530c6a9f92c24300014919c9dcbc055bf4cdf51ec30aed099b06cd6674ef85
-  prism-merge (7.1.9)
+  prism-merge (7.1.9) sha256=a51f86841dfa399a06dddc16b35f9277845b7ad0d77baad4c1e218987e63ac60
   psych (5.5.0) sha256=4b245bbbd0f3238df8ccee766ebc1a6b062b10e4ee1d3284eb588739ba156a0a
-  psych-merge (7.1.9)
+  psych-merge (7.1.9) sha256=c3f34f3820b55538c08d3cd59b85e022a81a06bbbab5923d09585b1f012f7eb5
   public_suffix (7.0.5) sha256=1a8bb08f1bbea19228d3bed6e5ed908d1cb4f7c2726d18bd9cadf60bc676f623
   racc (1.8.1) sha256=4a7f6929691dbec8b5209a0b373bc2614882b55fc5d2e447a21aaa691303d62f
   rack (3.2.7) sha256=93e13e1c24f93556671d85d2d79fa228c3485815c50d7e2f265b5330c6528fb7
   rack-test (2.2.0) sha256=005a36692c306ac0b4a9350355ee080fd09ddef1148a5f8b2ac636c720f5c463
   rainbow (3.1.1) sha256=039491aa3a89f42efa1d6dec2fc4e62ede96eb6acd95e52f1ad581182b79bc6a
   rake (13.4.2) sha256=cb825b2bd5f1f8e91ca37bddb4b9aaf345551b4731da62949be002fa89283701
-  rake-compiler-dock (1.12.0)
-  rb_sys (0.9.130)
+  rake-compiler-dock (1.12.0) sha256=f13205c2738f3d2053afcd03491a9e4541b22a59a0bfc53fc8bc883bd8188023
+  rb_sys (0.9.130) sha256=7d486d99c1da02635515deaf9860fc5aea90bb4ab2589b2deec7fdc7d3548615
   rbs (4.2.0) sha256=51f7b886dcc05bc09e10b901daa6a81829f6adc03101d6ca9ea4aac6103e0674
-  rbs-merge (7.1.9)
+  rbs-merge (7.1.9) sha256=c5aa537019fc8bad1f8fc8c37deed4ae5d1f5dd2dfb9f61edaef14c5bfb73383
   rdoc (7.2.0) sha256=8650f76cd4009c3b54955eb5d7e3a075c60a57276766ebf36f9085e8c9f23192
   reek (6.5.0) sha256=d26d3a492773b2bbc228888067a21afe33ac07954a17dbd64cdeae42c4c69be1
   regexp_parser (2.12.0) sha256=35a916a1d63190ab5c9009457136ae5f3c0c7512d60291d0d1378ba18ce08ebb
@@ -860,7 +854,7 @@ CHECKSUMS
   rubocop-rspec_rails (2.32.0) sha256=4a0d641c72f6ebb957534f539d9d0a62c47abd8ce0d0aeee1ef4701e892a9100
   rubocop-ruby2_3 (3.0.7) sha256=be48c53160caff29a50333e3bac7311d4dab9b855fc260c32a6951c4073e1e5a
   rubocop-thread_safety (0.7.3) sha256=067cdd52fbf5deffc18995437e45b5194236eaff4f71de3375a1f6052e48f431
-  ruby-merge (7.1.9)
+  ruby-merge (7.1.9) sha256=935774793dcec28614019a7c0802f14f93f805664684e7a29184ad1b4db241fa
   ruby-progressbar (1.13.0) sha256=80fc9c47a9b640d6834e0dc7b3c94c9df37f08cb072b7761e4a71e22cff29b33
   ruby2_keywords (0.0.5) sha256=ffd13740c573b7301cf7a2e61fc857b2a8e3d3aff32545d6f8300d8bae10e3ef
   ruby_engine (2.0.3) sha256=ca2ae7def8cfcdc2bfb6a186d36d5d59c8b403245dc0256c3802b767fa278aaa
@@ -888,10 +882,10 @@ CHECKSUMS
   timecop (0.9.11) sha256=41284dc6e5041f2184f781ace766f942108c842f8d8c1386a26e6343decc7542
   timecop-rspec (1.0.3) sha256=005f14841bb606dcaefb060e321b5388e2e59537742bee8b3a9a9a40e598fab9
   token-resolver (2.0.11) sha256=eef000ba6a47563a1d7a6be316124375effc61d56c90e603f657769298ff41bf
-  toml-merge (7.1.9)
+  toml-merge (7.1.9) sha256=a085b6d3e0f5ceed49ad2711f643c640a65cfbedca590dafdef7ce6e33fec71a
   toml-rb (4.2.1) sha256=e6c40e27905e86a7d38cc252eb4bc12d72c61576c826a358390c30f5de0b9dbb
-  tree_haver (7.1.9)
-  tree_sitter_language_pack (1.20.0)
+  tree_haver (7.1.9) sha256=d7420e0f8f21368e1362da63bfe105897e7e56bdf741ba292adef7a6c3ea0a75
+  tree_sitter_language_pack (1.20.0) sha256=2ab298478a2390f0fba2f05e32325bb5b7c2f5f9674019d209de582446329d7d
   tree_sitter_language_pack (1.20.0-x86_64-linux) sha256=ce5e910a1443afbc770eb6cd18d33b08327fed1ef721f6c9a15e0dfccf7327a4
   tsort (0.2.0) sha256=9650a793f6859a43b6641671278f79cfead60ac714148aabe4e3f0060480089f
   tty-cursor (0.7.1) sha256=79534185e6a777888d88628b14b6a1fdf5154a603f285f80b1753e1908e0bf48
@@ -905,7 +899,7 @@ CHECKSUMS
   webmock (3.26.4) sha256=8d8da206d217ebe6968cfb09c77f4533c23074e1432bad865f3994eacbaad50d
   webrick (1.9.2) sha256=beb4a15fc474defed24a3bda4ffd88a490d517c9e4e6118c3edce59e45864131
   yaml-converter (0.2.6) sha256=f270e8bcf19a20830056c77acf3bf942545e445455f20825af6a6884384611e9
-  yaml-merge (7.1.9)
+  yaml-merge (7.1.9) sha256=fab35e05ea9905494ff754363ab8173c7528e6b4e0c364ecba11cb1cf974fe25
   yard (0.9.45) sha256=52e211493f7cb8a3ebf7e104a25a1e73937a3103092545d34cb88fafebb3dc51
   yard-fence (0.9.9) sha256=62c4d419e0da092a67b4d0f7115e54df44662bae6e705f3bcafb8f1cc33195b2
   yard-junk (0.1.0) sha256=e85fe2ec1afa47313decd333447b53458cb1ed49b510b70015fdc3041a94bcdd
