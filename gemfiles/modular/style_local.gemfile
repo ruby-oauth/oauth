@@ -4,12 +4,12 @@
 # rules for the configured Ruby floor independently from task dependency floors.
 
 # Local path overrides for development.
-# Loaded by the associated non-local gemfile when RUBOCOP_LTS_LOCAL != "false".
+# Loaded by the associated non-local gemfile when RUBOCOP_LTS_DEV != "false".
 
 # Bootstrapping nomono here cannot rely on a plain `gem "nomono", ...` line.
 # Bundler records that dependency during Gemfile evaluation, but it does not
 # activate that exact version before the immediate `require "nomono/bundler"`.
-nomono_activation_requirements = ["~> 1.1", ">= 1.1.4"]
+nomono_activation_requirements = ["~> 1.1", ">= 1.1.5"]
 nomono_requirement = Gem::Requirement.new(nomono_activation_requirements)
 nomono_already_activated = Gem.loaded_specs["nomono"]
 nomono_lockfile = File.expand_path("../../Gemfile.lock", __dir__)
@@ -40,7 +40,7 @@ platform :mri do
   eval_nomono_gems(
     gems: local_gems_to_eval,
     prefix: "RUBOCOP_LTS",
-    path_env: "RUBOCOP_LTS_LOCAL",
+    path_env: "RUBOCOP_LTS_DEV",
     vendored_gems_env: "VENDORED_GEMS",
     vendor_gem_dir_env: "VENDOR_GEM_DIR",
     debug_env: "RUBOCOP_LTS_DEBUG",

@@ -1,0 +1,24 @@
+# frozen_string_literal: true
+
+# kettle-changelog depends on the current kettle-dev APIs and the structured
+# Markdown merger. Keep it out of older appraisal jobs whose Ruby cannot load
+# its runtime dependency floor.
+# Release lockfile/build commands set this dependency-specific switch so
+# the development tool cannot pull unpublished family gems into resolution.
+kettle_changelog_skip = ENV.fetch("KETTLE_DEV_SKIP_CHANGELOG_DEPENDENCY", "false").downcase
+kettle_changelog_skip = %w[true 1 yes on].include?(kettle_changelog_skip)
+kettle_changelog_local = ENV.fetch("KETTLE_DEV_DEV", "false").downcase
+kettle_changelog_local = !%w[false 0 no off].include?(kettle_changelog_local)
+unless kettle_changelog_skip
+  if kettle_changelog_local
+    require "nomono/bundler"
+    eval_nomono_gems(
+      gems: ["kettle-changelog"],
+      prefix: "KETTLE_DEV",
+      path_env: "KETTLE_DEV_DEV",
+      root: ["src", "my", "kettle-dev"]
+    )
+  elsif Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("4.0.0")
+    gem "kettle-changelog", "~> 1.0", ">= 1.0.7"
+  end
+end

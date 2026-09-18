@@ -84,7 +84,7 @@ The primary maintainer since 2020 is Peter Boling ([@pboling](https://github.com
 
 ### Compatibility
 
-Compatible with MRI Ruby 2.3+, and concordant releases of JRuby, and TruffleRuby.
+Compatible with MRI Ruby 2.3+, JRuby, and TruffleRuby.
 CI workflows and Appraisals are generated for MRI Ruby 2.4+.
 This test floor is configured by `ruby.test_minimum` in `.kettle-jem.yml` and
 may be higher than the gem's runtime compatibility floor when legacy Rubies are
@@ -123,7 +123,9 @@ The _amazing_ test matrix is powered by the kettle-dev stack.
 
 </details>
 
-### Enterprise Support [![Tidelift](https://tidelift.com/badges/package/rubygems/oauth)](https://tidelift.com/subscription/pkg/rubygems-oauth?utm_source=rubygems-oauth&utm_medium=referral&utm_campaign=readme)
+### Enterprise Support
+
+[![Tidelift](https://tidelift.com/badges/package/rubygems/oauth)](https://tidelift.com/subscription/pkg/rubygems-oauth?utm_source=rubygems-oauth&utm_medium=referral&utm_campaign=readme)
 
 Available as part of the Tidelift Subscription.
 
@@ -335,8 +337,7 @@ See [SECURITY.md][🔐security].
 ## 🤝 Contributing
 
 If you need some ideas of where to help, you could work on adding more code coverage,
-or if it is already 💯 (see [below](#code-coverage)) check [issues][🤝gh-issues] or [PRs][🤝gh-pulls],
-or use the gem and think about how it could be better.
+check [issues][🤝gh-issues] or [PRs][🤝gh-pulls], or use the gem and think about how it could be better.
 
 We [![Keep A Changelog][📗keep-changelog-img]][📗keep-changelog] so if you make changes, remember to update it.
 
@@ -375,11 +376,11 @@ Also see GitLab Contributors: [https://gitlab.com/ruby-oauth/oauth/-/graphs/main
 <details markdown="1">
  <summary>⭐️ Star History</summary>
 
-<a href="https://star-history.dera.page/ruby-oauth/oauth&Date">
+<a href="https://star-history.dera.page/#ruby-oauth/oauth&type=date&legend=top-left">
  <picture>
- <source media="(prefers-color-scheme: dark)" srcset="https://star-history.dera.page/svg?repos=ruby-oauth/oauth&type=Date&theme=dark" />
- <source media="(prefers-color-scheme: light)" srcset="https://star-history.dera.page/svg?repos=ruby-oauth/oauth&type=Date" />
- <img alt="Star History Chart" src="https://star-history.dera.page/svg?repos=ruby-oauth/oauth&type=Date" />
+ <source media="(prefers-color-scheme: dark)" srcset="https://star-history.dera.page/svg?repos=ruby-oauth/oauth&type=date&theme=dark&legend=top-left" />
+ <source media="(prefers-color-scheme: light)" srcset="https://star-history.dera.page/svg?repos=ruby-oauth/oauth&type=date&legend=top-left" />
+ <img alt="Star History Chart" src="https://star-history.dera.page/svg?repos=ruby-oauth/oauth&type=date&legend=top-left" />
  </picture>
 </a>
 
@@ -475,16 +476,14 @@ See [LICENSE.md][📄license] for the official copyright notice.
 - Copyright (c) 2019 Shohei Maeda
 - Copyright (c) 2020-2021, 2026 Khem
 - Copyright (c) 2021 Chuck Remes
-- Copyright (c) 2021 iamibi
+- Copyright (c) 2021, 2026 iamibi
 - Copyright (c) 2021 Jeremy Sioui
 - Copyright (c) 2021 Nick Morgan
 - Copyright (c) 2021-2022, 2025-2026 Peter H. Boling
 - Copyright (c) 2021 Richard Vowles
 - Copyright (c) 2022 Shalvah
 - Copyright (c) 2024-2025 Annibelle Boling
-- Copyright (c) 2025 Aboling0
 - Copyright (c) 2026 David Varga
-- Copyright (c) 2026 StepSecurity Bot
 
 </details>
 
