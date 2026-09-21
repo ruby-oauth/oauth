@@ -61,7 +61,7 @@ jobs:
 
       - name: Setup Ruby & RubyGems
         if: ${{ !env.ACT }}
-        uses: appraisal-rb/setup-ruby-flash@f15d6abac61046b9b66778f8b5e96ee0d8917353 # v2.2
+        uses: appraisal-rb/setup-ruby-flash@8562306866e7e0348dab54cd26e36821809d6d23 # v2.4
         with:
           ruby-version: ${{ matrix.ruby }}
           rubygems: ${{ matrix.rubygems }}
@@ -134,7 +134,7 @@ jobs:
 
       - name: Setup Ruby & RubyGems
         if: ${{ !env.ACT }}
-        uses: appraisal-rb/setup-ruby-flash@f15d6abac61046b9b66778f8b5e96ee0d8917353 # v2.2
+        uses: appraisal-rb/setup-ruby-flash@8562306866e7e0348dab54cd26e36821809d6d23 # v2.4
         with:
           ruby-version: ${{ matrix.ruby }}
           rubygems: ${{ matrix.rubygems }}
@@ -208,7 +208,7 @@ jobs:
 
       - name: Setup Ruby & RubyGems
         if: ${{ !env.ACT }}
-        uses: appraisal-rb/setup-ruby-flash@f15d6abac61046b9b66778f8b5e96ee0d8917353 # v2.2
+        uses: appraisal-rb/setup-ruby-flash@8562306866e7e0348dab54cd26e36821809d6d23 # v2.4
         with:
           ruby-version: ${{ matrix.ruby }}
           rubygems: ${{ matrix.rubygems }}
