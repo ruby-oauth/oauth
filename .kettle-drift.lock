@@ -3,9 +3,18 @@
     {
       "file": "CHANGELOG.md",
       "lines": [
-        311,
-        320,
-        343
+        342,
+        351,
+        374
+      ]
+    }
+  ],
+  "- ruby: \"ruby\"\nappraisal: \"current\"": [
+    {
+      "file": ".github/workflows/current.yml",
+      "lines": [
+        41,
+        47
       ]
     }
   ],
@@ -33,6 +42,15 @@
       ]
     }
   ],
+  "config: .licenserc.yaml\nmode: \"check\"": [
+    {
+      "file": ".github/workflows/license-eye.yml",
+      "lines": [
+        49,
+        62
+      ]
+    }
+  ],
   "direct: oauth.gemspec\nmodular: gemfiles/modular/injected.gemfile": [
     {
       "file": ".structuredmerge/kettle-jem.yml",
@@ -45,6 +63,15 @@
         137,
         142,
         147
+      ]
+    }
+  ],
+  "exec_cmd: \"kettle-test\"\nrubygems: latest": [
+    {
+      "file": ".github/workflows/current.yml",
+      "lines": [
+        44,
+        50
       ]
     }
   ],

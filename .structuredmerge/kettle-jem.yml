@@ -179,6 +179,19 @@ engines:
   - ruby
   - jruby
   - truffleruby
+# List the OS platforms this project's CI exercises. kettle-jem uses this to
+# generate the current.yml OS matrix and the README platform tier table.
+# Windows applies only when declared: the `if: matrix.os` guards and the
+# Windows-only test step are emitted solely for destinations that opt in.
+#
+# Supported values: linux, macos, windows
+# Default (when key is absent): linux, macos
+# These are CI OS families, a distinct vocabulary from Gem::Platform strings
+# and Gemfile DSL platform symbols; never reuse them for
+# `bundle lock --add-platform`.
+platforms:
+  - linux
+  - macos
 
 # Ruby version policy.
 ruby:
