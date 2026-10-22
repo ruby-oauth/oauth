@@ -23,8 +23,8 @@ Gem::Specification.new do |spec|
   spec.authors = ["Pelle Braendgaard", "Chris Mear", "Jon Crosby", "Seth Fitzsimmons", "Tilmann Singer", "Tom Insam", "tsailipu", "Aaron Quint", "Anders Conbere", "Bill Kocik", "Darcy Laycock", "Eric Hartmann", "Greg Weber", "Laszlo Bacsi", "Marshall Huss", "Matt Sanford", "Neill Pearman", "Seth Cousins", "Yoan Blanc", "andrehjr", "Brian Finney", "ecavazos", "Joshua Hull", "Marsh Gardiner", "Michael Reinsch", "Sean Cribbs", "Steven Parkes", "成田 一生", "Shaliko Usubov", "Ernie Miller", "Jonathon M. Abbott", "Richard Huang", "rick", "Steven Hammond", "Craig Walker", "Khem Veasna", "Brian John", "Michal Papis", "raeno", "jremmen", "Kevin Hughes", "Eric True", "James Pinto", "jianben", "Nik Wakelin", "Ondrej Prazak", "Nicholas Souphandavong", "Yvonne", "Agora@Ubuntu-dev", "Shohei Maeda", "Khem", "Chuck Remes", "iamibi", "Jeremy Sioui", "Nick Morgan", "Peter H. Boling", "Richard Vowles", "Shalvah", "Annibelle Boling", "David Varga", "StepSecurity Bot", "Mubelotix"]
   spec.email = ["floss@galtzo.com"]
 
-  spec.summary = "🔮 OAuth 1.0 / 1.0a Core Ruby implementation"
-  spec.description = "🔮 A Ruby wrapper for the original OAuth 1.0 / 1.0a spec."
+  spec.summary = "🔑 OAuth 1.0 / 1.0a Core Ruby implementation"
+  spec.description = "🔑 A Ruby wrapper for the original OAuth 1.0 / 1.0a spec."
   spec.homepage = "https://github.com/ruby-oauth/oauth"
   spec.licenses = ["MIT"]
   spec.required_ruby_version = ">= 2.3"
@@ -62,7 +62,7 @@ Gem::Specification.new do |spec|
   gemspec_root = __dir__
   relative_package_path = lambda do |path|
     prefix = "#{gemspec_root}/"
-    (path[0, prefix.length] == prefix) ? path[prefix.length..-1] : path
+    path[0, prefix.length] == prefix ? path[prefix.length..-1] : path
   end
   enumerate_package_glob = lambda do |glob|
     files = []
