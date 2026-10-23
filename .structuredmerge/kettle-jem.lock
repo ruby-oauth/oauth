@@ -22,6 +22,7 @@ template_state:
     - oauth.gemspec
     kettle-jem/template:
     - ".git-hooks/prepare-commit-msg"
+    - ".github/workflows/auto-assign.yml"
     - ".github/workflows/coverage.yml"
     - ".github/workflows/current.yml"
     - ".github/workflows/dep-heads.yml"
@@ -56,6 +57,7 @@ template_state:
     - ".github/workflows/truffleruby-33.0.yml"
     - ".github/workflows/unlocked_deps.yml"
     - ".github/workflows/windows.yml"
+    - ".licenserc.yaml"
     - ".simplecov"
     - Appraisal.root.gemfile
     - CONTRIBUTING.md
