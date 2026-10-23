@@ -745,7 +745,7 @@ Thanks for RTFM. ☺️
 | Field | Value |
 |---|---|
 | Package | oauth |
-| Description | 🔮 A Ruby wrapper for the original OAuth 1.0 / 1.0a spec. |
+| Description | 🔑 A Ruby wrapper for the original OAuth 1.0 / 1.0a spec. |
 | Homepage | https://github.com/ruby-oauth/oauth |
 | Source | https://github.com/ruby-oauth/oauth |
 | License | `MIT` |

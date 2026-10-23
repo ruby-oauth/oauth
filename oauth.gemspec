@@ -62,7 +62,7 @@ Gem::Specification.new do |spec|
   gemspec_root = __dir__
   relative_package_path = lambda do |path|
     prefix = "#{gemspec_root}/"
-    path[0, prefix.length] == prefix ? path[prefix.length..-1] : path
+    (path[0, prefix.length] == prefix) ? path[prefix.length..-1] : path
   end
   enumerate_package_glob = lambda do |glob|
     files = []
@@ -130,7 +130,7 @@ Gem::Specification.new do |spec|
   #       and preferably a modular one (see gemfiles/modular/*.gemfile).
 
   # Dev, Test, & Release Tasks
-  spec.add_development_dependency("kettle-dev", "~> 3.1", ">= 3.1.20")             # ruby >= 2.4
+  spec.add_development_dependency("kettle-dev", "~> 3.1", ">= 3.1.22")             # ruby >= 2.4
 
   # Security
   spec.add_development_dependency("bundler-audit", "~> 0.9.3")                      # ruby >= 2.0.0
