@@ -13,8 +13,12 @@ gem_version =
     # See: https://github.com/panorama-ed/memo_wise/pull/397
     Module.new.tap { |mod| Kernel.load("#{__dir__}/lib/oauth/version.rb", mod) }::OAuth::Version::VERSION
   else
-    require_relative "lib/oauth/version"
-    OAuth::Version::VERSION
+    # Ruby < 3.1: Kernel.load(path, module) is unavailable, but Module#module_eval with file
+    # metadata works on Ruby 2.2+. Anonymous loading matters beyond coverage: evaluating this
+    # gemspec (e.g. by bundler/setup in a subprocess) must not define top-level constants,
+    # which isolated-loading specs assert on.
+    version_path = "#{__dir__}/lib/oauth/version.rb"
+    Module.new.tap { |mod| mod.module_eval(File.read(version_path), version_path, 1) }::OAuth::Version::VERSION
   end
 
 Gem::Specification.new do |spec|
