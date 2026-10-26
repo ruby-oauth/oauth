@@ -13,7 +13,7 @@ PATH
     oauth-tty (1.0.14)
       anonymous_loader (~> 0.1, >= 0.1.4)
       auth-sanitizer (~> 0.2, >= 0.2.4)
-      version_gem (~> 1.1, >= 1.1.16)
+      version_gem (~> 1.1, >= 1.1.17)
 
 PATH
   remote: .
@@ -24,21 +24,21 @@ PATH
       base64 (~> 0.1)
       oauth-tty (~> 1.0, >= 1.0.13)
       snaky_hash (~> 2.0, >= 2.0.8)
-      version_gem (~> 1.1, >= 1.1.16)
+      version_gem (~> 1.1, >= 1.1.17)
 
 PATH
   remote: /var/home/pboling/src/my/kettle-dev/kettle-changelog
   specs:
     kettle-changelog (1.0.14)
       ast-crispr-markdown-markly (~> 7.1, >= 7.1.1)
-      kettle-dev (~> 3.1, >= 3.1.24)
+      kettle-dev (~> 3.1, >= 3.1.25)
       version_gem (~> 1.1, >= 1.1.16)
 
 PATH
   remote: /var/home/pboling/src/my/kettle-dev/kettle-deps-floor
   specs:
     kettle-deps-floor (0.1.1)
-      kettle-dev (~> 3.1, >= 3.1.24)
+      kettle-dev (~> 3.1, >= 3.1.25)
       kettle-ndjson (~> 0.1, >= 0.1.20)
       prism (>= 1.3)
       version_gem (~> 1.1, >= 1.1.16)
@@ -48,10 +48,10 @@ PATH
   specs:
     kettle-dev (3.1.25)
       emoji_regex (>= 15.0)
-      kettle-gha-pins (~> 0.3, >= 0.3.18)
-      kettle-ndjson (~> 0.1, >= 0.1.20)
-      kettle-rb (~> 0.1, >= 0.1.19)
-      kettle-test (~> 2.0, >= 2.0.27)
+      kettle-gha-pins (~> 0.3, >= 0.3.19)
+      kettle-ndjson (~> 0.1, >= 0.1.22)
+      kettle-rb (~> 0.1, >= 0.1.20)
+      kettle-test (~> 2.0, >= 2.0.28)
       ruby-progressbar (~> 1.13)
       tty-progressbar (~> 0.18)
       version_gem (~> 1.1, >= 1.1.16)
@@ -65,14 +65,14 @@ PATH
 PATH
   remote: /var/home/pboling/src/my/kettle-dev/kettle-family
   specs:
-    kettle-family (1.3.34)
+    kettle-family (1.3.35)
       ast-crispr (~> 7.1, >= 7.1.11)
       ast-crispr-toml (~> 7.1, >= 7.1.11)
       command_kit (~> 0.6)
       command_kit-completion (~> 0.1)
-      kettle-changelog (~> 1.0, >= 1.0.13)
-      kettle-deps-floor (~> 0.1, >= 0.1.0)
-      kettle-dev (~> 3.1, >= 3.1.24)
+      kettle-changelog (~> 1.0, >= 1.0.14)
+      kettle-deps-floor (~> 0.1, >= 0.1.1)
+      kettle-dev (~> 3.1, >= 3.1.25)
       kettle-gha-pins (~> 0.3, >= 0.3.18)
       kettle-jem (~> 7.1, >= 7.1.28)
       kettle-ndjson (~> 0.1, >= 0.1.20)
@@ -82,24 +82,24 @@ PATH
       tsort (~> 0.2)
       tty-screen (~> 0.8)
       unicode-display_width (~> 2.6)
-      version_gem (~> 1.1, >= 1.1.16)
+      version_gem (~> 1.1, >= 1.1.17)
 
 PATH
   remote: /var/home/pboling/src/my/kettle-dev/kettle-rb
   specs:
-    kettle-rb (0.1.19)
+    kettle-rb (0.1.20)
 
 PATH
   remote: /var/home/pboling/src/my/kettle-dev/kettle-soup-cover
   specs:
-    kettle-soup-cover (3.0.14)
-      kettle-wash (~> 0.1, >= 0.1.10)
+    kettle-soup-cover (3.0.15)
+      kettle-wash (~> 0.1, >= 0.1.13)
       simplecov (>= 1.0)
       simplecov-cobertura (>= 4.0)
       simplecov-console (~> 0.9, >= 0.9.5)
       simplecov-rcov (~> 0.3, >= 0.3.7)
       simplecov_lcov_formatter (~> 0.9, >= 0.9.0)
-      version_gem (~> 1.1, >= 1.1.16)
+      version_gem (~> 1.1, >= 1.1.17)
 
 PATH
   remote: /var/home/pboling/src/my/kettle-dev/kettle-test
@@ -121,20 +121,20 @@ PATH
   remote: /var/home/pboling/src/my/ruby-oauth/anonymous_loader
   specs:
     anonymous_loader (0.1.5)
-      version_gem (~> 1.1, >= 1.1.16)
+      version_gem (~> 1.1, >= 1.1.17)
 
 PATH
   remote: /var/home/pboling/src/my/ruby-oauth/auth-sanitizer
   specs:
     auth-sanitizer (0.2.5)
-      version_gem (~> 1.1, >= 1.1.16)
+      version_gem (~> 1.1, >= 1.1.17)
 
 PATH
   remote: /var/home/pboling/src/my/ruby-oauth/snaky_hash
   specs:
     snaky_hash (2.0.9)
       hashie (>= 0.1.0, < 6)
-      version_gem (~> 1.1, >= 1.1.16)
+      version_gem (~> 1.1, >= 1.1.17)
 
 PATH
   remote: /var/home/pboling/src/my/ruby-oauth/version_gem
@@ -550,9 +550,9 @@ GEM
       ruby-progressbar (~> 1.13)
       tty-progressbar (~> 0.18)
       version_gem (~> 1.1, >= 1.1.16)
-    kettle-ndjson (0.1.21)
+    kettle-ndjson (0.1.22)
       version_gem (~> 1.1, >= 1.1.16)
-    kettle-wash (0.1.12)
+    kettle-wash (0.1.13)
       version_gem (~> 1.1, >= 1.1.16)
     kramdown (2.5.2)
       rexml (>= 3.4.4)
@@ -586,7 +586,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.19.4-x86_64-linux-musl)
       racc (~> 1.4)
-    nomono (1.1.15)
+    nomono (1.1.16)
       version_gem (~> 1.1, >= 1.1.16)
     openssl (4.0.2)
     ostruct (0.6.3)
@@ -802,9 +802,9 @@ GEM
       delegate (~> 0.1)
       rspec (~> 3.0)
       timecop (>= 0.7, < 1)
-    token-resolver (2.0.14)
+    token-resolver (2.0.15)
       parslet (~> 2.0)
-      version_gem (~> 1.1, >= 1.1.15)
+      version_gem (~> 1.1, >= 1.1.16)
     toml (0.3.0)
       parslet (>= 1.8.0, < 3.0.0)
     toml-rb (4.2.2)
@@ -854,7 +854,7 @@ GEM
       ostruct
       rainbow
       yard
-    yard-lint (1.12.0)
+    yard-lint (1.13.0)
       yard (~> 0.9)
       zeitwerk (~> 2.6)
     yard-relative_markdown_links (0.6.0)
@@ -906,20 +906,20 @@ DEPENDENCIES
   json-merge!
   kettle-changelog!
   kettle-deps-floor!
-  kettle-dev (~> 3.1, >= 3.1.24)!
+  kettle-dev (~> 3.1, >= 3.1.25)!
   kettle-drift!
-  kettle-family (~> 1.3, >= 1.3.33)!
+  kettle-family (~> 1.3, >= 1.3.34)!
   kettle-jem!
   kettle-rb!
   kettle-soup-cover!
-  kettle-test (~> 2.0, >= 2.0.27)!
+  kettle-test (~> 2.0, >= 2.0.28)!
   kramdown (~> 2.5, >= 2.5.2)
   kramdown-parser-gfm (~> 1.1)
   markdown-merge!
   markly-merge!
   mocha
   mutex_m (~> 0.2)
-  nomono (~> 1.1, >= 1.1.15)
+  nomono (~> 1.1, >= 1.1.16)
   oauth!
   oauth-tty (~> 1.0, >= 1.0.13)!
   ostruct (~> 0.6)
@@ -956,7 +956,7 @@ DEPENDENCIES
   typescript-merge!
   typhoeus (>= 0.1.13)
   vcr (>= 4)
-  version_gem (~> 1.1, >= 1.1.16)!
+  version_gem (~> 1.1, >= 1.1.17)!
   webmock (>= 3)
   webrick (~> 1.9)
   yaml-converter (~> 0.2, >= 0.2.7)
@@ -964,7 +964,7 @@ DEPENDENCIES
   yard (~> 0.9, >= 0.9.45)
   yard-fence (~> 0.9, >= 0.9.10)
   yard-junk (~> 0.1, >= 0.1.0)
-  yard-lint (~> 1.12, >= 1.12.0)
+  yard-lint (~> 1.13, >= 1.13.0)
   yard-relative_markdown_links (~> 0.6)
   yard-timekeeper (~> 0.2, >= 0.2.9)
   yard-yaml (~> 0.2, >= 0.2.6)
@@ -1046,14 +1046,14 @@ CHECKSUMS
   kettle-deps-floor (0.1.1)
   kettle-dev (3.1.25)
   kettle-drift (1.0.18)
-  kettle-family (1.3.34)
+  kettle-family (1.3.35)
   kettle-gha-pins (0.3.19) sha256=ac43784d685aaee019056d666d0c7a8d6d2d9d0b6cd9823c3897cfee27627035
   kettle-jem (7.1.41)
-  kettle-ndjson (0.1.21) sha256=ebeeb2a365c77ad61f8a88026bcb9ea36674411a786001e922ca0ed51e816ef6
-  kettle-rb (0.1.19)
-  kettle-soup-cover (3.0.14)
+  kettle-ndjson (0.1.22)
+  kettle-rb (0.1.20)
+  kettle-soup-cover (3.0.15)
   kettle-test (2.0.28)
-  kettle-wash (0.1.12) sha256=7f43396d325f75753b0cd5e4044bde5ef081dedaddea26244a540de1924c2ab3
+  kettle-wash (0.1.13)
   kramdown (2.5.2) sha256=1ba542204c66b6f9111ff00dcc26075b95b220b07f2905d8261740c82f7f02fa
   kramdown-parser-gfm (1.1.0) sha256=fb39745516427d2988543bf01fc4cf0ab1149476382393e0e9c48592f6581729
   language_server-protocol (3.17.0.6) sha256=5ef2c0c138f8267e1bc631d3328347d354f96724b0af22f2c79516120443b7f0
@@ -1074,7 +1074,7 @@ CHECKSUMS
   nokogiri (1.19.4-x86_64-darwin) sha256=7fd17057d3e1f00e9954a74b3cd76595d3d4a5ef233b7ed9599047c204f70551
   nokogiri (1.19.4-x86_64-linux-gnu) sha256=379fae440b28915e3f19d752ce2dcf8465ed2b2fbefd2a7ca0dd497bc981a06a
   nokogiri (1.19.4-x86_64-linux-musl) sha256=17dfb7c1fa194ae02fbf7c51a7afc8d278045ab3fdacfd86f91d02d7b274470b
-  nomono (1.1.15) sha256=a2ad25ea5a90fc1924f5e943348553ae387b940d23b1bf4119be9591e7887d7a
+  nomono (1.1.16)
   oauth (1.1.9)
   oauth-tty (1.0.14)
   openssl (4.0.2) sha256=1037ad2868ae58df9ad917891c0c0f9815a1172f6846d4bcdd508e4c2ee747c2
@@ -1164,7 +1164,7 @@ CHECKSUMS
   thor (1.5.0) sha256=e3a9e55fe857e44859ce104a84675ab6e8cd59c650a49106a05f55f136425e73
   timecop (0.9.11) sha256=41284dc6e5041f2184f781ace766f942108c842f8d8c1386a26e6343decc7542
   timecop-rspec (1.0.3) sha256=005f14841bb606dcaefb060e321b5388e2e59537742bee8b3a9a9a40e598fab9
-  token-resolver (2.0.14) sha256=b50ac4ff67a2a220b77836f3b943ba5ac5d52f2961aae13a3b75663282af71e6
+  token-resolver (2.0.15)
   toml (0.3.0)
   toml-merge (7.1.16)
   toml-rb (4.2.2) sha256=b41cf36117bafab84c72017697ab49fe49a065e2bcfa6dffb704389fb7b0a60a
@@ -1190,7 +1190,7 @@ CHECKSUMS
   yard (0.9.45) sha256=52e211493f7cb8a3ebf7e104a25a1e73937a3103092545d34cb88fafebb3dc51
   yard-fence (0.9.10) sha256=56b645ab3e20e3c1caa2e0fa4e0c28a3c3b8ebc8b3214ef571402857ac02c098
   yard-junk (0.1.0) sha256=e85fe2ec1afa47313decd333447b53458cb1ed49b510b70015fdc3041a94bcdd
-  yard-lint (1.12.0) sha256=e9899cfb09e9cdc33bf300933981f87abea9bebd9a83d679209a5d4ce3b0a937
+  yard-lint (1.13.0)
   yard-relative_markdown_links (0.6.0) sha256=3e5ffa85cbad9bac70bee5421774b190fb25d3bdf489323a5b3534f647d1a70e
   yard-timekeeper (0.2.9) sha256=614d0f43d3665928c8d121b3214afb56fc38f625267ac1c4a27eaaff8c8eb87e
   yard-yaml (0.2.6) sha256=4d4ecb669655403766c1167e4bdaab0a3921a66f263f1fb0ace9d6ea4699cb1c
