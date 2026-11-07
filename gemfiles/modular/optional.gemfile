@@ -13,4 +13,4 @@ gem "rbs", ">= 4.2.0", require: false # ruby >= 3.1
 
 # Required for kettle-pre-release
 # URL parsing with Unicode support (falls back to URI if not available)
-gem "addressable", ">= 2.9.0", "< 3" # ruby >= 2.2
+gem "addressable", ">= 2.9.2", "< 3" # ruby >= 2.2

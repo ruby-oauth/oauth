@@ -25,15 +25,15 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
-- [kc] kettle-jem/prepare: updated 20 project files:
-  - configuration (1)
-  - dependencies (19)
+- [kc] kettle-jem/prepare: updated 22 project files:
+  - configuration (2)
+  - dependencies (20)
 
-- [kc] kettle-jem/template: updated 50 project files:
+- [kc] kettle-jem/template: updated 51 project files:
   - code and tests (3)
   - dependencies (7)
   - documentation (2)
-  - other (3)
+  - other (4)
   - workflows (35)
 
 - Dependency floors raised to the latest releases, including auth-sanitizer >= 0.2.4 (Hash#inspect redaction in debug logging, GHSA-cmh8-5q25-68v6).

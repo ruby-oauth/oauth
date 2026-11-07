@@ -68,7 +68,7 @@ def local_gem_satisfies?(gem_name, requirements, dev_root)
 
   # Parse version from gemspec
   spec = Gem::Specification.load(gemspec_path)
-  return false unless spec && spec.version
+  return false unless spec&.version
 
   # Check if version satisfies all requirements
   requirements.all? do |req|

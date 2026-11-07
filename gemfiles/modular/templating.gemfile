@@ -2,6 +2,7 @@
 
 structuredmerge_remote = ENV.fetch("STRUCTUREDMERGE_DEV", "false").casecmp("false").zero?
 kettle_remote = ENV.fetch("KETTLE_DEV_DEV", "false").casecmp("false").zero?
+structuredmerge_core_remote = ENV.fetch("STRUCTUREDMERGE_CORE_DEV", "false").casecmp("false").zero?
 
 tslp_dev = ENV.fetch("TSLP_DEV", nil).to_s
 tslp_dev = nil if tslp_dev.empty? || %w[false 0 no off].include?(tslp_dev.downcase)
@@ -24,7 +25,7 @@ end
 
 if kettle_remote
   # Template/plugin checks for released installs.
-  gem "kettle-drift", "~> 1.0", ">= 1.0.18", require: false
+  gem "kettle-drift", "~> 1.0", ">= 1.0.19", require: false
 end
 
 # Set STRUCTUREDMERGE_DEV=/path/to/structuredmerge/ruby/gems for local development with path-based dependencies.
@@ -33,4 +34,4 @@ end
 #
 # Set KETTLE_DEV_DEV=/path/to/my for local development with Kettle plugin gems.
 # When false (default / CI), released Kettle plugin gems are used.
-eval_gemfile "templating_local.gemfile" unless structuredmerge_remote && kettle_remote
+eval_gemfile "templating_local.gemfile" unless structuredmerge_remote && kettle_remote && structuredmerge_core_remote
