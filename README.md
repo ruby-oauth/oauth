@@ -167,6 +167,7 @@ Common options include:
 - `:ca_file`, `:proxy`, `:debug_output` - Net::HTTP transport options.
 - `:token_request_max_redirects` - Maximum redirects followed while requesting OAuth tokens. Defaults to `10`.
 - `:token_request_cross_origin_redirects` - Whether token requests may follow redirects to a different scheme, host, or effective port. Defaults to `false`; only enable this when the provider's token endpoints intentionally redirect across origins.
+- `:access_token_cross_origin_requests` - Whether `AccessToken` service calls (`#get`/`#post`/`#put`/`#patch`/`#delete`/`#head`) may target an absolute URI whose origin (scheme, host, or effective port) differs from `:site`. Defaults to `false`; a cross-origin absolute URI raises `OAuth::Error` because it would send the signed OAuth `Authorization` header to a different host (credential leak / SSRF). Enable this only when you intentionally call signed service endpoints on other origins, and never pass untrusted/user-supplied URLs to these methods.
 
 This gem was originally extracted from @pelle's [oauth-plugin](https://github.com/pelle/oauth-plugin)
 gem. After extraction that gem was made to depend on this gem.

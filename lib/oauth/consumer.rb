@@ -94,7 +94,15 @@ module OAuth
         # default. Cross-origin redirects can re-sign token requests for an
         # attacker-controlled endpoint, so they require explicit opt-in.
         token_request_max_redirects: 10,
-        token_request_cross_origin_redirects: false
+        token_request_cross_origin_redirects: false,
+
+        # AccessToken service calls (AccessToken#get/#post/...) may target an
+        # absolute URI. By default such a call is permitted only when it shares
+        # the configured site's origin (scheme, host, and port); a cross-origin
+        # absolute URI raises OAuth::Error, since it would send the signed OAuth
+        # Authorization header to a different host (credential leak / SSRF). Set
+        # this to true to allow calling service endpoints on other origins.
+        access_token_cross_origin_requests: false
       }
     )
 
@@ -373,12 +381,25 @@ module OAuth
     end
 
     def token_request_cross_origin?(current_uri, redirected_uri)
-      current_uri.scheme.to_s.downcase != redirected_uri.scheme.to_s.downcase ||
-        current_uri.host.to_s.downcase != redirected_uri.host.to_s.downcase ||
-        token_request_effective_port(current_uri) != token_request_effective_port(redirected_uri)
+      cross_origin?(current_uri, redirected_uri)
     end
 
-    def token_request_effective_port(uri)
+    # Whether the consumer permits AccessToken service calls to an absolute URI
+    # whose origin differs from the configured site. Off by default.
+    def access_token_cross_origin_requests?
+      !!options[:access_token_cross_origin_requests]
+    end
+
+    # True when the two URIs differ in scheme, host, or effective port. Used
+    # both for token-request redirect safety and for AccessToken service-call
+    # origin checks.
+    def cross_origin?(uri_a, uri_b)
+      uri_a.scheme.to_s.downcase != uri_b.scheme.to_s.downcase ||
+        uri_a.host.to_s.downcase != uri_b.host.to_s.downcase ||
+        effective_port(uri_a) != effective_port(uri_b)
+    end
+
+    def effective_port(uri)
       return uri.port if uri.port
       return 443 if uri.scheme == "https"
 

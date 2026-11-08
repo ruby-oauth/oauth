@@ -19,6 +19,7 @@ Please file a bug if you notice a violation of semantic versioning.
 ## [Unreleased]
 
 ### Added
+- `access_token_cross_origin_requests` consumer option (default `false`): `AccessToken#request` now refuses an absolute service URI whose origin differs from the configured `:site`, raising `OAuth::Error`, so the signed OAuth `Authorization` header is not sent to a different host. Same-origin absolute URIs and relative paths are unaffected. Set the option to `true` to restore cross-origin service calls. [CWE-918]
 
 - kettle-jem-template-20260720-001 - READMEs can now display configured
   corporate sponsor logos.

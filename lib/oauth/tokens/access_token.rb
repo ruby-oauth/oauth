@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "oauth/errors"
+
 module OAuth
   # The Access Token is used for the actual "real" web service calls that you perform against the server
   class AccessToken < ConsumerToken
@@ -9,6 +11,14 @@ module OAuth
       request_uri = URI.parse(path)
       site_uri = consumer.uri
       is_service_uri_different = request_uri.absolute? && request_uri != site_uri
+      if is_service_uri_different && consumer.cross_origin?(site_uri, request_uri) &&
+          !consumer.access_token_cross_origin_requests?
+        raise OAuth::Error,
+          "AccessToken request to cross-origin URI #{authority(request_uri)} is not permitted " \
+          "(configured site origin is #{authority(site_uri)}). Sending the signed OAuth Authorization " \
+          "header to a different origin can leak it or enable SSRF. Set the consumer option " \
+          "access_token_cross_origin_requests: true to allow service calls to other origins."
+      end
       begin
         consumer.uri(request_uri) if is_service_uri_different
         @response = super
@@ -80,6 +90,14 @@ module OAuth
     #
     def delete(path, headers = {})
       request(:delete, path, headers)
+    end
+
+    private
+
+    # scheme://host[:port] for an error message; URI::HTTP/HTTPS always
+    # resolve a port, so it renders whenever one is known.
+    def authority(uri)
+      "#{uri.scheme}://#{uri.host}#{":#{uri.port}" if uri.port}"
     end
   end
 end
