@@ -25,40 +25,6 @@ Please file a bug if you notice a violation of semantic versioning.
 - kettle-jem-template-20260720-001 - READMEs can now display configured
   corporate sponsor logos.
 
-### Changed
-
-- [kc] kettle-jem/prepare: updated 22 project files:
-  - configuration (2)
-  - dependencies (20)
-
-- [kc] kettle-jem/template: updated 51 project files:
-  - code and tests (3)
-  - dependencies (7)
-  - documentation (2)
-  - other (4)
-  - workflows (35)
-
-- Dependency floors raised to the latest releases, including auth-sanitizer >= 0.2.4 (Hash#inspect redaction in debug logging, GHSA-cmh8-5q25-68v6).
-
-### Deprecated
-
-### Removed
-
-### Fixed
-
-- Token inspection specs no longer treat hexadecimal object identifiers as leaked secrets.
-
-### Security
-
-## [1.1.9] - 2026-09-18
-
-- TAG: [v1.1.9][1.1.9t]
-- COVERAGE: 87.71% -- 849/968 lines in 34 files
-- BRANCH COVERAGE: 61.37% -- 170/277 branches in 34 files
-- 41.13% documented
-
-### Added
-
 - Spec coverage for `OAuth::Client::Helper`, the `query_string` OAuth signing scheme in
   `lib/oauth/client/net_http.rb`, and the `OAuth::Error`/`OAuth::Unauthorized`/`OAuth::Problem`
   classes — none previously had a dedicated spec file.
@@ -81,6 +47,19 @@ Please file a bug if you notice a violation of semantic versioning.
   engine support needs.
 
 ### Changed
+
+- [kc] kettle-jem/prepare: updated 22 project files:
+  - configuration (2)
+  - dependencies (20)
+
+- [kc] kettle-jem/template: updated 51 project files:
+  - code and tests (3)
+  - dependencies (7)
+  - documentation (2)
+  - other (4)
+  - workflows (35)
+
+- Dependency floors raised to the latest releases, including auth-sanitizer >= 0.2.4 (Hash#inspect redaction in debug logging, GHSA-cmh8-5q25-68v6).
 
 - kettle-jem-template-20260716-002 - Generated gemspec manifests now ship fewer
   repository-only files by default to reduce downstream distro packaging churn.
@@ -109,7 +88,13 @@ Please file a bug if you notice a violation of semantic versioning.
   - other (3)
   - workflows (32)
 
+### Deprecated
+
+### Removed
+
 ### Fixed
+
+- Token inspection specs no longer treat hexadecimal object identifiers as leaked secrets.
 
 - kettle-jem-template-20260720-003 - StructuredMerge Git diff driver config now
   uses the installed `smorg-rb` driver command.
@@ -154,6 +139,8 @@ Please file a bug if you notice a violation of semantic versioning.
   preserving comments and trailing commas during template updates.
 
 - Exclude optional OAuth adapters from the default coverage scope.
+
+### Security
 
 ## [1.1.8] - 2026-07-15
 
@@ -988,9 +975,7 @@ All together now release
 - Moved all non-Rails functionality from the Rails plugin:
   http://code.google.com/p/oauth-plugin/
 
-[Unreleased]: https://github.com/ruby-oauth/oauth/compare/v1.1.9...HEAD
-[1.1.9]: https://github.com/ruby-oauth/oauth/compare/v1.1.8...v1.1.9
-[1.1.9t]: https://github.com/ruby-oauth/oauth/releases/tag/v1.1.9
+[Unreleased]: https://github.com/ruby-oauth/oauth/compare/v1.1.8...HEAD
 [1.1.8]: https://github.com/ruby-oauth/oauth/compare/v1.1.7...v1.1.8
 [1.1.8t]: https://github.com/ruby-oauth/oauth/releases/tag/v1.1.8
 [1.1.7]: https://github.com/ruby-oauth/oauth/compare/v1.1.6...v1.1.7
