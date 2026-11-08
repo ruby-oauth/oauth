@@ -301,10 +301,6 @@ NOTE: [kettle-readme-backers][kettle-readme-backers] updates this list every day
 
 <!-- OPENCOLLECTIVE-ORGANIZATIONS:START -->
 No sponsors yet. Be the first!
-
-### Open Collective for Donors
-
-[Bill Woika](https://opencollective.com/bill-woika) [Philipp Ebneter](https://opencollective.com/guest-e77282f7) [Grigoriy](https://opencollective.com/guest-c93e0c48) [Guest](https://opencollective.com/guest-703e7c5a)
 <!-- OPENCOLLECTIVE-ORGANIZATIONS:END -->
 
 [kettle-readme-backers]: https://github.com/ruby-oauth/oauth/blob/main/bin/kettle-readme-backers
@@ -475,6 +471,7 @@ See [LICENSE.md][📄license] for the official copyright notice.
 - Copyright (c) 2022 Shalvah
 - Copyright (c) 2024-2025 Annibelle Boling
 - Copyright (c) 2026 David Varga
+- Copyright (c) 2026 Richard Desmarais
 
 </details>
 
