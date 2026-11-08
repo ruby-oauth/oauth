@@ -12,9 +12,11 @@ RSpec.describe OAuth::AccessToken do
   let(:token) { described_class.new(consumer, "token", "token_secret") }
 
   # Stop before the network: raise from Consumer#request so we only assert which
-  # URI the request would have been sent to, never actually send one.
+  # URI the request would have been sent to, never actually send one. The block
+  # form keeps the consumer.uri interpolation lazy, so the message reflects the
+  # URI at call time (after any same-origin/opted-in swap), not at stub time.
   before do
-    allow(consumer).to receive(:request).and_raise(StandardError, "network reached: #{consumer.uri}")
+    allow(consumer).to receive(:request) { raise StandardError, "network reached: #{consumer.uri}" }
   end
 
   context "with the default configuration" do
@@ -35,12 +37,12 @@ RSpec.describe OAuth::AccessToken do
 
     it "allows a same-origin absolute URI (reaches the request layer)" do
       expect { token.get("https://provider.example/api/people") }
-        .to raise_error(StandardError, /network reached/)
+        .to raise_error(StandardError, %r{network reached: https://provider\.example/api/people})
     end
 
     it "allows a relative path (reaches the request layer)" do
       expect { token.get("/api/people") }
-        .to raise_error(StandardError, /network reached/)
+        .to raise_error(StandardError, %r{network reached: https://provider\.example})
     end
 
     it "restores consumer.uri after refusing" do
@@ -54,7 +56,7 @@ RSpec.describe OAuth::AccessToken do
 
     it "allows a cross-origin absolute URI (reaches the request layer)" do
       expect { token.get("https://attacker.example/collect") }
-        .to raise_error(StandardError, /network reached/)
+        .to raise_error(StandardError, %r{network reached: https://attacker\.example/collect})
     end
   end
 end

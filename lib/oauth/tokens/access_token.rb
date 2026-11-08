@@ -94,7 +94,8 @@ module OAuth
 
     private
 
-    # scheme://host:port for an error message, port shown only when explicit.
+    # scheme://host[:port] for an error message; URI::HTTP/HTTPS always
+    # resolve a port, so it renders whenever one is known.
     def authority(uri)
       "#{uri.scheme}://#{uri.host}#{":#{uri.port}" if uri.port}"
     end
