@@ -84,20 +84,27 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 
 <h3 id="security">Security</h3>
 
-<h2 id="119---2026-09-18">
-<a href="https://github.com/ruby-oauth/oauth/compare/v1.1.8...v1.1.9">1.1.9</a> - 2026-09-18</h2>
+<h2 id="119---2026-11-07">
+<a href="https://github.com/ruby-oauth/oauth/compare/v1.1.8...v1.1.9">1.1.9</a> - 2026-11-07</h2>
 
 <ul>
   <li>TAG: <a href="https://github.com/ruby-oauth/oauth/releases/tag/v1.1.9">v1.1.9</a>
 </li>
-  <li>COVERAGE: 87.71% – 849/968 lines in 34 files</li>
-  <li>BRANCH COVERAGE: 61.37% – 170/277 branches in 34 files</li>
-  <li>41.13% documented</li>
+  <li>COVERAGE: 88.05% – 862/979 lines in 34 files</li>
+  <li>BRANCH COVERAGE: 62.63% – 176/281 branches in 34 files</li>
+  <li>41.57% documented</li>
 </ul>
 
 <h3 id="added-1">Added</h3>
 
 <ul>
+  <li>
+    <p><code>access_token_cross_origin_requests</code> consumer option (default <code>false</code>): <code>AccessToken#request</code> now refuses an absolute service URI whose origin differs from the configured <code>:site</code>, raising <code>OAuth::Error</code>, so the signed OAuth <code>Authorization</code> header is not sent to a different host. Same-origin absolute URIs and relative paths are unaffected. Set the option to <code>true</code> to restore cross-origin service calls. [CWE-918]</p>
+  </li>
+  <li>
+    <p>kettle-jem-template-20260720-001 - READMEs can now display configured<br>
+corporate sponsor logos.</p>
+  </li>
   <li>Spec coverage for <code>OAuth::Client::Helper</code>, the <code>query_string</code> OAuth signing scheme in<br>
 <code>lib/oauth/client/net_http.rb</code>, and the <code>OAuth::Error</code>/<code>OAuth::Unauthorized</code>/<code>OAuth::Problem</code><br>
 classes — none previously had a dedicated spec file.</li>
@@ -124,6 +131,24 @@ engine support needs.</li>
 <h3 id="changed-1">Changed</h3>
 
 <ul>
+  <li>[kc] kettle-jem/prepare: updated 22 project files:
+    <ul>
+      <li>configuration (2)</li>
+      <li>dependencies (20)</li>
+    </ul>
+  </li>
+  <li>[kc] kettle-jem/template: updated 51 project files:
+    <ul>
+      <li>code and tests (3)</li>
+      <li>dependencies (7)</li>
+      <li>documentation (2)</li>
+      <li>other (4)</li>
+      <li>workflows (35)</li>
+    </ul>
+  </li>
+  <li>
+    <p>Dependency floors raised to the latest releases, including auth-sanitizer &gt;= 0.2.4 (Hash#inspect redaction in debug logging, GHSA-cmh8-5q25-68v6).</p>
+  </li>
   <li>
     <p>kettle-jem-template-20260716-002 - Generated gemspec manifests now ship fewer<br>
 repository-only files by default to reduce downstream distro packaging churn.</p>
@@ -163,6 +188,9 @@ use ClickGems instead of BestGems.</p>
 <h3 id="fixed-1">Fixed</h3>
 
 <ul>
+  <li>
+    <p>Token inspection specs no longer treat hexadecimal object identifiers as leaked secrets.</p>
+  </li>
   <li>kettle-jem-template-20260720-003 - StructuredMerge Git diff driver config now<br>
 uses the installed <code>smorg-rb</code> driver command.</li>
   <li>kettle-jem-template-20260725-001 - Release pull request branches beginning<br>

@@ -20,6 +20,25 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Added
 
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [1.1.9] - 2026-11-07
+
+- TAG: [v1.1.9][1.1.9t]
+- COVERAGE: 88.05% -- 862/979 lines in 34 files
+- BRANCH COVERAGE: 62.63% -- 176/281 branches in 34 files
+- 41.57% documented
+
+### Added
+
 - `access_token_cross_origin_requests` consumer option (default `false`): `AccessToken#request` now refuses an absolute service URI whose origin differs from the configured `:site`, raising `OAuth::Error`, so the signed OAuth `Authorization` header is not sent to a different host. Same-origin absolute URIs and relative paths are unaffected. Set the option to `true` to restore cross-origin service calls. [CWE-918]
 
 - kettle-jem-template-20260720-001 - READMEs can now display configured
@@ -88,10 +107,6 @@ Please file a bug if you notice a violation of semantic versioning.
   - other (3)
   - workflows (32)
 
-### Deprecated
-
-### Removed
-
 ### Fixed
 
 - Token inspection specs no longer treat hexadecimal object identifiers as leaked secrets.
@@ -139,8 +154,6 @@ Please file a bug if you notice a violation of semantic versioning.
   preserving comments and trailing commas during template updates.
 
 - Exclude optional OAuth adapters from the default coverage scope.
-
-### Security
 
 ## [1.1.8] - 2026-07-15
 
@@ -975,7 +988,9 @@ All together now release
 - Moved all non-Rails functionality from the Rails plugin:
   http://code.google.com/p/oauth-plugin/
 
-[Unreleased]: https://github.com/ruby-oauth/oauth/compare/v1.1.8...HEAD
+[Unreleased]: https://github.com/ruby-oauth/oauth/compare/v1.1.9...HEAD
+[1.1.9]: https://github.com/ruby-oauth/oauth/compare/v1.1.8...v1.1.9
+[1.1.9t]: https://github.com/ruby-oauth/oauth/releases/tag/v1.1.9
 [1.1.8]: https://github.com/ruby-oauth/oauth/compare/v1.1.7...v1.1.8
 [1.1.8t]: https://github.com/ruby-oauth/oauth/releases/tag/v1.1.8
 [1.1.7]: https://github.com/ruby-oauth/oauth/compare/v1.1.6...v1.1.7
