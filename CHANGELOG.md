@@ -21,18 +21,23 @@ Please file a bug if you notice a violation of semantic versioning.
 ### Added
 - `access_token_cross_origin_requests` consumer option (default `false`): `AccessToken#request` now refuses an absolute service URI whose origin differs from the configured `:site`, raising `OAuth::Error`, so the signed OAuth `Authorization` header is not sent to a different host. Same-origin absolute URIs and relative paths are unaffected. Set the option to `true` to restore cross-origin service calls. [CWE-918]
 
+- kettle-jem-template-20260720-001 - READMEs can now display configured
+  corporate sponsor logos.
+
 ### Changed
 
-- [kc] kettle-jem/prepare: updated 12 project files:
-  - configuration (1)
-  - dependencies (11)
+- [kc] kettle-jem/prepare: updated 22 project files:
+  - configuration (2)
+  - dependencies (20)
 
-- [kc] kettle-jem/template: updated 48 project files:
+- [kc] kettle-jem/template: updated 51 project files:
   - code and tests (3)
   - dependencies (7)
   - documentation (2)
-  - other (2)
-  - workflows (34)
+  - other (4)
+  - workflows (35)
+
+- Dependency floors raised to the latest releases, including auth-sanitizer >= 0.2.4 (Hash#inspect redaction in debug logging, GHSA-cmh8-5q25-68v6).
 
 ### Deprecated
 

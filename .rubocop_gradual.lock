@@ -1,8 +1,0 @@
-{
-  "gemfiles/modular/style_local.gemfile:803618203": [
-    [71, 23, 20, "Style/SafeNavigation: Use safe navigation (`&.`) instead of checking if an object exists before calling the method.", 1851388465]
-  ],
-  "lib/oauth/consumer.rb:1840951906": [
-    [144, 7, 15, "Lint/EmptyWhen: Avoid `when` branches without a body.", 602070219]
-  ]
-}

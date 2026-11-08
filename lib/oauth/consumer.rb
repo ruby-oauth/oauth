@@ -150,6 +150,7 @@ module OAuth
     def debug_output
       @debug_output ||= case @options[:debug_output]
       when nil, false
+        nil
       when true
         $stdout
       else
