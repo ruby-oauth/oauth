@@ -134,7 +134,7 @@ jobs:
 
       - name: Upload coverage to QLTY
         if: ${{ !env.ACT }}
-        uses: qltysh/qlty-action/coverage@ebcd284bf32e36a030afe15f1e136c7be08b9506 # v2.5.0
+        uses: qltysh/qlty-action/coverage@357cd88be7c73c5dc45cf7cf8f99a46ec0b62b73 # v2.6.0
         with:
           oidc: true
           files: coverage/lcov.info
