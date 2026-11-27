@@ -295,6 +295,13 @@ workflows:
 #   project => related-org,ruby,project
 #   org_and_project => related-org,ruby,org,project
 readme:
+  corporate_sponsors:
+  - name: SerpApi
+    url: https://serpapi.com
+    img_src: https://serpapi.com/assets/media_kit/logo-with-wordmark.svg
+    since: '2026-01-01'
+    target_href: https://serpapi.com
+    image_src: https://serpapi.com/assets/media_kit/logo-with-wordmark.svg
   top_logos: org
   h2_synopsis_logos: related-org,ruby
   # Optional package-family README block.

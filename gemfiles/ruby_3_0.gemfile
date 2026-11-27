@@ -9,3 +9,5 @@ eval_gemfile("modular/json/truffleruby_22_3.gemfile")
 eval_gemfile("modular/json/truffleruby_23_0.gemfile")
 
 eval_gemfile("modular/x_std_libs/r3.1/libs.gemfile")
+
+eval_gemfile("modular/rspec_junit_formatter/r3.2/v0.6.gemfile")

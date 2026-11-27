@@ -325,10 +325,10 @@ GEM
       racc (~> 1.4)
     nomono (1.1.18)
       version_gem (~> 1.1, >= 1.1.17)
-    oauth-tty (1.0.13)
-      anonymous_loader (~> 0.1, >= 0.1.3)
-      auth-sanitizer (~> 0.2, >= 0.2.3)
-      version_gem (~> 1.1, >= 1.1.14)
+    oauth-tty (1.0.14)
+      anonymous_loader (~> 0.1, >= 0.1.4)
+      auth-sanitizer (~> 0.2, >= 0.2.4)
+      version_gem (~> 1.1, >= 1.1.17)
     openssl (4.0.2)
     ostruct (0.6.3)
     parallel (1.28.0)
@@ -671,7 +671,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  addressable (>= 2.9.2, < 3)
+  addressable (>= 2.10.0, < 3)
   appraisal2 (~> 3.2, >= 3.2.6)
   appraisal2-rubocop (~> 1.0, >= 1.0.5)
   backports (~> 3.25, >= 3.25.1)
@@ -680,15 +680,15 @@ DEPENDENCIES
   cgi (~> 0.5)
   debug (>= 1.11.1)
   erb (~> 6.0, >= 6.0.7)
-  gem_bench (~> 2.0, >= 2.0.5)
-  gitmoji-regex (~> 2.0, >= 2.0.15)
+  gem_bench (~> 2.0, >= 2.0.6)
+  gitmoji-regex (~> 2.0, >= 2.0.17)
   irb (~> 1.17)
-  kettle-changelog (~> 1.0, >= 1.0.16)
-  kettle-dev (~> 3.1, >= 3.1.26)
-  kettle-family (~> 1.3, >= 1.3.37)
-  kettle-soup-cover (~> 3.0, >= 3.0.16)
-  kettle-test (~> 2.0, >= 2.0.29)
-  kramdown (~> 2.5, >= 2.5.2)
+  kettle-changelog (~> 1.0, >= 1.0.21)
+  kettle-dev (~> 3.1, >= 3.1.33)
+  kettle-family (~> 1.3, >= 1.3.52)
+  kettle-soup-cover (~> 3.0, >= 3.0.17)
+  kettle-test (~> 2.0, >= 2.0.30)
+  kramdown (~> 2.6, >= 2.6.1)
   kramdown-parser-gfm (~> 1.1)
   mocha
   mutex_m (~> 0.2)
@@ -700,7 +700,7 @@ DEPENDENCIES
   rake (~> 13.0)
   rbs (>= 4.2.0)
   reek (~> 6.6, >= 6.6.0)
-  require_bench (~> 1.0, >= 1.0.4)
+  require_bench (~> 1.0, >= 1.0.5)
   rest-client
   rubocop-gradual (~> 0.4, >= 0.4.0)
   rubocop-lts (~> 10.3, >= 10.3.3)
@@ -711,20 +711,20 @@ DEPENDENCIES
   rubocop-ruby2_3 (~> 3.0, >= 3.0.7)
   ruby-progressbar (~> 1.13)
   standard (~> 1.57, >= 1.57.0)
-  stone_checksums (~> 1.0, >= 1.0.9)
+  stone_checksums (~> 1.0, >= 1.0.11)
   stringio (>= 3.2.0)
-  turbo_tests2 (~> 4.0, >= 4.0.0)
+  turbo_tests2 (~> 4.0, >= 4.0.2)
   typhoeus (>= 0.1.13)
   vcr (>= 4)
   webmock (>= 3)
   webrick (~> 1.9)
-  yaml-converter (~> 0.2, >= 0.2.7)
-  yard (~> 0.9, >= 0.9.45)
-  yard-fence (~> 0.9, >= 0.9.10)
+  yaml-converter (~> 0.2, >= 0.2.8)
+  yard (~> 0.9, >= 0.9.46)
+  yard-fence (~> 0.9, >= 0.9.12)
   yard-junk (~> 0.1, >= 0.1.0)
-  yard-lint (~> 1.13, >= 1.13.1)
+  yard-lint (~> 1.15, >= 1.15.0)
   yard-relative_markdown_links (~> 0.6)
-  yard-timekeeper (~> 0.2, >= 0.2.9)
+  yard-timekeeper (~> 0.2, >= 0.2.11)
   yard-yaml (~> 0.2, >= 0.2.6)
 
 CHECKSUMS
@@ -830,7 +830,7 @@ CHECKSUMS
   nokogiri (1.19.7-x86_64-linux-musl) sha256=464d1f3dfb0d53cf54c0c6a7e23e8e91cf68ec3cafc2b27dc4a7682f2d9bf546
   nomono (1.1.18) sha256=e685e9519143bebabfbcbca3cb32dfbe377a33a3118347240516eb300e4c7385
   oauth (1.1.9)
-  oauth-tty (1.0.13) sha256=71ad5f93ceea6fd21fe9a731dc02a4b892c5de9d77e0b303e81bd73f9daeb4a3
+  oauth-tty (1.0.14) sha256=e8986fa9ddb4f5d13f08a602aa06b27400435bcee06c0e922484bd41799ebb73
   openssl (4.0.2) sha256=1037ad2868ae58df9ad917891c0c0f9815a1172f6846d4bcdd508e4c2ee747c2
   ostruct (0.6.3) sha256=95a2ed4a4bd1d190784e666b47b2d3f078e4a9efda2fccf18f84ddc6538ed912
   parallel (1.28.0) sha256=33e6de1484baf2524792d178b0913fc8eb94c628d6cfe45599ad4458c638c970
